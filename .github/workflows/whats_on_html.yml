@@ -1,0 +1,397 @@
+# Generate and publish Merlin Cornwall what's-on HTML when listings change.
+# Runs daily and on manual trigger; commits only when data or cache changed.
+name: What's On HTML
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # 09:00 UTC daily
+  workflow_dispatch:
+
+concurrency:
+  group: merlin-whats-on-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      CREATE_FAILURE_ISSUE: ${{ secrets.CREATE_FAILURE_ISSUE }}
+      SCRAPER_RUN_ATTEMPTS: ${{ secrets.SCRAPER_RUN_ATTEMPTS }}
+      POSTER_MISSING_FAIL_THRESHOLD: ${{ vars.POSTER_MISSING_FAIL_THRESHOLD || '8' }}
+      HEALTHCHECK_ENFORCE: "true"
+      WTW_FAIL_ON_MARKUP_DRIFT: ${{ vars.WTW_FAIL_ON_MARKUP_DRIFT || 'false' }}
+      WTW_MIN_TOTAL_FILMS: ${{ vars.WTW_MIN_TOTAL_FILMS || '10' }}
+      WTW_MIN_TOTAL_SHOWTIMES: ${{ vars.WTW_MIN_TOTAL_SHOWTIMES || '30' }}
+      WTW_MIN_FILMS_PER_CINEMA: ${{ vars.WTW_MIN_FILMS_PER_CINEMA || '0' }}
+      WTW_INITIAL_SHOWINGS_VISIBLE: ${{ vars.WTW_INITIAL_SHOWINGS_VISIBLE || '40' }}
+      WTW_ENABLED_CINEMAS: ${{ vars.WTW_ENABLED_CINEMAS || 'all' }}
+      HEALTH_MIN_TOTAL_FILMS: ${{ vars.HEALTH_MIN_TOTAL_FILMS || '10' }}
+      HEALTH_MIN_TOTAL_SHOWTIMES: ${{ vars.HEALTH_MIN_TOTAL_SHOWTIMES || '30' }}
+      HEALTH_MIN_CINEMAS_WITH_FILMS: ${{ vars.HEALTH_MIN_CINEMAS_WITH_FILMS || '4' }}
+      HEALTH_MIN_NOW_SHOWING_FILMS: ${{ vars.HEALTH_MIN_NOW_SHOWING_FILMS || '1' }}
+      HEALTH_MAX_MARKUP_SUSPECT_CINEMAS: ${{ vars.HEALTH_MAX_MARKUP_SUSPECT_CINEMAS || '1' }}
+      HEALTH_EXCLUDED_CINEMAS: ${{ vars.HEALTH_EXCLUDED_CINEMAS || 'st-ives' }}
+      MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ vars.MAX_CONSECUTIVE_CINEMA_FAILURES || '2' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper and generate HTML (with retries)
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          POSTER_MISSING_FAIL_THRESHOLD: ${{ env.POSTER_MISSING_FAIL_THRESHOLD }}
+          HEALTHCHECK_ENFORCE: ${{ env.HEALTHCHECK_ENFORCE }}
+          WTW_FAIL_ON_MARKUP_DRIFT: ${{ env.WTW_FAIL_ON_MARKUP_DRIFT }}
+          WTW_MIN_TOTAL_FILMS: ${{ env.WTW_MIN_TOTAL_FILMS }}
+          WTW_MIN_TOTAL_SHOWTIMES: ${{ env.WTW_MIN_TOTAL_SHOWTIMES }}
+          WTW_MIN_FILMS_PER_CINEMA: ${{ env.WTW_MIN_FILMS_PER_CINEMA }}
+          WTW_INITIAL_SHOWINGS_VISIBLE: ${{ env.WTW_INITIAL_SHOWINGS_VISIBLE }}
+          WTW_ENABLED_CINEMAS: ${{ env.WTW_ENABLED_CINEMAS }}
+          HEALTH_MIN_TOTAL_FILMS: ${{ env.HEALTH_MIN_TOTAL_FILMS }}
+          HEALTH_MIN_TOTAL_SHOWTIMES: ${{ env.HEALTH_MIN_TOTAL_SHOWTIMES }}
+          HEALTH_MIN_CINEMAS_WITH_FILMS: ${{ env.HEALTH_MIN_CINEMAS_WITH_FILMS }}
+          HEALTH_MIN_NOW_SHOWING_FILMS: ${{ env.HEALTH_MIN_NOW_SHOWING_FILMS }}
+          HEALTH_MAX_MARKUP_SUSPECT_CINEMAS: ${{ env.HEALTH_MAX_MARKUP_SUSPECT_CINEMAS }}
+          HEALTH_EXCLUDED_CINEMAS: ${{ env.HEALTH_EXCLUDED_CINEMAS }}
+          MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ env.MAX_CONSECUTIVE_CINEMA_FAILURES }}
+        run: |
+          set -o pipefail
+          mkdir -p logs
+          : > logs/scraper_run.log
+          {
+            echo "Timestamp (UTC): $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            echo "Runner: ${RUNNER_OS:-unknown}"
+            echo "Python: $(python3 --version 2>&1)"
+            echo "HEALTHCHECK_ENFORCE=${HEALTHCHECK_ENFORCE}"
+            echo "WTW_FAIL_ON_MARKUP_DRIFT=${WTW_FAIL_ON_MARKUP_DRIFT}"
+            echo "WTW_MIN_TOTAL_FILMS=${WTW_MIN_TOTAL_FILMS}"
+            echo "WTW_MIN_TOTAL_SHOWTIMES=${WTW_MIN_TOTAL_SHOWTIMES}"
+            echo "WTW_MIN_FILMS_PER_CINEMA=${WTW_MIN_FILMS_PER_CINEMA}"
+            echo "WTW_INITIAL_SHOWINGS_VISIBLE=${WTW_INITIAL_SHOWINGS_VISIBLE}"
+            echo "WTW_ENABLED_CINEMAS=${WTW_ENABLED_CINEMAS}"
+            echo "HEALTH_MIN_TOTAL_FILMS=${HEALTH_MIN_TOTAL_FILMS}"
+            echo "HEALTH_MIN_TOTAL_SHOWTIMES=${HEALTH_MIN_TOTAL_SHOWTIMES}"
+            echo "HEALTH_MIN_CINEMAS_WITH_FILMS=${HEALTH_MIN_CINEMAS_WITH_FILMS}"
+            echo "HEALTH_MIN_NOW_SHOWING_FILMS=${HEALTH_MIN_NOW_SHOWING_FILMS}"
+            echo "HEALTH_MAX_MARKUP_SUSPECT_CINEMAS=${HEALTH_MAX_MARKUP_SUSPECT_CINEMAS}"
+            echo "HEALTH_EXCLUDED_CINEMAS=${HEALTH_EXCLUDED_CINEMAS}"
+            echo "MAX_CONSECUTIVE_CINEMA_FAILURES=${MAX_CONSECUTIVE_CINEMA_FAILURES}"
+            echo "POSTER_MISSING_FAIL_THRESHOLD=${POSTER_MISSING_FAIL_THRESHOLD}"
+            echo "SCRAPER_RUN_ATTEMPTS=${SCRAPER_RUN_ATTEMPTS}"
+          } > logs/health_env.txt
+
+          if [ -z "${TMDB_API_KEY}" ]; then
+            echo "TMDB_API_KEY is required for reliable poster enrichment. Set repository secret TMDB_API_KEY."
+            exit 1
+          fi
+          echo "::add-mask::${TMDB_API_KEY}"
+
+          ATTEMPTS="${SCRAPER_RUN_ATTEMPTS:-2}"
+          if [ "$ATTEMPTS" -lt 1 ]; then
+            ATTEMPTS=1
+          fi
+
+          attempt=1
+          while [ "$attempt" -le "$ATTEMPTS" ]; do
+            echo "Scraper attempt $attempt/$ATTEMPTS"
+            if python3 whats_on_scraper.py 2>&1 | tee -a logs/scraper_run.log; then
+              echo "Scraper completed successfully"
+              exit 0
+            fi
+
+            if [ "$attempt" -lt "$ATTEMPTS" ]; then
+              sleep_seconds=$((attempt * 20))
+              echo "Attempt $attempt failed; retrying in ${sleep_seconds}s..."
+              sleep "$sleep_seconds"
+            fi
+            attempt=$((attempt + 1))
+          done
+
+          echo "All scraper attempts failed"
+          exit 1
+
+      - name: Upload failure logs artifact
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-failure-logs
+          path: |
+            logs/scraper_run.log
+            logs/health_env.txt
+          if-no-files-found: ignore
+
+      - name: Commit and push if output changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in whats_on_data.json .tmdb_cache.json .whats_on_fingerprint .cinema_failure_state.json; do
+            if [ -f "$f" ]; then
+              git add "$f"
+            fi
+          done
+          if [ -d docs ]; then
+            git add docs/
+          fi
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: update whats-on data and HTML"
+          git push
+
+      - name: Create or update failure issue
+        if: failure() && env.CREATE_FAILURE_ISSUE == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const crypto = require('crypto');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = "What's On scraper failure";
+            const labels = ["automation", "scraper-failure"];
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+            const artifactUrl = `${runUrl}#artifacts`;
+            const streakPattern = /<!--\s*success-streak:(\d+)\s*-->/i;
+            function setStreakMarker(body, value) {
+              const marker = `<!-- success-streak:${value} -->`;
+              if (!body || !body.trim()) return marker;
+              if (streakPattern.test(body)) return body.replace(streakPattern, marker);
+              return `${marker}\n${body}`;
+            }
+            async function resetIssueStreak(issueNumber, currentBody) {
+              const patched = setStreakMarker(currentBody || "", 0);
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: issueNumber,
+                body: patched
+              });
+            }
+
+            let healthEnv = "Unavailable";
+            let scraperLogTail = "Unavailable";
+            try {
+              if (fs.existsSync("logs/health_env.txt")) {
+                healthEnv = fs.readFileSync("logs/health_env.txt", "utf8").trim();
+              }
+              if (fs.existsSync("logs/scraper_run.log")) {
+                const fullLog = fs.readFileSync("logs/scraper_run.log", "utf8");
+                const lines = fullLog.split(/\r?\n/);
+                scraperLogTail = lines.slice(-220).join("\n").trim() || "Empty log";
+              }
+            } catch (err) {
+              scraperLogTail = `Could not read local log files: ${err.message}`;
+            }
+
+            const stableErrorLines = scraperLogTail
+              .split(/\r?\n/)
+              .map((l) => l.trim())
+              .filter(Boolean)
+              .filter((l) =>
+                /error|failed|traceback|exception|health checks failed|warning/i.test(l)
+              )
+              .map((l) =>
+                l
+                  .replace(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z/g, "<ts>")
+                  .replace(/\b(attempt\s+\d+\/\d+)\b/gi, "<attempt>")
+                  .replace(/\b\d+(\.\d+)?s\b/g, "<sec>")
+              )
+              .slice(-120)
+              .join("\n");
+            const signatureInput = `${healthEnv}\n---\n${stableErrorLines || scraperLogTail.slice(-12000)}`;
+            const failureSignature = crypto.createHash('sha256').update(signatureInput).digest('hex').slice(0, 16);
+            const sigMarker = `<!-- failure-signature:${failureSignature} -->`;
+            const body = [
+              sigMarker,
+              "The scheduled/manual What's On workflow failed after configured retries.",
+              "",
+              `- Failure Signature: \`${failureSignature}\``,
+              `- Workflow: ${context.workflow}`,
+              `- Job: ${context.job}`,
+              `- Run: ${runUrl}`,
+              `- Artifacts: ${artifactUrl}`,
+              `- Commit: ${context.sha}`,
+              "",
+              "### Health/Config Context",
+              "```text",
+              healthEnv,
+              "```",
+              "",
+              "### Scraper Log Tail (last ~220 lines)",
+              "```text",
+              scraperLogTail.slice(-60000),
+              "```",
+              "",
+              "Please review the run logs and fix the scraping/configuration issue."
+            ].join("\\n");
+
+            const existing = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: "all",
+              labels: labels.join(","),
+              per_page: 100
+            });
+
+            const sameTitleIssues = existing.data
+              .filter((item) => item.title === title)
+              .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+            let signatureIssue = null;
+            for (const candidate of sameTitleIssues) {
+              const bodyHasSig = (candidate.body || "").includes(sigMarker);
+              let commentsHasSig = false;
+              if (!bodyHasSig) {
+                const comments = await github.rest.issues.listComments({
+                  owner,
+                  repo,
+                  issue_number: candidate.number,
+                  per_page: 100
+                });
+                commentsHasSig = comments.data.some((c) => (c.body || "").includes(sigMarker));
+              }
+              if (bodyHasSig || commentsHasSig) {
+                signatureIssue = candidate;
+                break;
+              }
+            }
+            if (signatureIssue) {
+              const wasClosed = signatureIssue.state === "closed";
+              if (wasClosed) {
+                await github.rest.issues.update({
+                  owner,
+                  repo,
+                  issue_number: signatureIssue.number,
+                  state: "open"
+                });
+              }
+              await resetIssueStreak(signatureIssue.number, signatureIssue.body || "");
+              if (wasClosed) {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: signatureIssue.number,
+                  body: [
+                    `Failure signature \`${failureSignature}\` recurred in run ${runUrl}.`,
+                    "",
+                    "Issue reopened; duplicate details omitted."
+                  ].join("\\n")
+                });
+                core.info(`Failure signature ${failureSignature} tracked in closed issue #${signatureIssue.number}; reopened/reset streak.`);
+              } else {
+                core.info(`Failure signature ${failureSignature} already tracked in open issue #${signatureIssue.number}; reset streak and skipped duplicate comment.`);
+              }
+              return;
+            }
+
+            const issue = sameTitleIssues[0];
+            if (issue) {
+              if (issue.state === "closed") {
+                await github.rest.issues.update({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  state: "open"
+                });
+              }
+              await resetIssueStreak(issue.number, issue.body || "");
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: issue.number,
+                body: [
+                  `New failure signature detected: \`${failureSignature}\``,
+                  "",
+                  body
+                ].join("\\n")
+              });
+            } else {
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body: setStreakMarker(body, 0),
+                labels
+              });
+            }
+
+      - name: Auto-close stale failure issue on success streak
+        if: success() && env.CREATE_FAILURE_ISSUE == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = "What's On scraper failure";
+            const labels = ["automation", "scraper-failure"];
+            const streakPattern = /<!--\s*success-streak:(\d+)\s*-->/i;
+            function getStreak(body) {
+              const m = (body || "").match(streakPattern);
+              return m ? parseInt(m[1], 10) : 0;
+            }
+            function setStreak(body, value) {
+              const marker = `<!-- success-streak:${value} -->`;
+              if (!body || !body.trim()) return marker;
+              if (streakPattern.test(body)) return body.replace(streakPattern, marker);
+              return `${marker}\n${body}`;
+            }
+
+            const existing = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: "open",
+              labels: labels.join(","),
+              per_page: 100
+            });
+            const issue = existing.data.find((item) => item.title === title);
+            if (!issue) {
+              core.info("No open failure issue to update.");
+              return;
+            }
+            const current = getStreak(issue.body || "");
+            const next = current + 1;
+            const patchedBody = setStreak(issue.body || "", next);
+            await github.rest.issues.update({
+              owner,
+              repo,
+              issue_number: issue.number,
+              body: patchedBody
+            });
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: issue.number,
+              body: `Successful run recorded. Success streak is now ${next}.`
+            });
+            if (next >= 2) {
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: issue.number,
+                state: "closed"
+              });
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: issue.number,
+                body: "Auto-closing after 2 consecutive successful runs."
+              });
+            }
