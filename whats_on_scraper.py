@@ -7,6 +7,7 @@ films with TMDb data, writes whats_on_data.json and regenerates docs/index.html
 on every run. Commits (e.g. in CI) are driven by fingerprint change.
 """
 import hashlib
+import html
 import json
 import logging
 import os
@@ -14,8 +15,9 @@ import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from copy import deepcopy
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import quote_plus, urljoin, urlparse
 
@@ -86,9 +88,20 @@ TMDB_REQUEST_RETRIES = 3
 HEALTHCHECK_DEFAULT_ENFORCE = "1" if os.environ.get("GITHUB_ACTIONS", "").lower() == "true" else "0"
 MAX_CONSECUTIVE_CINEMA_FAILURES_DEFAULT = 2
 
+UK_TZ = ZoneInfo("Europe/London")
+
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 HTTP_SESSION = requests.Session()
+
+
+def uk_today_iso(when: Optional[datetime] = None) -> str:
+    """Calendar date in Europe/London as YYYY-MM-DD (matches page 'today' and section splits)."""
+    dt = when or datetime.now(timezone.utc)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(UK_TZ).date().isoformat()
+
 
 # BBFC rating pattern in titles: (15), (12A), (PG), (18), (U), (R18), (with subtitles) etc.
 RATING_PATTERN = re.compile(r"\((\d+A?|U|PG|R18)\)", re.IGNORECASE)
@@ -1182,8 +1195,9 @@ def validate_scrape_health(
                 cinema_slug, raw_cards, parsed_films, show_count,
             )
 
-    build_today = scrape_date.date().isoformat()
-    now_cutoff = (scrape_date.date() + timedelta(days=NOW_SHOWING_THRESHOLD_DAYS)).isoformat()
+    scrape_uk = scrape_date.astimezone(UK_TZ) if scrape_date.tzinfo else scrape_date.replace(tzinfo=timezone.utc).astimezone(UK_TZ)
+    build_today = scrape_uk.date().isoformat()
+    now_cutoff = (scrape_uk.date() + timedelta(days=NOW_SHOWING_THRESHOLD_DAYS)).isoformat()
     now_showing_films = 0
     for cinema in (data.get("cinemas") or {}).values():
         for film in cinema.get("films") or []:
@@ -1426,16 +1440,20 @@ def build_html(data: Dict[str, Any]) -> str:
         film["cinema_names_list"] = cinema_names_short
         film["cinema_name"] = ", ".join(cinema_names_short)
         films.append(film)
-    build_today = datetime.now(timezone.utc).date()
-    build_today_iso = build_today.isoformat()
-    now_showing_cutoff_iso = (build_today + timedelta(days=NOW_SHOWING_THRESHOLD_DAYS)).isoformat()
+    build_today_iso = uk_today_iso()
+    now_showing_cutoff_iso = (date.fromisoformat(build_today_iso) + timedelta(days=NOW_SHOWING_THRESHOLD_DAYS)).isoformat()
 
     # Collect unique dates for tabs
     all_dates = set()
+    all_cinema_shorts = set()
     for f in films:
         for st in f.get("showtimes") or []:
             all_dates.add(st.get("date", ""))
+            cs = short_cinema_name(str(st.get("cinema_name") or st.get("screen") or ""))
+            if cs:
+                all_cinema_shorts.add(cs)
     sorted_dates = sorted(all_dates) if all_dates else []
+    sorted_cinema_tabs = sorted(all_cinema_shorts)
 
     def cert_span(rating: Optional[str]) -> str:
         """Render certificate as a compact text badge."""
@@ -1443,6 +1461,131 @@ def build_html(data: Dict[str, Any]) -> str:
             return ""
         r = rating.upper()
         return f'<span class="cert cert-fallback" aria-label="{r}">{r}</span>'
+
+    def split_initial_showtimes(all_sorted: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+        showtimes_display: List[Dict[str, Any]] = []
+        showtimes_hidden: List[Dict[str, Any]] = []
+        kept_dates: set = set()
+        for st in all_sorted:
+            d = st.get("date", "")
+            if not d:
+                continue
+            if d not in kept_dates and len(kept_dates) >= SHOWTIMES_MAX_DAYS_PER_FILM:
+                showtimes_hidden.append(st)
+                continue
+            if d not in kept_dates:
+                kept_dates.add(d)
+            if len(showtimes_display) >= initial_showings_visible:
+                showtimes_hidden.append(st)
+                continue
+            showtimes_display.append(st)
+        return showtimes_display, showtimes_hidden
+
+    def showtimes_dicts_to_compact_json(all_sorted: List[Dict[str, Any]]) -> str:
+        rows: List[Any] = []
+        for st in all_sorted:
+            booking = (st.get("booking_url") or "").strip()
+            if st.get("sold_out"):
+                booking = ""
+            scr = short_cinema_name(str(st.get("screen", "")))
+            cname = short_cinema_name(str(st.get("cinema_name") or st.get("screen") or ""))
+            row: List[Any] = [
+                st.get("date") or "",
+                st.get("time") or "",
+                scr,
+                cname,
+                booking,
+                list(st.get("tags") or []),
+            ]
+            if st.get("sold_out"):
+                row.append(1)
+            rows.append(row)
+        payload = json.dumps({"v": 1, "r": rows}, separators=(",", ":"), ensure_ascii=False)
+        return payload.replace("</", "<\\/")
+
+    def render_showtime_rows_html(showtimes: List[Dict[str, Any]]) -> str:
+        showtimes_by_date: Dict[str, List[Dict[str, Any]]] = {}
+        for st in showtimes:
+            d = st.get("date", "")
+            if d not in showtimes_by_date:
+                showtimes_by_date[d] = []
+            showtimes_by_date[d].append(st)
+        rows_out: List[str] = []
+        for d in sorted(showtimes_by_date.keys()):
+            times = showtimes_by_date[d]
+            time_parts: List[str] = []
+            for st in times:
+                t = st.get("time", "")
+                screen = short_cinema_name(str(st.get("screen", "")))
+                booking = st.get("booking_url", "")
+                sold_out = bool(st.get("sold_out"))
+                tags = st.get("tags") or []
+                tag_icon_ids = {
+                    "Audio Description": "icon-audio-desc",
+                    "Wheelchair access": "icon-wheelchair",
+                    "2D": "icon-2d",
+                    "3D": "icon-3d",
+                    "Subtitles": "icon-subtitles",
+                    "Silver Screen": "icon-silver-screen",
+                    "Event cinema": "icon-event-cinema",
+                    "Advance Screening": "icon-event-cinema",
+                    "Strobe Light warning": "icon-strobe",
+                    "Parent & Baby": "icon-parent-baby",
+                    "Autism Friendly": "icon-autism-friendly",
+                    "Kids Club": "icon-kids-club",
+                }
+                tag_short_labels = {
+                    "Audio Description": "AD",
+                    "Subtitles": "Subs",
+                    "Wheelchair access": "WA",
+                    "Strobe Light warning": "Strobe",
+                    "Hard of Hearing": "HOH",
+                    "Private Box": "Box",
+                    "Super Saver": "Saver",
+                }
+                tag_tooltips = {
+                    "Audio Description": "Audio description",
+                    "Subtitles": "Subtitled screening",
+                    "Wheelchair access": "Wheelchair accessible",
+                    "2D": "Standard 2D screening",
+                    "Strobe Light warning": "Strobe lighting may affect photosensitive viewers",
+                    "Hard of Hearing": "Infrared hard of hearing available",
+                }
+
+                def tag_html(tag: str) -> str:
+                    icon_id = tag_icon_ids.get(tag)
+                    label = tag_short_labels.get(tag, tag)
+                    tooltip = tag_tooltips.get(tag) or (tag if tag in tag_short_labels else None)
+                    title_esc = (tooltip or "").replace("&", "&amp;").replace('"', "&quot;")
+                    title_attr = f' title="{title_esc}"' if title_esc else ""
+                    if icon_id:
+                        return f'<span class="tag"{title_attr}><svg class="tag-icon" aria-hidden="true"><use href="#{icon_id}"/></svg>{label}</span>'
+                    return f'<span class="tag"{title_attr}>{label}</span>'
+
+                tag_span = " ".join(tag_html(tag) for tag in tags[:4])
+                if booking and not sold_out:
+                    time_el = f'<a href="{booking}">{t}</a>'
+                elif sold_out:
+                    time_el = f'<span class="past">{t} Sold Out</span>'
+                else:
+                    time_el = f'<span class="past">{t}</span>'
+                time_parts.append(
+                    f'<div class="st-row">'
+                    f'<span class="st-time">{time_el}</span>'
+                    f'<span class="st-screen">{screen}</span>'
+                    f'<span class="st-tags">{tag_span}</span>'
+                    f"</div>"
+                )
+            date_label = d
+            try:
+                dt = datetime.strptime(d, "%Y-%m-%d")
+                date_label = dt.strftime("%a %d %b")
+            except ValueError:
+                pass
+            rows_out.append(
+                f'<div class="day-group"><div class="st-date">{date_label}</div>' + "".join(time_parts) + "</div>"
+            )
+        return "\n".join(rows_out)
 
     def film_card(f: Dict) -> str:
         title = f.get("title", "")
@@ -1492,105 +1635,12 @@ def build_html(data: Dict[str, Any]) -> str:
             (f.get("showtimes") or []),
             key=lambda s: (s.get("date", ""), s.get("time", ""), s.get("screen", "")),
         )
-        showtimes_display: List[Dict[str, Any]] = []
-        showtimes_hidden: List[Dict[str, Any]] = []
-        kept_dates: set = set()
-        for st in all_showtimes_sorted:
-            d = st.get("date", "")
-            if not d:
-                continue
-            if d not in kept_dates and len(kept_dates) >= SHOWTIMES_MAX_DAYS_PER_FILM:
-                showtimes_hidden.append(st)
-                continue
-            if d not in kept_dates:
-                kept_dates.add(d)
-            if len(showtimes_display) >= initial_showings_visible:
-                showtimes_hidden.append(st)
-                continue
-            showtimes_display.append(st)
-
-        def render_showtime_rows(showtimes: List[Dict[str, Any]]) -> str:
-            showtimes_by_date: Dict[str, List[Dict]] = {}
-            for st in showtimes:
-                d = st.get("date", "")
-                if d not in showtimes_by_date:
-                    showtimes_by_date[d] = []
-                showtimes_by_date[d].append(st)
-            rows = []
-            for d in sorted(showtimes_by_date.keys()):
-                times = showtimes_by_date[d]
-                time_parts = []
-                for st in times:
-                    t = st.get("time", "")
-                    screen = short_cinema_name(str(st.get("screen", "")))
-                    booking = st.get("booking_url", "")
-                    sold_out = bool(st.get("sold_out"))
-                    tags = st.get("tags") or []
-                    tag_icon_ids = {
-                        "Audio Description": "icon-audio-desc",
-                        "Wheelchair access": "icon-wheelchair",
-                        "2D": "icon-2d",
-                        "3D": "icon-3d",
-                        "Subtitles": "icon-subtitles",
-                        "Silver Screen": "icon-silver-screen",
-                        "Event cinema": "icon-event-cinema",
-                        "Advance Screening": "icon-event-cinema",
-                        "Strobe Light warning": "icon-strobe",
-                        "Parent & Baby": "icon-parent-baby",
-                        "Autism Friendly": "icon-autism-friendly",
-                        "Kids Club": "icon-kids-club",
-                    }
-                    tag_short_labels = {
-                        "Audio Description": "AD",
-                        "Subtitles": "Subs",
-                        "Wheelchair access": "WA",
-                        "Strobe Light warning": "Strobe",
-                        "Hard of Hearing": "HOH",
-                        "Private Box": "Box",
-                        "Super Saver": "Saver",
-                    }
-                    tag_tooltips = {
-                        "Audio Description": "Audio description",
-                        "Subtitles": "Subtitled screening",
-                        "Wheelchair access": "Wheelchair accessible",
-                        "2D": "Standard 2D screening",
-                        "Strobe Light warning": "Strobe lighting may affect photosensitive viewers",
-                        "Hard of Hearing": "Infrared hard of hearing available",
-                    }
-                    def tag_html(tag: str) -> str:
-                        icon_id = tag_icon_ids.get(tag)
-                        label = tag_short_labels.get(tag, tag)
-                        tooltip = tag_tooltips.get(tag) or (tag if tag in tag_short_labels else None)
-                        title_esc = (tooltip or "").replace("&", "&amp;").replace('"', "&quot;")
-                        title_attr = f' title="{title_esc}"' if title_esc else ""
-                        if icon_id:
-                            return f'<span class="tag"{title_attr}><svg class="tag-icon" aria-hidden="true"><use href="#{icon_id}"/></svg>{label}</span>'
-                        return f'<span class="tag"{title_attr}>{label}</span>'
-                    tag_span = " ".join(tag_html(tag) for tag in tags[:4])
-                    if booking and not sold_out:
-                        time_el = f'<a href="{booking}">{t}</a>'
-                    elif sold_out:
-                        time_el = f'<span class="past">{t} Sold Out</span>'
-                    else:
-                        time_el = f'<span class="past">{t}</span>'
-                    time_parts.append(
-                        f'<div class="st-row">'
-                        f'<span class="st-time">{time_el}</span>'
-                        f'<span class="st-screen">{screen}</span>'
-                        f'<span class="st-tags">{tag_span}</span>'
-                        f'</div>'
-                    )
-                date_label = d
-                try:
-                    dt = datetime.strptime(d, "%Y-%m-%d")
-                    date_label = dt.strftime("%a %d %b")
-                except ValueError:
-                    pass
-                rows.append(f'<div class="day-group"><div class="st-date">{date_label}</div>' + "".join(time_parts) + "</div>")
-            return "\n".join(rows)
-
-        showtimes_html = render_showtime_rows(showtimes_display)
-        hidden_showtimes_html = render_showtime_rows(showtimes_hidden)
+        showtimes_json = showtimes_dicts_to_compact_json(all_showtimes_sorted)
+        _st = "script"
+        showtimes_script = f"<{_st} type=\"application/json\" class=\"film-showtimes-full\">{showtimes_json}</{_st}>"
+        showtimes_display, showtimes_hidden = split_initial_showtimes(all_showtimes_sorted)
+        showtimes_html = render_showtime_rows_html(showtimes_display)
+        hidden_showtimes_html = render_showtime_rows_html(showtimes_hidden)
         all_showtime_dates = sorted({st.get("date", "") for st in all_showtimes_sorted if st.get("date", "")})
         hidden_count = len(showtimes_hidden)
         showtimes_toggle_html = ""
@@ -1670,8 +1720,11 @@ def build_html(data: Dict[str, Any]) -> str:
         if is_live_event:
             status_label = "Live Event"
         cinema_line = f'<p class="crew"><strong>Cinema:</strong> {esc(cinema_name)}</p>' if cinema_name else ""
+        dates_attr = html.escape(",".join(all_showtime_dates), quote=True)
+        cinemas_attr = html.escape(",".join(f.get("cinema_names_list") or []), quote=True)
+        options_key_attr = html.escape(options_id, quote=True)
         return f"""
-<article class="film-card" data-dates="{",".join(all_showtime_dates)}" data-status="{status}">
+<article class="film-card" data-dates="{dates_attr}" data-status="{status}" data-options-key="{options_key_attr}" data-cinemas="{cinemas_attr}">
   <span class="status-pill status-pill--{status}">{status_label}</span>
   <div class="film-header">
     {poster_div}
@@ -1692,6 +1745,7 @@ def build_html(data: Dict[str, Any]) -> str:
       {chooser_html}
     </div>
   </div>
+  {showtimes_script}
   <div class="showtimes">{showtimes_html}{showtimes_toggle_html}</div>
 </article>"""
 
@@ -1725,18 +1779,58 @@ def build_html(data: Dict[str, Any]) -> str:
     ) if coming_soon else ""
     cards_html = "\n".join(s for s in (section_now, section_coming) if s)
 
-    # Date filter tabs
-    tabs = ['<button type="button" class="tab active" data-date="all">All</button>']
+    # Cinema + date filter tabs (labels and data-* escaped for HTML safety)
+    cinema_tab_lines = [
+        '<button type="button" class="tab tab-cinema active" data-cinema="all">All cinemas</button>'
+    ]
+    for cn in sorted_cinema_tabs:
+        cinema_tab_lines.append(
+            '<button type="button" class="tab tab-cinema" data-cinema="'
+            + html.escape(cn, quote=True)
+            + '">'
+            + html.escape(cn, quote=False)
+            + "</button>"
+        )
+    cinema_tabs_html = "\n".join(cinema_tab_lines)
+    date_tab_lines = ['<button type="button" class="tab tab-date active" data-date="all">All</button>']
     for d in sorted_dates[:14]:
         try:
             dt = datetime.strptime(d, "%Y-%m-%d")
             label = dt.strftime("%a %d")
             if d == build_today_iso:
                 label = "Today"
-            tabs.append(f'<button type="button" class="tab" data-date="{d}">{label}</button>')
+            date_tab_lines.append(
+                '<button type="button" class="tab tab-date" data-date="'
+                + html.escape(d, quote=True)
+                + '">'
+                + html.escape(label, quote=False)
+                + "</button>"
+            )
         except ValueError:
-            tabs.append(f'<button type="button" class="tab" data-date="{d}">{d}</button>')
-    tabs_html = "\n".join(tabs)
+            date_tab_lines.append(
+                '<button type="button" class="tab tab-date" data-date="'
+                + html.escape(d, quote=True)
+                + '">'
+                + html.escape(d, quote=False)
+                + "</button>"
+            )
+    date_tabs_html = "\n".join(date_tab_lines)
+    filter_tabs_html = (
+        '<div class="filter-tabs">\n'
+        '      <div class="tabs-wrap" role="group" aria-label="Filter by cinema">\n'
+        '        <div class="tabs-label">Cinema</div>\n'
+        '        <div class="tabs tabs-cinema">\n'
+        f"{cinema_tabs_html}\n"
+        "        </div>\n"
+        "      </div>\n"
+        '      <div class="tabs-wrap" role="group" aria-label="Filter by date">\n'
+        '        <div class="tabs-label">Date</div>\n'
+        '        <div class="tabs tabs-date">\n'
+        f"{date_tabs_html}\n"
+        "        </div>\n"
+        "      </div>\n"
+        "    </div>"
+    )
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1819,7 +1913,10 @@ def build_html(data: Dict[str, Any]) -> str:
       background-clip: text;
     }}
     header p {{ color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem; }}
-    .tabs {{ display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; padding: 1rem 0; }}
+    .filter-tabs {{ display: flex; flex-direction: column; gap: 1rem; align-items: center; padding: 0.75rem 0 0; width: 100%; }}
+    .tabs-wrap {{ width: 100%; }}
+    .tabs-label {{ font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.35rem; text-align: center; font-weight: 600; }}
+    .tabs {{ display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; padding: 0.25rem 0 0.25rem; }}
     .tab {{
       font-family: inherit;
       background: var(--surface-2);
@@ -2099,8 +2196,8 @@ def build_html(data: Dict[str, Any]) -> str:
       <h1>What's on at Merlin Cinemas Cornwall</h1>
       <p>Ratings, trailers &amp; links to IMDb, RT and Trakt</p>
     </header>
-    <div class="tabs">{tabs_html}</div>
-    <main id="films">{cards_html}</main>
+    {filter_tabs_html}
+    <main id="films" data-initial-showings="{initial_showings_visible}" data-max-showtime-days="{SHOWTIMES_MAX_DAYS_PER_FILM}">{cards_html}</main>
     <footer>
       <p class="footer-disclaimer">An open source fan-made project. Not affiliated with Merlin Cinemas.</p>
       <div class="footer-links">
@@ -2112,30 +2209,321 @@ def build_html(data: Dict[str, Any]) -> str:
     </footer>
   </div>
   <script>
-    document.querySelectorAll('.tab').forEach(function(btn) {{
-      btn.addEventListener('click', function() {{
-        document.querySelectorAll('.tab').forEach(function(b) {{ b.classList.remove('active'); }});
-        btn.classList.add('active');
-        var date = btn.getAttribute('data-date');
-        var isAll = date === 'all';
-        var sectionVisibility = {{ now: false, coming: false }};
-        document.querySelectorAll('.film-card').forEach(function(card) {{
-          var dates = (card.getAttribute('data-dates') || '').split(',');
-          var show = isAll || dates.indexOf(date) !== -1;
-          card.style.display = show ? 'block' : 'none';
-          if (show) {{
-            var status = card.getAttribute('data-status') || '';
-            if (status === 'now') sectionVisibility.now = true;
-            if (status === 'coming-soon') sectionVisibility.coming = true;
-          }}
+    (function() {{
+      var filmsEl = document.getElementById('films');
+      var storageKey = 'wtw-whats-on-cinema';
+      if (!filmsEl) return;
+      var initialN = parseInt(filmsEl.getAttribute('data-initial-showings') || '40', 10);
+      var maxDays = parseInt(filmsEl.getAttribute('data-max-showtime-days') || '10', 10);
+      if (initialN < 1) initialN = 1;
+
+      function normalizeRow(r) {{
+        if (Array.isArray(r)) {{
+          return {{
+            date: r[0] || '',
+            time: r[1] || '',
+            screen: r[2] || '',
+            cinema_name: r[3] || '',
+            booking_url: r[4] || '',
+            tags: r[5] || [],
+            sold_out: r.length > 6 ? !!r[6] : false
+          }};
+        }}
+        return {{
+          date: r.date || '',
+          time: r.time || '',
+          screen: r.screen || '',
+          cinema_name: r.cinema_name || '',
+          booking_url: r.booking_url || '',
+          tags: r.tags || [],
+          sold_out: !!r.sold_out
+        }};
+      }}
+
+      function parseShowtimesJson(text) {{
+        var o = JSON.parse(text);
+        if (o && o.v === 1 && Array.isArray(o.r)) return o.r.map(normalizeRow);
+        if (Array.isArray(o)) return o.map(normalizeRow);
+        return [];
+      }}
+
+      function rowMatches(row, selDate, selCinema) {{
+        if (selDate !== 'all' && row.date !== selDate) return false;
+        if (selCinema !== 'all' && row.cinema_name !== selCinema) return false;
+        return true;
+      }}
+
+      function sortRows(rows) {{
+        return rows.slice().sort(function(a, b) {{
+          if (a.date !== b.date) return a.date < b.date ? -1 : 1;
+          if (a.time !== b.time) return a.time < b.time ? -1 : 1;
+          if (a.screen !== b.screen) return a.screen < b.screen ? -1 : 1;
+          return (a.booking_url || '').localeCompare(b.booking_url || '');
         }});
+      }}
+
+      function splitInitial(rows) {{
+        var display = [];
+        var hidden = [];
+        var keptDates = {{}};
+        function countDates() {{
+          var n = 0;
+          for (var k in keptDates) {{
+            if (Object.prototype.hasOwnProperty.call(keptDates, k)) n++;
+          }}
+          return n;
+        }}
+        for (var i = 0; i < rows.length; i++) {{
+          var st = rows[i];
+          var d = st.date || '';
+          if (!d) continue;
+          if (!keptDates[d] && countDates() >= maxDays) {{
+            hidden.push(st);
+            continue;
+          }}
+          if (!keptDates[d]) keptDates[d] = true;
+          if (display.length >= initialN) {{
+            hidden.push(st);
+            continue;
+          }}
+          display.push(st);
+        }}
+        return {{ display: display, hidden: hidden }};
+      }}
+
+      function escapeHtml(s) {{
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }}
+
+      function dayHeaderLabel(iso) {{
+        try {{
+          var d = new Date(iso + 'T12:00:00Z');
+          return d.toLocaleDateString('en-GB', {{
+            timeZone: 'Europe/London',
+            weekday: 'short',
+            day: 'numeric',
+            month: 'short'
+          }});
+        }} catch (e) {{
+          return iso;
+        }}
+      }}
+
+      var tagIconIds = {{
+        'Audio Description': 'icon-audio-desc',
+        'Wheelchair access': 'icon-wheelchair',
+        '2D': 'icon-2d',
+        '3D': 'icon-3d',
+        'Subtitles': 'icon-subtitles',
+        'Silver Screen': 'icon-silver-screen',
+        'Event cinema': 'icon-event-cinema',
+        'Advance Screening': 'icon-event-cinema',
+        'Strobe Light warning': 'icon-strobe',
+        'Parent & Baby': 'icon-parent-baby',
+        'Autism Friendly': 'icon-autism-friendly',
+        'Kids Club': 'icon-kids-club'
+      }};
+      var tagShortLabels = {{
+        'Audio Description': 'AD',
+        'Subtitles': 'Subs',
+        'Wheelchair access': 'WA',
+        'Strobe Light warning': 'Strobe',
+        'Hard of Hearing': 'HOH',
+        'Private Box': 'Box',
+        'Super Saver': 'Saver'
+      }};
+      var tagTooltips = {{
+        'Audio Description': 'Audio description',
+        'Subtitles': 'Subtitled screening',
+        'Wheelchair access': 'Wheelchair accessible',
+        '2D': 'Standard 2D screening',
+        'Strobe Light warning': 'Strobe lighting may affect photosensitive viewers',
+        'Hard of Hearing': 'Infrared hard of hearing available'
+      }};
+
+      function oneTagHtml(tag) {{
+        var iconId = tagIconIds[tag];
+        var label = tagShortLabels[tag] || tag;
+        var tooltip = tagTooltips[tag] || (tagShortLabels[tag] ? null : tag);
+        var titleEsc = tooltip ? escapeHtml(tooltip) : '';
+        var titleAttr = titleEsc ? ' title="' + titleEsc + '"' : '';
+        if (iconId) {{
+          return '<span class="tag"' + titleAttr + '><svg class="tag-icon" aria-hidden="true"><use href="#' + iconId + '"/></svg>' + escapeHtml(label) + '</span>';
+        }}
+        return '<span class="tag"' + titleAttr + '>' + escapeHtml(label) + '</span>';
+      }}
+
+      function renderShowtimeRows(rows) {{
+        var byDate = {{}};
+        for (var i = 0; i < rows.length; i++) {{
+          var st = rows[i];
+          var d = st.date || '';
+          if (!byDate[d]) byDate[d] = [];
+          byDate[d].push(st);
+        }}
+        var keys = Object.keys(byDate).sort();
+        var parts = [];
+        for (var ki = 0; ki < keys.length; ki++) {{
+          var d = keys[ki];
+          var times = byDate[d];
+          var timeParts = [];
+          for (var j = 0; j < times.length; j++) {{
+            var st = times[j];
+            var t = st.time || '';
+            var screen = escapeHtml(st.screen || '');
+            var booking = st.booking_url || '';
+            var soldOut = st.sold_out;
+            var tags = st.tags || [];
+            var tagSpan = '';
+            for (var ti = 0; ti < Math.min(tags.length, 4); ti++) {{
+              tagSpan += (ti ? ' ' : '') + oneTagHtml(tags[ti]);
+            }}
+            var timeEl;
+            if (booking && !soldOut) {{
+              timeEl = '<a href="' + escapeHtml(booking) + '">' + escapeHtml(t) + '</a>';
+            }} else if (soldOut) {{
+              timeEl = '<span class="past">' + escapeHtml(t) + ' Sold Out</span>';
+            }} else {{
+              timeEl = '<span class="past">' + escapeHtml(t) + '</span>';
+            }}
+            timeParts.push(
+              '<div class="st-row"><span class="st-time">' + timeEl + '</span><span class="st-screen">' + screen + '</span><span class="st-tags">' + tagSpan + '</span></div>'
+            );
+          }}
+          parts.push(
+            '<div class="day-group"><div class="st-date">' + escapeHtml(dayHeaderLabel(d)) + '</div>' + timeParts.join('') + '</div>'
+          );
+        }}
+        return parts.join('\\n');
+      }}
+
+      function buildShowtimesInner(picked, optionsKey) {{
+        picked = sortRows(picked);
+        var sp = splitInitial(picked);
+        var mainHtml = renderShowtimeRows(sp.display);
+        var hidden = sp.hidden;
+        var n = hidden.length;
+        if (n === 0) return mainHtml;
+        var extraId = 'showtimes-extra-' + optionsKey;
+        var moreLabel = 'Show ' + n + ' more showings';
+        return (
+          mainHtml +
+          '<div class="showtimes-actions"><button type="button" class="showtimes-more-btn" data-target="' +
+          escapeHtml(extraId) +
+          '" data-more-label="' +
+          escapeHtml(moreLabel) +
+          '" data-less-label="' +
+          escapeHtml('Show fewer showings') +
+          '">' +
+          escapeHtml(moreLabel) +
+          '</button></div><div id="' +
+          escapeHtml(extraId) +
+          '" class="showtimes-extra" hidden>' +
+          renderShowtimeRows(hidden) +
+          '</div>'
+        );
+      }}
+
+      function applyFilters() {{
+        var dateBtn = document.querySelector('.tab-date.active');
+        var cinemaBtn = document.querySelector('.tab-cinema.active');
+        var selDate = dateBtn ? dateBtn.getAttribute('data-date') || 'all' : 'all';
+        var selCinema = cinemaBtn ? cinemaBtn.getAttribute('data-cinema') || 'all' : 'all';
+        var sectionVis = {{ now: false, coming: false }};
+        var cards = filmsEl.querySelectorAll('.film-card');
+        for (var i = 0; i < cards.length; i++) {{
+          var card = cards[i];
+          var scriptEl = card.querySelector('script.film-showtimes-full');
+          if (!scriptEl) continue;
+          var rows;
+          try {{
+            rows = parseShowtimesJson(scriptEl.textContent.trim());
+          }} catch (e2) {{
+            rows = [];
+          }}
+          var picked = [];
+          for (var ri = 0; ri < rows.length; ri++) {{
+            if (rowMatches(rows[ri], selDate, selCinema)) picked.push(rows[ri]);
+          }}
+          if (picked.length === 0) {{
+            card.style.display = 'none';
+            continue;
+          }}
+          card.style.display = '';
+          var optsKey = card.getAttribute('data-options-key') || 'film';
+          var wrap = card.querySelector('.showtimes');
+          if (wrap) wrap.innerHTML = buildShowtimesInner(picked, optsKey);
+          var status = card.getAttribute('data-status') || '';
+          if (status === 'now') sectionVis.now = true;
+          if (status === 'coming-soon') sectionVis.coming = true;
+        }}
         document.querySelectorAll('.film-section').forEach(function(section) {{
           var sectionType = section.getAttribute('data-section') || '';
-          var showSection = sectionType === 'now' ? sectionVisibility.now : sectionVisibility.coming;
+          var showSection = sectionType === 'now' ? sectionVis.now : sectionVis.coming;
           section.style.display = showSection ? 'grid' : 'none';
         }});
+      }}
+
+      function activateTabRow(selector, btn) {{
+        document.querySelectorAll(selector).forEach(function(b) {{ b.classList.remove('active'); }});
+        btn.classList.add('active');
+      }}
+
+      document.querySelectorAll('.tab-date').forEach(function(btn) {{
+        btn.addEventListener('click', function() {{
+          activateTabRow('.tab-date', btn);
+          applyFilters();
+        }});
       }});
-    }});
+      document.querySelectorAll('.tab-cinema').forEach(function(btn) {{
+        btn.addEventListener('click', function() {{
+          activateTabRow('.tab-cinema', btn);
+          var c = btn.getAttribute('data-cinema') || 'all';
+          try {{
+            if (c === 'all') localStorage.removeItem(storageKey);
+            else localStorage.setItem(storageKey, c);
+          }} catch (e3) {{}}
+          applyFilters();
+        }});
+      }});
+
+      filmsEl.addEventListener('click', function(ev) {{
+        var btn = ev.target && ev.target.closest ? ev.target.closest('.showtimes-more-btn') : null;
+        if (!btn || !filmsEl.contains(btn)) return;
+        var targetId = btn.getAttribute('data-target');
+        var target = targetId ? document.getElementById(targetId) : null;
+        if (!target) return;
+        var isHidden = target.hasAttribute('hidden');
+        if (isHidden) {{
+          target.removeAttribute('hidden');
+          btn.textContent = btn.getAttribute('data-less-label') || 'Show fewer showings';
+        }} else {{
+          target.setAttribute('hidden', '');
+          btn.textContent = btn.getAttribute('data-more-label') || 'Show more showings';
+        }}
+      }});
+
+      try {{
+        var saved = localStorage.getItem(storageKey);
+        if (saved) {{
+          var tabs = document.querySelectorAll('.tab-cinema');
+          var found = false;
+          for (var si = 0; si < tabs.length; si++) {{
+            if (tabs[si].getAttribute('data-cinema') === saved) {{
+              activateTabRow('.tab-cinema', tabs[si]);
+              found = true;
+              break;
+            }}
+          }}
+          if (!found) localStorage.removeItem(storageKey);
+        }}
+      }} catch (e4) {{}}
+      applyFilters();
+    }})();
     document.querySelectorAll('.cast-more-btn').forEach(function(btn) {{
       btn.addEventListener('click', function() {{
         var rest = btn.previousElementSibling;
