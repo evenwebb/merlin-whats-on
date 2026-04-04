@@ -1448,7 +1448,9 @@ def build_html(data: Dict[str, Any]) -> str:
     all_cinema_shorts = set()
     for f in films:
         for st in f.get("showtimes") or []:
-            all_dates.add(st.get("date", ""))
+            d0 = (st.get("date") or "").strip()
+            if d0:
+                all_dates.add(d0)
             cs = short_cinema_name(str(st.get("cinema_name") or st.get("screen") or ""))
             if cs:
                 all_cinema_shorts.add(cs)
@@ -1460,7 +1462,9 @@ def build_html(data: Dict[str, Any]) -> str:
         if not rating:
             return ""
         r = rating.upper()
-        return f'<span class="cert cert-fallback" aria-label="{r}">{r}</span>'
+        r_esc = html.escape(r, quote=True)
+        r_txt = html.escape(r, quote=False)
+        return f'<span class="cert cert-fallback" aria-label="{r_esc}">{r_txt}</span>'
 
     def split_initial_showtimes(all_sorted: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
         showtimes_display: List[Dict[str, Any]] = []
@@ -1563,8 +1567,9 @@ def build_html(data: Dict[str, Any]) -> str:
                     return f'<span class="tag"{title_attr}>{label}</span>'
 
                 tag_span = " ".join(tag_html(tag) for tag in tags[:4])
+                booking_esc = html.escape(str(booking), quote=True)
                 if booking and not sold_out:
-                    time_el = f'<a href="{booking}">{t}</a>'
+                    time_el = f'<a href="{booking_esc}">{t}</a>'
                 elif sold_out:
                     time_el = f'<span class="past">{t} Sold Out</span>'
                 else:
@@ -1578,8 +1583,8 @@ def build_html(data: Dict[str, Any]) -> str:
                 )
             date_label = d
             try:
-                dt = datetime.strptime(d, "%Y-%m-%d")
-                date_label = dt.strftime("%a %d %b")
+                dt_uk = datetime.strptime(d, "%Y-%m-%d").replace(tzinfo=UK_TZ)
+                date_label = dt_uk.strftime("%a %d %b")
             except ValueError:
                 pass
             rows_out.append(
@@ -1656,7 +1661,8 @@ def build_html(data: Dict[str, Any]) -> str:
         has_3d = any("3D" in (st.get("tags") or []) for st in (f.get("showtimes") or []))
         poster_src = poster_url or site_image_url or POSTER_PLACEHOLDER_REL
         poster_alt = f"Poster for {title}" if (poster_url or site_image_url) else f"No poster available for {title}"
-        poster_inner = f'<img src="{poster_src}" alt="{poster_alt}" loading="lazy"/>'
+        poster_alt_esc = html.escape(poster_alt, quote=True)
+        poster_inner = f'<img src="{poster_src}" alt="{poster_alt_esc}" loading="lazy"/>'
         if poster_url and has_3d:
             poster_inner += '<i class="icon--hints icon--3d" aria-hidden="true"></i>'
         if not poster_url and not site_image_url:
@@ -1675,7 +1681,11 @@ def build_html(data: Dict[str, Any]) -> str:
                 trailer_watch_esc = trailer_url.replace("&", "&amp;").replace('"', "&quot;")
         trailer_embed_esc = (trailer_embed or "").replace("&", "&amp;").replace('"', "&quot;")
         trailer_a = f'<button type="button" class="trailer trailer-lightbox-trigger" data-embed="{trailer_embed_esc}" data-watch="{trailer_watch_esc}" aria-label="Play trailer">Trailer</button>' if trailer_embed else ""
-        genre_span = f'<span class="genres">{", ".join(genres[:4])}</span>' if genres else ""
+        genre_span = (
+            f'<span class="genres">{", ".join(html.escape(str(g), quote=False) for g in genres[:4])}</span>'
+            if genres
+            else ""
+        )
         # Escape for HTML (e.g. "Smith & Jones" -> "Smith &amp; Jones")
         def esc(s: str) -> str:
             return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -1729,7 +1739,7 @@ def build_html(data: Dict[str, Any]) -> str:
   <div class="film-header">
     {poster_div}
     <div class="film-meta">
-      <h2>{title} {cert_span(bbfc)}</h2>
+      <h2>{html.escape(title, quote=False)} {cert_span(bbfc)}</h2>
       <div class="meta-line">{runtime_str} {release_line} {vote_str} {genre_span}</div>
       {trailer_a}
       {cinema_line}
@@ -2216,6 +2226,7 @@ def build_html(data: Dict[str, Any]) -> str:
       var initialN = parseInt(filmsEl.getAttribute('data-initial-showings') || '40', 10);
       var maxDays = parseInt(filmsEl.getAttribute('data-max-showtime-days') || '10', 10);
       if (initialN < 1) initialN = 1;
+      if (!Number.isFinite(maxDays) || maxDays < 1) maxDays = 10;
 
       function normalizeRow(r) {{
         if (Array.isArray(r)) {{
@@ -2443,7 +2454,11 @@ def build_html(data: Dict[str, Any]) -> str:
           try {{
             rows = parseShowtimesJson(scriptEl.textContent.trim());
           }} catch (e2) {{
-            rows = [];
+            card.style.removeProperty('display');
+            var stBad = card.getAttribute('data-status') || '';
+            if (stBad === 'now') sectionVis.now = true;
+            if (stBad === 'coming-soon') sectionVis.coming = true;
+            continue;
           }}
           var picked = [];
           for (var ri = 0; ri < rows.length; ri++) {{
@@ -2453,7 +2468,7 @@ def build_html(data: Dict[str, Any]) -> str:
             card.style.display = 'none';
             continue;
           }}
-          card.style.display = '';
+          card.style.removeProperty('display');
           var optsKey = card.getAttribute('data-options-key') || 'film';
           var wrap = card.querySelector('.showtimes');
           if (wrap) wrap.innerHTML = buildShowtimesInner(picked, optsKey);
@@ -2531,21 +2546,6 @@ def build_html(data: Dict[str, Any]) -> str:
           var on = rest.hasAttribute('hidden');
           if (on) {{ rest.removeAttribute('hidden'); btn.textContent = 'Less'; }}
           else {{ rest.setAttribute('hidden', ''); btn.textContent = 'More'; }}
-        }}
-      }});
-    }});
-    document.querySelectorAll('.showtimes-more-btn').forEach(function(btn) {{
-      btn.addEventListener('click', function() {{
-        var targetId = btn.getAttribute('data-target');
-        var target = targetId ? document.getElementById(targetId) : null;
-        if (!target) return;
-        var isHidden = target.hasAttribute('hidden');
-        if (isHidden) {{
-          target.removeAttribute('hidden');
-          btn.textContent = btn.getAttribute('data-less-label') || 'Show fewer showings';
-        }} else {{
-          target.setAttribute('hidden', '');
-          btn.textContent = btn.getAttribute('data-more-label') || 'Show more showings';
         }}
       }});
     }});

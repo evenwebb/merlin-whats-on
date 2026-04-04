@@ -40,12 +40,12 @@ jobs:
       MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ vars.MAX_CONSECUTIVE_CINEMA_FAILURES || '2' }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 1
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
           cache: "pip"
@@ -129,7 +129,7 @@ jobs:
 
       - name: Upload failure logs artifact
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: scraper-failure-logs
           path: |
@@ -158,7 +158,7 @@ jobs:
 
       - name: Create or update failure issue
         if: failure() && env.CREATE_FAILURE_ISSUE == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const fs = require('fs');
@@ -335,7 +335,7 @@ jobs:
 
       - name: Auto-close stale failure issue on success streak
         if: success() && env.CREATE_FAILURE_ISSUE == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const owner = context.repo.owner;
