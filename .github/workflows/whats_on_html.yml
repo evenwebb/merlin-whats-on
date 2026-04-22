@@ -1,5 +1,6 @@
 # Generate and publish Merlin Cornwall what's-on HTML when listings change.
-# Runs daily and on manual trigger; commits only when data or cache changed.
+# Tuned for minimal runner time: single pip step, job-level env (no duplicate passes),
+# default 1 scraper attempt (set secret SCRAPER_RUN_ATTEMPTS=2 if you need retries).
 name: What's On HTML
 
 on:
@@ -18,11 +19,15 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     env:
       PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PIP_NO_PYTHON_VERSION_WARNING: "1"
+      # Secrets / vars once at job level — inherited by all steps (no per-step env block).
+      TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
       CREATE_FAILURE_ISSUE: ${{ secrets.CREATE_FAILURE_ISSUE }}
-      SCRAPER_RUN_ATTEMPTS: ${{ secrets.SCRAPER_RUN_ATTEMPTS }}
+      # Default 1 attempt = fastest billable time; set repository secret to 2 for retry + backoff.
+      SCRAPER_RUN_ATTEMPTS: ${{ secrets.SCRAPER_RUN_ATTEMPTS || '1' }}
       POSTER_MISSING_FAIL_THRESHOLD: ${{ vars.POSTER_MISSING_FAIL_THRESHOLD || '8' }}
       HEALTHCHECK_ENFORCE: "true"
       WTW_FAIL_ON_MARKUP_DRIFT: ${{ vars.WTW_FAIL_ON_MARKUP_DRIFT || 'false' }}
@@ -38,44 +43,26 @@ jobs:
       HEALTH_MAX_MARKUP_SUSPECT_CINEMAS: ${{ vars.HEALTH_MAX_MARKUP_SUSPECT_CINEMAS || '1' }}
       HEALTH_EXCLUDED_CINEMAS: ${{ vars.HEALTH_EXCLUDED_CINEMAS || 'st-ives' }}
       MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ vars.MAX_CONSECUTIVE_CINEMA_FAILURES || '2' }}
-      # TMDb: retry cached poster misses at most once per day by default (override with repo variable)
       TMDB_EMPTY_POSTER_REFETCH_DAYS: ${{ vars.TMDB_EMPTY_POSTER_REFETCH_DAYS || '1' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
           fetch-depth: 1
+          show-progress: false
 
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-          cache: "pip"
+          cache: pip
+          cache-dependency-path: requirements.txt
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run scraper and generate HTML (with retries)
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-          POSTER_MISSING_FAIL_THRESHOLD: ${{ env.POSTER_MISSING_FAIL_THRESHOLD }}
-          HEALTHCHECK_ENFORCE: ${{ env.HEALTHCHECK_ENFORCE }}
-          WTW_FAIL_ON_MARKUP_DRIFT: ${{ env.WTW_FAIL_ON_MARKUP_DRIFT }}
-          WTW_MIN_TOTAL_FILMS: ${{ env.WTW_MIN_TOTAL_FILMS }}
-          WTW_MIN_TOTAL_SHOWTIMES: ${{ env.WTW_MIN_TOTAL_SHOWTIMES }}
-          WTW_MIN_FILMS_PER_CINEMA: ${{ env.WTW_MIN_FILMS_PER_CINEMA }}
-          WTW_INITIAL_SHOWINGS_VISIBLE: ${{ env.WTW_INITIAL_SHOWINGS_VISIBLE }}
-          WTW_ENABLED_CINEMAS: ${{ env.WTW_ENABLED_CINEMAS }}
-          HEALTH_MIN_TOTAL_FILMS: ${{ env.HEALTH_MIN_TOTAL_FILMS }}
-          HEALTH_MIN_TOTAL_SHOWTIMES: ${{ env.HEALTH_MIN_TOTAL_SHOWTIMES }}
-          HEALTH_MIN_CINEMAS_WITH_FILMS: ${{ env.HEALTH_MIN_CINEMAS_WITH_FILMS }}
-          HEALTH_MIN_NOW_SHOWING_FILMS: ${{ env.HEALTH_MIN_NOW_SHOWING_FILMS }}
-          HEALTH_MAX_MARKUP_SUSPECT_CINEMAS: ${{ env.HEALTH_MAX_MARKUP_SUSPECT_CINEMAS }}
-          HEALTH_EXCLUDED_CINEMAS: ${{ env.HEALTH_EXCLUDED_CINEMAS }}
-          MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ env.MAX_CONSECUTIVE_CINEMA_FAILURES }}
-          TMDB_EMPTY_POSTER_REFETCH_DAYS: ${{ env.TMDB_EMPTY_POSTER_REFETCH_DAYS }}
+      - name: Install dependencies & run scraper
         run: |
           set -o pipefail
+          python3 -m pip install -q --disable-pip-version-check --prefer-binary -r requirements.txt
+
           mkdir -p logs
           : > logs/scraper_run.log
           {
@@ -107,7 +94,7 @@ jobs:
           fi
           echo "::add-mask::${TMDB_API_KEY}"
 
-          ATTEMPTS="${SCRAPER_RUN_ATTEMPTS:-2}"
+          ATTEMPTS="${SCRAPER_RUN_ATTEMPTS:-1}"
           if [ "$ATTEMPTS" -lt 1 ]; then
             ATTEMPTS=1
           fi
@@ -121,7 +108,7 @@ jobs:
             fi
 
             if [ "$attempt" -lt "$ATTEMPTS" ]; then
-              sleep_seconds=$((attempt * 20))
+              sleep_seconds=$((attempt * 15))
               echo "Attempt $attempt failed; retrying in ${sleep_seconds}s..."
               sleep "$sleep_seconds"
             fi
@@ -136,6 +123,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: scraper-failure-logs
+          retention-days: 7
           path: |
             logs/scraper_run.log
             logs/health_env.txt

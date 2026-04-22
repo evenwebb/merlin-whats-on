@@ -89,7 +89,7 @@ Workflow: `.github/workflows/whats_on_html.yml`
 Features:
 
 - Scheduled daily run + manual trigger
-- Whole-job retries (`SCRAPER_RUN_ATTEMPTS`)
+- Optional whole-job retries (`SCRAPER_RUN_ATTEMPTS`; workflow defaults to **1** attempt to save CI minutes)
 - Secrets-based TMDb key only (`secrets.TMDB_API_KEY`)
 - Health/env context capture and scraper logs on failure
 - Failure artifact upload (`scraper-failure-logs`)
@@ -105,7 +105,7 @@ Features:
 ### Optional repository secret
 
 - `CREATE_FAILURE_ISSUE` (`true` to enable issue creation)
-- `SCRAPER_RUN_ATTEMPTS` (defaults to 2 in script if unset)
+- `SCRAPER_RUN_ATTEMPTS` (workflow defaults to **1**; set to `2` if you want one retry after failure)
 
 ### Recommended repository variables
 
