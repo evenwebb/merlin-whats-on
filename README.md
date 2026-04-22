@@ -49,6 +49,7 @@ Outputs:
 | `FORCE_REBUILD` | `false` | Force full rebuild even when fingerprint unchanged. |
 | `POSTER_MISSING_FAIL_THRESHOLD` | unset locally | Optional quality gate for missing posters. |
 | `TMDB_DELAY_SEC` | `0` | Optional pacing between TMDb calls. |
+| `TMDB_EMPTY_POSTER_REFETCH_DAYS` | `1` | Retry cached TMDb poster misses after this many days (`0` = every run). |
 | `WTW_ENABLED_CINEMAS` | `all` | Scrape subset (`bodmin,helston,...`) or `all`. |
 | `WTW_INITIAL_SHOWINGS_VISIBLE` | `40` | Initial per-film showings shown before “Show more”. |
 
@@ -108,6 +109,7 @@ Features:
 
 ### Recommended repository variables
 
+- `TMDB_EMPTY_POSTER_REFETCH_DAYS` (e.g. `1` daily, `0` aggressive)
 - `POSTER_MISSING_FAIL_THRESHOLD`
 - `WTW_FAIL_ON_MARKUP_DRIFT`
 - `WTW_MIN_TOTAL_FILMS`

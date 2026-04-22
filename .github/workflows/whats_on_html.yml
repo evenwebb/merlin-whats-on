@@ -38,6 +38,8 @@ jobs:
       HEALTH_MAX_MARKUP_SUSPECT_CINEMAS: ${{ vars.HEALTH_MAX_MARKUP_SUSPECT_CINEMAS || '1' }}
       HEALTH_EXCLUDED_CINEMAS: ${{ vars.HEALTH_EXCLUDED_CINEMAS || 'st-ives' }}
       MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ vars.MAX_CONSECUTIVE_CINEMA_FAILURES || '2' }}
+      # TMDb: retry cached poster misses at most once per day by default (override with repo variable)
+      TMDB_EMPTY_POSTER_REFETCH_DAYS: ${{ vars.TMDB_EMPTY_POSTER_REFETCH_DAYS || '1' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -71,6 +73,7 @@ jobs:
           HEALTH_MAX_MARKUP_SUSPECT_CINEMAS: ${{ env.HEALTH_MAX_MARKUP_SUSPECT_CINEMAS }}
           HEALTH_EXCLUDED_CINEMAS: ${{ env.HEALTH_EXCLUDED_CINEMAS }}
           MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ env.MAX_CONSECUTIVE_CINEMA_FAILURES }}
+          TMDB_EMPTY_POSTER_REFETCH_DAYS: ${{ env.TMDB_EMPTY_POSTER_REFETCH_DAYS }}
         run: |
           set -o pipefail
           mkdir -p logs
@@ -95,6 +98,7 @@ jobs:
             echo "MAX_CONSECUTIVE_CINEMA_FAILURES=${MAX_CONSECUTIVE_CINEMA_FAILURES}"
             echo "POSTER_MISSING_FAIL_THRESHOLD=${POSTER_MISSING_FAIL_THRESHOLD}"
             echo "SCRAPER_RUN_ATTEMPTS=${SCRAPER_RUN_ATTEMPTS}"
+            echo "TMDB_EMPTY_POSTER_REFETCH_DAYS=${TMDB_EMPTY_POSTER_REFETCH_DAYS}"
           } > logs/health_env.txt
 
           if [ -z "${TMDB_API_KEY}" ]; then

@@ -1,0 +1,47 @@
+{
+  "cinemas": {
+    "bodmin": {
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_failure": "",
+      "last_success": "2026-04-22T00:00:36Z"
+    },
+    "helston": {
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_failure": "",
+      "last_success": "2026-04-22T00:00:36Z"
+    },
+    "falmouth": {
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_failure": "",
+      "last_success": "2026-04-22T00:00:36Z"
+    },
+    "redruth": {
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_failure": "",
+      "last_success": "2026-04-22T00:00:36Z"
+    },
+    "st-ives": {
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_failure": "",
+      "last_success": "2026-04-22T00:00:36Z"
+    },
+    "penzance": {
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_failure": "",
+      "last_success": "2026-04-22T00:00:36Z"
+    },
+    "ritz": {
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_failure": "",
+      "last_success": "2026-04-22T00:00:36Z"
+    }
+  },
+  "updated_at": "2026-04-22T00:00:36Z"
+}

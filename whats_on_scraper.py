@@ -79,6 +79,9 @@ CERT_IMAGES = {"U": "cert-u.png", "PG": "cert-pg.png", "12A": "cert-12a.png", "1
 TMDB_CACHE_DAYS = 30
 TMDB_DELAY_SEC = float(os.environ.get("TMDB_DELAY_SEC", "0"))
 TMDB_EMPTY_CACHE_TTL_DAYS = 7
+# Re-attempt TMDb when cached entry has no poster (matching improves over time).
+# 0 = retry every run (max coverage, more API calls); 1 = at most once per day (default for prod).
+TMDB_EMPTY_POSTER_REFETCH_DAYS = float(os.environ.get("TMDB_EMPTY_POSTER_REFETCH_DAYS", "1"))
 MERLIN_DETAIL_CACHE_DAYS = 21
 POSTER_PLACEHOLDER_REL = "posters/placeholder.svg"
 NOW_SHOWING_THRESHOLD_DAYS = 7
@@ -93,6 +96,29 @@ UK_TZ = ZoneInfo("Europe/London")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 HTTP_SESSION = requests.Session()
+
+
+def _load_dotenv() -> None:
+    """Load `.env` from the repo root if present (does not override existing env vars). No extra dependencies."""
+    env_path = Path(__file__).resolve().parent / ".env"
+    if not env_path.is_file():
+        return
+    try:
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if "=" not in line:
+                continue
+            key, _, val = line.partition("=")
+            key = key.strip()
+            if not key:
+                continue
+            val = val.strip().strip("'").strip('"')
+            if key not in os.environ:
+                os.environ[key] = val
+    except OSError as e:
+        logger.warning("Could not read .env: %s", e)
 
 
 def uk_today_iso(when: Optional[datetime] = None) -> str:
@@ -111,6 +137,18 @@ AUTISM_FRIENDLY_SUFFIX = re.compile(r"\s+autism\s+friendly\s+screening\s*$", re.
 FORMAT_SUFFIX = re.compile(r"\s*-\s*HFR\s*3D\s*$", re.IGNORECASE)
 MERLIN_DATE_SUFFIX = re.compile(r"(\d{1,2})(st|nd|rd|th)\b", re.IGNORECASE)
 PERFCODE_PATTERN = re.compile(r"[?&]perfCode=(\d+)")
+
+# Extra title cleanup for TMDb search (Merlin-specific prefixes / live-event suffixes)
+_NT_LIVE_PREFIX = re.compile(r"^NT\s+Live:\s*", re.IGNORECASE)
+_RITZ_ON_SCREEN_PREFIX = re.compile(r"^Ritz\s+On\s+Screen:\s*", re.IGNORECASE)
+_LIVE_ON_STAGE_SUFFIX = re.compile(r"\s*\(LIVE\s+On\s+Stage\)\s*$", re.IGNORECASE)
+_TBC_PARENS = re.compile(r"\s*\([^)]*\bTBC\b[^)]*\)", re.IGNORECASE)
+_MOMENTS_MOVIES_PREFIX = re.compile(r"^Moments\s*&\s*Movies:\s*", re.IGNORECASE)
+_LIVE_ON_BRACKET_ALT = re.compile(r"\s*\(LIVE\s+ON\s+STAGE\)\s*$", re.IGNORECASE)
+_YEAR_IN_PARENS = re.compile(r"\((\d{4})\)")
+_PRESENTED_BY_TAIL = re.compile(r"\s+presented\s+by\s+.+$", re.IGNORECASE)
+_THE_MUSICAL_TAIL = re.compile(r"\s+-\s+The\s+Musical\b.*$", re.IGNORECASE)
+_WITH_QA_TAIL = re.compile(r"\s+with\s+Q\s*&\s*A\s*$", re.IGNORECASE)
 
 MERLIN_TAG_MAP = {
     "3d": "3D",
@@ -212,6 +250,8 @@ def extract_search_title(title: str) -> str:
     t = strip_format_suffix(title)
     t = SUBTITLE_SUFFIX.sub("", t).strip()
     t = AUTISM_FRIENDLY_SUFFIX.sub("", t).strip()
+    # "(12A TBC)" etc. — RATING_PATTERN only matches simple (12A), not combined certificate lines
+    t = _TBC_PARENS.sub("", t).strip()
     t = RATING_PATTERN.sub("", t).strip()
     return t.strip(" -")
 
@@ -437,40 +477,124 @@ def _normalize_title_for_match(title: str) -> str:
     return re.sub(r"[\s\-:]+", " ", title.lower()).strip()
 
 
+def _title_match_score(norm_search: str, norm_title: str) -> float:
+    """Higher = better match; uses containment and token overlap (Jaccard on words)."""
+    if not norm_search or not norm_title:
+        return 0.0
+    if norm_title == norm_search:
+        return 100.0
+    if norm_search in norm_title:
+        return 90.0
+    if norm_title in norm_search:
+        return 45.0
+    ts = {w for w in norm_search.split() if len(w) > 1}
+    tt = {w for w in norm_title.split() if len(w) > 1}
+    if not ts or not tt:
+        return 5.0
+    inter = len(ts & tt)
+    union = len(ts | tt)
+    return max(5.0, 100.0 * inter / union)
+
+
 def _pick_best_tmdb_result(results: List[Dict], search_title: str) -> Optional[Dict]:
-    """Pick the TMDb result that best matches our search title (e.g. 'Avatar: Fire and Ash' not 'Avatar' 2009)."""
+    """Pick the TMDb movie (or TV-shaped) result that best matches our search title; prefer rows with poster_path when close."""
     if not results or not search_title:
         return results[0] if results else None
     norm_search = _normalize_title_for_match(search_title)
     if not norm_search:
         return results[0]
-    best = None
-    best_score = -1
+    best: Optional[Dict] = None
+    best_score = -1.0
     for r in results:
-        title = (r.get("title") or "").strip()
+        title = (r.get("title") or r.get("name") or "").strip()
         norm_title = _normalize_title_for_match(title)
-        if norm_title == norm_search:
-            return r  # Exact match
-        score = 0
-        if norm_search in norm_title:
-            score = 90  # Our search is contained in result title (e.g. result "Avatar: Fire and Ash")
-        elif norm_title in norm_search:
-            score = 30  # Result is shorter (e.g. "Avatar" when we want "Avatar: Fire and Ash") - prefer longer
-        else:
-            # Partial: prefer recent films for sequel-style titles
-            release = (r.get("release_date") or "")[:4]
-            try:
-                year = int(release) if release else 0
-                if year >= 2020:
-                    score = 50
-                else:
-                    score = 10
-            except ValueError:
-                score = 10
+        base = _title_match_score(norm_search, norm_title)
+        if base >= 99.99:
+            return r
+        poster_boost = 1.25 if r.get("poster_path") else 0.0
+        # Prefer recent releases when scores tie (sequel years)
+        rel = (r.get("release_date") or r.get("first_air_date") or "")[:4]
+        try:
+            y = int(rel) if rel else 0
+        except ValueError:
+            y = 0
+        recency = min(8.0, max(0.0, (y - 1980) / 25.0)) if y else 0.0
+        score = base + poster_boost + recency * 0.15
         if score > best_score:
             best_score = score
             best = r
     return best if best is not None else results[0]
+
+
+def _extract_year_hint(movie_title: str) -> Optional[int]:
+    """4-digit year from (YYYY) in Merlin titles (e.g. 'Casablanca (1942) (U)')."""
+    if not movie_title:
+        return None
+    for m in _YEAR_IN_PARENS.finditer(movie_title):
+        try:
+            y = int(m.group(1))
+            if 1920 <= y <= 2035:
+                return y
+        except ValueError:
+            continue
+    return None
+
+
+def _tmdb_search_query_variants(movie_title: str, search_title: str) -> List[str]:
+    """Ordered unique queries for TMDb search (movie/TV/multi); strips Merlin-specific cruft."""
+    seen: set = set()
+    out: List[str] = []
+
+    def add(q: str) -> None:
+        q = (q or "").strip()
+        if len(q) < 2:
+            return
+        k = q.casefold()
+        if k not in seen:
+            seen.add(k)
+            out.append(q)
+
+    raw = movie_title or ""
+    # TMDb indexes play/film titles, not Merlin broadcast prefixes — try core titles first
+    if raw.strip() and _NT_LIVE_PREFIX.match(raw.strip()):
+        core_nt = extract_search_title(_NT_LIVE_PREFIX.sub("", raw))
+        if core_nt:
+            add(core_nt)
+    if raw.strip() and _RITZ_ON_SCREEN_PREFIX.match(raw.strip()):
+        core_rz = extract_search_title(_RITZ_ON_SCREEN_PREFIX.sub("", raw))
+        if core_rz:
+            add(core_rz)
+
+    add(search_title)
+    stripped = [
+        raw,
+        _NT_LIVE_PREFIX.sub("", raw),
+        _RITZ_ON_SCREEN_PREFIX.sub("", raw),
+        _MOMENTS_MOVIES_PREFIX.sub("", raw),
+        _LIVE_ON_STAGE_SUFFIX.sub("", raw),
+        _LIVE_ON_BRACKET_ALT.sub("", raw),
+        _TBC_PARENS.sub("", raw),
+        _THE_MUSICAL_TAIL.sub("", raw),
+        _WITH_QA_TAIL.sub("", raw),
+        _PRESENTED_BY_TAIL.sub("", raw),
+    ]
+    for s in stripped:
+        add(extract_search_title(s))
+    # Title before year in parens: "Casablanca (1942) (U)" -> core title
+    ystrip = _YEAR_IN_PARENS.sub("", raw).strip()
+    if ystrip != raw:
+        add(extract_search_title(ystrip))
+    bare = extract_search_title(raw)
+    if " - " in bare and len(bare) > 35:
+        add(bare.split(" - ")[0].strip())
+    # "Label: Subtitle" — use subtitle when it looks like a film name (not NT Live handled above)
+    if ":" in bare and len(bare) > 12:
+        low = bare.lower()
+        if not low.startswith("nt live") and not low.startswith("ritz on screen"):
+            tail = bare.split(":", 1)[-1].strip()
+            if len(tail) > 4:
+                add(extract_search_title(tail))
+    return out
 
 
 def _event_cinema_fallback_queries(title: str) -> List[str]:
@@ -537,6 +661,82 @@ def _tmdb_get(url: str, params: Dict[str, Any], timeout: int = 10) -> requests.R
     raise requests.RequestException("TMDb request retries exhausted")
 
 
+def _tmdb_movie_search(
+    api_key: str, query: str, *, year: Optional[int] = None
+) -> List[Dict[str, Any]]:
+    """TMDb /search/movie."""
+    params: Dict[str, Any] = {"api_key": api_key, "query": query, "language": "en-GB"}
+    if year is not None:
+        params["year"] = year
+    r = _tmdb_get("https://api.themoviedb.org/3/search/movie", params=params, timeout=10)
+    return r.json().get("results") or []
+
+
+def _tmdb_tv_search(api_key: str, query: str, *, first_air_year: Optional[int] = None) -> List[Dict[str, Any]]:
+    """TMDb /search/tv (specials, NT Live as TV, some 'films' only indexed as TV)."""
+    params: Dict[str, Any] = {"api_key": api_key, "query": query, "language": "en-GB"}
+    if first_air_year is not None:
+        params["first_air_date_year"] = first_air_year
+    r = _tmdb_get("https://api.themoviedb.org/3/search/tv", params=params, timeout=10)
+    return r.json().get("results") or []
+
+
+def _tmdb_multi_search(api_key: str, query: str) -> List[Dict[str, Any]]:
+    """TMDb /search/multi — movie + TV in one list."""
+    r = _tmdb_get(
+        "https://api.themoviedb.org/3/search/multi",
+        params={"api_key": api_key, "query": query, "language": "en-GB"},
+        timeout=10,
+    )
+    out: List[Dict[str, Any]] = []
+    for item in r.json().get("results") or []:
+        mt = item.get("media_type")
+        if mt == "movie":
+            out.append(item)
+        elif mt == "tv":
+            out.append(item)
+    return out
+
+
+def _tmdb_movie_images_poster_path(api_key: str, movie_id: int) -> str:
+    """Alternate poster from /movie/{id}/images when detail has no poster_path."""
+    try:
+        r = _tmdb_get(
+            "https://api.themoviedb.org/3/movie/{}/images".format(movie_id),
+            params={"api_key": api_key},
+            timeout=10,
+        )
+        posters = r.json().get("posters") or []
+        for lang in ("en", None, "xx"):
+            for p in posters:
+                if p.get("iso_639_1") == lang and p.get("file_path"):
+                    return (p.get("file_path") or "").lstrip("/")
+        if posters and posters[0].get("file_path"):
+            return (posters[0].get("file_path") or "").lstrip("/")
+    except Exception as e:
+        logger.debug("TMDb movie images fallback failed for %s: %s", movie_id, e)
+    return ""
+
+
+def _tmdb_tv_images_poster_path(api_key: str, tv_id: int) -> str:
+    try:
+        r = _tmdb_get(
+            "https://api.themoviedb.org/3/tv/{}/images".format(tv_id),
+            params={"api_key": api_key},
+            timeout=10,
+        )
+        posters = r.json().get("posters") or []
+        for lang in ("en", None, "xx"):
+            for p in posters:
+                if p.get("iso_639_1") == lang and p.get("file_path"):
+                    return (p.get("file_path") or "").lstrip("/")
+        if posters and posters[0].get("file_path"):
+            return (posters[0].get("file_path") or "").lstrip("/")
+    except Exception as e:
+        logger.debug("TMDb TV images fallback failed for %s: %s", tv_id, e)
+    return ""
+
+
 def enrich_film_tmdb(
     film: Dict[str, Any],
     api_key: str,
@@ -551,20 +751,26 @@ def enrich_film_tmdb(
     if cache_key in cache:
         entry = cache[cache_key]
         cached_at = _parse_cached_at(entry.get("cached_at", ""))
+        has_poster = bool((entry.get("poster_url") or "").strip())
         stale_empty_cache = False
-        if not entry.get("poster_url"):
-            if not cached_at:
+        if not has_poster:
+            if TMDB_EMPTY_POSTER_REFETCH_DAYS <= 0:
+                stale_empty_cache = True
+            elif not cached_at:
                 stale_empty_cache = True
             else:
-                stale_empty_cache = datetime.now(cached_at.tzinfo) - cached_at >= timedelta(days=TMDB_EMPTY_CACHE_TTL_DAYS)
+                stale_empty_cache = (
+                    datetime.now(cached_at.tzinfo) - cached_at
+                    >= timedelta(days=TMDB_EMPTY_POSTER_REFETCH_DAYS)
+                )
         # Refetch if we have poster but no genres (backfill for old cache entries)
         if (not (entry.get("genres") or [])) and entry.get("poster_url"):
             pass  # Fall through to API call to get genres (and refresh cache)
-        # Retry empty-cache misses after TTL so new TMDb records can be picked up later
+        # Retry poster misses so improved matching can fill them (rate-limit via TMDB_EMPTY_POSTER_REFETCH_DAYS)
         elif stale_empty_cache:
             pass
         # Retry with event cinema fallback if cache has no poster and this is an RBO title
-        elif not entry.get("poster_url") and _event_cinema_fallback_queries(film.get("title", "")):
+        elif not has_poster and _event_cinema_fallback_queries(film.get("title", "")):
             pass  # Fall through to API call with fallback
         else:
             film["poster_url"] = entry.get("poster_url") or film.get("poster_url") or ""
@@ -581,65 +787,70 @@ def enrich_film_tmdb(
             return
 
     try:
-        search_url = "https://api.themoviedb.org/3/search/movie"
-        search_r = _tmdb_get(
-            search_url,
-            params={"api_key": api_key, "query": search_title, "language": "en-GB"},
-            timeout=10,
-        )
-        data = search_r.json()
-        results = data.get("results") or []
+        movie_title = film.get("title", "") or ""
+        year_hint = _extract_year_hint(movie_title)
+        query_variants = _tmdb_search_query_variants(movie_title, search_title)
+        results: List[Dict[str, Any]] = []
         match_title = search_title
-        # Event cinema fallback: try RBO/Met Opera queries when full title returns nothing
-        fallback_queries = _event_cinema_fallback_queries(film.get("title", "")) if not results else []
-        for fq in fallback_queries:
-            search_r = _tmdb_get(
-                search_url,
-                params={"api_key": api_key, "query": fq, "language": "en-GB"},
-                timeout=10,
-            )
-            data = search_r.json()
-            results = data.get("results") or []
-            if results:
-                match_title = fq
+
+        for q in query_variants:
+            res = _tmdb_movie_search(api_key, q, year=year_hint)
+            if not res and year_hint is not None:
+                res = _tmdb_movie_search(api_key, q, year=None)
+            if res:
+                results, match_title = res, q
                 break
+
+        if not results:
+            for q in query_variants[:12]:
+                res = _tmdb_tv_search(api_key, q, first_air_year=year_hint)
+                if res:
+                    results, match_title = res, q
+                    break
+
+        if not results:
+            for fq in _event_cinema_fallback_queries(movie_title):
+                res = _tmdb_movie_search(api_key, fq)
+                if res:
+                    results, match_title = res, fq
+                    break
+
+        if not results and query_variants:
+            res = _tmdb_multi_search(api_key, query_variants[0])
+            if res:
+                results, match_title = res, query_variants[0]
+
         if not results:
             cache[cache_key] = _empty_tmdb_entry()
             return
+
         chosen = _pick_best_tmdb_result(results, match_title)
         if not chosen:
             cache[cache_key] = _empty_tmdb_entry()
             return
-        # If best match has no poster, try next results that do (e.g. TMDb sometimes omits poster on new entries)
-        movie_id = chosen.get("id")
-        if not chosen.get("poster_path") and results:
-            for r in results:
-                if r.get("poster_path") and _normalize_title_for_match(r.get("title") or "") == _normalize_title_for_match(chosen.get("title") or ""):
-                    chosen = r
-                    movie_id = r.get("id")
-                    break
-        if not movie_id:
+
+        display_for_norm = (chosen.get("title") or chosen.get("name") or "").strip()
+        picked_id = chosen.get("id")
+        if not picked_id:
             cache[cache_key] = _empty_tmdb_entry()
             return
 
-        detail_url = f"https://api.themoviedb.org/3/movie/{movie_id}"
-        detail_r = _tmdb_get(
-            detail_url,
-            params={"api_key": api_key, "append_to_response": "videos,credits", "language": "en-GB"},
-            timeout=10,
-        )
-        movie = detail_r.json()
-
-        poster_path = (movie.get("poster_path") or "").lstrip("/")
-        poster_url = f"https://image.tmdb.org/t/p/w342/{poster_path}" if poster_path else ""
-
-        trailer_url = ""
-        for v in (movie.get("videos", {}).get("results") or []):
-            if v.get("site") == "YouTube" and v.get("type", "").lower() in ("trailer", "teaser"):
-                key = v.get("key")
-                if key:
-                    trailer_url = f"https://www.youtube.com/watch?v={key}"
+        if not chosen.get("poster_path") and results:
+            nch = _normalize_title_for_match(display_for_norm)
+            for r in results:
+                dt = (r.get("title") or r.get("name") or "").strip()
+                if r.get("poster_path") and _normalize_title_for_match(dt) == nch:
+                    chosen = r
+                    picked_id = r.get("id")
                     break
+            if not chosen.get("poster_path"):
+                for r in results:
+                    if r.get("poster_path"):
+                        chosen = r
+                        picked_id = r.get("id")
+                        break
+
+        is_tv = chosen.get("media_type") == "tv" or (bool(chosen.get("name")) and not chosen.get("title"))
 
         GENRE_MAP = {
             28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime",
@@ -647,17 +858,71 @@ def enrich_film_tmdb(
             27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction",
             10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western",
         }
-        genre_list = movie.get("genres") or []
-        genres = [g.get("name", "").strip() for g in genre_list if g.get("name")] if genre_list else []
-        if not genres:
-            # Detail response may omit genres; use genre_ids from detail or from search result
-            genre_ids = movie.get("genre_ids") or chosen.get("genre_ids") or []
-            genres = [GENRE_MAP[g] for g in genre_ids if g in GENRE_MAP]
 
-        imdb_id = movie.get("imdb_id") or ""
-        overview = (movie.get("overview") or "").strip()
+        ep_runtime: Optional[int] = None
+        if is_tv:
+            detail_r = _tmdb_get(
+                f"https://api.themoviedb.org/3/tv/{picked_id}",
+                params={
+                    "api_key": api_key,
+                    "append_to_response": "videos,credits,external_ids",
+                    "language": "en-GB",
+                },
+                timeout=10,
+            )
+            movie = detail_r.json()
+            poster_path = (movie.get("poster_path") or "").lstrip("/")
+            if not poster_path:
+                poster_path = _tmdb_tv_images_poster_path(api_key, int(picked_id))
+            poster_url = f"https://image.tmdb.org/t/p/w342/{poster_path}" if poster_path else ""
+            trailer_url = ""
+            for v in (movie.get("videos", {}).get("results") or []):
+                if v.get("site") == "YouTube" and v.get("type", "").lower() in ("trailer", "teaser"):
+                    key = v.get("key")
+                    if key:
+                        trailer_url = f"https://www.youtube.com/watch?v={key}"
+                        break
+            genre_list = movie.get("genres") or []
+            genres = [g.get("name", "").strip() for g in genre_list if g.get("name")] if genre_list else []
+            if not genres:
+                genre_ids = movie.get("genre_ids") or chosen.get("genre_ids") or []
+                genres = [GENRE_MAP[g] for g in genre_ids if g in GENRE_MAP]
+            ex_ids = movie.get("external_ids") or {}
+            imdb_raw = (ex_ids.get("imdb_id") or "").strip()
+            imdb_id = imdb_raw if imdb_raw.startswith("tt") else (f"tt{imdb_raw}" if imdb_raw else "")
+            overview = (movie.get("overview") or "").strip()
+            ert = movie.get("episode_run_time") or []
+            if ert:
+                try:
+                    ep_runtime = int(ert[0])
+                except (TypeError, ValueError, IndexError):
+                    ep_runtime = None
+        else:
+            detail_r = _tmdb_get(
+                f"https://api.themoviedb.org/3/movie/{picked_id}",
+                params={"api_key": api_key, "append_to_response": "videos,credits", "language": "en-GB"},
+                timeout=10,
+            )
+            movie = detail_r.json()
+            poster_path = (movie.get("poster_path") or "").lstrip("/")
+            if not poster_path:
+                poster_path = _tmdb_movie_images_poster_path(api_key, int(picked_id))
+            poster_url = f"https://image.tmdb.org/t/p/w342/{poster_path}" if poster_path else ""
+            trailer_url = ""
+            for v in (movie.get("videos", {}).get("results") or []):
+                if v.get("site") == "YouTube" and v.get("type", "").lower() in ("trailer", "teaser"):
+                    key = v.get("key")
+                    if key:
+                        trailer_url = f"https://www.youtube.com/watch?v={key}"
+                        break
+            genre_list = movie.get("genres") or []
+            genres = [g.get("name", "").strip() for g in genre_list if g.get("name")] if genre_list else []
+            if not genres:
+                genre_ids = movie.get("genre_ids") or chosen.get("genre_ids") or []
+                genres = [GENRE_MAP[g] for g in genre_ids if g in GENRE_MAP]
+            imdb_id = (movie.get("imdb_id") or "").strip()
+            overview = (movie.get("overview") or "").strip()
 
-        # Credits: director, writer, cast (with character names)
         director_names: List[str] = []
         writer_names: List[str] = []
         cast_parts: List[str] = []
@@ -676,14 +941,22 @@ def enrich_film_tmdb(
             char = (c.get("character") or "").strip()
             if name:
                 cast_parts.append(f"{name} ({char})" if char else name)
+        if is_tv:
+            for c in movie.get("created_by") or []:
+                nm = (c.get("name") or "").strip()
+                if nm and nm not in director_names:
+                    director_names.append(nm)
         director_str = ", ".join(director_names[:3])
         writer_str = ", ".join(writer_names[:5])
         cast_str = ", ".join(cast_parts) if cast_parts else film.get("cast") or ""
 
         film["poster_url"] = poster_url or film.get("poster_url") or ""
         film["trailer_url"] = trailer_url
-        if film.get("runtime_min") is None and movie.get("runtime"):
-            film["runtime_min"] = movie.get("runtime")
+        if film.get("runtime_min") is None:
+            if not is_tv and movie.get("runtime"):
+                film["runtime_min"] = movie.get("runtime")
+            elif is_tv and ep_runtime is not None:
+                film["runtime_min"] = ep_runtime
         film["vote_average"] = movie.get("vote_average")
         film["genres"] = genres
         film["imdb_id"] = imdb_id
@@ -1842,7 +2115,7 @@ def build_html(data: Dict[str, Any]) -> str:
         "    </div>"
     )
 
-    html = f"""<!DOCTYPE html>
+    page_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -2610,10 +2883,11 @@ def build_html(data: Dict[str, Any]) -> str:
 </body>
 </html>
 """
-    return html
+    return page_html
 
 
 def main() -> None:
+    _load_dotenv()
     scrape_date = datetime.now(timezone.utc)
     previous_data: Optional[Dict[str, Any]] = None
     if Path(DATA_FILE).exists():
@@ -2769,9 +3043,35 @@ def main() -> None:
     for key, local in poster_locals.items():
         for other in films_by_tmdb_key.get(key, []):
             other["poster_url"] = local
+
+    # Merlin listing images when TMDb has no poster (live events, local acts)
+    for key, group in films_by_tmdb_key.items():
+        film = group[0]
+        pu = (film.get("poster_url") or "").strip()
+        si = (film.get("site_image_url") or "").strip()
+        if pu or not si or not si.startswith("http"):
+            continue
+        slug = (film.get("film_slug") or "").strip() or key
+        local_m = _download_poster(si, slug)
+        if local_m:
+            film["poster_url"] = local_m
+            for other in group[1:]:
+                other["poster_url"] = local_m
+
     _ensure_placeholder_poster()
 
-    missing_posters = [f.get("title", "") for f in all_films if not (f.get("poster_url") or "").strip()]
+    # Every card should resolve to an image: use placeholder when TMDb/Merlin provided nothing.
+    for film in all_films:
+        pu = (film.get("poster_url") or "").strip()
+        site = (film.get("site_image_url") or "").strip()
+        if not pu and not site:
+            film["poster_url"] = POSTER_PLACEHOLDER_REL
+
+    missing_posters = [
+        f.get("title", "")
+        for f in all_films
+        if not (f.get("poster_url") or "").strip() and not (f.get("site_image_url") or "").strip()
+    ]
     if missing_posters:
         logger.warning("Missing posters for %d film(s): %s", len(missing_posters), ", ".join(missing_posters))
     fail_threshold_raw = os.environ.get("POSTER_MISSING_FAIL_THRESHOLD", "").strip()
