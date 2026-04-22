@@ -210,7 +210,7 @@
     "director": "Garry Hynes",
     "writer": "John Millington Synge",
     "cast": "Catherine Walsh (Pegeen Mike), Aaron Monaghan (Christopher Mahon), Marie Mullen (Widow Quin), Nick Lee (Shawn Keogh), Eamon Morrissey (Old Mahon), Derry Power (Michael James Flaherty), Marcus Lamb (Philly O'Cullen), Eoin Lynch (Jimmy Farrell), Gemma Reeves (Sara Tansey), Louise Lewis (Honor Blake), Hannah McCabe (Susan Brady)",
-    "cached_at": "2026-04-22T01:20:29.026658"
+    "cached_at": "2026-04-22T10:13:47.464254"
   },
   "nt-live-les-liaisons-dangereuses": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ckJRPZgzxIii9ewSyMhLnhs9azC.jpg",
@@ -1012,7 +1012,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-04-22T01:20:41.827484"
+    "cached_at": "2026-04-22T10:13:52.935337"
   },
   "our-planet-the-people-my-blood-with-q-a": {
     "poster_url": "",
@@ -1318,5 +1318,109 @@
     "writer": "",
     "cast": "",
     "cached_at": "2026-04-22T01:20:47.413933"
+  },
+  "santa-s-best-ever-christmas-2027": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:48.078121"
+  },
+  "cabaret-extreme": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:48.666069"
+  },
+  "the-ultimate-boyband-party-show": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:49.273379"
+  },
+  "choose-george": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:49.894834"
+  },
+  "twist-shout-2027": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:50.479303"
+  },
+  "the-cavern-club-story": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:51.187209"
+  },
+  "the-dolly-show-2027": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:51.810075"
+  },
+  "p-ssed-up-panto-snow-white-and-the-seven-dwarfs-adults-only": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-04-22T10:13:52.682534"
   }
 }
