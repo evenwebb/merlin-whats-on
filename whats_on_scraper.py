@@ -23,6 +23,8 @@ from urllib.parse import quote_plus, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
+from io import BytesIO
+from PIL import Image, ImageOps
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -74,6 +76,8 @@ MERLIN_DETAIL_CACHE_FILE = ".merlin_detail_cache.json"
 CINEMA_FAILURE_STATE_FILE = ".cinema_failure_state.json"
 SITE_DIR = "docs"  # GitHub Pages: only /(root) and /docs are offered; use Deploy from branch → /docs
 POSTERS_DIR = "docs/posters"
+# Posters: Pillow only EXIF transpose, mode→RGB, aspect check (~2:3 vs layout), JPEG save — never Image.resize/thumbnail/crop.
+POSTER_ASPECT_TOLERANCE = float(os.environ.get("POSTER_ASPECT_TOLERANCE", "0.02"))
 CERTS_DIR = "docs/certs"
 CERT_IMAGES = {"U": "cert-u.png", "PG": "cert-pg.png", "12A": "cert-12a.png", "15": "cert-15.png", "18": "cert-18.png"}
 TMDB_CACHE_DAYS = 30
@@ -423,6 +427,35 @@ def _ensure_placeholder_poster() -> None:
     path.write_text(svg, encoding="utf-8")
 
 
+def _save_poster_unscaled_two_to_three(data: bytes, out_path: Path) -> bool:
+    """Save image at native pixel size if aspect ratio is ~2:3 (see POSTERS_DIR comment)."""
+    try:
+        im = Image.open(BytesIO(data))
+        im = ImageOps.exif_transpose(im)
+        if im.mode == "P":
+            im = im.convert("RGBA")
+        if im.mode in ("RGBA", "LA"):
+            bg = Image.new("RGB", im.size, (14, 14, 18))
+            bg.paste(im, mask=im.split()[-1])
+            im = bg
+        else:
+            im = im.convert("RGB")
+        w, h = im.size
+        if w < 8 or h < 8:
+            return False
+        target = 2.0 / 3.0
+        got = w / float(h)
+        if abs(got - target) > POSTER_ASPECT_TOLERANCE:
+            logger.debug("Poster aspect %.4f not ~2:3 (%d×%d); skip save", got, w, h)
+            return False
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        im.save(out_path, "JPEG", quality=92, optimize=True)
+        return True
+    except Exception as e:
+        logger.warning("Could not process poster image: %s", e)
+        return False
+
+
 def _parse_cached_at(value: str) -> Optional[datetime]:
     """Parse cached_at timestamp safely."""
     if not value:
@@ -434,19 +467,14 @@ def _parse_cached_at(value: str) -> Optional[datetime]:
 
 
 def _download_poster(url: str, slug: str) -> str:
-    """Download poster image and save under POSTERS_DIR; return relative path or '' on failure."""
+    """Download and save poster JPEG if ~2:3; otherwise ''."""
     if not url or not url.startswith("http"):
         return ""
     slug = re.sub(r"[^a-z0-9-]", "", slug.lower()) or "poster"
-    ext = "jpg"
-    if ".webp" in url.lower():
-        ext = "webp"
-    elif ".png" in url.lower():
-        ext = "png"
-    path = Path(POSTERS_DIR) / f"{slug}.{ext}"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    if path.exists():
-        return f"posters/{slug}.{ext}"
+    out_path = Path(POSTERS_DIR) / f"{slug}.jpg"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    if out_path.exists():
+        return f"posters/{slug}.jpg"
     try:
         headers = {"User-Agent": USER_AGENT}
         if "merlincinemas.co.uk" in url:
@@ -454,8 +482,10 @@ def _download_poster(url: str, slug: str) -> str:
             headers["Referer"] = f"{parsed.scheme}://{parsed.netloc}/"
         r = HTTP_SESSION.get(url, headers=headers, timeout=15)
         r.raise_for_status()
-        path.write_bytes(r.content)
-        return f"posters/{slug}.{ext}"  # relative to SITE_DIR for HTML
+        if _save_poster_unscaled_two_to_three(r.content, out_path):
+            return f"posters/{slug}.jpg"
+        logger.warning("Poster rejected or unreadable (need ~2:3 aspect): %s", url[:80])
+        return ""
     except Exception as e:
         logger.warning("Poster download failed %s: %s", url[:50], e)
         return ""
@@ -2098,6 +2128,10 @@ def build_html(data: Dict[str, Any]) -> str:
                 + "</button>"
             )
     date_tabs_html = "\n".join(date_tab_lines)
+    saver_tabs_html = (
+        '<button type="button" class="tab tab-saver active" data-saver="all">All showings</button>'
+        '<button type="button" class="tab tab-saver" data-saver="super-saver">Super Saver</button>'
+    )
     filter_tabs_html = (
         '<div class="filter-tabs">\n'
         '      <div class="tabs-wrap" role="group" aria-label="Filter by cinema">\n'
@@ -2110,6 +2144,12 @@ def build_html(data: Dict[str, Any]) -> str:
         '        <div class="tabs-label">Date</div>\n'
         '        <div class="tabs tabs-date">\n'
         f"{date_tabs_html}\n"
+        "        </div>\n"
+        "      </div>\n"
+        '      <div class="tabs-wrap" role="group" aria-label="Filter by offer">\n'
+        '        <div class="tabs-label">Offers</div>\n'
+        '        <div class="tabs tabs-saver">\n'
+        f"{saver_tabs_html}\n"
         "        </div>\n"
         "      </div>\n"
         "    </div>"
@@ -2531,9 +2571,17 @@ def build_html(data: Dict[str, Any]) -> str:
         return [];
       }}
 
-      function rowMatches(row, selDate, selCinema) {{
+      function rowMatches(row, selDate, selCinema, selSaver) {{
         if (selDate !== 'all' && row.date !== selDate) return false;
         if (selCinema !== 'all' && row.cinema_name !== selCinema) return false;
+        if (selSaver === 'super-saver') {{
+          var tags = row.tags || [];
+          var hasSaver = false;
+          for (var ti = 0; ti < tags.length; ti++) {{
+            if (tags[ti] === 'Super Saver') {{ hasSaver = true; break; }}
+          }}
+          if (!hasSaver) return false;
+        }}
         return true;
       }}
 
@@ -2715,8 +2763,10 @@ def build_html(data: Dict[str, Any]) -> str:
       function applyFilters() {{
         var dateBtn = document.querySelector('.tab-date.active');
         var cinemaBtn = document.querySelector('.tab-cinema.active');
+        var saverBtn = document.querySelector('.tab-saver.active');
         var selDate = dateBtn ? dateBtn.getAttribute('data-date') || 'all' : 'all';
         var selCinema = cinemaBtn ? cinemaBtn.getAttribute('data-cinema') || 'all' : 'all';
+        var selSaver = saverBtn ? saverBtn.getAttribute('data-saver') || 'all' : 'all';
         var sectionVis = {{ now: false, coming: false }};
         var cards = filmsEl.querySelectorAll('.film-card');
         for (var i = 0; i < cards.length; i++) {{
@@ -2735,7 +2785,7 @@ def build_html(data: Dict[str, Any]) -> str:
           }}
           var picked = [];
           for (var ri = 0; ri < rows.length; ri++) {{
-            if (rowMatches(rows[ri], selDate, selCinema)) picked.push(rows[ri]);
+            if (rowMatches(rows[ri], selDate, selCinema, selSaver)) picked.push(rows[ri]);
           }}
           if (picked.length === 0) {{
             card.style.display = 'none';
@@ -2775,6 +2825,12 @@ def build_html(data: Dict[str, Any]) -> str:
             if (c === 'all') localStorage.removeItem(storageKey);
             else localStorage.setItem(storageKey, c);
           }} catch (e3) {{}}
+          applyFilters();
+        }});
+      }});
+      document.querySelectorAll('.tab-saver').forEach(function(btn) {{
+        btn.addEventListener('click', function() {{
+          activateTabRow('.tab-saver', btn);
           applyFilters();
         }});
       }});
