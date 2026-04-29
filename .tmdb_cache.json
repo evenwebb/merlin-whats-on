@@ -210,7 +210,7 @@
     "director": "Garry Hynes",
     "writer": "John Millington Synge",
     "cast": "Catherine Walsh (Pegeen Mike), Aaron Monaghan (Christopher Mahon), Marie Mullen (Widow Quin), Nick Lee (Shawn Keogh), Eamon Morrissey (Old Mahon), Derry Power (Michael James Flaherty), Marcus Lamb (Philly O'Cullen), Eoin Lynch (Jimmy Farrell), Gemma Reeves (Sara Tansey), Louise Lewis (Honor Blake), Hannah McCabe (Susan Brady)",
-    "cached_at": "2026-04-28T10:56:50.805122"
+    "cached_at": "2026-04-29T10:48:07.457506"
   },
   "nt-live-les-liaisons-dangereuses": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ckJRPZgzxIii9ewSyMhLnhs9azC.jpg",
@@ -1012,7 +1012,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-04-28T10:57:14.131886"
+    "cached_at": "2026-04-29T10:48:07.737274"
   },
   "our-planet-the-people-my-blood-with-q-a": {
     "poster_url": "",
@@ -1500,5 +1500,22 @@
     "writer": "Jeremy Slater",
     "cast": "Karl Urban (Johnny Cage), Adeline Rudolph (Kitana), Jessica McNamee (Sonya Blade), Josh Lawson (Revenant Kano), Ludi Lin (Liu Kang), Mehcad Brooks (Jackson 'Jax' Briggs), Tati Gabrielle (Jade), Lewis Tan (Cole Young), Damon Herriman (Quan Chi), Chin Han (Shang Tsung), Tadanobu Asano (Lord Raiden), Joe Taslim (Bi-Han)",
     "cached_at": "2026-04-28T10:56:50.584869"
+  },
+  "hokum": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/gC4FtEthYvx6XV2JHCQibf4P3FT.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=dUZmnpdsTXo",
+    "runtime_min": 105,
+    "vote_average": 4.0,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "imdb_id": "tt35672862",
+    "overview": "When novelist Ohm Bauman retreats to a remote inn to scatter his parents' ashes, he is consumed by tales of a witch haunting the honeymoon suite. Disturbing visions and a shocking disappearance forces him to confront dark corners of his past.",
+    "director": "Damian McCarthy",
+    "writer": "Damian McCarthy",
+    "cast": "Adam Scott (Ohm Bauman), Peter Coonan (Mal), David Wilmot (Jerry), Florence Ordesh (Fiona), Will O'Connell (Alby), Michael Patric (Fergal), Brendan Conroy (Mr. Cobb), Austin Amelio (Conquistador), Ezra Carlisle (Boy), Mallory Adams (Delia Bauman), Sioux Carroll (Witch)",
+    "cached_at": "2026-04-29T10:48:07.594373"
   }
 }
