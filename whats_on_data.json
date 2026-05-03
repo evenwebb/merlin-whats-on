@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-02T09:54:26Z",
+  "updated_at": "2026-05-03T09:59:27Z",
   "cinemas": {
     "bodmin": {
       "name": "Capitol Cinema, Bodmin",
@@ -71,42 +71,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "11:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50553",
-              "perf_code": "50553",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "14:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50552",
-              "perf_code": "50552",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "11:45",
@@ -305,78 +269,6 @@
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "12:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50541",
-              "perf_code": "50541",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "14:40",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50542",
-              "perf_code": "50542",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50549",
-              "perf_code": "50549",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50551",
-              "perf_code": "50551",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "12:00",
               "screen": "Capitol Cinema, Bodmin",
@@ -529,117 +421,6 @@
           "writer": "Craig Mazin, Leonie Swann"
         },
         {
-          "title": "Hitpig! (PG)",
-          "certificate": "PG",
-          "search_title": "Hitpig!",
-          "film_slug": "hitpig",
-          "film_id": "108515",
-          "event_id": "6115",
-          "cinema_code": "MER_BODM",
-          "synopsis": "When your kitty's left the city, when your moose is on the loose, when your cow has said ciao, call Hitpig, the world's greatest animal tracker.",
-          "cast": "Jason Sudeikis (Hitpig (voice)), Lilly Singh (Pickles (voice)), Rainn Wilson (Leapin' Lord of the Leotard (voice)), Anitta (Leticia dos Anjos (voice)), Hannah Gadsby (Koala (voice)), RuPaul (Polecat (voice)), Charlie Adler (Super Rooster / Lobster / Nuke Techs (voice)), Flavor Flav (Chef Emcee (voice)), Lorraine Ashbourne (Big Bertha (voice)), Andy Serkis (Newscaster (voice)), Shelby Young (Catchvan (voice)), Dave Rosenbaum (Janitor (voice))",
-          "director": "David Feiss, Cinzia Angelini",
-          "runtime_min": 85,
-          "release_date": "2026-04-24",
-          "release_date_text": "24th April, 2026",
-          "ticket_note": "",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://bodmin.merlincinemas.co.uk/film/108515-hitpig",
-          "poster_url": "posters/hitpig.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108515/d21e2cddbb5fe960d59a80bd5828d2cb.jpg",
-          "event_banner_url": "https://bodmin.merlincinemas.co.uk/media/email/2511251257_1901467594_SUPER-SAVER-2025-no-price.png",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=i0O0VlWwrHU",
-          "genres": [
-            "Animation",
-            "Comedy",
-            "Adventure",
-            "Family"
-          ],
-          "cinema_name": "Capitol Cinema, Bodmin",
-          "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:15",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50555",
-              "perf_code": "50555",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Super Saver"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "saver"
-              ]
-            },
-            {
-              "date": "2026-05-04",
-              "time": "12:15",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50565",
-              "perf_code": "50565",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Super Saver"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "saver"
-              ]
-            }
-          ],
-          "vote_average": 6.7,
-          "imdb_id": "tt13176330",
-          "overview": "A porcine bounty hunter accepts his next hit: Pickles, a naive, ebullient elephant. Though he initially sets out to capture the perky pachyderm, the unlikely pair find themselves crisscrossing the globe on an adventure that brings out the best in both of them.",
-          "writer": "Berkeley Breathed, Tyler Werrin, Dave Rosenbaum"
-        },
-        {
           "title": "Michael (12A)",
           "certificate": "12A",
           "search_title": "Michael",
@@ -702,58 +483,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:30",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50554",
-              "perf_code": "50554",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50547",
-              "perf_code": "50547",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50548",
-              "perf_code": "50548",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "13:30",
@@ -1057,76 +786,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "14:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50546",
-              "perf_code": "50546",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:15",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50544",
-              "perf_code": "50544",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50556",
-              "perf_code": "50556",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "20:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50543",
-              "perf_code": "50543",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "14:00",
@@ -1468,22 +1127,6 @@
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "16:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50550",
-              "perf_code": "50550",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "16:20",
               "screen": "Capitol Cinema, Bodmin",
@@ -1552,6 +1195,97 @@
           "imdb_id": "tt7734244",
           "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
           "writer": "Simon Farnaby"
+        },
+        {
+          "title": "Hitpig! (PG)",
+          "certificate": "PG",
+          "search_title": "Hitpig!",
+          "film_slug": "hitpig",
+          "film_id": "108515",
+          "event_id": "6115",
+          "cinema_code": "MER_BODM",
+          "synopsis": "When your kitty's left the city, when your moose is on the loose, when your cow has said ciao, call Hitpig, the world's greatest animal tracker.",
+          "cast": "Jason Sudeikis (Hitpig (voice)), Lilly Singh (Pickles (voice)), Rainn Wilson (Leapin' Lord of the Leotard (voice)), Anitta (Leticia dos Anjos (voice)), Hannah Gadsby (Koala (voice)), RuPaul (Polecat (voice)), Charlie Adler (Super Rooster / Lobster / Nuke Techs (voice)), Flavor Flav (Chef Emcee (voice)), Lorraine Ashbourne (Big Bertha (voice)), Andy Serkis (Newscaster (voice)), Shelby Young (Catchvan (voice)), Dave Rosenbaum (Janitor (voice))",
+          "director": "David Feiss, Cinzia Angelini",
+          "runtime_min": 85,
+          "release_date": "2026-04-24",
+          "release_date_text": "24th April, 2026",
+          "ticket_note": "",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://bodmin.merlincinemas.co.uk/film/108515-hitpig",
+          "poster_url": "posters/hitpig.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108515/d21e2cddbb5fe960d59a80bd5828d2cb.jpg",
+          "event_banner_url": "https://bodmin.merlincinemas.co.uk/media/email/2511251257_1901467594_SUPER-SAVER-2025-no-price.png",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=i0O0VlWwrHU",
+          "genres": [
+            "Animation",
+            "Comedy",
+            "Adventure",
+            "Family"
+          ],
+          "cinema_name": "Capitol Cinema, Bodmin",
+          "showtimes": [
+            {
+              "date": "2026-05-04",
+              "time": "12:15",
+              "screen": "Capitol Cinema, Bodmin",
+              "cinema_name": "Capitol Cinema, Bodmin",
+              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50565",
+              "perf_code": "50565",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Super Saver"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "saver"
+              ]
+            }
+          ],
+          "vote_average": 6.7,
+          "imdb_id": "tt13176330",
+          "overview": "A porcine bounty hunter accepts his next hit: Pickles, a naive, ebullient elephant. Though he initially sets out to capture the perky pachyderm, the unlikely pair find themselves crisscrossing the globe on an adventure that brings out the best in both of them.",
+          "writer": "Berkeley Breathed, Tyler Werrin, Dave Rosenbaum"
         },
         {
           "title": "Rose Of Nevada (15)",
@@ -2530,22 +2264,6 @@
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "11:30",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34435",
-              "perf_code": "34435",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "11:45",
               "screen": "Flora Cinema, Helston",
@@ -2643,28 +2361,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Mystery",
             "Comedy",
-            "Family"
+            "Family",
+            "Mystery"
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:00",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34428",
-              "perf_code": "34428",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "12:00",
@@ -2767,54 +2469,6 @@
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:50",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34433",
-              "perf_code": "34433",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:45",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34434",
-              "perf_code": "34434",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:30",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34432",
-              "perf_code": "34432",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "13:50",
@@ -3064,54 +2718,6 @@
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "14:20",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34430",
-              "perf_code": "34430",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:00",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34429",
-              "perf_code": "34429",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:45",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34431",
-              "perf_code": "34431",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "14:20",
@@ -3473,6 +3079,196 @@
       "url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
       "films": [
         {
+          "title": "The Super Mario Galaxy Movie (PG)",
+          "certificate": "PG",
+          "search_title": "The Super Mario Galaxy Movie",
+          "film_slug": "the-super-mario-galaxy-movie",
+          "film_id": "102277",
+          "event_id": "5820",
+          "cinema_code": "MER_FALM",
+          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
+          "cast": "Chris Pratt, Anya Taylor-Joy, Jack Black",
+          "director": "Directors: Aaron Horvath, Michael Jelenic",
+          "runtime_min": 95,
+          "release_date": "2026-04-03",
+          "release_date_text": "3rd April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
+          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=DDZkObBBV5w",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation"
+          ],
+          "cinema_name": "Phoenix Cinema, Falmouth",
+          "showtimes": [
+            {
+              "date": "2026-05-03",
+              "time": "12:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84321",
+              "perf_code": "84321",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Autism Friendly"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "autism"
+              ]
+            },
+            {
+              "date": "2026-05-03",
+              "time": "13:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84334",
+              "perf_code": "84334",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-03",
+              "time": "15:15",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84316",
+              "perf_code": "84316",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-04",
+              "time": "13:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84329",
+              "perf_code": "84329",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-04",
+              "time": "15:15",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84326",
+              "perf_code": "84326",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-05",
+              "time": "16:30",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84303",
+              "perf_code": "84303",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            }
+          ],
+          "vote_average": 6.754,
+          "imdb_id": "tt28650488",
+          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
+          "writer": "Matthew Fogel"
+        },
+        {
           "title": "Hitpig! (PG)",
           "certificate": "PG",
           "search_title": "Hitpig!",
@@ -3536,26 +3332,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84305",
-              "perf_code": "84305",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Super Saver"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "saver"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "12:30",
@@ -3660,90 +3436,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Mystery",
             "Comedy",
-            "Family"
+            "Family",
+            "Mystery"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:45",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84167",
-              "perf_code": "84167",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "14:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84168",
-              "perf_code": "84168",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84175",
-              "perf_code": "84175",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "18:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84180",
-              "perf_code": "84180",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "12:45",
@@ -3907,236 +3605,6 @@
           "writer": "Craig Mazin, Leonie Swann"
         },
         {
-          "title": "The Super Mario Galaxy Movie (PG)",
-          "certificate": "PG",
-          "search_title": "The Super Mario Galaxy Movie",
-          "film_slug": "the-super-mario-galaxy-movie",
-          "film_id": "102277",
-          "event_id": "5820",
-          "cinema_code": "MER_FALM",
-          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
-          "cast": "Chris Pratt, Anya Taylor-Joy, Jack Black",
-          "director": "Directors: Aaron Horvath, Michael Jelenic",
-          "runtime_min": 95,
-          "release_date": "2026-04-03",
-          "release_date_text": "3rd April, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://falmouth.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
-          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=DDZkObBBV5w",
-          "genres": [
-            "Action",
-            "Adventure",
-            "Animation"
-          ],
-          "cinema_name": "Phoenix Cinema, Falmouth",
-          "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84173",
-              "perf_code": "84173",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "15:15",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84169",
-              "perf_code": "84169",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-03",
-              "time": "12:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84321",
-              "perf_code": "84321",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Autism Friendly"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "autism"
-              ]
-            },
-            {
-              "date": "2026-05-03",
-              "time": "13:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84334",
-              "perf_code": "84334",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-03",
-              "time": "15:15",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84316",
-              "perf_code": "84316",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-04",
-              "time": "13:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84329",
-              "perf_code": "84329",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-04",
-              "time": "15:15",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84326",
-              "perf_code": "84326",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "16:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84303",
-              "perf_code": "84303",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            }
-          ],
-          "vote_average": 6.754,
-          "imdb_id": "tt28650488",
-          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
-          "writer": "Matthew Fogel"
-        },
-        {
           "title": "Michael (12A)",
           "certificate": "12A",
           "search_title": "Michael",
@@ -4200,62 +3668,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84179",
-              "perf_code": "84179",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:45",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84171",
-              "perf_code": "84171",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84172",
-              "perf_code": "84172",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "13:30",
@@ -4569,80 +3981,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "14:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84170",
-              "perf_code": "84170",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84165",
-              "perf_code": "84165",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:45",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84166",
-              "perf_code": "84166",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "20:15",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84183",
-              "perf_code": "84183",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "14:00",
@@ -4992,26 +4330,6 @@
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "15:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84298",
-              "perf_code": "84298",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "15:30",
               "screen": "Phoenix Cinema, Falmouth",
@@ -5161,26 +4479,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "17:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84332",
-              "perf_code": "84332",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "17:30",
@@ -5370,26 +4668,6 @@
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "19:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84184",
-              "perf_code": "84184",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "19:00",
               "screen": "Phoenix Cinema, Falmouth",
@@ -5397,7 +4675,7 @@
               "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
               "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84239",
               "perf_code": "84239",
-              "sold_out": false,
+              "sold_out": true,
               "tags": [
                 "Wheelchair access",
                 "Licensed Bar",
@@ -5561,26 +4839,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "20:35",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84177",
-              "perf_code": "84177",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "20:35",
@@ -6715,8 +5973,8 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=yYg4Np-i4f0",
           "genres": [
-            "Music",
             "Adventure",
+            "Music",
             "Romance"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
@@ -6805,8 +6063,8 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=vNGAtHBhdiM",
           "genres": [
-            "Drama",
             "Animation",
+            "Drama",
             "Thriller"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
@@ -6997,136 +6255,6 @@
       "url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
       "films": [
         {
-          "title": "Hitpig! (PG)",
-          "certificate": "PG",
-          "search_title": "Hitpig!",
-          "film_slug": "hitpig",
-          "film_id": "108515",
-          "event_id": "6115",
-          "cinema_code": "MER_REDR",
-          "synopsis": "When your kitty's left the city, when your moose is on the loose, when your cow has said ciao, call Hitpig, the world's greatest animal tracker.",
-          "cast": "Jason Sudeikis, Lilly Singh, Rainn Wilson",
-          "director": "Directors: Cinzia Angelini, David Feiss",
-          "runtime_min": 85,
-          "release_date": "2026-04-24",
-          "release_date_text": "24th April, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://redruth.merlincinemas.co.uk/film/108515-hitpig",
-          "poster_url": "posters/hitpig.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108515/d21e2cddbb5fe960d59a80bd5828d2cb.jpg",
-          "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2511251257_1901467594_SUPER-SAVER-2025-no-price.png",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=G1CwxvTFx_4",
-          "genres": [
-            "Family",
-            "Adventure",
-            "Animation"
-          ],
-          "cinema_name": "Regal Cinema & Theatre, Redruth",
-          "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88680",
-              "perf_code": "88680",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Super Saver",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "saver",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-03",
-              "time": "12:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88716",
-              "perf_code": "88716",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Super Saver",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "saver",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-04",
-              "time": "12:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88738",
-              "perf_code": "88738",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Super Saver",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "saver",
-                "box"
-              ]
-            }
-          ],
-          "vote_average": 6.7,
-          "imdb_id": "tt13176330",
-          "overview": "A porcine bounty hunter accepts his next hit: Pickles, a naive, ebullient elephant. Though he initially sets out to capture the perky pachyderm, the unlikely pair find themselves crisscrossing the globe on an adventure that brings out the best in both of them.",
-          "writer": "Berkeley Breathed, Tyler Werrin, Dave Rosenbaum"
-        },
-        {
           "title": "The Super Mario Galaxy Movie (PG)",
           "certificate": "PG",
           "search_title": "The Super Mario Galaxy Movie",
@@ -7190,66 +6318,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:45",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88696",
-              "perf_code": "88696",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "15:15",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88700",
-              "perf_code": "88700",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:40",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88714",
-              "perf_code": "88714",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "12:10",
@@ -7451,6 +6519,116 @@
           "writer": "Matthew Fogel"
         },
         {
+          "title": "Hitpig! (PG)",
+          "certificate": "PG",
+          "search_title": "Hitpig!",
+          "film_slug": "hitpig",
+          "film_id": "108515",
+          "event_id": "6115",
+          "cinema_code": "MER_REDR",
+          "synopsis": "When your kitty's left the city, when your moose is on the loose, when your cow has said ciao, call Hitpig, the world's greatest animal tracker.",
+          "cast": "Jason Sudeikis, Lilly Singh, Rainn Wilson",
+          "director": "Directors: Cinzia Angelini, David Feiss",
+          "runtime_min": 85,
+          "release_date": "2026-04-24",
+          "release_date_text": "24th April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://redruth.merlincinemas.co.uk/film/108515-hitpig",
+          "poster_url": "posters/hitpig.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108515/d21e2cddbb5fe960d59a80bd5828d2cb.jpg",
+          "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2511251257_1901467594_SUPER-SAVER-2025-no-price.png",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=G1CwxvTFx_4",
+          "genres": [
+            "Family",
+            "Adventure",
+            "Animation"
+          ],
+          "cinema_name": "Regal Cinema & Theatre, Redruth",
+          "showtimes": [
+            {
+              "date": "2026-05-03",
+              "time": "12:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88716",
+              "perf_code": "88716",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Super Saver",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "saver",
+                "box"
+              ]
+            },
+            {
+              "date": "2026-05-04",
+              "time": "12:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88738",
+              "perf_code": "88738",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Super Saver",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "saver",
+                "box"
+              ]
+            }
+          ],
+          "vote_average": 6.7,
+          "imdb_id": "tt13176330",
+          "overview": "A porcine bounty hunter accepts his next hit: Pickles, a naive, ebullient elephant. Though he initially sets out to capture the perky pachyderm, the unlikely pair find themselves crisscrossing the globe on an adventure that brings out the best in both of them.",
+          "writer": "Berkeley Breathed, Tyler Werrin, Dave Rosenbaum"
+        },
+        {
           "title": "The Sheep Detectives (PG)",
           "certificate": "PG",
           "search_title": "The Sheep Detectives",
@@ -7508,82 +6686,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Mystery",
             "Comedy",
-            "Family"
+            "Family",
+            "Mystery"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88688",
-              "perf_code": "88688",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "14:20",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88682",
-              "perf_code": "88682",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:15",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88692",
-              "perf_code": "88692",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "18:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88694",
-              "perf_code": "88694",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "13:00",
@@ -7794,58 +6902,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:20",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88690",
-              "perf_code": "88690",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:45",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88685",
-              "perf_code": "88685",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88683",
-              "perf_code": "88683",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "13:20",
@@ -8149,26 +7205,6 @@
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "13:35",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88699",
-              "perf_code": "88699",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Luxury Seating",
-                "Mini Merlins"
-              ],
-              "tag_keys": [
-                "licensed",
-                "luxury",
-                "mm"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "13:35",
               "screen": "Regal Cinema & Theatre, Redruth",
@@ -8277,78 +7313,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "14:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88684",
-              "perf_code": "88684",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88679",
-              "perf_code": "88679",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "18:50",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88686",
-              "perf_code": "88686",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:50",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88681",
-              "perf_code": "88681",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "14:00",
@@ -8748,22 +7712,6 @@
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "15:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88695",
-              "perf_code": "88695",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "15:30",
               "screen": "Regal Cinema & Theatre, Redruth",
@@ -8901,42 +7849,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "16:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88698",
-              "perf_code": "88698",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:15",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88691",
-              "perf_code": "88691",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "16:00",
@@ -9134,26 +8046,6 @@
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "20:10",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88697",
-              "perf_code": "88697",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "20:10",
               "screen": "Regal Cinema & Theatre, Redruth",
@@ -9317,22 +8209,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "20:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88693",
-              "perf_code": "88693",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "20:30",
@@ -10570,8 +9446,8 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=yYg4Np-i4f0",
           "genres": [
-            "Music",
             "Adventure",
+            "Music",
             "Romance"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
@@ -10660,8 +9536,8 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=vNGAtHBhdiM",
           "genres": [
-            "Drama",
             "Animation",
+            "Drama",
             "Thriller"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
@@ -13017,22 +11893,6 @@
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "11:30",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=37997",
-              "perf_code": "37997",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "11:45",
               "screen": "Royal Cinema, St. Ives",
@@ -13130,28 +11990,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Mystery",
             "Comedy",
-            "Family"
+            "Family",
+            "Mystery"
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=37996",
-              "perf_code": "37996",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "12:00",
@@ -13254,54 +12098,6 @@
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:50",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=37999",
-              "perf_code": "37999",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:45",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=37998",
-              "perf_code": "37998",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:30",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38000",
-              "perf_code": "38000",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "13:50",
@@ -13517,54 +12313,6 @@
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "14:20",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=37994",
-              "perf_code": "37994",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=37995",
-              "perf_code": "37995",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:45",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=37993",
-              "perf_code": "37993",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "14:20",
@@ -13790,44 +12538,6 @@
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "11:45",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59153",
-              "perf_code": "59153",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "14:20",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59159",
-              "perf_code": "59159",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "11:45",
               "screen": "Savoy Cinema, Penzance",
@@ -14009,88 +12719,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Mystery",
             "Comedy",
-            "Family"
+            "Family",
+            "Mystery"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59151",
-              "perf_code": "59151",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "14:40",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59150",
-              "perf_code": "59150",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "16:45",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59158",
-              "perf_code": "59158",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:20",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59157",
-              "perf_code": "59157",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "12:00",
@@ -14252,120 +12886,6 @@
           "writer": "Craig Mazin, Leonie Swann"
         },
         {
-          "title": "Hitpig! (PG)",
-          "certificate": "PG",
-          "search_title": "Hitpig!",
-          "film_slug": "hitpig",
-          "film_id": "108515",
-          "event_id": "6115",
-          "cinema_code": "MER_PENZ",
-          "synopsis": "When your kitty's left the city, when your moose is on the loose, when your cow has said ciao, call Hitpig, the world's greatest animal tracker.",
-          "cast": "Jason Sudeikis, Lilly Singh, Rainn Wilson",
-          "director": "Directors: Cinzia Angelini, David Feiss",
-          "runtime_min": 85,
-          "release_date": "2026-04-24",
-          "release_date_text": "24th April, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://penzance.merlincinemas.co.uk/film/108515-hitpig",
-          "poster_url": "posters/hitpig.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108515/d21e2cddbb5fe960d59a80bd5828d2cb.jpg",
-          "event_banner_url": "https://penzance.merlincinemas.co.uk/media/email/2511251257_1901467594_SUPER-SAVER-2025-no-price.png",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=G1CwxvTFx_4",
-          "genres": [
-            "Family",
-            "Adventure",
-            "Animation"
-          ],
-          "cinema_name": "Savoy Cinema, Penzance",
-          "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "12:15",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59156",
-              "perf_code": "59156",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating",
-                "Super Saver"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury",
-                "saver"
-              ]
-            },
-            {
-              "date": "2026-05-04",
-              "time": "12:15",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59228",
-              "perf_code": "59228",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating",
-                "Super Saver"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury",
-                "saver"
-              ]
-            }
-          ],
-          "vote_average": 6.7,
-          "imdb_id": "tt13176330",
-          "overview": "A porcine bounty hunter accepts his next hit: Pickles, a naive, ebullient elephant. Though he initially sets out to capture the perky pachyderm, the unlikely pair find themselves crisscrossing the globe on an adventure that brings out the best in both of them.",
-          "writer": "Berkeley Breathed, Tyler Werrin, Dave Rosenbaum"
-        },
-        {
           "title": "Michael (12A)",
           "certificate": "12A",
           "search_title": "Michael",
@@ -14429,62 +12949,6 @@
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "13:30",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59155",
-              "perf_code": "59155",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59148",
-              "perf_code": "59148",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:45",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59149",
-              "perf_code": "59149",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "13:30",
@@ -14800,80 +13264,6 @@
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "14:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59152",
-              "perf_code": "59152",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "17:15",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59146",
-              "perf_code": "59146",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "19:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59147",
-              "perf_code": "59147",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-02",
-              "time": "20:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59145",
-              "perf_code": "59145",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-03",
               "time": "14:00",
@@ -15225,26 +13615,6 @@
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
             {
-              "date": "2026-05-02",
-              "time": "16:20",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59160",
-              "perf_code": "59160",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-03",
               "time": "16:20",
               "screen": "Savoy Cinema, Penzance",
@@ -15309,6 +13679,98 @@
           "imdb_id": "tt7734244",
           "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
           "writer": "Simon Farnaby"
+        },
+        {
+          "title": "Hitpig! (PG)",
+          "certificate": "PG",
+          "search_title": "Hitpig!",
+          "film_slug": "hitpig",
+          "film_id": "108515",
+          "event_id": "6115",
+          "cinema_code": "MER_PENZ",
+          "synopsis": "When your kitty's left the city, when your moose is on the loose, when your cow has said ciao, call Hitpig, the world's greatest animal tracker.",
+          "cast": "Jason Sudeikis, Lilly Singh, Rainn Wilson",
+          "director": "Directors: Cinzia Angelini, David Feiss",
+          "runtime_min": 85,
+          "release_date": "2026-04-24",
+          "release_date_text": "24th April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://penzance.merlincinemas.co.uk/film/108515-hitpig",
+          "poster_url": "posters/hitpig.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108515/d21e2cddbb5fe960d59a80bd5828d2cb.jpg",
+          "event_banner_url": "https://penzance.merlincinemas.co.uk/media/email/2511251257_1901467594_SUPER-SAVER-2025-no-price.png",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=G1CwxvTFx_4",
+          "genres": [
+            "Family",
+            "Adventure",
+            "Animation"
+          ],
+          "cinema_name": "Savoy Cinema, Penzance",
+          "showtimes": [
+            {
+              "date": "2026-05-04",
+              "time": "12:15",
+              "screen": "Savoy Cinema, Penzance",
+              "cinema_name": "Savoy Cinema, Penzance",
+              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59228",
+              "perf_code": "59228",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating",
+                "Super Saver"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury",
+                "saver"
+              ]
+            }
+          ],
+          "vote_average": 6.7,
+          "imdb_id": "tt13176330",
+          "overview": "A porcine bounty hunter accepts his next hit: Pickles, a naive, ebullient elephant. Though he initially sets out to capture the perky pachyderm, the unlikely pair find themselves crisscrossing the globe on an adventure that brings out the best in both of them.",
+          "writer": "Berkeley Breathed, Tyler Werrin, Dave Rosenbaum"
         },
         {
           "title": "Rose Of Nevada (15)",
@@ -16571,8 +15033,8 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=vNGAtHBhdiM",
           "genres": [
-            "Drama",
             "Animation",
+            "Drama",
             "Thriller"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
@@ -16762,54 +15224,6 @@
       "name": "The Ritz, Penzance",
       "url": "https://ritz.merlincinemas.co.uk/?forcechoice=true",
       "films": [
-        {
-          "title": "Phil Barnett and Friends Present A Night at the Musicals (LIVE On Stage)",
-          "certificate": "LIVE On Stage",
-          "search_title": "Phil Barnett and Friends Present A Night at the Musicals",
-          "film_slug": "phil-barnett-and-friends-present-a-night-at-the-musicals",
-          "film_id": "108640",
-          "event_id": "",
-          "cinema_code": "",
-          "synopsis": "A Night at the Musicals is a sparkling celebration of the magic of musical theatre, bringing together some of the most beloved songs ever written for the stage. Featuring hits from legendary shows such as Les Misérables, Hamilton, Disney, Wicked and The Greatest Showman, the evening promises soaring ballads, rousing choruses and unforgettable showstoppers.",
-          "cast": "",
-          "director": "",
-          "runtime_min": 120,
-          "release_date": "",
-          "release_date_text": "",
-          "ticket_note": "",
-          "tag_labels_available": [],
-          "tag_keys_available": [],
-          "film_url": "https://ritz.merlincinemas.co.uk/film/108640-phil-barnett-and-friends-present-a-night-at-the-musicals",
-          "poster_url": "posters/phil-barnett-and-friends-present-a-night-at-the-musicals.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108640/5d0feb9b30eb70d5a7d30a7317a39262.jpg",
-          "event_banner_url": "",
-          "is_live_event": true,
-          "trailer_url": "",
-          "genres": [],
-          "cinema_name": "The Ritz, Penzance",
-          "showtimes": [
-            {
-              "date": "2026-05-02",
-              "time": "19:30",
-              "screen": "The Ritz, Penzance",
-              "cinema_name": "The Ritz, Penzance",
-              "cinema_url": "https://ritz.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinritz.admit-one.eu/?p=tickets&perfCode=254",
-              "perf_code": "254",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            }
-          ],
-          "vote_average": null,
-          "imdb_id": "",
-          "overview": "",
-          "writer": ""
-        },
         {
           "title": "The D-Day Darlings Victorious (LIVE On Stage)",
           "certificate": "LIVE On Stage",
