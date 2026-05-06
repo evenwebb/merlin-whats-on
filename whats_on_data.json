@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-05-05T10:28:03Z",
+  "updated_at": "2026-05-06T10:58:43Z",
   "cinemas": {
     "bodmin": {
       "name": "Capitol Cinema, Bodmin",
       "url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
       "films": [
         {
-          "title": "The Super Mario Galaxy Movie (PG)",
-          "certificate": "PG",
-          "search_title": "The Super Mario Galaxy Movie",
-          "film_slug": "the-super-mario-galaxy-movie",
-          "film_id": "102277",
-          "event_id": "5820",
+          "title": "The Magic Faraway Tree (U)",
+          "certificate": "U",
+          "search_title": "The Magic Faraway Tree",
+          "film_slug": "the-magic-faraway-tree",
+          "film_id": "105538",
+          "event_id": "5948",
           "cinema_code": "MER_BODM",
-          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
-          "cast": "Chris Pratt (Mario (voice)), Charlie Day (Luigi (voice)), Anya Taylor-Joy (Princess Peach (voice)), Jack Black (Bowser (voice)), Keegan-Michael Key (Toad (voice)), Benny Safdie (Bowser Jr. (voice)), Donald Glover (Yoshi (voice)), Luis Guzmán (Wart (voice)), Issa Rae (Honey Queen (voice)), Kevin Michael Richardson (Kamek (voice)), Brie Larson (Rosalina (voice)), Glen Powell (Fox McCloud (voice))",
-          "director": "Michael Jelenic, Aaron Horvath",
-          "runtime_min": 95,
-          "release_date": "2026-04-03",
-          "release_date_text": "3rd April, 2026",
+          "synopsis": "The Magic Faraway Tree follows Polly, Tim, and their three children - a modern family forced to relocate to the remote English countryside. As they adapt to their new lives, the children discover a magical tree and its extraordinary and eccentric residents including treasured characters Moonface, Silky, Dame Washalot, and Saucepan Man. At the top of the tree, they are transported to spectacular and fantastical lands and, through the joys and challenges of their adventures, the family learn to reconnect and value each other for the first time in years.",
+          "cast": "Andrew Garfield (Tim Thompson), Claire Foy (Polly Thompson), Nicola Coughlan (Silky), Jessica Gunning (Dame Washalot), Rebecca Ferguson (Dame Snap), Hiran Abeysekera (Angry Pixie), Phoenix Laroche (Joe Thompson), Delilah Bennett-Cardy (Beth Thompson), Billie Gadsdon (Fran Thompson), Jennifer Saunders (Grandma), Judi Dench (The Fridge (voice)), Nonso Anozie (Moonface)",
+          "director": "Ben Gregor",
+          "runtime_min": 110,
+          "release_date": "2026-03-27",
+          "release_date_text": "27th March, 2026",
           "ticket_note": "",
           "tag_labels_available": [
             "3D",
@@ -56,29 +56,27 @@
             "advanced",
             "pfs"
           ],
-          "film_url": "https://bodmin.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
-          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
+          "film_url": "https://bodmin.merlincinemas.co.uk/film/105538-the-magic-faraway-tree",
+          "poster_url": "posters/the-magic-faraway-tree.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105538/9d6b4742580c8415602b35b9e463c79e.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=fm3oeAGbcd4",
+          "trailer_url": "https://www.youtube.com/watch?v=bxWxrEsdWqQ",
           "genres": [
             "Family",
-            "Comedy",
-            "Adventure",
             "Fantasy",
-            "Animation"
+            "Adventure"
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "16:00",
+              "date": "2026-05-06",
+              "time": "16:20",
               "screen": "Capitol Cinema, Bodmin",
               "cinema_name": "Capitol Cinema, Bodmin",
               "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50513",
-              "perf_code": "50513",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50578",
+              "perf_code": "50578",
               "sold_out": false,
               "tags": [
                 "Licensed Bar"
@@ -89,48 +87,28 @@
             },
             {
               "date": "2026-05-07",
-              "time": "16:00",
+              "time": "16:45",
               "screen": "Capitol Cinema, Bodmin",
               "cinema_name": "Capitol Cinema, Bodmin",
               "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50538",
-              "perf_code": "50538",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50579",
+              "perf_code": "50579",
               "sold_out": false,
               "tags": [
-                "Wheelchair access",
                 "Licensed Bar"
               ],
               "tag_keys": [
-                "access",
                 "licensed"
               ]
             },
             {
               "date": "2026-05-09",
-              "time": "11:30",
+              "time": "12:20",
               "screen": "Capitol Cinema, Bodmin",
               "cinema_name": "Capitol Cinema, Bodmin",
               "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50396",
-              "perf_code": "50396",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-09",
-              "time": "15:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50401",
-              "perf_code": "50401",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50402",
+              "perf_code": "50402",
               "sold_out": false,
               "tags": [
                 "Licensed Bar"
@@ -141,30 +119,12 @@
             },
             {
               "date": "2026-05-10",
-              "time": "11:30",
+              "time": "12:20",
               "screen": "Capitol Cinema, Bodmin",
               "cinema_name": "Capitol Cinema, Bodmin",
               "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50416",
-              "perf_code": "50416",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-10",
-              "time": "15:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50422",
-              "perf_code": "50422",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50423",
+              "perf_code": "50423",
               "sold_out": false,
               "tags": [
                 "Licensed Bar"
@@ -174,10 +134,10 @@
               ]
             }
           ],
-          "vote_average": 6.754,
-          "imdb_id": "tt28650488",
-          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
-          "writer": "Matthew Fogel"
+          "vote_average": 6.3,
+          "imdb_id": "tt7734244",
+          "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
+          "writer": "Simon Farnaby"
         },
         {
           "title": "Michael (12A)",
@@ -242,42 +202,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "16:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50516",
-              "perf_code": "50516",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:30",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50517",
-              "perf_code": "50517",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "16:45",
@@ -590,7 +514,7 @@
             },
             {
               "date": "2026-05-13",
-              "time": "16:15",
+              "time": "16:30",
               "screen": "Capitol Cinema, Bodmin",
               "cinema_name": "Capitol Cinema, Bodmin",
               "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
@@ -745,42 +669,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "17:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50518",
-              "perf_code": "50518",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50519",
-              "perf_code": "50519",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "17:00",
@@ -1250,24 +1138,6 @@
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "17:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50514",
-              "perf_code": "50514",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "17:20",
               "screen": "Capitol Cinema, Bodmin",
@@ -1389,22 +1259,6 @@
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "19:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50515",
-              "perf_code": "50515",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "19:00",
               "screen": "Capitol Cinema, Bodmin",
@@ -1475,140 +1329,6 @@
           "imdb_id": "tt12042730",
           "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction… but an unexpected friendship means he may not have to do it alone.",
           "writer": "Andy Weir, Drew Goddard"
-        },
-        {
-          "title": "The Magic Faraway Tree (U)",
-          "certificate": "U",
-          "search_title": "The Magic Faraway Tree",
-          "film_slug": "the-magic-faraway-tree",
-          "film_id": "105538",
-          "event_id": "5948",
-          "cinema_code": "MER_BODM",
-          "synopsis": "The Magic Faraway Tree follows Polly, Tim, and their three children - a modern family forced to relocate to the remote English countryside. As they adapt to their new lives, the children discover a magical tree and its extraordinary and eccentric residents including treasured characters Moonface, Silky, Dame Washalot, and Saucepan Man. At the top of the tree, they are transported to spectacular and fantastical lands and, through the joys and challenges of their adventures, the family learn to reconnect and value each other for the first time in years.",
-          "cast": "Andrew Garfield (Tim Thompson), Claire Foy (Polly Thompson), Nicola Coughlan (Silky), Jessica Gunning (Dame Washalot), Rebecca Ferguson (Dame Snap), Hiran Abeysekera (Angry Pixie), Phoenix Laroche (Joe Thompson), Delilah Bennett-Cardy (Beth Thompson), Billie Gadsdon (Fran Thompson), Jennifer Saunders (Grandma), Judi Dench (The Fridge (voice)), Nonso Anozie (Moonface)",
-          "director": "Ben Gregor",
-          "runtime_min": 110,
-          "release_date": "2026-03-27",
-          "release_date_text": "27th March, 2026",
-          "ticket_note": "",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://bodmin.merlincinemas.co.uk/film/105538-the-magic-faraway-tree",
-          "poster_url": "posters/the-magic-faraway-tree.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105538/9d6b4742580c8415602b35b9e463c79e.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=bxWxrEsdWqQ",
-          "genres": [
-            "Family",
-            "Fantasy",
-            "Adventure"
-          ],
-          "cinema_name": "Capitol Cinema, Bodmin",
-          "showtimes": [
-            {
-              "date": "2026-05-06",
-              "time": "16:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50578",
-              "perf_code": "50578",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-07",
-              "time": "16:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50579",
-              "perf_code": "50579",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-09",
-              "time": "12:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50402",
-              "perf_code": "50402",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-10",
-              "time": "12:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50423",
-              "perf_code": "50423",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            }
-          ],
-          "vote_average": 6.3,
-          "imdb_id": "tt7734244",
-          "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
-          "writer": "Simon Farnaby"
         },
         {
           "title": "Mortal Kombat (15)",
@@ -1804,6 +1524,164 @@
           "writer": "Nick Moorcroft, Meg Leonard"
         },
         {
+          "title": "The Super Mario Galaxy Movie (PG)",
+          "certificate": "PG",
+          "search_title": "The Super Mario Galaxy Movie",
+          "film_slug": "the-super-mario-galaxy-movie",
+          "film_id": "102277",
+          "event_id": "5820",
+          "cinema_code": "MER_BODM",
+          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
+          "cast": "Chris Pratt (Mario (voice)), Charlie Day (Luigi (voice)), Anya Taylor-Joy (Princess Peach (voice)), Jack Black (Bowser (voice)), Keegan-Michael Key (Toad (voice)), Benny Safdie (Bowser Jr. (voice)), Donald Glover (Yoshi (voice)), Luis Guzmán (Wart (voice)), Issa Rae (Honey Queen (voice)), Kevin Michael Richardson (Kamek (voice)), Brie Larson (Rosalina (voice)), Glen Powell (Fox McCloud (voice))",
+          "director": "Michael Jelenic, Aaron Horvath",
+          "runtime_min": 95,
+          "release_date": "2026-04-03",
+          "release_date_text": "3rd April, 2026",
+          "ticket_note": "",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://bodmin.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
+          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=fm3oeAGbcd4",
+          "genres": [
+            "Family",
+            "Comedy",
+            "Adventure",
+            "Fantasy",
+            "Animation"
+          ],
+          "cinema_name": "Capitol Cinema, Bodmin",
+          "showtimes": [
+            {
+              "date": "2026-05-07",
+              "time": "16:00",
+              "screen": "Capitol Cinema, Bodmin",
+              "cinema_name": "Capitol Cinema, Bodmin",
+              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50538",
+              "perf_code": "50538",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-09",
+              "time": "11:30",
+              "screen": "Capitol Cinema, Bodmin",
+              "cinema_name": "Capitol Cinema, Bodmin",
+              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50396",
+              "perf_code": "50396",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-09",
+              "time": "15:00",
+              "screen": "Capitol Cinema, Bodmin",
+              "cinema_name": "Capitol Cinema, Bodmin",
+              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50401",
+              "perf_code": "50401",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-10",
+              "time": "11:30",
+              "screen": "Capitol Cinema, Bodmin",
+              "cinema_name": "Capitol Cinema, Bodmin",
+              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50416",
+              "perf_code": "50416",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-10",
+              "time": "15:00",
+              "screen": "Capitol Cinema, Bodmin",
+              "cinema_name": "Capitol Cinema, Bodmin",
+              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50422",
+              "perf_code": "50422",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            }
+          ],
+          "vote_average": 6.754,
+          "imdb_id": "tt28650488",
+          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
+          "writer": "Matthew Fogel"
+        },
+        {
           "title": "Mortal Kombat II (15)",
           "certificate": "15",
           "search_title": "Mortal Kombat II",
@@ -1857,7 +1735,7 @@
           "film_url": "https://bodmin.merlincinemas.co.uk/film/98552-mortal-kombat-ii",
           "poster_url": "posters/mortal-kombat-ii.jpg",
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/98552/372c2c29065fa76f1d23c3a5f51181f0.jpg",
-          "event_banner_url": "https://bodmin.merlincinemas.co.uk/media/email/2604281712_2097727795_mortal.png",
+          "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=ul4M0n21hIs",
           "genres": [
@@ -2386,7 +2264,7 @@
             },
             {
               "date": "2026-05-13",
-              "time": "16:30",
+              "time": "16:15",
               "screen": "Capitol Cinema, Bodmin",
               "cinema_name": "Capitol Cinema, Bodmin",
               "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
@@ -3013,22 +2891,6 @@
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "19:00",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34454",
-              "perf_code": "34454",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "19:00",
               "screen": "Flora Cinema, Helston",
@@ -3293,22 +3155,6 @@
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "19:15",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34452",
-              "perf_code": "34452",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "19:15",
@@ -3697,9 +3543,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
+            "Comedy",
             "Family",
-            "Mystery",
-            "Comedy"
+            "Mystery"
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
@@ -4084,19 +3930,19 @@
       "url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
       "films": [
         {
-          "title": "The Super Mario Galaxy Movie (PG)",
-          "certificate": "PG",
-          "search_title": "The Super Mario Galaxy Movie",
-          "film_slug": "the-super-mario-galaxy-movie",
-          "film_id": "102277",
-          "event_id": "5820",
+          "title": "The Magic Faraway Tree (U)",
+          "certificate": "U",
+          "search_title": "The Magic Faraway Tree",
+          "film_slug": "the-magic-faraway-tree",
+          "film_id": "105538",
+          "event_id": "5948",
           "cinema_code": "MER_FALM",
-          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
-          "cast": "Chris Pratt, Anya Taylor-Joy, Jack Black",
-          "director": "Directors: Aaron Horvath, Michael Jelenic",
-          "runtime_min": 95,
-          "release_date": "2026-04-03",
-          "release_date_text": "3rd April, 2026",
+          "synopsis": "The Magic Faraway Tree follows Polly, Tim, and their three children - a modern family forced to relocate to the remote English countryside. As they adapt to their new lives, the children discover a magical tree and its extraordinary and eccentric residents including treasured characters Moonface, Silky, Dame Washalot, and Saucepan Man. At the top of the tree, they are transported to spectacular and fantastical lands and, through the joys and challenges of their adventures, the family learn to reconnect and value each other for the first time in years.",
+          "cast": "Claire Foy, Andrew Garfield, Nicola Coughlan",
+          "director": "Ben Gregor",
+          "runtime_min": 110,
+          "release_date": "2026-03-27",
+          "release_date_text": "27th March, 2026",
           "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
@@ -4134,27 +3980,47 @@
             "advanced",
             "pfs"
           ],
-          "film_url": "https://falmouth.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
-          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/105538-the-magic-faraway-tree",
+          "poster_url": "posters/the-magic-faraway-tree.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105538/9d6b4742580c8415602b35b9e463c79e.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=DDZkObBBV5w",
+          "trailer_url": "https://www.youtube.com/watch?v=PAUEwUhAjzg",
           "genres": [
-            "Action",
-            "Adventure",
-            "Animation"
+            "Family",
+            "Fantasy",
+            "Adventure"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
             {
-              "date": "2026-05-05",
+              "date": "2026-05-06",
               "time": "16:30",
               "screen": "Phoenix Cinema, Falmouth",
               "cinema_name": "Phoenix Cinema, Falmouth",
               "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84303",
-              "perf_code": "84303",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84302",
+              "perf_code": "84302",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-07",
+              "time": "16:30",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84309",
+              "perf_code": "84309",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -4169,30 +4035,12 @@
             },
             {
               "date": "2026-05-09",
-              "time": "11:30",
+              "time": "12:20",
               "screen": "Phoenix Cinema, Falmouth",
               "cinema_name": "Phoenix Cinema, Falmouth",
               "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84061",
-              "perf_code": "84061",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-09",
-              "time": "15:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84065",
-              "perf_code": "84065",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84066",
+              "perf_code": "84066",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -4207,30 +4055,12 @@
             },
             {
               "date": "2026-05-10",
-              "time": "11:30",
+              "time": "12:20",
               "screen": "Phoenix Cinema, Falmouth",
               "cinema_name": "Phoenix Cinema, Falmouth",
               "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84037",
-              "perf_code": "84037",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-10",
-              "time": "15:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84043",
-              "perf_code": "84043",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84044",
+              "perf_code": "84044",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -4244,10 +4074,10 @@
               ]
             }
           ],
-          "vote_average": 6.754,
-          "imdb_id": "tt28650488",
-          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
-          "writer": "Matthew Fogel"
+          "vote_average": 6.3,
+          "imdb_id": "tt7734244",
+          "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
+          "writer": "Simon Farnaby"
         },
         {
           "title": "Michael (12A)",
@@ -4313,42 +4143,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "16:45",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84267",
-              "perf_code": "84267",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84268",
-              "perf_code": "84268",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "16:45",
@@ -4869,42 +4663,6 @@
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "17:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84266",
-              "perf_code": "84266",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:45",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84265",
-              "perf_code": "84265",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "17:00",
               "screen": "Phoenix Cinema, Falmouth",
@@ -5311,136 +5069,6 @@
           "writer": "Aline Brosh McKenna"
         },
         {
-          "title": "The Drama (15)",
-          "certificate": "15",
-          "search_title": "The Drama",
-          "film_slug": "the-drama",
-          "film_id": "106035",
-          "event_id": "6090",
-          "cinema_code": "MER_FALM",
-          "synopsis": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails",
-          "cast": "Zendaya (Emma Harwood), Robert Pattinson (Charlie Thompson), Mamoudou Athie (Mike), Alana Haim (Rachel), Jordyn Curet (Young Emma), Hailey Gates (Misha), Michael Abbott Jr. (Blake), Hannah Gross (Alice), Sydney Lemmon (Pauline), Zoë Winters (Frances), Anna Baryshnikov (Sam), Dee Nelson (Jill)",
-          "director": "Kristoffer Borgli",
-          "runtime_min": 105,
-          "release_date": "2026-04-03",
-          "release_date_text": "3rd April, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://falmouth.merlincinemas.co.uk/film/106035-the-drama",
-          "poster_url": "posters/the-drama.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/106035/d6b4e26374c9c7272478dcebc0482d47.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=-ppw3BbSelI",
-          "genres": [
-            "Romance",
-            "Comedy",
-            "Drama"
-          ],
-          "cinema_name": "Phoenix Cinema, Falmouth",
-          "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "17:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84273",
-              "perf_code": "84273",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-06",
-              "time": "18:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84281",
-              "perf_code": "84281",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-13",
-              "time": "20:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84395",
-              "perf_code": "84395",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            }
-          ],
-          "vote_average": 7.035,
-          "imdb_id": "tt33071426",
-          "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
-          "writer": "Kristoffer Borgli"
-        },
-        {
           "title": "Rose Of Nevada (15)",
           "certificate": "15",
           "search_title": "Rose Of Nevada",
@@ -5504,26 +5132,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "18:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84269",
-              "perf_code": "84269",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "17:30",
@@ -5727,6 +5335,116 @@
           "writer": "Mark Jenkin"
         },
         {
+          "title": "The Drama (15)",
+          "certificate": "15",
+          "search_title": "The Drama",
+          "film_slug": "the-drama",
+          "film_id": "106035",
+          "event_id": "6090",
+          "cinema_code": "MER_FALM",
+          "synopsis": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails",
+          "cast": "Zendaya (Emma Harwood), Robert Pattinson (Charlie Thompson), Mamoudou Athie (Mike), Alana Haim (Rachel), Jordyn Curet (Young Emma), Hailey Gates (Misha), Michael Abbott Jr. (Blake), Hannah Gross (Alice), Sydney Lemmon (Pauline), Zoë Winters (Frances), Anna Baryshnikov (Sam), Dee Nelson (Jill)",
+          "director": "Kristoffer Borgli",
+          "runtime_min": 105,
+          "release_date": "2026-04-03",
+          "release_date_text": "3rd April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/106035-the-drama",
+          "poster_url": "posters/the-drama.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/106035/d6b4e26374c9c7272478dcebc0482d47.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=-ppw3BbSelI",
+          "genres": [
+            "Romance",
+            "Comedy",
+            "Drama"
+          ],
+          "cinema_name": "Phoenix Cinema, Falmouth",
+          "showtimes": [
+            {
+              "date": "2026-05-06",
+              "time": "18:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84281",
+              "perf_code": "84281",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-13",
+              "time": "20:20",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84395",
+              "perf_code": "84395",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            }
+          ],
+          "vote_average": 7.035,
+          "imdb_id": "tt33071426",
+          "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
+          "writer": "Kristoffer Borgli"
+        },
+        {
           "title": "Project Hail Mary (12A)",
           "certificate": "12A",
           "search_title": "Project Hail Mary",
@@ -5790,26 +5508,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "19:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84270",
-              "perf_code": "84270",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "19:00",
@@ -5937,6 +5635,116 @@
           "writer": "Andy Weir, Drew Goddard"
         },
         {
+          "title": "Mortal Kombat (15)",
+          "certificate": "15",
+          "search_title": "Mortal Kombat",
+          "film_slug": "mortal-kombat",
+          "film_id": "59961",
+          "event_id": "4349",
+          "cinema_code": "MER_FALM",
+          "synopsis": "Mortal Kombat II hits cinemas on May 8. ROUND ONE returns to our screens so you’re battle-ready for ROUND TWO!",
+          "cast": "Lewis Tan, Jessica McNamee, Joe Taslim",
+          "director": "Simon McQuoid",
+          "runtime_min": 110,
+          "release_date": "2021-04-16",
+          "release_date_text": "16th April, 2021",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/59961-mortal-kombat",
+          "poster_url": "posters/mortal-kombat.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/59961/9ec60fd655e15b50e8b48bb10e607e74.jpg",
+          "event_banner_url": "https://falmouth.merlincinemas.co.uk/media/email/2604281156_1770551323_BIG-MOVIE-DEAL-NEW-PRICE-BANNER-no-price.png",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=NnjJiwYsT9c",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "cinema_name": "Phoenix Cinema, Falmouth",
+          "showtimes": [
+            {
+              "date": "2026-05-06",
+              "time": "20:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84283",
+              "perf_code": "84283",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-07",
+              "time": "18:30",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84307",
+              "perf_code": "84307",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            }
+          ],
+          "vote_average": 6.982,
+          "imdb_id": "tt0293429",
+          "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
+          "writer": "Greg Russo, Oren Uziel, David Callaham"
+        },
+        {
           "title": "Hokum (15)",
           "certificate": "15",
           "search_title": "Hokum",
@@ -6000,26 +5808,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "20:35",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84271",
-              "perf_code": "84271",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "20:35",
@@ -6207,266 +5995,6 @@
           "imdb_id": "tt35672862",
           "overview": "When novelist Ohm Bauman retreats to a remote inn to scatter his parents' ashes, he is consumed by tales of a witch haunting the honeymoon suite. Disturbing visions and a shocking disappearance forces him to confront dark corners of his past.",
           "writer": "Damian McCarthy"
-        },
-        {
-          "title": "The Magic Faraway Tree (U)",
-          "certificate": "U",
-          "search_title": "The Magic Faraway Tree",
-          "film_slug": "the-magic-faraway-tree",
-          "film_id": "105538",
-          "event_id": "5948",
-          "cinema_code": "MER_FALM",
-          "synopsis": "The Magic Faraway Tree follows Polly, Tim, and their three children - a modern family forced to relocate to the remote English countryside. As they adapt to their new lives, the children discover a magical tree and its extraordinary and eccentric residents including treasured characters Moonface, Silky, Dame Washalot, and Saucepan Man. At the top of the tree, they are transported to spectacular and fantastical lands and, through the joys and challenges of their adventures, the family learn to reconnect and value each other for the first time in years.",
-          "cast": "Claire Foy, Andrew Garfield, Nicola Coughlan",
-          "director": "Ben Gregor",
-          "runtime_min": 110,
-          "release_date": "2026-03-27",
-          "release_date_text": "27th March, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://falmouth.merlincinemas.co.uk/film/105538-the-magic-faraway-tree",
-          "poster_url": "posters/the-magic-faraway-tree.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105538/9d6b4742580c8415602b35b9e463c79e.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=PAUEwUhAjzg",
-          "genres": [
-            "Family",
-            "Fantasy",
-            "Adventure"
-          ],
-          "cinema_name": "Phoenix Cinema, Falmouth",
-          "showtimes": [
-            {
-              "date": "2026-05-06",
-              "time": "16:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84302",
-              "perf_code": "84302",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-07",
-              "time": "16:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84309",
-              "perf_code": "84309",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-09",
-              "time": "12:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84066",
-              "perf_code": "84066",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-10",
-              "time": "12:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84044",
-              "perf_code": "84044",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            }
-          ],
-          "vote_average": 6.3,
-          "imdb_id": "tt7734244",
-          "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
-          "writer": "Simon Farnaby"
-        },
-        {
-          "title": "Mortal Kombat (15)",
-          "certificate": "15",
-          "search_title": "Mortal Kombat",
-          "film_slug": "mortal-kombat",
-          "film_id": "59961",
-          "event_id": "4349",
-          "cinema_code": "MER_FALM",
-          "synopsis": "Mortal Kombat II hits cinemas on May 8. ROUND ONE returns to our screens so you’re battle-ready for ROUND TWO!",
-          "cast": "Lewis Tan, Jessica McNamee, Joe Taslim",
-          "director": "Simon McQuoid",
-          "runtime_min": 110,
-          "release_date": "2021-04-16",
-          "release_date_text": "16th April, 2021",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://falmouth.merlincinemas.co.uk/film/59961-mortal-kombat",
-          "poster_url": "posters/mortal-kombat.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/59961/9ec60fd655e15b50e8b48bb10e607e74.jpg",
-          "event_banner_url": "https://falmouth.merlincinemas.co.uk/media/email/2604281156_1770551323_BIG-MOVIE-DEAL-NEW-PRICE-BANNER-no-price.png",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=NnjJiwYsT9c",
-          "genres": [
-            "Fantasy",
-            "Action",
-            "Adventure"
-          ],
-          "cinema_name": "Phoenix Cinema, Falmouth",
-          "showtimes": [
-            {
-              "date": "2026-05-06",
-              "time": "20:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84283",
-              "perf_code": "84283",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-07",
-              "time": "18:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84307",
-              "perf_code": "84307",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            }
-          ],
-          "vote_average": 6.982,
-          "imdb_id": "tt0293429",
-          "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
-          "writer": "Greg Russo, Oren Uziel, David Callaham"
         },
         {
           "title": "Mother's Pride (12A)",
@@ -6788,12 +6316,12 @@
           "film_url": "https://falmouth.merlincinemas.co.uk/film/98552-mortal-kombat-ii",
           "poster_url": "posters/mortal-kombat-ii.jpg",
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/98552/372c2c29065fa76f1d23c3a5f51181f0.jpg",
-          "event_banner_url": "https://falmouth.merlincinemas.co.uk/media/email/2604281712_2097727795_mortal.png",
+          "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=z6fz_ewTKTs",
           "genres": [
-            "Fantasy",
             "Action",
+            "Fantasy",
             "Thriller"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
@@ -7226,9 +6754,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
+            "Comedy",
             "Family",
-            "Mystery",
-            "Comedy"
+            "Mystery"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
@@ -7718,6 +7246,152 @@
           "writer": "Aaron Buchsbaum, Teddy Riley"
         },
         {
+          "title": "The Super Mario Galaxy Movie (PG)",
+          "certificate": "PG",
+          "search_title": "The Super Mario Galaxy Movie",
+          "film_slug": "the-super-mario-galaxy-movie",
+          "film_id": "102277",
+          "event_id": "5820",
+          "cinema_code": "MER_FALM",
+          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
+          "cast": "Chris Pratt, Anya Taylor-Joy, Jack Black",
+          "director": "Directors: Aaron Horvath, Michael Jelenic",
+          "runtime_min": 95,
+          "release_date": "2026-04-03",
+          "release_date_text": "3rd April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
+          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=DDZkObBBV5w",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation"
+          ],
+          "cinema_name": "Phoenix Cinema, Falmouth",
+          "showtimes": [
+            {
+              "date": "2026-05-09",
+              "time": "11:30",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84061",
+              "perf_code": "84061",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-09",
+              "time": "15:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84065",
+              "perf_code": "84065",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-10",
+              "time": "11:30",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84037",
+              "perf_code": "84037",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-10",
+              "time": "15:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84043",
+              "perf_code": "84043",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            }
+          ],
+          "vote_average": 6.754,
+          "imdb_id": "tt28650488",
+          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
+          "writer": "Matthew Fogel"
+        },
+        {
           "title": "Little Trouble Girls (15)",
           "certificate": "15",
           "search_title": "Little Trouble Girls",
@@ -7979,6 +7653,92 @@
           "imdb_id": ""
         },
         {
+          "title": "The North (15)",
+          "certificate": "15",
+          "search_title": "The North",
+          "film_slug": "the-north",
+          "film_id": "110407",
+          "event_id": "6159",
+          "cinema_code": "MER_FALM",
+          "synopsis": "A decade after being best friends and roommates, Chris and Lluis set out on a 600-kilometre hike through the Scottish Highlands. Following the West Highland way and The Cape Wrath Trail, they spend thirty days together in nature - hoping to rekindle their once-powerful friendship. But while Chris remains preoccupied with work and life back at home, Lluis is determined to finish the trail to prove he can do it. The solitude and silence of the highlands forces them to confront harsh truths about themselves, their friendship, and what it truly means to stand still and listen.",
+          "cast": "Bart Harder (Chris), Carlos Pulido (Lluis), Matthijs van de Sande Bakhuyzen (Tom), Olly Bassi (Richard)",
+          "director": "Bart Schrijver",
+          "runtime_min": 130,
+          "release_date": "2026-04-24",
+          "release_date_text": "24th April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/110407-the-north",
+          "poster_url": "posters/the-north.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/110407/c2dbbb5f7c48a54060ad0c1a9b390145.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=AWWU4hrapC4",
+          "genres": [
+            "Drama"
+          ],
+          "cinema_name": "Phoenix Cinema, Falmouth",
+          "showtimes": [
+            {
+              "date": "2026-06-02",
+              "time": "19:00",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84398",
+              "perf_code": "84398",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            }
+          ],
+          "vote_average": 7.0,
+          "imdb_id": "tt35331003",
+          "overview": "A decade after they were best friends and roommates, Chris and Lluis set out on a 600 kilometer hike through the Scottish Highlands to reconnect with each other, nature and parts of themselves they lost.",
+          "writer": "Bart Schrijver"
+        },
+        {
           "title": "Bonnie & Clive with The Jive Aces Double Bill (12A)",
           "certificate": "12A",
           "search_title": "Bonnie & Clive with The Jive Aces Double Bill",
@@ -7988,7 +7748,7 @@
           "cinema_code": "MER_FALM",
           "synopsis": "Two multi-award-winning UK hits. One special double-bill screening.",
           "cast": "Eleanor May Blackburn, Michael Kodi Farrow, James Jip",
-          "director": "",
+          "director": "Kevin Short",
           "runtime_min": 85,
           "release_date": "2026-06-03",
           "release_date_text": "3rd June, 2026",
@@ -8034,8 +7794,12 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/110073/1fc852378a38c33674fd428d8b9aa188.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "",
-          "genres": [],
+          "trailer_url": "https://www.youtube.com/watch?v=yYg4Np-i4f0",
+          "genres": [
+            "Music",
+            "Adventure",
+            "Romance"
+          ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
             {
@@ -8323,7 +8087,7 @@
           "cinema_code": "MER_REDR",
           "synopsis": "Jo In The Water follows a passionate sea swimmer turned reluctant activist. Exmouth-based Jo Bateman takes on one of the UK's biggest water companies in a David-and-Goliath battle to protect our waters from devastating sewage pollution. Jo In The Water is a feature-length documentary made by award-winning filmmakers with a strong track record of bringing powerful stories to our cinema screens.",
           "cast": "Jo Bateman, Jeremy Vine, Chris Packham",
-          "director": "",
+          "director": "Pip Piper",
           "runtime_min": 105,
           "release_date": "2026-04-09",
           "release_date_text": "9th April, 2026",
@@ -8369,8 +8133,10 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108002/0f018a1713ae835bc2441c10b5f9602f.jpg",
           "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2311031151_223069631_qanda.png",
           "is_live_event": false,
-          "trailer_url": "",
-          "genres": [],
+          "trailer_url": "https://www.youtube.com/watch?v=xGxX71FXrTQ",
+          "genres": [
+            "Doumentary"
+          ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
@@ -8462,60 +8228,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "16:10",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88768",
-              "perf_code": "88768",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "17:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88758",
-              "perf_code": "88758",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:50",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88759",
-              "perf_code": "88759",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "16:10",
@@ -9023,22 +8735,6 @@
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "16:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88764",
-              "perf_code": "88764",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "16:30",
               "screen": "Regal Cinema & Theatre, Redruth",
@@ -9216,38 +8912,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "16:45",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88760",
-              "perf_code": "88760",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88761",
-              "perf_code": "88761",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "16:45",
@@ -9705,26 +9369,6 @@
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "17:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88766",
-              "perf_code": "88766",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "17:30",
               "screen": "Regal Cinema & Theatre, Redruth",
@@ -9803,115 +9447,6 @@
           "writer": "Simon Farnaby"
         },
         {
-          "title": "Mother's Pride (12A)",
-          "certificate": "12A",
-          "search_title": "Mother's Pride",
-          "film_slug": "mothers-pride",
-          "film_id": "104162",
-          "event_id": "5966",
-          "cinema_code": "MER_REDR",
-          "synopsis": "From the team behind Finding Your Feet and Fisherman’s Friends comes Mother’s Pride, a story about the Harley family who after losing their matriarch, must come together to save their pub and village through the art of beer-brewing.",
-          "cast": "James Buckley, Martin Clunes, Mark Addy",
-          "director": "Nick Moorcroft",
-          "runtime_min": 93,
-          "release_date": "2026-03-06",
-          "release_date_text": "6th March, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://redruth.merlincinemas.co.uk/film/104162-mothers-pride",
-          "poster_url": "posters/mothers-pride.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/104162/5552d3dc739f868b933552e14dc37cf6.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=NyDJXrMhwSI",
-          "genres": [
-            "Comedy",
-            "Drama"
-          ],
-          "cinema_name": "Regal Cinema & Theatre, Redruth",
-          "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "18:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88793",
-              "perf_code": "88793",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-07",
-              "time": "14:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88796",
-              "perf_code": "88796",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            }
-          ],
-          "vote_average": 6.7,
-          "imdb_id": "tt32569057",
-          "overview": "A comedy about a failing pub, a divided community and a grieving family whose lives are changed by brewing real ale and entering the Great British Beer Awards.",
-          "writer": "Nick Moorcroft, Meg Leonard"
-        },
-        {
           "title": "Rose Of Nevada (15)",
           "certificate": "15",
           "search_title": "Rose Of Nevada",
@@ -9975,24 +9510,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "19:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88767",
-              "perf_code": "88767",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "18:00",
@@ -10174,6 +9691,96 @@
           "writer": "Mark Jenkin"
         },
         {
+          "title": "Funny Girl - The Musical (PG)",
+          "certificate": "PG",
+          "search_title": "Funny Girl - The Musical",
+          "film_slug": "funny-girl-the-musical",
+          "film_id": "108440",
+          "event_id": "6089",
+          "cinema_code": "MER_REDR",
+          "synopsis": "Funny Girl is the bittersweet musical comedy telling the story of the indomitable Fanny Brice (a role made famous by Barbra Streisand), a girl from the Lower East Side who dreamed of a life on the stage and her tempestuous relationship with entrepreneur and gambler Nick Arnstein. Fanny became one of the most beloved performers in history, shining brighter than the brightest lights of Broadway.",
+          "cast": "Barbra Streisand (Fanny Brice), Omar Sharif (Nick Arnstein), Kay Medford (Rose Brice), Anne Francis (Georgia James), Walter Pidgeon (Florenz Ziegfeld), Lee Allen (Eddie Ryan), Mae Questel (Mrs. Strakosh), Gerald Mohr (Branca), Frank Faylen (Keeney), Mittie Lawrence (Emma), Gertrude Flynn (Mrs. O'Malley), Penny Santon (Mrs. Meeker)",
+          "director": "William Wyler",
+          "runtime_min": 165,
+          "release_date": "2026-04-30",
+          "release_date_text": "30th April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://redruth.merlincinemas.co.uk/film/108440-funny-girl-the-musical",
+          "poster_url": "posters/funny-girl-the-musical.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108440/46215512af6c11503be7978156d20e1c.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=qzOFC4XiqL0",
+          "genres": [
+            "Comedy",
+            "Drama",
+            "Romance"
+          ],
+          "cinema_name": "Regal Cinema & Theatre, Redruth",
+          "showtimes": [
+            {
+              "date": "2026-05-06",
+              "time": "19:00",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=87680",
+              "perf_code": "87680",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            }
+          ],
+          "vote_average": 7.2,
+          "imdb_id": "tt0062994",
+          "overview": "The life of famed 1930s comedienne Fanny Brice, from her early days in the Jewish slums of New York, to the height of her career with the Ziegfeld Follies, as well as her marriage to the rakish gambler Nick Arnstein.",
+          "writer": "Isobel Lennart"
+        },
+        {
           "title": "Project Hail Mary (12A)",
           "certificate": "12A",
           "search_title": "Project Hail Mary",
@@ -10237,22 +9844,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "19:15",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88765",
-              "perf_code": "88765",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "19:15",
@@ -10410,6 +10001,108 @@
           "writer": "Andy Weir, Drew Goddard"
         },
         {
+          "title": "Mortal Kombat (15)",
+          "certificate": "15",
+          "search_title": "Mortal Kombat",
+          "film_slug": "mortal-kombat",
+          "film_id": "59961",
+          "event_id": "4349",
+          "cinema_code": "MER_REDR",
+          "synopsis": "Mortal Kombat II hits cinemas on May 8. ROUND ONE returns to our screens so you’re battle-ready for ROUND TWO!",
+          "cast": "Lewis Tan, Jessica McNamee, Joe Taslim",
+          "director": "Simon McQuoid",
+          "runtime_min": 110,
+          "release_date": "2021-04-16",
+          "release_date_text": "16th April, 2021",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://redruth.merlincinemas.co.uk/film/59961-mortal-kombat",
+          "poster_url": "posters/mortal-kombat.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/59961/9ec60fd655e15b50e8b48bb10e607e74.jpg",
+          "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2604281156_1770551323_BIG-MOVIE-DEAL-NEW-PRICE-BANNER-no-price.png",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=NnjJiwYsT9c",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "cinema_name": "Regal Cinema & Theatre, Redruth",
+          "showtimes": [
+            {
+              "date": "2026-05-06",
+              "time": "20:15",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88794",
+              "perf_code": "88794",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-07",
+              "time": "18:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88791",
+              "perf_code": "88791",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            }
+          ],
+          "vote_average": 6.982,
+          "imdb_id": "tt0293429",
+          "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
+          "writer": "Greg Russo, Oren Uziel, David Callaham"
+        },
+        {
           "title": "Hokum (15)",
           "certificate": "15",
           "search_title": "Hokum",
@@ -10471,26 +10164,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "20:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88762",
-              "perf_code": "88762",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "20:30",
@@ -10674,19 +10347,19 @@
           "writer": "Damian McCarthy"
         },
         {
-          "title": "Funny Girl - The Musical (PG)",
-          "certificate": "PG",
-          "search_title": "Funny Girl - The Musical",
-          "film_slug": "funny-girl-the-musical",
-          "film_id": "108440",
-          "event_id": "6089",
+          "title": "Mother's Pride (12A)",
+          "certificate": "12A",
+          "search_title": "Mother's Pride",
+          "film_slug": "mothers-pride",
+          "film_id": "104162",
+          "event_id": "5966",
           "cinema_code": "MER_REDR",
-          "synopsis": "Funny Girl is the bittersweet musical comedy telling the story of the indomitable Fanny Brice (a role made famous by Barbra Streisand), a girl from the Lower East Side who dreamed of a life on the stage and her tempestuous relationship with entrepreneur and gambler Nick Arnstein. Fanny became one of the most beloved performers in history, shining brighter than the brightest lights of Broadway.",
-          "cast": "Barbra Streisand (Fanny Brice), Omar Sharif (Nick Arnstein), Kay Medford (Rose Brice), Anne Francis (Georgia James), Walter Pidgeon (Florenz Ziegfeld), Lee Allen (Eddie Ryan), Mae Questel (Mrs. Strakosh), Gerald Mohr (Branca), Frank Faylen (Keeney), Mittie Lawrence (Emma), Gertrude Flynn (Mrs. O'Malley), Penny Santon (Mrs. Meeker)",
-          "director": "William Wyler",
-          "runtime_min": 165,
-          "release_date": "2026-04-30",
-          "release_date_text": "30th April, 2026",
+          "synopsis": "From the team behind Finding Your Feet and Fisherman’s Friends comes Mother’s Pride, a story about the Harley family who after losing their matriarch, must come together to save their pub and village through the art of beer-brewing.",
+          "cast": "James Buckley, Martin Clunes, Mark Addy",
+          "director": "Nick Moorcroft",
+          "runtime_min": 93,
+          "release_date": "2026-03-06",
+          "release_date_text": "6th March, 2026",
           "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
@@ -10724,27 +10397,26 @@
             "advanced",
             "pfs"
           ],
-          "film_url": "https://redruth.merlincinemas.co.uk/film/108440-funny-girl-the-musical",
-          "poster_url": "posters/funny-girl-the-musical.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108440/46215512af6c11503be7978156d20e1c.jpg",
+          "film_url": "https://redruth.merlincinemas.co.uk/film/104162-mothers-pride",
+          "poster_url": "posters/mothers-pride.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/104162/5552d3dc739f868b933552e14dc37cf6.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=qzOFC4XiqL0",
+          "trailer_url": "https://www.youtube.com/watch?v=NyDJXrMhwSI",
           "genres": [
             "Comedy",
-            "Drama",
-            "Romance"
+            "Drama"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-06",
-              "time": "19:00",
+              "date": "2026-05-07",
+              "time": "14:00",
               "screen": "Regal Cinema & Theatre, Redruth",
               "cinema_name": "Regal Cinema & Theatre, Redruth",
               "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=87680",
-              "perf_code": "87680",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88796",
+              "perf_code": "88796",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -10758,112 +10430,10 @@
               ]
             }
           ],
-          "vote_average": 7.2,
-          "imdb_id": "tt0062994",
-          "overview": "The life of famed 1930s comedienne Fanny Brice, from her early days in the Jewish slums of New York, to the height of her career with the Ziegfeld Follies, as well as her marriage to the rakish gambler Nick Arnstein.",
-          "writer": "Isobel Lennart"
-        },
-        {
-          "title": "Mortal Kombat (15)",
-          "certificate": "15",
-          "search_title": "Mortal Kombat",
-          "film_slug": "mortal-kombat",
-          "film_id": "59961",
-          "event_id": "4349",
-          "cinema_code": "MER_REDR",
-          "synopsis": "Mortal Kombat II hits cinemas on May 8. ROUND ONE returns to our screens so you’re battle-ready for ROUND TWO!",
-          "cast": "Lewis Tan, Jessica McNamee, Joe Taslim",
-          "director": "Simon McQuoid",
-          "runtime_min": 110,
-          "release_date": "2021-04-16",
-          "release_date_text": "16th April, 2021",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://redruth.merlincinemas.co.uk/film/59961-mortal-kombat",
-          "poster_url": "posters/mortal-kombat.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/59961/9ec60fd655e15b50e8b48bb10e607e74.jpg",
-          "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2604281156_1770551323_BIG-MOVIE-DEAL-NEW-PRICE-BANNER-no-price.png",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=NnjJiwYsT9c",
-          "genres": [
-            "Fantasy",
-            "Action",
-            "Adventure"
-          ],
-          "cinema_name": "Regal Cinema & Theatre, Redruth",
-          "showtimes": [
-            {
-              "date": "2026-05-06",
-              "time": "20:15",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88794",
-              "perf_code": "88794",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-07",
-              "time": "18:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88791",
-              "perf_code": "88791",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            }
-          ],
-          "vote_average": 6.982,
-          "imdb_id": "tt0293429",
-          "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
-          "writer": "Greg Russo, Oren Uziel, David Callaham"
+          "vote_average": 6.7,
+          "imdb_id": "tt32569057",
+          "overview": "A comedy about a failing pub, a divided community and a grieving family whose lives are changed by brewing real ale and entering the Great British Beer Awards.",
+          "writer": "Nick Moorcroft, Meg Leonard"
         },
         {
           "title": "Shakespeare's OTHELLO (12A)",
@@ -11007,12 +10577,12 @@
           "film_url": "https://redruth.merlincinemas.co.uk/film/98552-mortal-kombat-ii",
           "poster_url": "posters/mortal-kombat-ii.jpg",
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/98552/372c2c29065fa76f1d23c3a5f51181f0.jpg",
-          "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2604281712_2097727795_mortal.png",
+          "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=z6fz_ewTKTs",
           "genres": [
-            "Fantasy",
             "Action",
+            "Fantasy",
             "Thriller"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
@@ -11373,7 +10943,7 @@
           "runtime_min": 110,
           "release_date": "2026-05-08",
           "release_date_text": "8th May, 2026",
-          "ticket_note": "Array",
+          "ticket_note": "Subtitled Performance on Thursday 14th May at 13:00 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -11417,9 +10987,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
+            "Comedy",
             "Family",
-            "Mystery",
-            "Comedy"
+            "Mystery"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -11605,10 +11175,12 @@
               "perf_code": "88856",
               "sold_out": false,
               "tags": [
+                "Subtitles",
                 "Licensed Bar",
                 "Luxury Seating"
               ],
               "tag_keys": [
+                "subtitled",
                 "licensed",
                 "luxury"
               ]
@@ -12059,7 +11631,7 @@
           "cinema_code": "MER_REDR",
           "synopsis": "From one of the UK’s most viral stand-up comedians, in his debut special, Paul Smith: Pablo Live is the show you’ve all been waiting for. Filmed live at the 3Olympia Theatre in Dublin, it’s packed full of Smith’s signature, unflinching, laugh out loud comedy. Featuring a mix of his trademark audience roasting, razor-sharp wit, and hilarious true stories of his everyday life, from spending money in the most irresponsible way possible, why boys are better than girls and raising kids without leading by example, this is the full, unfiltered Paul Smith experience, and you won't want to miss a minute of it.",
           "cast": "Paul Smith",
-          "director": "",
+          "director": "Chris Rowe",
           "runtime_min": 84,
           "release_date": "2026-04-17",
           "release_date_text": "17th April, 2026",
@@ -12105,8 +11677,10 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/107805/04f3ed156e1cb44a57fb74302a8add82.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "",
-          "genres": [],
+          "trailer_url": "https://www.youtube.com/watch?v=L79M1Ros8jw",
+          "genres": [
+            "Live Comedy On Stage"
+          ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
@@ -12157,7 +11731,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/98409/4336e4930cffdeb1e0855637d43dc37d.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=soaKnmT5Fuo",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12659,7 +12233,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/100114/753ac14e83b573fb4150212957027bba.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=IRLP5egY2ck",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12709,7 +12283,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102657/f793a04ebe8b1a2ddb032552444ef133.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=tefo7gk_ixU",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12759,7 +12333,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/99743/cf953054dd5053d492171827a1fa8d2b.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=3zj8bgQjeks",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12909,7 +12483,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/100224/cb4529def06eaef69f7ec33dffc634d8.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=xNzI58JYsDc",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -13084,7 +12658,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/103090/21140db4abd04c481e29d089a897cda1.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=k5hpJJ14qNE",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -13284,7 +12858,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102595/5e72fd40d8042878252629e3c2ef0848.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=SQFtsBTb41I",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14107,7 +13681,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/109416/58fa61def5237e5da46f24cfe1e9e57a.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=ai_Ity6_MOY",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14207,7 +13781,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/109421/4808326ce949d1c7914f6b7bfb671671.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=rxFoVqRmqEA",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14257,7 +13831,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108706/eebdf482ca651edfcc7058754a07aa30.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=qcdzD331aBI",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14459,7 +14033,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105569/53d99b275ee8082e0e04ff8a33c3756e.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=cPKxpXqcXHY",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14560,7 +14134,9 @@
           "event_banner_url": "",
           "is_live_event": true,
           "trailer_url": "",
-          "genres": [],
+          "genres": [
+            "Comedy"
+          ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
@@ -14677,7 +14253,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108670/b8f9569458577fc4ddb58a2ed277ef0d.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=qo2sxu98wBI",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14775,22 +14351,6 @@
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "19:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38020",
-              "perf_code": "38020",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "19:00",
@@ -15001,27 +14561,11 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=R57Y4v5OmzM",
           "genres": [
-            "Drama",
-            "Comedy"
+            "Comedy",
+            "Drama"
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "19:15",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38018",
-              "perf_code": "38018",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "19:15",
@@ -15378,9 +14922,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
+            "Comedy",
             "Family",
-            "Mystery",
-            "Comedy"
+            "Mystery"
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
@@ -15699,19 +15243,19 @@
           "writer": ""
         },
         {
-          "title": "The Magic Faraway Tree (U)",
-          "certificate": "U",
-          "search_title": "The Magic Faraway Tree",
-          "film_slug": "the-magic-faraway-tree",
-          "film_id": "105538",
-          "event_id": "5948",
+          "title": "The Super Mario Galaxy Movie (PG)",
+          "certificate": "PG",
+          "search_title": "The Super Mario Galaxy Movie",
+          "film_slug": "the-super-mario-galaxy-movie",
+          "film_id": "102277",
+          "event_id": "5820",
           "cinema_code": "MER_PENZ",
-          "synopsis": "The Magic Faraway Tree follows Polly, Tim, and their three children - a modern family forced to relocate to the remote English countryside. As they adapt to their new lives, the children discover a magical tree and its extraordinary and eccentric residents including treasured characters Moonface, Silky, Dame Washalot, and Saucepan Man. At the top of the tree, they are transported to spectacular and fantastical lands and, through the joys and challenges of their adventures, the family learn to reconnect and value each other for the first time in years.",
-          "cast": "Claire Foy, Andrew Garfield, Nicola Coughlan",
-          "director": "Ben Gregor",
-          "runtime_min": 110,
-          "release_date": "2026-03-27",
-          "release_date_text": "27th March, 2026",
+          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
+          "cast": "Chris Pratt, Anya Taylor-Joy, Jack Black",
+          "director": "Directors: Aaron Horvath, Michael Jelenic",
+          "runtime_min": 95,
+          "release_date": "2026-04-03",
+          "release_date_text": "3rd April, 2026",
           "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
@@ -15749,27 +15293,27 @@
             "advanced",
             "pfs"
           ],
-          "film_url": "https://penzance.merlincinemas.co.uk/film/105538-the-magic-faraway-tree",
-          "poster_url": "posters/the-magic-faraway-tree.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105538/9d6b4742580c8415602b35b9e463c79e.jpg",
+          "film_url": "https://penzance.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
+          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=PAUEwUhAjzg",
+          "trailer_url": "https://www.youtube.com/watch?v=DDZkObBBV5w",
           "genres": [
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "Action",
+            "Adventure",
+            "Animation"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "16:20",
+              "date": "2026-05-06",
+              "time": "16:30",
               "screen": "Savoy Cinema, Penzance",
               "cinema_name": "Savoy Cinema, Penzance",
               "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59230",
-              "perf_code": "59230",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59231",
+              "perf_code": "59231",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -15784,12 +15328,30 @@
             },
             {
               "date": "2026-05-09",
-              "time": "12:20",
+              "time": "11:20",
               "screen": "Savoy Cinema, Penzance",
               "cinema_name": "Savoy Cinema, Penzance",
               "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=58999",
-              "perf_code": "58999",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59000",
+              "perf_code": "59000",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-09",
+              "time": "15:00",
+              "screen": "Savoy Cinema, Penzance",
+              "cinema_name": "Savoy Cinema, Penzance",
+              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59005",
+              "perf_code": "59005",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -15804,12 +15366,30 @@
             },
             {
               "date": "2026-05-10",
-              "time": "12:20",
+              "time": "11:20",
               "screen": "Savoy Cinema, Penzance",
               "cinema_name": "Savoy Cinema, Penzance",
               "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59022",
-              "perf_code": "59022",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59019",
+              "perf_code": "59019",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-10",
+              "time": "15:00",
+              "screen": "Savoy Cinema, Penzance",
+              "cinema_name": "Savoy Cinema, Penzance",
+              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59021",
+              "perf_code": "59021",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -15823,10 +15403,10 @@
               ]
             }
           ],
-          "vote_average": 6.3,
-          "imdb_id": "tt7734244",
-          "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
-          "writer": "Simon Farnaby"
+          "vote_average": 6.754,
+          "imdb_id": "tt28650488",
+          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
+          "writer": "Matthew Fogel"
         },
         {
           "title": "Michael (12A)",
@@ -15892,42 +15472,6 @@
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "16:45",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59196",
-              "perf_code": "59196",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:30",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59197",
-              "perf_code": "59197",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "16:45",
@@ -16383,42 +15927,6 @@
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-05",
-              "time": "17:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59194",
-              "perf_code": "59194",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-05",
-              "time": "19:45",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59193",
-              "perf_code": "59193",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-06",
               "time": "17:00",
@@ -16896,26 +16404,6 @@
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "17:20",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59195",
-              "perf_code": "59195",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "17:20",
               "screen": "Savoy Cinema, Penzance",
@@ -17102,26 +16590,6 @@
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
             {
-              "date": "2026-05-05",
-              "time": "19:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59198",
-              "perf_code": "59198",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-06",
               "time": "19:00",
               "screen": "Savoy Cinema, Penzance",
@@ -17166,172 +16634,6 @@
           "imdb_id": "tt12042730",
           "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction… but an unexpected friendship means he may not have to do it alone.",
           "writer": "Andy Weir, Drew Goddard"
-        },
-        {
-          "title": "The Super Mario Galaxy Movie (PG)",
-          "certificate": "PG",
-          "search_title": "The Super Mario Galaxy Movie",
-          "film_slug": "the-super-mario-galaxy-movie",
-          "film_id": "102277",
-          "event_id": "5820",
-          "cinema_code": "MER_PENZ",
-          "synopsis": "The Super Mario brothers are back for a cosmic sequel where the fate of the entire galaxy hangs in the balance. Having thwarted Bowser’s previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr, who is determined to liberate his father from captivity and restore the family legacy. Alongside their loyal companion Toad and the celestial protector Rosalina, the brothers travel across the stars to stop the young heir’s crusade, eventually crossing paths with a friendly new ally, Yoshi. Despite the cosmic pressure, these plumbers prove they can handle any leak in the galaxy’s security - because when things get backed up, they always find a way to flush out the competition.",
-          "cast": "Chris Pratt, Anya Taylor-Joy, Jack Black",
-          "director": "Directors: Aaron Horvath, Michael Jelenic",
-          "runtime_min": 95,
-          "release_date": "2026-04-03",
-          "release_date_text": "3rd April, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://penzance.merlincinemas.co.uk/film/102277-the-super-mario-galaxy-movie",
-          "poster_url": "posters/the-super-mario-galaxy-movie.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102277/57305cc186cdf804a45f4395aa3deb43.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=DDZkObBBV5w",
-          "genres": [
-            "Action",
-            "Adventure",
-            "Animation"
-          ],
-          "cinema_name": "Savoy Cinema, Penzance",
-          "showtimes": [
-            {
-              "date": "2026-05-06",
-              "time": "16:30",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59231",
-              "perf_code": "59231",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-09",
-              "time": "11:20",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59000",
-              "perf_code": "59000",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-09",
-              "time": "15:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59005",
-              "perf_code": "59005",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-10",
-              "time": "11:20",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59019",
-              "perf_code": "59019",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-10",
-              "time": "15:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59021",
-              "perf_code": "59021",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            }
-          ],
-          "vote_average": 6.754,
-          "imdb_id": "tt28650488",
-          "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
-          "writer": "Matthew Fogel"
         },
         {
           "title": "Mortal Kombat (15)",
@@ -17391,9 +16693,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=NnjJiwYsT9c",
           "genres": [
-            "Fantasy",
             "Action",
-            "Adventure"
+            "Adventure",
+            "Fantasy"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
@@ -17762,12 +17064,12 @@
           "film_url": "https://penzance.merlincinemas.co.uk/film/98552-mortal-kombat-ii",
           "poster_url": "posters/mortal-kombat-ii.jpg",
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/98552/372c2c29065fa76f1d23c3a5f51181f0.jpg",
-          "event_banner_url": "https://penzance.merlincinemas.co.uk/media/email/2604281712_2097727795_mortal.png",
+          "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=z6fz_ewTKTs",
           "genres": [
-            "Fantasy",
             "Action",
+            "Fantasy",
             "Thriller"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
@@ -18138,9 +17440,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
+            "Comedy",
             "Family",
-            "Mystery",
-            "Comedy"
+            "Mystery"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
@@ -18648,6 +17950,116 @@
           "imdb_id": "tt27613895",
           "overview": "A small goat with big dreams gets a once-in-a-lifetime shot to join the pros and play roarball, a high-intensity, co-ed, full-contact sport dominated by the fastest, fiercest animals in the world.",
           "writer": "Aaron Buchsbaum, Teddy Riley"
+        },
+        {
+          "title": "The Magic Faraway Tree (U)",
+          "certificate": "U",
+          "search_title": "The Magic Faraway Tree",
+          "film_slug": "the-magic-faraway-tree",
+          "film_id": "105538",
+          "event_id": "5948",
+          "cinema_code": "MER_PENZ",
+          "synopsis": "The Magic Faraway Tree follows Polly, Tim, and their three children - a modern family forced to relocate to the remote English countryside. As they adapt to their new lives, the children discover a magical tree and its extraordinary and eccentric residents including treasured characters Moonface, Silky, Dame Washalot, and Saucepan Man. At the top of the tree, they are transported to spectacular and fantastical lands and, through the joys and challenges of their adventures, the family learn to reconnect and value each other for the first time in years.",
+          "cast": "Claire Foy, Andrew Garfield, Nicola Coughlan",
+          "director": "Ben Gregor",
+          "runtime_min": 110,
+          "release_date": "2026-03-27",
+          "release_date_text": "27th March, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://penzance.merlincinemas.co.uk/film/105538-the-magic-faraway-tree",
+          "poster_url": "posters/the-magic-faraway-tree.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105538/9d6b4742580c8415602b35b9e463c79e.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=PAUEwUhAjzg",
+          "genres": [
+            "Family",
+            "Fantasy",
+            "Adventure"
+          ],
+          "cinema_name": "Savoy Cinema, Penzance",
+          "showtimes": [
+            {
+              "date": "2026-05-09",
+              "time": "12:20",
+              "screen": "Savoy Cinema, Penzance",
+              "cinema_name": "Savoy Cinema, Penzance",
+              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=58999",
+              "perf_code": "58999",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-10",
+              "time": "12:20",
+              "screen": "Savoy Cinema, Penzance",
+              "cinema_name": "Savoy Cinema, Penzance",
+              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59022",
+              "perf_code": "59022",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            }
+          ],
+          "vote_average": 6.3,
+          "imdb_id": "tt7734244",
+          "overview": "A modern family relocates to the countryside where the children discover a magical tree with eccentric residents. They're transported to fantastical lands, rekindling their family bond through adventures.",
+          "writer": "Simon Farnaby"
         },
         {
           "title": "Little Trouble Girls (15)",
@@ -19606,7 +19018,7 @@
           "cinema_code": "MER_RITZ",
           "synopsis": "Alan Owen, a descendant of an Atomic Soldier, has fought tirelessly for the rights of those affected by Nuclear Weapons Testing around the world. Through global first hand accounts, we follow Alan on his journey, as he takes on the UK's Ministry of Defence, in a landmark legal battle that seeks recognition and compensation for millions.",
           "cast": "",
-          "director": "",
+          "director": "Daniel Everitt-Lock Writer: Daniel Everitt-Lock",
           "runtime_min": 129,
           "release_date": "2026-03-20",
           "release_date_text": "20th March, 2026",
@@ -20097,7 +19509,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105593/5756361c870dad8e8558e15b0e0fc406.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=FIuR7fjY7pM",
           "genres": [],
           "cinema_name": "The Ritz, Penzance",
           "showtimes": [
@@ -20415,7 +19827,7 @@
           "cinema_code": "MER_RITZ",
           "synopsis": "Join us for a special screening of The Rocky Horror Picture Show with After Party! Fancy dress optional, but encouraged!",
           "cast": "Tim Curry, Susan Sarandon, Barry Bostwick",
-          "director": "",
+          "director": "Jim Sharman",
           "runtime_min": 100,
           "release_date": "2026-07-25",
           "release_date_text": "25th July, 2026",
@@ -20461,7 +19873,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/107904/32bcf45fd266397e96679eafe0a1e913.jpg",
           "event_banner_url": "https://ritz.merlincinemas.co.uk/media/email/2603061455_1476407990_on_screen_banner.png",
           "is_live_event": false,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=4plqh6obZW4",
           "genres": [],
           "cinema_name": "The Ritz, Penzance",
           "showtimes": [
@@ -20560,7 +19972,9 @@
           "event_banner_url": "",
           "is_live_event": true,
           "trailer_url": "",
-          "genres": [],
+          "genres": [
+            "Music"
+          ],
           "cinema_name": "The Ritz, Penzance",
           "showtimes": [
             {
