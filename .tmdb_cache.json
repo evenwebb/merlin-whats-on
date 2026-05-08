@@ -210,7 +210,7 @@
     "director": "Garry Hynes",
     "writer": "John Millington Synge",
     "cast": "Catherine Walsh (Pegeen Mike), Aaron Monaghan (Christopher Mahon), Marie Mullen (Widow Quin), Nick Lee (Shawn Keogh), Eamon Morrissey (Old Mahon), Derry Power (Michael James Flaherty), Marcus Lamb (Philly O'Cullen), Eoin Lynch (Jimmy Farrell), Gemma Reeves (Sara Tansey), Louise Lewis (Honor Blake), Hannah McCabe (Susan Brady)",
-    "cached_at": "2026-05-07T11:02:40.848972"
+    "cached_at": "2026-05-08T10:18:32.781025"
   },
   "nt-live-les-liaisons-dangereuses": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ckJRPZgzxIii9ewSyMhLnhs9azC.jpg",
@@ -1012,7 +1012,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-07T11:03:21.647243"
+    "cached_at": "2026-05-08T10:18:32.971898"
   },
   "our-planet-the-people-my-blood-with-q-a": {
     "poster_url": "",
@@ -1709,5 +1709,57 @@
     "writer": "",
     "cast": "Giles Thomas (Private Francis Francis), Ewan McGregor (Private Mick Hopper), Louise Germaine (Sylvia Berry), Douglas Henshall (Corporal Berry), Peter Jeffrey (Colonel Bernwood), Roy Hudd (Harold Atterbow), Clive Francis (Major Hedges), Nicholas Jones (Major Carter), Nicholas Farrell (Major Church), Maggie Steed (Aunt Vickie), Bernard Hill (Uncle Fred), Bernard Brown (Prime Minister Eden)",
     "cached_at": "2026-05-07T11:03:20.342540"
+  },
+  "a-summer-princess-ball-at-the-ritz": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-08T10:18:33.456145"
+  },
+  "kizamba-at-the-ritz": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-08T10:18:33.968168"
+  },
+  "a-splann-night-at-the-ritz": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-08T10:18:34.470239"
+  },
+  "penzance-musical-theatre-company-presents-elf-the-musical": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-08T10:18:34.998158"
   }
 }
