@@ -210,7 +210,7 @@
     "director": "Garry Hynes",
     "writer": "John Millington Synge",
     "cast": "Catherine Walsh (Pegeen Mike), Aaron Monaghan (Christopher Mahon), Marie Mullen (Widow Quin), Nick Lee (Shawn Keogh), Eamon Morrissey (Old Mahon), Derry Power (Michael James Flaherty), Marcus Lamb (Philly O'Cullen), Eoin Lynch (Jimmy Farrell), Gemma Reeves (Sara Tansey), Louise Lewis (Honor Blake), Hannah McCabe (Susan Brady)",
-    "cached_at": "2026-05-11T11:58:58.525641"
+    "cached_at": "2026-05-12T11:14:13.707882"
   },
   "nt-live-les-liaisons-dangereuses": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ckJRPZgzxIii9ewSyMhLnhs9azC.jpg",
@@ -1012,7 +1012,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-11T11:59:23.963373"
+    "cached_at": "2026-05-12T11:14:14.495706"
   },
   "our-planet-the-people-my-blood-with-q-a": {
     "poster_url": "",
@@ -1774,5 +1774,71 @@
     "writer": "",
     "cast": "",
     "cached_at": "2026-05-11T11:59:26.273314"
+  },
+  "charlie-the-wonderdog": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/whvkL0wzxgKmVbaPontq9NlVd5z.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=uUDfO0Q4sog",
+    "runtime_min": 90,
+    "vote_average": 6.8,
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "imdb_id": "tt29612071",
+    "overview": "Timid 9-year-old Danny teams up with his beloved family dog Charlie, who gets abducted by aliens and returns with superpowers, to thwart a plan by the neighbor's sinister cat Puddy to destroy humanity.",
+    "director": "Shea Wageman",
+    "writer": "Shea Wageman, Steve Ball, Raul Sanchez Inglis",
+    "cast": "Owen Wilson (Charlie (voice)), Dawson Littman (Danny (voice)), Tabitha St. Germain (President Rose (voice)), Sebastian Billingsley-Rodriguez (Alien Prince (voice)), Rhona Rees (Alien Queen (voice)), Anthony Bolognese (Jacob (voice)), Caitlynne Medrek (Kitten (voice)), Emily Delahunty (Emma (voice)), Ruairi MacDonald (Puddy (voice)), Mela Pietropaolo (Madison (voice)), Lindsay Gibson (Judge Gruff (voice)), Jenn Rogan (Sam (voice))",
+    "cached_at": "2026-05-12T11:14:13.504344"
+  },
+  "the-christophers": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/ehoacRcNWpJ5mKkc2UkXOSofwuS.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=42GkXhRVLUQ",
+    "runtime_min": 100,
+    "vote_average": 6.8,
+    "genres": [
+      "Crime",
+      "Comedy"
+    ],
+    "imdb_id": "tt34966562",
+    "overview": "The estranged children of a once-famous artist hire a forger to complete his unfinished works so they can be \"discovered\" and sold after his death.",
+    "director": "Steven Soderbergh",
+    "writer": "Ed Solomon",
+    "cast": "Michaela Coel (Lori Butler), Ian McKellen (Julian Sklar), Jessica Gunning (Sally Sklar), James Corden (Barnaby Sklar), Ferdy Roberts (Owen Appleton), Tilly Botsford (Esme), Lucy McCormick (Lori's Flatmate #1), Le Fil (Lori's Flatmate #2), Daniel Fearn (Locksmith), Dmitri Prokopiev (Food Truck Patron), Dallas Campbell (Art Fight Moderator), Stuart Cooke (Press (uncredited))",
+    "cached_at": "2026-05-12T11:14:13.901010"
+  },
+  "obsession": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/7BYIUIrpdSkz89DTkY5NhaP9Mf5.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=gMC8kkwbIQQ",
+    "runtime_min": 109,
+    "vote_average": 6.5,
+    "genres": [
+      "Horror"
+    ],
+    "imdb_id": "tt37287335",
+    "overview": "After breaking the mysterious \"One Wish Willow\" to win his crush's heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+    "director": "Curry Barker",
+    "writer": "Curry Barker",
+    "cast": "Michael Johnston (Bear), Inde Navarrette (Nikki Freeman), Cooper Tomlinson (Ian), Megan Lawless (Sarah), Andy Richter (Carter), Haley Fitzgerald (Viola), Darin Toonder (Harry), Anthony Pavone (Reggie), Justice (Joe), Anthony Casabianca (Chris), Chloe Breen (Ruthie), Malcolm Kelner (Bartender)",
+    "cached_at": "2026-05-12T11:14:14.087418"
+  },
+  "iron-maiden-burning-ambition": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/yZqhFJDenLfgF1VygOOCNmAdS1P.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=I5Pdnye49wQ",
+    "runtime_min": 105,
+    "vote_average": 7.2,
+    "genres": [
+      "Documentary",
+      "Music"
+    ],
+    "imdb_id": "tt36163614",
+    "overview": "With unprecedented access to the official archives and intimate recollections from the band, both current and past,  Iron Maiden: Burning Ambition invites fans to experience one of the most iconic journeys in music history.  Spanning five decades, this electrifying documentary charts the band’s rise from the pubs of East London to the world’s biggest stadiums. Featuring exclusive interviews with band members and contributors such as Javier Bardem, Lars Ulrich and Chuck D, as well as all-new animated sequences of the band's legendary mascot, Eddie, the film offers a rare and intimate look at Iron Maiden’s uncompromising vision and unwavering connection with their truly global army of fans.",
+    "director": "Malcolm Venville",
+    "writer": "David Teague",
+    "cast": "Steve Harris (Self), Bruce Dickinson (Self), Nicko McBrain (Self), Adrian Smith (Self), Dave Murray (Self), Janick Gers (Self), Blaze Bayley (Self), Rod Smallwood (Self), Chuck D (Self), Simon Gallup (Self), Scott Ian (Self), Tom Morello (Self)",
+    "cached_at": "2026-05-12T11:14:14.282207"
   }
 }
