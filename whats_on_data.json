@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-12T11:13:50Z",
+  "updated_at": "2026-05-13T11:26:23Z",
   "cinemas": {
     "bodmin": {
       "name": "Capitol Cinema, Bodmin",
@@ -70,24 +70,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:15",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50594",
-              "perf_code": "50594",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:15",
@@ -400,7 +382,7 @@
           "runtime_min": 125,
           "release_date": "2026-04-22",
           "release_date_text": "22nd April, 2026",
-          "ticket_note": "Subtitled Performance on Thursday 30th April at 14:00",
+          "ticket_note": "",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -449,42 +431,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:30",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50591",
-              "perf_code": "50591",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:15",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50590",
-              "perf_code": "50590",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:30",
@@ -932,42 +878,6 @@
           ],
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50589",
-              "perf_code": "50589",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:30",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50588",
-              "perf_code": "50588",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:45",
@@ -1419,38 +1329,6 @@
           "cinema_name": "Capitol Cinema, Bodmin",
           "showtimes": [
             {
-              "date": "2026-05-12",
-              "time": "17:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50592",
-              "perf_code": "50592",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:45",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50593",
-              "perf_code": "50593",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
               "date": "2026-05-13",
               "time": "17:00",
               "screen": "Capitol Cinema, Bodmin",
@@ -1659,110 +1537,6 @@
           "imdb_id": "tt17490712",
           "overview": "The fan favorite champions—now joined by Johnny Cage himself—are pitted against one another in the ultimate, no-holds barred, gory battle to defeat the dark rule of Shao Kahn that threatens the very existence of the Earthrealm and its defenders.",
           "writer": "Jeremy Slater"
-        },
-        {
-          "title": "Rose Of Nevada (15)",
-          "certificate": "15",
-          "search_title": "Rose Of Nevada",
-          "film_slug": "rose-of-nevada",
-          "film_id": "108086",
-          "event_id": "6113",
-          "cinema_code": "MER_BODM",
-          "synopsis": "When a fishing boat, the Rose Of Nevada, lost with all hands thirty years ago, mysteriously reappears in the old harbour of a forgotten Cornish village, for those who remember, it's surely a sign. The boat must go out to sea again and maybe then the luck of the devastated village will turn. Young father Nick needs a job to provide for his family and enigmatic newcomer Liam is desperate to escape his past. They join captain Murgey and head out to sea. But when they return, satisfied with their haul, something is amiss - they've slipped back in time to 1993, and the villagers greet them as if they are the original crew.",
-          "cast": "George MacKay (Nick), Callum Turner (Liam), Francis Magee, Edward Rowe, Rosalind Eleazar, Mary Woodvine",
-          "director": "Mark Jenkin",
-          "runtime_min": 115,
-          "release_date": "2026-04-24",
-          "release_date_text": "24th April, 2026",
-          "ticket_note": "Subtitled Performance on Thursday 30th April at 17:00",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://bodmin.merlincinemas.co.uk/film/108086-rose-of-nevada",
-          "poster_url": "posters/rose-of-nevada.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108086/8bed0e29cffba0e33eb075f6508a1283.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=bw371ui9cTk",
-          "genres": [
-            "Science Fiction",
-            "Mystery",
-            "Drama"
-          ],
-          "cinema_name": "Capitol Cinema, Bodmin",
-          "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "19:00",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50628",
-              "perf_code": "50628",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-18",
-              "time": "17:20",
-              "screen": "Capitol Cinema, Bodmin",
-              "cinema_name": "Capitol Cinema, Bodmin",
-              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50722",
-              "perf_code": "50722",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            }
-          ],
-          "vote_average": 0.0,
-          "imdb_id": "tt35674521",
-          "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
-          "writer": "Mark Jenkin"
         },
         {
           "title": "Project Hail Mary (12A)",
@@ -2276,7 +2050,7 @@
           "synopsis": "She changed music. He changed movies. Together they'll reinvent the concert experience. Captured during her sold-out world tour, Billie Eilish - Hit Me Hard And Soft: The Tour brings an innovative new concert experience to the big screen from one of the most celebrated and successful artists of her generation. The film is directed by Academy Award-winners James Cameron and Billie Eilish.",
           "cast": "Billie Eilish (Self), James Cameron (Self), FINNEAS (Self), Maggie Baird (Self)",
           "director": "James Cameron, Billie Eilish",
-          "runtime_min": 115,
+          "runtime_min": 114,
           "release_date": "2026-05-08",
           "release_date_text": "8th May, 2026",
           "ticket_note": "",
@@ -2381,6 +2155,92 @@
           "imdb_id": "tt39018643",
           "overview": "Captured during Billie Eilish's sold-out world tour, a concert experience from one of the most celebrated and successful artists of her generation, presented in immersive 3D.",
           "writer": ""
+        },
+        {
+          "title": "Rose Of Nevada (15)",
+          "certificate": "15",
+          "search_title": "Rose Of Nevada",
+          "film_slug": "rose-of-nevada",
+          "film_id": "108086",
+          "event_id": "6113",
+          "cinema_code": "MER_BODM",
+          "synopsis": "When a fishing boat, the Rose Of Nevada, lost with all hands thirty years ago, mysteriously reappears in the old harbour of a forgotten Cornish village, for those who remember, it's surely a sign. The boat must go out to sea again and maybe then the luck of the devastated village will turn. Young father Nick needs a job to provide for his family and enigmatic newcomer Liam is desperate to escape his past. They join captain Murgey and head out to sea. But when they return, satisfied with their haul, something is amiss - they've slipped back in time to 1993, and the villagers greet them as if they are the original crew.",
+          "cast": "George MacKay (Nick), Callum Turner (Liam), Francis Magee, Edward Rowe, Rosalind Eleazar, Mary Woodvine",
+          "director": "Mark Jenkin",
+          "runtime_min": 115,
+          "release_date": "2026-04-24",
+          "release_date_text": "24th April, 2026",
+          "ticket_note": "",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://bodmin.merlincinemas.co.uk/film/108086-rose-of-nevada",
+          "poster_url": "posters/rose-of-nevada.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108086/8bed0e29cffba0e33eb075f6508a1283.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=bw371ui9cTk",
+          "genres": [
+            "Science Fiction",
+            "Mystery",
+            "Drama"
+          ],
+          "cinema_name": "Capitol Cinema, Bodmin",
+          "showtimes": [
+            {
+              "date": "2026-05-18",
+              "time": "17:20",
+              "screen": "Capitol Cinema, Bodmin",
+              "cinema_name": "Capitol Cinema, Bodmin",
+              "cinema_url": "https://bodmin.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinbodmin.admit-one.eu/?p=tickets&perfCode=50722",
+              "perf_code": "50722",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            }
+          ],
+          "vote_average": 0.0,
+          "imdb_id": "tt35674521",
+          "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
+          "writer": "Mark Jenkin"
         },
         {
           "title": "Star Wars: The Mandalorian And Grogu (12A)",
@@ -2763,7 +2623,7 @@
           ],
           "film_url": "https://bodmin.merlincinemas.co.uk/film/105662-nt-live-les-liaisons-dangereuses",
           "poster_url": "posters/nt-live-les-liaisons-dangereuses.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/9eca39510073a58822075cf5ac5522a3.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/688aa1d0ca78a446c326a47bf8534175.jpg",
           "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=eDi2LJ0GOYw",
@@ -2862,28 +2722,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Comedy",
             "Family",
-            "Mystery"
+            "Mystery",
+            "Comedy"
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:30",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34495",
-              "perf_code": "34495",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:30",
@@ -3018,7 +2862,7 @@
           "runtime_min": 119,
           "release_date": "2026-05-01",
           "release_date_text": "1st May, 2026",
-          "ticket_note": "Array",
+          "ticket_note": "Subtitled Performance on Saturday 16th May at 17:05 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -3062,43 +2906,11 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=R57Y4v5OmzM",
           "genres": [
-            "Comedy",
-            "Drama"
+            "Drama",
+            "Comedy"
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:45",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34492",
-              "perf_code": "34492",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:30",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34493",
-              "perf_code": "34493",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:45",
@@ -3411,7 +3223,7 @@
           "runtime_min": 125,
           "release_date": "2026-04-22",
           "release_date_text": "22nd April, 2026",
-          "ticket_note": "Subtitled Performance on Thursday 30th April at 14:15 Array",
+          "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -3455,28 +3267,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=spOtvnAzBh8",
           "genres": [
-            "Biography",
             "Drama",
-            "Musical"
+            "Musical",
+            "Biography"
           ],
           "cinema_name": "Flora Cinema, Helston",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "19:10",
-              "screen": "Flora Cinema, Helston",
-              "cinema_name": "Flora Cinema, Helston",
-              "cinema_url": "https://helston.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinhelston.admit-one.eu/?p=tickets&perfCode=34494",
-              "perf_code": "34494",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "19:10",
@@ -3691,7 +3487,7 @@
           "runtime_min": 115,
           "release_date": "2026-04-24",
           "release_date_text": "24th April, 2026",
-          "ticket_note": "Subtitled Performance on Thursday 30th April at 16:45 Array",
+          "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -3969,7 +3765,7 @@
           ],
           "film_url": "https://helston.merlincinemas.co.uk/film/105662-nt-live-les-liaisons-dangereuses",
           "poster_url": "posters/nt-live-les-liaisons-dangereuses.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/9eca39510073a58822075cf5ac5522a3.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/688aa1d0ca78a446c326a47bf8534175.jpg",
           "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=eDi2LJ0GOYw",
@@ -4070,46 +3866,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84364",
-              "perf_code": "84364",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "20:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84365",
-              "perf_code": "84365",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:20",
@@ -4372,7 +4128,7 @@
           "runtime_min": 125,
           "release_date": "2026-04-22",
           "release_date_text": "22nd April, 2026",
-          "ticket_note": "Subtitled Performance on Sunday 26th April at 17:40 Subtitled Performance on Thursday 30th April at 14:15 Array",
+          "ticket_note": "Subtitled Performance on Thursday 21st May at 14:35 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -4416,48 +4172,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=spOtvnAzBh8",
           "genres": [
-            "Biography",
             "Drama",
-            "Musical"
+            "Musical",
+            "Biography"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:35",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84363",
-              "perf_code": "84363",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:30",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84362",
-              "perf_code": "84362",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:35",
@@ -4930,7 +4650,7 @@
           "runtime_min": 119,
           "release_date": "2026-05-01",
           "release_date_text": "1st May, 2026",
-          "ticket_note": "Array",
+          "ticket_note": "Subtitled Performance on Thursday 14th May at 16:55 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -4974,47 +4694,11 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=R57Y4v5OmzM",
           "genres": [
-            "Comedy",
-            "Drama"
+            "Drama",
+            "Comedy"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "17:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84361",
-              "perf_code": "84361",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:45",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84360",
-              "perf_code": "84360",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "17:00",
@@ -5479,32 +5163,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Comedy",
             "Family",
-            "Mystery"
+            "Mystery",
+            "Comedy"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "17:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84366",
-              "perf_code": "84366",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "17:20",
@@ -5806,20 +5470,20 @@
           "writer": "Craig Mazin, Leonie Swann"
         },
         {
-          "title": "Rose Of Nevada (15)",
+          "title": "Hokum (15)",
           "certificate": "15",
-          "search_title": "Rose Of Nevada",
-          "film_slug": "rose-of-nevada",
-          "film_id": "108086",
-          "event_id": "6113",
+          "search_title": "Hokum",
+          "film_slug": "hokum",
+          "film_id": "109519",
+          "event_id": "6122",
           "cinema_code": "MER_FALM",
-          "synopsis": "When a fishing boat, the Rose Of Nevada, lost with all hands thirty years ago, mysteriously reappears in the old harbour of a forgotten Cornish village, for those who remember, it's surely a sign. The boat must go out to sea again and maybe then the luck of the devastated village will turn. Young father Nick needs a job to provide for his family and enigmatic newcomer Liam is desperate to escape his past. They join captain Murgey and head out to sea. But when they return, satisfied with their haul, something is amiss - they've slipped back in time to 1993, and the villagers greet them as if they are the original crew.",
-          "cast": "Callum Turner, George MacKay, Edward Rowe",
-          "director": "Mark Jenkin",
-          "runtime_min": 115,
-          "release_date": "2026-04-24",
-          "release_date_text": "24th April, 2026",
-          "ticket_note": "Subtitled Performance on Friday 24th April at 16:30 Subtitled Performance on Thursday 30th April at 19:15 Array",
+          "synopsis": "When reclusive novelist Ohm Bauman retreats to a remote Irish inn to scatter his parents' ashes, the staff's tales of an ancient witch haunting the honeymoon suite take hold of his mind. Soon, disturbing visions and a shocking disappearance draw him into a nightmarish confrontation with the darkest corners of his past.",
+          "cast": "Adam Scott, Peter Coonan, David Wilmot",
+          "director": "Damian Mc Carthy",
+          "runtime_min": 105,
+          "release_date": "2026-05-01",
+          "release_date_text": "1st May, 2026",
+          "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -5856,27 +5520,25 @@
             "advanced",
             "pfs"
           ],
-          "film_url": "https://falmouth.merlincinemas.co.uk/film/108086-rose-of-nevada",
-          "poster_url": "posters/rose-of-nevada.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108086/8bed0e29cffba0e33eb075f6508a1283.jpg",
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/109519-hokum",
+          "poster_url": "posters/hokum.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/109519/e71fc970cda511caeb57890adf876e44.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=bw371ui9cTk",
+          "trailer_url": "https://www.youtube.com/watch?v=x94TNKhMN94",
           "genres": [
-            "Horror",
-            "Mystery",
-            "Sci-Fi"
+            "Horror"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
             {
-              "date": "2026-05-12",
-              "time": "17:40",
+              "date": "2026-05-13",
+              "time": "18:00",
               "screen": "Phoenix Cinema, Falmouth",
               "cinema_name": "Phoenix Cinema, Falmouth",
               "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84369",
-              "perf_code": "84369",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84378",
+              "perf_code": "84378",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -5891,110 +5553,12 @@
             },
             {
               "date": "2026-05-14",
-              "time": "14:15",
+              "time": "20:20",
               "screen": "Phoenix Cinema, Falmouth",
               "cinema_name": "Phoenix Cinema, Falmouth",
               "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84394",
-              "perf_code": "84394",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-14",
-              "time": "16:15",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84391",
-              "perf_code": "84391",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-15",
-              "time": "17:35",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84409",
-              "perf_code": "84409",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-18",
-              "time": "17:35",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84458",
-              "perf_code": "84458",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-20",
-              "time": "17:35",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84477",
-              "perf_code": "84477",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-21",
-              "time": "14:50",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84492",
-              "perf_code": "84492",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84392",
+              "perf_code": "84392",
               "sold_out": false,
               "tags": [
                 "Wheelchair access",
@@ -6008,10 +5572,10 @@
               ]
             }
           ],
-          "vote_average": 0.0,
-          "imdb_id": "tt35674521",
-          "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
-          "writer": "Mark Jenkin"
+          "vote_average": 4.0,
+          "imdb_id": "tt35672862",
+          "overview": "When novelist Ohm Bauman retreats to a remote inn to scatter his parents' ashes, he is consumed by tales of a witch haunting the honeymoon suite. Disturbing visions and a shocking disappearance forces him to confront dark corners of his past.",
+          "writer": "Damian McCarthy"
         },
         {
           "title": "Project Hail Mary (12A)",
@@ -6077,26 +5641,6 @@
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "19:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84367",
-              "perf_code": "84367",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "19:00",
@@ -6266,134 +5810,6 @@
           "writer": "Andy Weir, Drew Goddard"
         },
         {
-          "title": "Hokum (15)",
-          "certificate": "15",
-          "search_title": "Hokum",
-          "film_slug": "hokum",
-          "film_id": "109519",
-          "event_id": "6122",
-          "cinema_code": "MER_FALM",
-          "synopsis": "When reclusive novelist Ohm Bauman retreats to a remote Irish inn to scatter his parents' ashes, the staff's tales of an ancient witch haunting the honeymoon suite take hold of his mind. Soon, disturbing visions and a shocking disappearance draw him into a nightmarish confrontation with the darkest corners of his past.",
-          "cast": "Adam Scott, Peter Coonan, David Wilmot",
-          "director": "Damian Mc Carthy",
-          "runtime_min": 105,
-          "release_date": "2026-05-01",
-          "release_date_text": "1st May, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://falmouth.merlincinemas.co.uk/film/109519-hokum",
-          "poster_url": "posters/hokum.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/109519/e71fc970cda511caeb57890adf876e44.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=x94TNKhMN94",
-          "genres": [
-            "Horror"
-          ],
-          "cinema_name": "Phoenix Cinema, Falmouth",
-          "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "20:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84368",
-              "perf_code": "84368",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-13",
-              "time": "18:00",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84378",
-              "perf_code": "84378",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-14",
-              "time": "20:20",
-              "screen": "Phoenix Cinema, Falmouth",
-              "cinema_name": "Phoenix Cinema, Falmouth",
-              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84392",
-              "perf_code": "84392",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            }
-          ],
-          "vote_average": 4.0,
-          "imdb_id": "tt35672862",
-          "overview": "When novelist Ohm Bauman retreats to a remote inn to scatter his parents' ashes, he is consumed by tales of a witch haunting the honeymoon suite. Disturbing visions and a shocking disappearance forces him to confront dark corners of his past.",
-          "writer": "Damian McCarthy"
-        },
-        {
           "title": "The Drama (15)",
           "certificate": "15",
           "search_title": "The Drama",
@@ -6482,6 +5898,194 @@
           "imdb_id": "tt33071426",
           "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
           "writer": "Kristoffer Borgli"
+        },
+        {
+          "title": "Rose Of Nevada (15)",
+          "certificate": "15",
+          "search_title": "Rose Of Nevada",
+          "film_slug": "rose-of-nevada",
+          "film_id": "108086",
+          "event_id": "6113",
+          "cinema_code": "MER_FALM",
+          "synopsis": "When a fishing boat, the Rose Of Nevada, lost with all hands thirty years ago, mysteriously reappears in the old harbour of a forgotten Cornish village, for those who remember, it's surely a sign. The boat must go out to sea again and maybe then the luck of the devastated village will turn. Young father Nick needs a job to provide for his family and enigmatic newcomer Liam is desperate to escape his past. They join captain Murgey and head out to sea. But when they return, satisfied with their haul, something is amiss - they've slipped back in time to 1993, and the villagers greet them as if they are the original crew.",
+          "cast": "Callum Turner, George MacKay, Edward Rowe",
+          "director": "Mark Jenkin",
+          "runtime_min": 115,
+          "release_date": "2026-04-24",
+          "release_date_text": "24th April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://falmouth.merlincinemas.co.uk/film/108086-rose-of-nevada",
+          "poster_url": "posters/rose-of-nevada.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108086/8bed0e29cffba0e33eb075f6508a1283.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=bw371ui9cTk",
+          "genres": [
+            "Horror",
+            "Mystery",
+            "Sci-Fi"
+          ],
+          "cinema_name": "Phoenix Cinema, Falmouth",
+          "showtimes": [
+            {
+              "date": "2026-05-14",
+              "time": "14:15",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84394",
+              "perf_code": "84394",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-14",
+              "time": "16:15",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84391",
+              "perf_code": "84391",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-15",
+              "time": "17:35",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84409",
+              "perf_code": "84409",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-18",
+              "time": "17:35",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84458",
+              "perf_code": "84458",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-20",
+              "time": "17:35",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84477",
+              "perf_code": "84477",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            },
+            {
+              "date": "2026-05-21",
+              "time": "14:50",
+              "screen": "Phoenix Cinema, Falmouth",
+              "cinema_name": "Phoenix Cinema, Falmouth",
+              "cinema_url": "https://falmouth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinfalmouth.admit-one.eu/?p=tickets&perfCode=84492",
+              "perf_code": "84492",
+              "sold_out": false,
+              "tags": [
+                "Wheelchair access",
+                "Licensed Bar",
+                "Luxury Seating"
+              ],
+              "tag_keys": [
+                "access",
+                "licensed",
+                "luxury"
+              ]
+            }
+          ],
+          "vote_average": 0.0,
+          "imdb_id": "tt35674521",
+          "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
+          "writer": "Mark Jenkin"
         },
         {
           "title": "The Christophers (15)",
@@ -6867,7 +6471,7 @@
           "synopsis": "She changed music. He changed movies. Together they'll reinvent the concert experience. Captured during her sold-out world tour, Billie Eilish - Hit Me Hard And Soft: The Tour brings an innovative new concert experience to the big screen from one of the most celebrated and successful artists of her generation. The film is directed by Academy Award-winners James Cameron and Billie Eilish.",
           "cast": "Billie Eilish",
           "director": "Directors: James Cameron, Billie Eilish",
-          "runtime_min": 115,
+          "runtime_min": 114,
           "release_date": "2026-05-08",
           "release_date_text": "8th May, 2026",
           "ticket_note": "Array",
@@ -7043,9 +6647,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=Xdg35d9TMnE",
           "genres": [
-            "Comedy",
             "Family",
-            "Animation"
+            "Animation",
+            "Comedy"
           ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
@@ -7817,7 +7421,7 @@
           "cinema_code": "MER_FALM",
           "synopsis": "Two multi-award-winning UK hits. One special double-bill screening.",
           "cast": "Eleanor May Blackburn, Michael Kodi Farrow, James Jip",
-          "director": "",
+          "director": "Kevin Short",
           "runtime_min": 85,
           "release_date": "2026-06-03",
           "release_date_text": "3rd June, 2026",
@@ -7863,8 +7467,12 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/110073/1fc852378a38c33674fd428d8b9aa188.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "",
-          "genres": [],
+          "trailer_url": "https://www.youtube.com/watch?v=yYg4Np-i4f0",
+          "genres": [
+            "Music",
+            "Adventure",
+            "Romance"
+          ],
           "cinema_name": "Phoenix Cinema, Falmouth",
           "showtimes": [
             {
@@ -8034,7 +7642,7 @@
           ],
           "film_url": "https://falmouth.merlincinemas.co.uk/film/105662-nt-live-les-liaisons-dangereuses",
           "poster_url": "posters/nt-live-les-liaisons-dangereuses.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/9eca39510073a58822075cf5ac5522a3.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/688aa1d0ca78a446c326a47bf8534175.jpg",
           "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=eDi2LJ0GOYw",
@@ -8200,28 +7808,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Comedy",
             "Family",
-            "Mystery"
+            "Mystery",
+            "Comedy"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:45",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88832",
-              "perf_code": "88832",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:45",
@@ -8492,7 +8084,7 @@
           "runtime_min": 125,
           "release_date": "2026-04-22",
           "release_date_text": "22nd April, 2026",
-          "ticket_note": "Private Luxury Boxes are available for some performances , look out for the balcony icon when hovering over times. Subtitled Performance on Thursday 30th April at 17:35 Subtitled Performance on Thursday 30th April at 20:30 Array",
+          "ticket_note": "Subtitled Performance on Wednesday 13th May at 19:15 Subtitled Performance on Sunday 17th May at 11:55 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -8536,46 +8128,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=spOtvnAzBh8",
           "genres": [
-            "Biography",
             "Drama",
-            "Musical"
+            "Musical",
+            "Biography"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "17:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88827",
-              "perf_code": "88827",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:20",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88826",
-              "perf_code": "88826",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "17:00",
@@ -9014,7 +8572,7 @@
           "runtime_min": 119,
           "release_date": "2026-05-01",
           "release_date_text": "1st May, 2026",
-          "ticket_note": "Array",
+          "ticket_note": "Subtitled Performance on Thursday 14th May at 14:40 Subtitled Performance on Sunday 17th May at 16:35 Private Luxury Boxes are available for some performances , look out for the balcony icon when hovering over times. Subtitled Performance on Thursday 21st May at 19:40 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -9058,43 +8616,11 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=R57Y4v5OmzM",
           "genres": [
-            "Comedy",
-            "Drama"
+            "Drama",
+            "Comedy"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "17:15",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88825",
-              "perf_code": "88825",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "20:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88824",
-              "perf_code": "88824",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "17:15",
@@ -9552,46 +9078,6 @@
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-12",
-              "time": "17:35",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88829",
-              "perf_code": "88829",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "20:15",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88828",
-              "perf_code": "88828",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-13",
               "time": "17:35",
               "screen": "Regal Cinema & Theatre, Redruth",
@@ -9835,7 +9321,7 @@
           "runtime_min": 115,
           "release_date": "2026-04-24",
           "release_date_text": "24th April, 2026",
-          "ticket_note": "Subtitled Performance on Friday 24th April at 19:15 Array",
+          "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -9885,26 +9371,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "18:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88831",
-              "perf_code": "88831",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "18:00",
@@ -10044,6 +9510,171 @@
           "writer": "Mark Jenkin"
         },
         {
+          "title": "Frozen presented by RAMPS (LIVE On Stage)",
+          "certificate": "LIVE On Stage",
+          "search_title": "Frozen presented by RAMPS",
+          "film_slug": "frozen-presented-by-ramps",
+          "film_id": "102656",
+          "event_id": "",
+          "cinema_code": "",
+          "synopsis": "This special screening will be a relaxed performance , designed to create a comfortable and welcoming experience for everyone. The sound will be turned down a little, the lights will stay on low, and guests are free to come and go from the auditorium as needed.",
+          "cast": "Idina Menzel (Elsa (voice)), Kristen Bell (Anna (voice)), Jonathan Groff (Kristoff (voice)), Josh Gad (Olaf (voice)), Livvy Stubenrauch (Young Anna (voice)), Santino Fontana (Hans (voice)), Eva Bella (Young Elsa (voice)), Alan Tudyk (Duke (voice)), Maia Wilson (Bulda (voice)), Ciarán Hinds (Pabbie / Grandpa (voice)), Annie Lopez (Baby Troll (voice)), Annaleigh Ashford (Girl Troll (voice))",
+          "director": "Chris Buck, Jennifer Lee",
+          "runtime_min": 135,
+          "release_date": "",
+          "release_date_text": "",
+          "ticket_note": "",
+          "tag_labels_available": [],
+          "tag_keys_available": [],
+          "film_url": "https://redruth.merlincinemas.co.uk/film/102656-frozen-presented-by-ramps",
+          "poster_url": "posters/frozen-presented-by-ramps.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102656/0da07eef13663d9ac96307e1ab2a1783.jpg",
+          "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2511031537_893969357_relaxed2.png",
+          "is_live_event": true,
+          "trailer_url": "https://www.youtube.com/watch?v=ssVnSg2jwUw",
+          "genres": [
+            "Animation",
+            "Family",
+            "Adventure",
+            "Fantasy"
+          ],
+          "cinema_name": "Regal Cinema & Theatre, Redruth",
+          "showtimes": [
+            {
+              "date": "2026-05-13",
+              "time": "19:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83574",
+              "perf_code": "83574",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Autism Friendly",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "autism",
+                "box"
+              ]
+            },
+            {
+              "date": "2026-05-14",
+              "time": "19:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83575",
+              "perf_code": "83575",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "box"
+              ]
+            },
+            {
+              "date": "2026-05-15",
+              "time": "19:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83576",
+              "perf_code": "83576",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "box"
+              ]
+            },
+            {
+              "date": "2026-05-16",
+              "time": "14:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83577",
+              "perf_code": "83577",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "box"
+              ]
+            },
+            {
+              "date": "2026-05-16",
+              "time": "19:30",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83578",
+              "perf_code": "83578",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "box"
+              ]
+            },
+            {
+              "date": "2026-05-17",
+              "time": "13:00",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83579",
+              "perf_code": "83579",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "box"
+              ]
+            },
+            {
+              "date": "2026-05-17",
+              "time": "17:00",
+              "screen": "Regal Cinema & Theatre, Redruth",
+              "cinema_name": "Regal Cinema & Theatre, Redruth",
+              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83580",
+              "perf_code": "83580",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar",
+                "Private Box"
+              ],
+              "tag_keys": [
+                "licensed",
+                "box"
+              ]
+            }
+          ],
+          "vote_average": 7.248,
+          "imdb_id": "tt2294629",
+          "overview": "Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. Fate takes her on a dangerous journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.",
+          "writer": "Jennifer Lee, Chris Buck, Shane Morris"
+        },
+        {
           "title": "Project Hail Mary (12A)",
           "certificate": "12A",
           "search_title": "Project Hail Mary",
@@ -10057,7 +9688,7 @@
           "runtime_min": 155,
           "release_date": "2026-03-20",
           "release_date_text": "20th March, 2026",
-          "ticket_note": "Array",
+          "ticket_note": "Subtitled Performance on Thursday 14th May at 19:15 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -10107,24 +9738,6 @@
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "19:45",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88833",
-              "perf_code": "88833",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "19:45",
@@ -10370,26 +9983,6 @@
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
-              "date": "2026-05-12",
-              "time": "20:35",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=88830",
-              "perf_code": "88830",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-13",
               "time": "20:35",
               "screen": "Regal Cinema & Theatre, Redruth",
@@ -10432,171 +10025,6 @@
           "imdb_id": "tt35672862",
           "overview": "When novelist Ohm Bauman retreats to a remote inn to scatter his parents' ashes, he is consumed by tales of a witch haunting the honeymoon suite. Disturbing visions and a shocking disappearance forces him to confront dark corners of his past.",
           "writer": "Damian McCarthy"
-        },
-        {
-          "title": "Frozen presented by RAMPS (LIVE On Stage)",
-          "certificate": "LIVE On Stage",
-          "search_title": "Frozen presented by RAMPS",
-          "film_slug": "frozen-presented-by-ramps",
-          "film_id": "102656",
-          "event_id": "",
-          "cinema_code": "",
-          "synopsis": "This special screening will be a relaxed performance , designed to create a comfortable and welcoming experience for everyone. The sound will be turned down a little, the lights will stay on low, and guests are free to come and go from the auditorium as needed.",
-          "cast": "Idina Menzel (Elsa (voice)), Kristen Bell (Anna (voice)), Jonathan Groff (Kristoff (voice)), Josh Gad (Olaf (voice)), Livvy Stubenrauch (Young Anna (voice)), Santino Fontana (Hans (voice)), Eva Bella (Young Elsa (voice)), Alan Tudyk (Duke (voice)), Maia Wilson (Bulda (voice)), Ciarán Hinds (Pabbie / Grandpa (voice)), Annie Lopez (Baby Troll (voice)), Annaleigh Ashford (Girl Troll (voice))",
-          "director": "Chris Buck, Jennifer Lee",
-          "runtime_min": 135,
-          "release_date": "",
-          "release_date_text": "",
-          "ticket_note": "",
-          "tag_labels_available": [],
-          "tag_keys_available": [],
-          "film_url": "https://redruth.merlincinemas.co.uk/film/102656-frozen-presented-by-ramps",
-          "poster_url": "posters/frozen-presented-by-ramps.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102656/0da07eef13663d9ac96307e1ab2a1783.jpg",
-          "event_banner_url": "https://redruth.merlincinemas.co.uk/media/email/2511031537_893969357_relaxed2.png",
-          "is_live_event": true,
-          "trailer_url": "https://www.youtube.com/watch?v=ssVnSg2jwUw",
-          "genres": [
-            "Animation",
-            "Family",
-            "Adventure",
-            "Fantasy"
-          ],
-          "cinema_name": "Regal Cinema & Theatre, Redruth",
-          "showtimes": [
-            {
-              "date": "2026-05-13",
-              "time": "19:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83574",
-              "perf_code": "83574",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Autism Friendly",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "autism",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-14",
-              "time": "19:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83575",
-              "perf_code": "83575",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-15",
-              "time": "19:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83576",
-              "perf_code": "83576",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-16",
-              "time": "14:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83577",
-              "perf_code": "83577",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-16",
-              "time": "19:30",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83578",
-              "perf_code": "83578",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-17",
-              "time": "13:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83579",
-              "perf_code": "83579",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            },
-            {
-              "date": "2026-05-17",
-              "time": "17:00",
-              "screen": "Regal Cinema & Theatre, Redruth",
-              "cinema_name": "Regal Cinema & Theatre, Redruth",
-              "cinema_url": "https://redruth.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinredruth.admit-one.eu/?p=tickets&perfCode=83580",
-              "perf_code": "83580",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar",
-                "Private Box"
-              ],
-              "tag_keys": [
-                "licensed",
-                "box"
-              ]
-            }
-          ],
-          "vote_average": 7.248,
-          "imdb_id": "tt2294629",
-          "overview": "Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. Fate takes her on a dangerous journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.",
-          "writer": "Jennifer Lee, Chris Buck, Shane Morris"
         },
         {
           "title": "Obsession (18)",
@@ -11128,9 +10556,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=Xdg35d9TMnE",
           "genres": [
-            "Comedy",
             "Family",
-            "Animation"
+            "Animation",
+            "Comedy"
           ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -11341,7 +10769,7 @@
           "synopsis": "She changed music. He changed movies. Together they'll reinvent the concert experience. Captured during her sold-out world tour, Billie Eilish - Hit Me Hard And Soft: The Tour brings an innovative new concert experience to the big screen from one of the most celebrated and successful artists of her generation. The film is directed by Academy Award-winners James Cameron and Billie Eilish.",
           "cast": "Billie Eilish",
           "director": "Directors: James Cameron, Billie Eilish",
-          "runtime_min": 115,
+          "runtime_min": 114,
           "release_date": "2026-05-08",
           "release_date_text": "8th May, 2026",
           "ticket_note": "Array",
@@ -11612,7 +11040,7 @@
           "cinema_code": "MER_REDR",
           "synopsis": "From one of the UK’s most viral stand-up comedians, in his debut special, Paul Smith: Pablo Live is the show you’ve all been waiting for. Filmed live at the 3Olympia Theatre in Dublin, it’s packed full of Smith’s signature, unflinching, laugh out loud comedy. Featuring a mix of his trademark audience roasting, razor-sharp wit, and hilarious true stories of his everyday life, from spending money in the most irresponsible way possible, why boys are better than girls and raising kids without leading by example, this is the full, unfiltered Paul Smith experience, and you won't want to miss a minute of it.",
           "cast": "Paul Smith",
-          "director": "",
+          "director": "Chris Rowe",
           "runtime_min": 84,
           "release_date": "2026-04-17",
           "release_date_text": "17th April, 2026",
@@ -11658,8 +11086,10 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/107805/04f3ed156e1cb44a57fb74302a8add82.jpg",
           "event_banner_url": "",
           "is_live_event": false,
-          "trailer_url": "",
-          "genres": [],
+          "trailer_url": "https://www.youtube.com/watch?v=L79M1Ros8jw",
+          "genres": [
+            "Live Comedy On Stage"
+          ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
@@ -11710,7 +11140,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/98409/4336e4930cffdeb1e0855637d43dc37d.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=soaKnmT5Fuo",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12313,7 +11743,7 @@
           ],
           "film_url": "https://redruth.merlincinemas.co.uk/film/105662-nt-live-les-liaisons-dangereuses",
           "poster_url": "posters/nt-live-les-liaisons-dangereuses.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/9eca39510073a58822075cf5ac5522a3.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/688aa1d0ca78a446c326a47bf8534175.jpg",
           "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=eDi2LJ0GOYw",
@@ -12370,7 +11800,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/100114/753ac14e83b573fb4150212957027bba.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=IRLP5egY2ck",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12420,7 +11850,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102657/f793a04ebe8b1a2ddb032552444ef133.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=tefo7gk_ixU",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12470,7 +11900,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/99743/cf953054dd5053d492171827a1fa8d2b.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=3zj8bgQjeks",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12620,7 +12050,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/100224/cb4529def06eaef69f7ec33dffc634d8.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=xNzI58JYsDc",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12795,7 +12225,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/103090/21140db4abd04c481e29d089a897cda1.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=k5hpJJ14qNE",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -12995,7 +12425,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/102595/5e72fd40d8042878252629e3c2ef0848.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=SQFtsBTb41I",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -13818,7 +13248,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/109416/58fa61def5237e5da46f24cfe1e9e57a.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=ai_Ity6_MOY",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -13918,7 +13348,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/109421/4808326ce949d1c7914f6b7bfb671671.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=rxFoVqRmqEA",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -13968,7 +13398,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108706/eebdf482ca651edfcc7058754a07aa30.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=qcdzD331aBI",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14170,7 +13600,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105569/53d99b275ee8082e0e04ff8a33c3756e.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=cPKxpXqcXHY",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14321,7 +13751,9 @@
           "event_banner_url": "",
           "is_live_event": true,
           "trailer_url": "",
-          "genres": [],
+          "genres": [
+            "Comedy"
+          ],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
             {
@@ -14525,7 +13957,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108670/b8f9569458577fc4ddb58a2ed277ef0d.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=qo2sxu98wBI",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14575,7 +14007,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/110086/6351ff1f504d20e6389b3f57da5c946d.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=Db2HQOaDDGY",
           "genres": [],
           "cinema_name": "Regal Cinema & Theatre, Redruth",
           "showtimes": [
@@ -14774,28 +14206,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Comedy",
             "Family",
-            "Mystery"
+            "Mystery",
+            "Comedy"
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:30",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38055",
-              "perf_code": "38055",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:30",
@@ -14972,43 +14388,11 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=R57Y4v5OmzM",
           "genres": [
-            "Comedy",
-            "Drama"
+            "Drama",
+            "Comedy"
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:45",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38054",
-              "perf_code": "38054",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:30",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38053",
-              "perf_code": "38053",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:45",
@@ -15262,6 +14646,140 @@
           "writer": "Aline Brosh McKenna"
         },
         {
+          "title": "Rose Of Nevada (15)",
+          "certificate": "15",
+          "search_title": "Rose Of Nevada",
+          "film_slug": "rose-of-nevada",
+          "film_id": "108086",
+          "event_id": "6113",
+          "cinema_code": "MER_STIV",
+          "synopsis": "When a fishing boat, the Rose Of Nevada, lost with all hands thirty years ago, mysteriously reappears in the old harbour of a forgotten Cornish village, for those who remember, it's surely a sign. The boat must go out to sea again and maybe then the luck of the devastated village will turn. Young father Nick needs a job to provide for his family and enigmatic newcomer Liam is desperate to escape his past. They join captain Murgey and head out to sea. But when they return, satisfied with their haul, something is amiss - they've slipped back in time to 1993, and the villagers greet them as if they are the original crew.",
+          "cast": "Callum Turner, George MacKay, Edward Rowe",
+          "director": "Mark Jenkin",
+          "runtime_min": 115,
+          "release_date": "2026-04-24",
+          "release_date_text": "24th April, 2026",
+          "ticket_note": "Array",
+          "tag_labels_available": [
+            "3D",
+            "Subtitles",
+            "Audio Description",
+            "Hard of Hearing",
+            "Mini Merlins",
+            "Silver Spoon",
+            "Parent & Baby",
+            "Autism Friendly",
+            "Wheelchair access",
+            "Licensed Bar",
+            "Luxury Seating",
+            "No Free Passes",
+            "Private Box",
+            "Adults Only 18+",
+            "Advance Screening",
+            "Film Society"
+          ],
+          "tag_keys_available": [
+            "3d",
+            "subtitled",
+            "audio",
+            "hoh",
+            "mm",
+            "ss",
+            "baby",
+            "autism",
+            "access",
+            "licensed",
+            "luxury",
+            "fls",
+            "box",
+            "18",
+            "advanced",
+            "pfs"
+          ],
+          "film_url": "https://st-ives.merlincinemas.co.uk/film/108086-rose-of-nevada",
+          "poster_url": "posters/rose-of-nevada.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108086/8bed0e29cffba0e33eb075f6508a1283.jpg",
+          "event_banner_url": "",
+          "is_live_event": false,
+          "trailer_url": "https://www.youtube.com/watch?v=bw371ui9cTk",
+          "genres": [
+            "Horror",
+            "Mystery",
+            "Sci-Fi"
+          ],
+          "cinema_name": "Royal Cinema, St. Ives",
+          "showtimes": [
+            {
+              "date": "2026-05-13",
+              "time": "19:00",
+              "screen": "Royal Cinema, St. Ives",
+              "cinema_name": "Royal Cinema, St. Ives",
+              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38071",
+              "perf_code": "38071",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-14",
+              "time": "19:00",
+              "screen": "Royal Cinema, St. Ives",
+              "cinema_name": "Royal Cinema, St. Ives",
+              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38070",
+              "perf_code": "38070",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-19",
+              "time": "19:00",
+              "screen": "Royal Cinema, St. Ives",
+              "cinema_name": "Royal Cinema, St. Ives",
+              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38102",
+              "perf_code": "38102",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            },
+            {
+              "date": "2026-05-20",
+              "time": "19:00",
+              "screen": "Royal Cinema, St. Ives",
+              "cinema_name": "Royal Cinema, St. Ives",
+              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
+              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38103",
+              "perf_code": "38103",
+              "sold_out": false,
+              "tags": [
+                "Licensed Bar"
+              ],
+              "tag_keys": [
+                "licensed"
+              ]
+            }
+          ],
+          "vote_average": 0.0,
+          "imdb_id": "tt35674521",
+          "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
+          "writer": "Mark Jenkin"
+        },
+        {
           "title": "Michael (12A)",
           "certificate": "12A",
           "search_title": "Michael",
@@ -15319,28 +14837,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=spOtvnAzBh8",
           "genres": [
-            "Biography",
             "Drama",
-            "Musical"
+            "Musical",
+            "Biography"
           ],
           "cinema_name": "Royal Cinema, St. Ives",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "19:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38056",
-              "perf_code": "38056",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-15",
               "time": "19:20",
@@ -15510,140 +15012,6 @@
           "writer": "John Logan"
         },
         {
-          "title": "Rose Of Nevada (15)",
-          "certificate": "15",
-          "search_title": "Rose Of Nevada",
-          "film_slug": "rose-of-nevada",
-          "film_id": "108086",
-          "event_id": "6113",
-          "cinema_code": "MER_STIV",
-          "synopsis": "When a fishing boat, the Rose Of Nevada, lost with all hands thirty years ago, mysteriously reappears in the old harbour of a forgotten Cornish village, for those who remember, it's surely a sign. The boat must go out to sea again and maybe then the luck of the devastated village will turn. Young father Nick needs a job to provide for his family and enigmatic newcomer Liam is desperate to escape his past. They join captain Murgey and head out to sea. But when they return, satisfied with their haul, something is amiss - they've slipped back in time to 1993, and the villagers greet them as if they are the original crew.",
-          "cast": "Callum Turner, George MacKay, Edward Rowe",
-          "director": "Mark Jenkin",
-          "runtime_min": 115,
-          "release_date": "2026-04-24",
-          "release_date_text": "24th April, 2026",
-          "ticket_note": "Array",
-          "tag_labels_available": [
-            "3D",
-            "Subtitles",
-            "Audio Description",
-            "Hard of Hearing",
-            "Mini Merlins",
-            "Silver Spoon",
-            "Parent & Baby",
-            "Autism Friendly",
-            "Wheelchair access",
-            "Licensed Bar",
-            "Luxury Seating",
-            "No Free Passes",
-            "Private Box",
-            "Adults Only 18+",
-            "Advance Screening",
-            "Film Society"
-          ],
-          "tag_keys_available": [
-            "3d",
-            "subtitled",
-            "audio",
-            "hoh",
-            "mm",
-            "ss",
-            "baby",
-            "autism",
-            "access",
-            "licensed",
-            "luxury",
-            "fls",
-            "box",
-            "18",
-            "advanced",
-            "pfs"
-          ],
-          "film_url": "https://st-ives.merlincinemas.co.uk/film/108086-rose-of-nevada",
-          "poster_url": "posters/rose-of-nevada.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/108086/8bed0e29cffba0e33eb075f6508a1283.jpg",
-          "event_banner_url": "",
-          "is_live_event": false,
-          "trailer_url": "https://www.youtube.com/watch?v=bw371ui9cTk",
-          "genres": [
-            "Horror",
-            "Mystery",
-            "Sci-Fi"
-          ],
-          "cinema_name": "Royal Cinema, St. Ives",
-          "showtimes": [
-            {
-              "date": "2026-05-13",
-              "time": "19:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38071",
-              "perf_code": "38071",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-14",
-              "time": "19:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38070",
-              "perf_code": "38070",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-19",
-              "time": "19:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38102",
-              "perf_code": "38102",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-20",
-              "time": "19:00",
-              "screen": "Royal Cinema, St. Ives",
-              "cinema_name": "Royal Cinema, St. Ives",
-              "cinema_url": "https://st-ives.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinstives.admit-one.eu/?p=tickets&perfCode=38103",
-              "perf_code": "38103",
-              "sold_out": false,
-              "tags": [
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "licensed"
-              ]
-            }
-          ],
-          "vote_average": 0.0,
-          "imdb_id": "tt35674521",
-          "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
-          "writer": "Mark Jenkin"
-        },
-        {
           "title": "Star Wars: The Mandalorian And Grogu (12A)",
           "certificate": "12A",
           "search_title": "Star Wars: The Mandalorian And Grogu",
@@ -15776,32 +15144,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=kXUZWOzgZN8",
           "genres": [
-            "Comedy",
             "Family",
-            "Mystery"
+            "Mystery",
+            "Comedy"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:15",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59251",
-              "perf_code": "59251",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:15",
@@ -16060,7 +15408,7 @@
           "runtime_min": 125,
           "release_date": "2026-04-22",
           "release_date_text": "22nd April, 2026",
-          "ticket_note": "Subtitled Performance on Thursday 30th April at 14:00 Array",
+          "ticket_note": "Subtitled Performance on Thursday 21st May at 14:35 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -16104,48 +15452,12 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=spOtvnAzBh8",
           "genres": [
-            "Biography",
             "Drama",
-            "Musical"
+            "Musical",
+            "Biography"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:30",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59253",
-              "perf_code": "59253",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:20",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59254",
-              "perf_code": "59254",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:30",
@@ -16572,7 +15884,7 @@
           "runtime_min": 119,
           "release_date": "2026-05-01",
           "release_date_text": "1st May, 2026",
-          "ticket_note": "Array",
+          "ticket_note": "Subtitled Performance on Thursday 14th May at 16:55 Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -16616,47 +15928,11 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=R57Y4v5OmzM",
           "genres": [
-            "Comedy",
-            "Drama"
+            "Drama",
+            "Comedy"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "16:45",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59247",
-              "perf_code": "59247",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:35",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59248",
-              "perf_code": "59248",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "16:45",
@@ -17128,46 +16404,6 @@
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
             {
-              "date": "2026-05-12",
-              "time": "17:10",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59249",
-              "perf_code": "59249",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
-              "date": "2026-05-12",
-              "time": "19:50",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59250",
-              "perf_code": "59250",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
-            {
               "date": "2026-05-13",
               "time": "17:10",
               "screen": "Savoy Cinema, Penzance",
@@ -17411,7 +16647,7 @@
           "runtime_min": 115,
           "release_date": "2026-04-24",
           "release_date_text": "24th April, 2026",
-          "ticket_note": "Subtitled Performance on Wednesday 29th April at 16:45 Array",
+          "ticket_note": "Array",
           "tag_labels_available": [
             "3D",
             "Subtitles",
@@ -17461,26 +16697,6 @@
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
-            {
-              "date": "2026-05-12",
-              "time": "19:00",
-              "screen": "Savoy Cinema, Penzance",
-              "cinema_name": "Savoy Cinema, Penzance",
-              "cinema_url": "https://penzance.merlincinemas.co.uk/?forcechoice=true",
-              "booking_url": "https://merlinpenzance.admit-one.eu/?p=tickets&perfCode=59281",
-              "perf_code": "59281",
-              "sold_out": false,
-              "tags": [
-                "Wheelchair access",
-                "Licensed Bar",
-                "Luxury Seating"
-              ],
-              "tag_keys": [
-                "access",
-                "licensed",
-                "luxury"
-              ]
-            },
             {
               "date": "2026-05-13",
               "time": "19:00",
@@ -18028,9 +17244,9 @@
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=Xdg35d9TMnE",
           "genres": [
-            "Comedy",
             "Family",
-            "Animation"
+            "Animation",
+            "Comedy"
           ],
           "cinema_name": "Savoy Cinema, Penzance",
           "showtimes": [
@@ -18181,7 +17397,7 @@
           "synopsis": "She changed music. He changed movies. Together they'll reinvent the concert experience. Captured during her sold-out world tour, Billie Eilish - Hit Me Hard And Soft: The Tour brings an innovative new concert experience to the big screen from one of the most celebrated and successful artists of her generation. The film is directed by Academy Award-winners James Cameron and Billie Eilish.",
           "cast": "Billie Eilish",
           "director": "Directors: James Cameron, Billie Eilish",
-          "runtime_min": 115,
+          "runtime_min": 114,
           "release_date": "2026-05-08",
           "release_date_text": "8th May, 2026",
           "ticket_note": "Array",
@@ -18821,7 +18037,7 @@
           ],
           "film_url": "https://penzance.merlincinemas.co.uk/film/105662-nt-live-les-liaisons-dangereuses",
           "poster_url": "posters/nt-live-les-liaisons-dangereuses.jpg",
-          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/9eca39510073a58822075cf5ac5522a3.jpg",
+          "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105662/688aa1d0ca78a446c326a47bf8534175.jpg",
           "event_banner_url": "",
           "is_live_event": false,
           "trailer_url": "https://www.youtube.com/watch?v=eDi2LJ0GOYw",
@@ -19374,7 +18590,7 @@
           "cinema_code": "MER_RITZ",
           "synopsis": "Alan Owen, a descendant of an Atomic Soldier, has fought tirelessly for the rights of those affected by Nuclear Weapons Testing around the world. Through global first hand accounts, we follow Alan on his journey, as he takes on the UK's Ministry of Defence, in a landmark legal battle that seeks recognition and compensation for millions.",
           "cast": "",
-          "director": "",
+          "director": "Daniel Everitt-Lock Writer: Daniel Everitt-Lock",
           "runtime_min": 129,
           "release_date": "2026-03-20",
           "release_date_text": "20th March, 2026",
@@ -19963,7 +19179,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/105593/5756361c870dad8e8558e15b0e0fc406.jpg",
           "event_banner_url": "",
           "is_live_event": true,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=FIuR7fjY7pM",
           "genres": [],
           "cinema_name": "The Ritz, Penzance",
           "showtimes": [
@@ -20231,7 +19447,7 @@
           "film_id": "106166",
           "event_id": "",
           "cinema_code": "",
-          "synopsis": "",
+          "synopsis": "Get ready for an unforgettable night of exceptional live music as Celtic Nights takes over the stage.",
           "cast": "",
           "director": "",
           "runtime_min": 140,
@@ -20281,7 +19497,7 @@
           "cinema_code": "MER_RITZ",
           "synopsis": "Join us for a special screening of The Rocky Horror Picture Show with After Party! Fancy dress optional, but encouraged!",
           "cast": "Tim Curry, Susan Sarandon, Barry Bostwick",
-          "director": "",
+          "director": "Jim Sharman",
           "runtime_min": 100,
           "release_date": "2026-07-25",
           "release_date_text": "25th July, 2026",
@@ -20327,7 +19543,7 @@
           "site_image_url": "https://www.merlincinemas.co.uk/media/film_images/107904/32bcf45fd266397e96679eafe0a1e913.jpg",
           "event_banner_url": "https://ritz.merlincinemas.co.uk/media/email/2603061455_1476407990_on_screen_banner.png",
           "is_live_event": false,
-          "trailer_url": "",
+          "trailer_url": "https://www.youtube.com/watch?v=4plqh6obZW4",
           "genres": [],
           "cinema_name": "The Ritz, Penzance",
           "showtimes": [
@@ -20510,7 +19726,9 @@
           "event_banner_url": "",
           "is_live_event": true,
           "trailer_url": "",
-          "genres": [],
+          "genres": [
+            "Music"
+          ],
           "cinema_name": "The Ritz, Penzance",
           "showtimes": [
             {
@@ -20774,7 +19992,9 @@
           "event_banner_url": "",
           "is_live_event": true,
           "trailer_url": "",
-          "genres": [],
+          "genres": [
+            "Musical"
+          ],
           "cinema_name": "The Ritz, Penzance",
           "showtimes": [
             {
