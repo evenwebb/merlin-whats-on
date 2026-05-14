@@ -210,7 +210,7 @@
     "director": "Garry Hynes",
     "writer": "John Millington Synge",
     "cast": "Catherine Walsh (Pegeen Mike), Aaron Monaghan (Christopher Mahon), Marie Mullen (Widow Quin), Nick Lee (Shawn Keogh), Eamon Morrissey (Old Mahon), Derry Power (Michael James Flaherty), Marcus Lamb (Philly O'Cullen), Eoin Lynch (Jimmy Farrell), Gemma Reeves (Sara Tansey), Louise Lewis (Honor Blake), Hannah McCabe (Susan Brady)",
-    "cached_at": "2026-05-13T11:26:59.461543"
+    "cached_at": "2026-05-14T11:10:22.909679"
   },
   "nt-live-les-liaisons-dangereuses": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ckJRPZgzxIii9ewSyMhLnhs9azC.jpg",
@@ -1012,7 +1012,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-13T11:27:09.348058"
+    "cached_at": "2026-05-14T11:10:23.158305"
   },
   "our-planet-the-people-my-blood-with-q-a": {
     "poster_url": "",
@@ -1840,5 +1840,18 @@
     "writer": "David Teague",
     "cast": "Steve Harris (Self), Bruce Dickinson (Self), Nicko McBrain (Self), Adrian Smith (Self), Dave Murray (Self), Janick Gers (Self), Blaze Bayley (Self), Rod Smallwood (Self), Chuck D (Self), Simon Gallup (Self), Scott Ian (Self), Tom Morello (Self)",
     "cached_at": "2026-05-12T11:14:14.282207"
+  },
+  "the-cornish-cheerleading-and-dance-showcase": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-14T11:10:23.090926"
   }
 }
