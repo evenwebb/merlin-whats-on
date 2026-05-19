@@ -210,7 +210,7 @@
     "director": "Garry Hynes",
     "writer": "John Millington Synge",
     "cast": "Catherine Walsh (Pegeen Mike), Aaron Monaghan (Christopher Mahon), Marie Mullen (Widow Quin), Nick Lee (Shawn Keogh), Eamon Morrissey (Old Mahon), Derry Power (Michael James Flaherty), Marcus Lamb (Philly O'Cullen), Eoin Lynch (Jimmy Farrell), Gemma Reeves (Sara Tansey), Louise Lewis (Honor Blake), Hannah McCabe (Susan Brady)",
-    "cached_at": "2026-05-18T12:22:45.611373"
+    "cached_at": "2026-05-19T11:55:45.787992"
   },
   "nt-live-les-liaisons-dangereuses": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ckJRPZgzxIii9ewSyMhLnhs9azC.jpg",
@@ -1012,7 +1012,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-18T12:22:56.260188"
+    "cached_at": "2026-05-19T11:55:46.062133"
   },
   "our-planet-the-people-my-blood-with-q-a": {
     "poster_url": "",
@@ -1866,5 +1866,50 @@
     "writer": "",
     "cast": "",
     "cached_at": "2026-05-18T12:22:47.756481"
+  },
+  "finding-emily": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/5lkaeLncVGSdBWslQBclJwPw23f.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=-OGuJf70S0s",
+    "runtime_min": 110,
+    "vote_average": 0.0,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "imdb_id": "tt32499466",
+    "overview": "When a lovesick musician is given the wrong number for his dream girl, he teams up with a driven psychology student to find her. Together, they spark a hilarious campus-wide frenzy that tests their own hearts and ambitions along the way.",
+    "director": "Alicia MacDonald",
+    "writer": "Rachel Hirons",
+    "cast": "Spike Fearn (Owen), Angourie Rice (Emily), Yali Topol Margalith (Emily Palmer), Ella Maisy Purvis (Meg), Nadia Parkes (Laura Lewis), Anthony J. Abraham (Kyle), Cora Kirk (Anna), Jack Riddiford (Matt), Minnie Driver (Dean), Kat Ronney (Emily Thewlis), Jessica Grundle (Emily), Faye Campbell (Emily Dixon)",
+    "cached_at": "2026-05-19T11:55:45.818357"
+  },
+  "passenger": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=Htd_QFC3fP4",
+    "runtime_min": 94,
+    "vote_average": 10.0,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "imdb_id": "tt33763941",
+    "overview": "After a young couple witnesses a gruesome highway accident, they soon realize they did not leave the crash scene alone, as a demonic presence called the Passenger that won't stop until it claims them both turns their van life adventure into a nightmare.",
+    "director": "André Øvredal",
+    "writer": "T. W. Burgess, Zachary Donohue",
+    "cast": "Lou Llobell (Maddie), Jacob Scipio (Tyler), Melissa Leo (Diana), Joseph Lopez (The Passenger), Tony Doupe (Preacher), Bonni Dichone (Diner Waitress), Devielle Johnson (Neighborhood Volunteer), Jessica Cruz (Diner Customer), Miles Fowler, Alan Trong",
+    "cached_at": "2026-05-19T11:55:45.855110"
+  },
+  "the-adventures-of-priscilla-queen-of-the-desert-with-redruth-pride": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-19T11:55:45.976220"
   }
 }
