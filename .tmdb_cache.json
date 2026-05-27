@@ -2,7 +2,7 @@
   "nt-live-the-playboy-of-the-western-world": {
     "poster_url": "https://image.tmdb.org/t/p/w342/3ovkp9kQVcOWESK9oe5J0QEDyYZ.jpg",
     "trailer_url": "",
-    "runtime_min": 155,
+    "runtime_min": 150,
     "vote_average": 0.0,
     "genres": [],
     "imdb_id": "",
@@ -10,7 +10,7 @@
     "director": "Garry Hynes",
     "writer": "John Millington Synge",
     "cast": "Catherine Walsh (Pegeen Mike), Aaron Monaghan (Christopher Mahon), Marie Mullen (Widow Quin), Nick Lee (Shawn Keogh), Eamon Morrissey (Old Mahon), Derry Power (Michael James Flaherty), Marcus Lamb (Philly O'Cullen), Eoin Lynch (Jimmy Farrell), Gemma Reeves (Sara Tansey), Louise Lewis (Honor Blake), Hannah McCabe (Susan Brady)",
-    "cached_at": "2026-05-25T12:21:07.607839"
+    "cached_at": "2026-05-27T12:14:46.347965"
   },
   "paul-smith-pablo-live-on-the-big-screen": {
     "poster_url": "",
@@ -24,32 +24,6 @@
     "writer": "",
     "cast": "",
     "cached_at": "2026-05-20T11:43:49.143660"
-  },
-  "the-ultimate-mod-revue": {
-    "poster_url": "",
-    "trailer_url": "",
-    "runtime_min": null,
-    "vote_average": null,
-    "genres": [],
-    "imdb_id": "",
-    "overview": "",
-    "director": "",
-    "writer": "",
-    "cast": "",
-    "cached_at": "2026-04-27T10:54:51.114594"
-  },
-  "20-years-of-bounce": {
-    "poster_url": "",
-    "trailer_url": "",
-    "runtime_min": null,
-    "vote_average": null,
-    "genres": [],
-    "imdb_id": "",
-    "overview": "",
-    "director": "",
-    "writer": "",
-    "cast": "",
-    "cached_at": "2026-04-26T09:45:51.111263"
   },
   "the-mersey-beatles-2026": {
     "poster_url": "",
@@ -101,7 +75,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:07.901796"
+    "cached_at": "2026-05-27T12:14:50.759840"
   },
   "redruth-comedy-club-with-russell-kane": {
     "poster_url": "",
@@ -114,7 +88,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:08.033849"
+    "cached_at": "2026-05-27T12:14:51.266060"
   },
   "the-drifters-2026": {
     "poster_url": "",
@@ -127,7 +101,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:08.345558"
+    "cached_at": "2026-05-27T12:14:52.588632"
   },
   "the-monkees-tale": {
     "poster_url": "",
@@ -140,7 +114,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:08.465446"
+    "cached_at": "2026-05-27T12:14:53.129694"
   },
   "the-makings-of-a-murderer-the-undercover-detective": {
     "poster_url": "",
@@ -153,7 +127,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:09.322626"
+    "cached_at": "2026-05-27T12:14:54.941951"
   },
   "a-night-to-remember-motown-show-2026-tour": {
     "poster_url": "",
@@ -166,7 +140,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:09.454451"
+    "cached_at": "2026-05-27T12:14:55.448943"
   },
   "redruth-comedy-club-with-marcus-brigstocke": {
     "poster_url": "",
@@ -179,7 +153,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:09.971770"
+    "cached_at": "2026-05-27T12:14:55.957015"
   },
   "forbidden-nights-2026": {
     "poster_url": "",
@@ -192,7 +166,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:10.894831"
+    "cached_at": "2026-05-27T12:14:56.457368"
   },
   "michael-starring-ben-2026": {
     "poster_url": "",
@@ -205,7 +179,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:11.077028"
+    "cached_at": "2026-05-27T12:14:57.160082"
   },
   "nick-cope-family-show-2026": {
     "poster_url": "",
@@ -218,7 +192,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:11.240291"
+    "cached_at": "2026-05-27T12:14:57.677663"
   },
   "oh-what-a-night-frankie-valli-the-four-seasons-show": {
     "poster_url": "",
@@ -231,7 +205,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:11.391874"
+    "cached_at": "2026-05-27T12:14:58.230036"
   },
   "hometown-glory-candlelit-concert-adele-tribute": {
     "poster_url": "",
@@ -244,7 +218,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:11.926865"
+    "cached_at": "2026-05-27T12:14:58.946354"
   },
   "elo-again-2026": {
     "poster_url": "",
@@ -257,7 +231,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:12.507069"
+    "cached_at": "2026-05-27T12:14:59.497562"
   },
   "the-good-old-fashioned-lover-boys-present-another-kind-of-magic": {
     "poster_url": "",
@@ -270,7 +244,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:12.645960"
+    "cached_at": "2026-05-27T12:15:00.018536"
   },
   "flo-joan-with-feeling": {
     "poster_url": "",
@@ -283,7 +257,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:12.858095"
+    "cached_at": "2026-05-27T12:15:00.745116"
   },
   "80-s-mania-2026": {
     "poster_url": "",
@@ -296,7 +270,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:12.991054"
+    "cached_at": "2026-05-27T12:15:01.289996"
   },
   "the-illegal-eagles-hotel-california-tour": {
     "poster_url": "",
@@ -309,7 +283,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:13.168569"
+    "cached_at": "2026-05-27T12:15:01.992933"
   },
   "t-rextasy-i-love-to-boogie": {
     "poster_url": "",
@@ -322,7 +296,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:13.295416"
+    "cached_at": "2026-05-27T12:15:02.492987"
   },
   "elvis-blue-christmas-starring-emilio-santoro": {
     "poster_url": "",
@@ -335,7 +309,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:13.550888"
+    "cached_at": "2026-05-27T12:15:03.529290"
   },
   "step-into-christmas": {
     "poster_url": "",
@@ -348,7 +322,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:14.454301"
+    "cached_at": "2026-05-27T12:15:04.045674"
   },
   "the-dazzling-diamonds-2027": {
     "poster_url": "",
@@ -361,7 +335,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:14.735882"
+    "cached_at": "2026-05-27T12:15:05.052405"
   },
   "vincent-simone-tango-passions-27": {
     "poster_url": "",
@@ -374,7 +348,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:15.627224"
+    "cached_at": "2026-05-27T12:15:06.781072"
   },
   "live-nation-presents-scott-bennett-stuff": {
     "poster_url": "",
@@ -387,7 +361,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:16.878783"
+    "cached_at": "2026-05-27T12:15:09.767267"
   },
   "the-fm-songbook": {
     "poster_url": "",
@@ -400,7 +374,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:17.717481"
+    "cached_at": "2026-05-27T12:15:10.961129"
   },
   "it-s-a-beautiful-noise-the-neil-diamond-tribute": {
     "poster_url": "",
@@ -465,7 +439,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:18.323468"
+    "cached_at": "2026-05-27T12:15:12.056389"
   },
   "dance-fitness": {
     "poster_url": "https://image.tmdb.org/t/p/w342/mgh0soJsBJHpX4LtB17kIhzIDNO.jpg",
@@ -478,7 +452,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:18.389027"
+    "cached_at": "2026-05-27T12:15:12.246284"
   },
   "our-planet-the-people-my-blood-with-q-a": {
     "poster_url": "",
@@ -491,7 +465,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:18.502300"
+    "cached_at": "2026-05-27T12:15:12.599556"
   },
   "penzance-comedy-club-with-russell-kane": {
     "poster_url": "",
@@ -504,7 +478,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:18.635293"
+    "cached_at": "2026-05-27T12:15:13.101400"
   },
   "biglove-presents-a-night-on-wax-funk-disco-soul-motown": {
     "poster_url": "",
@@ -517,7 +491,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:18.774702"
+    "cached_at": "2026-05-27T12:15:13.629950"
   },
   "swing-into-summer-with-little-leskyn": {
     "poster_url": "",
@@ -530,7 +504,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:19.525381"
+    "cached_at": "2026-05-27T12:15:14.667969"
   },
   "albi-the-wolves-nz-solo": {
     "poster_url": "",
@@ -543,7 +517,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:20.152701"
+    "cached_at": "2026-05-27T12:15:15.699190"
   },
   "the-hollies-story": {
     "poster_url": "",
@@ -556,7 +530,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:20.405025"
+    "cached_at": "2026-05-27T12:15:16.683157"
   },
   "kpop-live-the-theatre-show": {
     "poster_url": "",
@@ -569,7 +543,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:21.081610"
+    "cached_at": "2026-05-27T12:15:17.734121"
   },
   "celtic-nights": {
     "poster_url": "",
@@ -595,7 +569,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:21.497428"
+    "cached_at": "2026-05-27T12:15:19.230066"
   },
   "spice-girls-the-theatre-show-2026": {
     "poster_url": "",
@@ -608,7 +582,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:22.548407"
+    "cached_at": "2026-05-27T12:15:20.230019"
   },
   "another-kind-of-magic-at-ritz": {
     "poster_url": "",
@@ -621,7 +595,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:22.675523"
+    "cached_at": "2026-05-27T12:15:20.719078"
   },
   "penzance-comedy-club-with-marcus-brigstocke": {
     "poster_url": "",
@@ -634,7 +608,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:22.959617"
+    "cached_at": "2026-05-27T12:15:21.953552"
   },
   "forbidden-nights-at-the-ritz": {
     "poster_url": "",
@@ -647,7 +621,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:23.082601"
+    "cached_at": "2026-05-27T12:15:22.514542"
   },
   "oh-what-a-night-at-the-ritz": {
     "poster_url": "",
@@ -660,7 +634,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:23.353486"
+    "cached_at": "2026-05-27T12:15:23.548820"
   },
   "willow-hill-at-the-ritz": {
     "poster_url": "",
@@ -673,7 +647,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:23.477867"
+    "cached_at": "2026-05-27T12:15:24.095106"
   },
   "the-abba-reunion-show-at-the-ritz": {
     "poster_url": "",
@@ -686,7 +660,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:24.638993"
+    "cached_at": "2026-05-27T12:15:24.589209"
   },
   "tom-meighan-the-original-voice-of-kasabian": {
     "poster_url": "",
@@ -699,7 +673,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:25.098955"
+    "cached_at": "2026-05-27T12:15:26.419331"
   },
   "cabaret-extreme": {
     "poster_url": "",
@@ -712,7 +686,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:14.608476"
+    "cached_at": "2026-05-27T12:15:04.532924"
   },
   "the-ultimate-boyband-party-show": {
     "poster_url": "",
@@ -725,7 +699,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:15.315346"
+    "cached_at": "2026-05-27T12:15:05.535530"
   },
   "choose-george": {
     "poster_url": "",
@@ -738,7 +712,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:15.456113"
+    "cached_at": "2026-05-27T12:15:06.038245"
   },
   "twist-shout-2027": {
     "poster_url": "",
@@ -751,7 +725,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:15.746684"
+    "cached_at": "2026-05-27T12:15:07.272189"
   },
   "the-cavern-club-story": {
     "poster_url": "",
@@ -764,7 +738,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:15.866304"
+    "cached_at": "2026-05-27T12:15:07.794939"
   },
   "the-dolly-show-2027": {
     "poster_url": "",
@@ -777,7 +751,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:16.690450"
+    "cached_at": "2026-05-27T12:15:09.059948"
   },
   "p-ssed-up-panto-snow-white-and-the-seven-dwarfs-adults-only": {
     "poster_url": "",
@@ -790,7 +764,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:17.587104"
+    "cached_at": "2026-05-27T12:15:10.466984"
   },
   "santa-s-best-ever-christmas": {
     "poster_url": "",
@@ -803,7 +777,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:13.415873"
+    "cached_at": "2026-05-27T12:15:03.029853"
   },
   "geddon-pz-summer-party": {
     "poster_url": "",
@@ -816,7 +790,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:20.536778"
+    "cached_at": "2026-05-27T12:15:17.199388"
   },
   "mortal-kombat": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ybrX94xQm8lXYpZAPRmwD9iIbWP.jpg",
@@ -880,7 +854,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:21.290865"
+    "cached_at": "2026-05-27T12:15:18.483313"
   },
   "moments-movies-cinema-craft-night-with-screening-of-how-to-lose-a-guy-in-10-days": {
     "poster_url": "",
@@ -893,7 +867,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:20.028990"
+    "cached_at": "2026-05-27T12:15:15.163174"
   },
   "the-amazing-digital-circus-the-last-act": {
     "poster_url": "https://image.tmdb.org/t/p/w342/uoZeXWuUS2z2F7VaC1iS5RS5cnk.jpg",
@@ -924,7 +898,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:07.765510"
+    "cached_at": "2026-05-27T12:14:50.270175"
   },
   "ta-daaa-presents-cinderella": {
     "poster_url": "",
@@ -937,7 +911,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:24.771245"
+    "cached_at": "2026-05-27T12:15:25.108822"
   },
   "the-north": {
     "poster_url": "https://image.tmdb.org/t/p/w342/9VM5eHTgwTYk9ElQMRm9qMepwbT.jpg",
@@ -997,7 +971,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:16.558556"
+    "cached_at": "2026-05-27T12:15:08.548110"
   },
   "beatles-complete-a-tribute-to-the-fab-four-2027": {
     "poster_url": "https://image.tmdb.org/t/p/w342/6rE48jCwGSNrSTorEAUAUBq9o27.jpg",
@@ -1026,7 +1000,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:17.879563"
+    "cached_at": "2026-05-27T12:15:11.537054"
   },
   "seriously-collins-the-phil-collins-genesis-tribute-show-2027": {
     "poster_url": "https://image.tmdb.org/t/p/w342/cFfN7nYxZsLAfHCzxPaib9erijW.jpg",
@@ -1072,7 +1046,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:20.263120"
+    "cached_at": "2026-05-27T12:15:16.196941"
   },
   "kizamba-at-the-ritz": {
     "poster_url": "",
@@ -1085,7 +1059,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:21.897712"
+    "cached_at": "2026-05-27T12:15:19.729161"
   },
   "a-splann-night-at-the-ritz": {
     "poster_url": "",
@@ -1098,7 +1072,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:23.203299"
+    "cached_at": "2026-05-27T12:15:23.003951"
   },
   "penzance-musical-theatre-company-presents-elf-the-musical": {
     "poster_url": "",
@@ -1111,7 +1085,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:24.891123"
+    "cached_at": "2026-05-27T12:15:25.621413"
   },
   "golowan-launch-party-organised-by-friends-of-golowan": {
     "poster_url": "",
@@ -1124,7 +1098,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:19.390420"
+    "cached_at": "2026-05-27T12:15:14.120743"
   },
   "charlie-the-wonderdog": {
     "poster_url": "https://image.tmdb.org/t/p/w342/whvkL0wzxgKmVbaPontq9NlVd5z.jpg",
@@ -1203,7 +1177,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:08.221968"
+    "cached_at": "2026-05-27T12:14:52.090091"
   },
   "pennoweth-presents-one-last-time": {
     "poster_url": "",
@@ -1216,7 +1190,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:09.144610"
+    "cached_at": "2026-05-27T12:14:53.823897"
   },
   "finding-emily": {
     "poster_url": "https://image.tmdb.org/t/p/w342/5lkaeLncVGSdBWslQBclJwPw23f.jpg",
@@ -1261,7 +1235,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:08.101686"
+    "cached_at": "2026-05-27T12:14:51.564485"
   },
   "michael": {
     "poster_url": "https://image.tmdb.org/t/p/w342/3Qud19bBUrrJAzy0Ilm8gRJlJXP.jpg",
@@ -1342,7 +1316,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:07.683257"
+    "cached_at": "2026-05-27T12:14:47.168980"
   },
   "nt-live-les-liaisons-dangereuses": {
     "poster_url": "https://image.tmdb.org/t/p/w342/ckJRPZgzxIii9ewSyMhLnhs9azC.jpg",
@@ -1547,7 +1521,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-05-25T12:21:22.832794"
+    "cached_at": "2026-05-27T12:15:21.440460"
   },
   "once-in-a-lifetime": {
     "poster_url": "https://image.tmdb.org/t/p/w342/rKvtfQYLOldGBGWrPYwLLOOHy1l.jpg",
@@ -1596,5 +1570,219 @@
     "writer": "Craig Mazin, Leonie Swann",
     "cast": "Hugh Jackman (George Hardy), Julia Louis-Dreyfus (Lily (voice)), Emma Thompson (Lydia Harbottle), Nicholas Braun (Tim Derry), Nicholas Galitzine (Elliot Matthews), Molly Gordon (Rebecca Hampstead), Bryan Cranston (Sebastian (voice)), Chris O'Dowd (Mopple (voice)), Hong Chau (Beth Pennock), Tosin Cole (Caleb Merrow), Kobna Holdbrook-Smith (Reverend Hillcoate), Conleth Hill (Ham Gilyard)",
     "cached_at": "2026-05-25T12:21:07.574217"
+  },
+  "power-ballad": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/lsDLLagSIyTu0Gi06QjVKDp2LI2.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=hhQNNm68e4s",
+    "runtime_min": 98,
+    "vote_average": 10.0,
+    "genres": [
+      "Comedy",
+      "Music",
+      "Drama"
+    ],
+    "imdb_id": "tt32267691",
+    "overview": "When Rick, a past-his-prime wedding singer, meets fading boy-band star Danny during a gig, the two bond over music and a late-night jam session. But when Danny turns one of Rick’s songs into the hit that reignites his career, Rick sets out to reclaim the recognition he believes he deserves - even if it means risking everything he cares about.",
+    "director": "John Carney",
+    "writer": "John Carney, Peter McDonald",
+    "cast": "Paul Rudd (Rick Power), Nick Jonas (Danny Wilson), Peter McDonald (Sandy), Marcella Plunkett (Rachel), Rory Keenan (Binzer), Keith McErlean (Kyle), Paul Reid (Bernie), Beth Fallon (Aja), Havana Rose Liu, Jack Reynor (Mac), Naoimh Whelton (Laura), Mae Higgins (Elaine)",
+    "cached_at": "2026-05-27T12:14:46.520578"
+  },
+  "backrooms": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/vpkNMkbisv5cTaIfCzUduYzXnjb.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=2z6a6NUFlsU",
+    "runtime_min": 110,
+    "vote_average": 5.8,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Science Fiction"
+    ],
+    "imdb_id": "tt26657236",
+    "overview": "A strange doorway appears in the basement of a furniture showroom.",
+    "director": "Kane Parsons",
+    "writer": "Will Soodik",
+    "cast": "Renate Reinsve (Mary), Chiwetel Ejiofor (Clark), Mark Duplass (Phil), Finn Bennett (Bobby), Lukita Maxwell (Kat), Avan Jogia (Naren Warne), Robert Bobroczkyi (Pirate Clark), Ember Ambrose (Young Mary), Krista Kosonen (Nora), Philip Granger (Meterman), Katharine Isabelle (Robin), Peter New (Big Wayne)",
+    "cached_at": "2026-05-27T12:14:46.695554"
+  },
+  "masters-of-the-universe": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/nm2ianYVp7OXElUZVeeAbNTqBLr.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=6gH1cQoW3dQ",
+    "runtime_min": 140,
+    "vote_average": 10.0,
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "imdb_id": "tt0427340",
+    "overview": "After being separated for 15 years, the Sword of Power leads Prince Adam back to Eternia, where he discovers his home shattered under the fiendish rule of Skeletor. To save his family and his world, Adam must join forces with his closest allies, Teela and Duncan/Man-At-Arms, and embrace his true destiny as He-Man — the most powerful man in the universe.",
+    "director": "Travis Knight",
+    "writer": "Chris Butler, Aaron Nee, Adam Nee, David Callaham, Alex Litvak",
+    "cast": "Nicholas Galitzine (Adam Glenn / He-Man), Camila Mendes (Teela), Alison Brie (Evil-Lyn), James Purefoy (King Randor), Morena Baccarin (The Sorceress), Jóhannes Haukur Jóhannesson (Malcolm / Fisto), Kristen Wiig (Roboto (voice)), Jared Leto (Skeletor), Idris Elba (Duncan / Man-At-Arms), Sam C. Wilson (Trap Jaw), Hafþór Júlíus Björnsson (Goat Man), Kojo Attah (Tri-Klops)",
+    "cached_at": "2026-05-27T12:14:46.871916"
+  },
+  "rbo-2026-27-met-opera-macbeth": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/9N1SAI1CEn44zqXiPU2JjAfZuJm.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=HuUtT3EZoqo",
+    "runtime_min": 210,
+    "vote_average": 0.0,
+    "genres": [
+      "Music"
+    ],
+    "imdb_id": "tt4127164",
+    "overview": "Star soprano Anna Netrebko created a sensation with her riveting performance as the malevolent Lady Macbeth, the central character in Verdi's retelling of Shakespeare's tragedy. She is joined by Željko Lučić, who brings dramatic intensity and vocal authority to the title role of the honest general driven to murder and deceit by his ambitious wife. The great René Pape is Banquo and Joseph Calleja gives a moving performance as Macduff. Adrian Noble's powerful production provides an ideal setting for this dark drama, which is masterfully presided over by Met Principal Conductor Fabio Luisi.",
+    "director": "",
+    "writer": "",
+    "cast": "Željko Lučić (Macbeth), René Pape (Banquo), Anna Netrebko (Lady Macbeth), Claudia Waite (Lady-in-Waiting to Lady Macbeth), Christopher Job (A Servant of Macbeth), Raymond Renault (Duncan, King of Scotland), Noah Baetge (Malcolm, Duncan's Son), Joseph Calleja (Macduff, Thane of Fife), Moritz Linn (Fleance, Banquo's Son), Richard Bernstein (A Murderer), Seth Malkin (A Herald), James Courtney (A Doctor)",
+    "cached_at": "2026-05-27T12:14:47.457576"
+  },
+  "rbo-2026-27-the-royal-ballet-manon": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/k9mOjA9e0kxVyIGBQD1DjZthhzY.jpg",
+    "trailer_url": "",
+    "runtime_min": 190,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-27T12:14:47.653324"
+  },
+  "rbo-2026-27-the-royal-opera-carmen": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/UhXsQRwE0eqTW5E95DKHZZj3aZ.jpg",
+    "trailer_url": "",
+    "runtime_min": 215,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "Ginger Costa-Jackson, Russell Thomas, Adriana González",
+    "cached_at": "2026-05-27T12:14:47.846929"
+  },
+  "rbo-2026-27-the-royal-ballet-the-nutcracker": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/2r83M6V15qReBAebIrejbM0CSkQ.jpg",
+    "trailer_url": "",
+    "runtime_min": 140,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "Marianna Tsembenhoi, Mayara Magri, Reece Clarke",
+    "cached_at": "2026-05-27T12:14:48.045003"
+  },
+  "rbo-2026-27-met-opera-la-fanciulla-del-west": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-27T12:14:48.785896"
+  },
+  "rbo-2026-27-the-royal-opera-g-tterd-mmerung": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/eXARNiz2CtVPnPFQEv1hD42r4Hh.jpg",
+    "trailer_url": "",
+    "runtime_min": 350,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "Elisabet Strid, Andreas Schager, Mika Kares",
+    "cached_at": "2026-05-27T12:14:48.978142"
+  },
+  "rbo-2026-27-the-royal-opera-cos-fan-tutte": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/jll3LbWdct2yykgP9bxjb0vZ44w.jpg",
+    "trailer_url": "",
+    "runtime_min": 210,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "Louise Alder, Simone McIntosh, Mingjie Lei",
+    "cached_at": "2026-05-27T12:14:49.178730"
+  },
+  "rbo-2026-27-the-royal-ballet-alice-s-adventures-in-wonderland": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/5objvLeZTI5oBGHeu5D2hG0EksB.jpg",
+    "trailer_url": "",
+    "runtime_min": 170,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "Francesca Hayward, William Bracewell, James Hay",
+    "cached_at": "2026-05-27T12:14:49.375532"
+  },
+  "rbo-2026-27-the-royal-ballet-swan-lake": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/mZ1srJ7CdHKuJD6TdRkVVfl4QrZ.jpg",
+    "trailer_url": "",
+    "runtime_min": 205,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-05-27T12:14:49.571212"
+  },
+  "rbo-2026-27-the-royal-opera-tosca": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/aXA7HKS5DE4WxBtrayxEHOYdXmF.jpg",
+    "trailer_url": "",
+    "runtime_min": 195,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "Aleksandra Kurzak, Saimir Pirgu, Christopher Maltman",
+    "cached_at": "2026-05-27T12:14:49.769611"
+  },
+  "rbo-2026-27-the-royal-ballet-romeo-juliet": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/eCZpBsBQhdBPCDEjX1DOtf9qcfW.jpg",
+    "trailer_url": "",
+    "runtime_min": 170,
+    "vote_average": 0.0,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "Fumi Kaneko, Vadim Muntagirov, Francisco Serrano",
+    "cached_at": "2026-05-27T12:14:49.959099"
+  },
+  "frozen-presented-by-ramps": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=ssVnSg2jwUw",
+    "runtime_min": 135,
+    "vote_average": 7.248,
+    "genres": [
+      "Animation",
+      "Family",
+      "Adventure",
+      "Fantasy"
+    ],
+    "imdb_id": "tt2294629",
+    "overview": "Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. Fate takes her on a dangerous journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.",
+    "director": "Chris Buck, Jennifer Lee",
+    "writer": "Jennifer Lee, Chris Buck, Shane Morris",
+    "cast": "Idina Menzel (Elsa (voice)), Kristen Bell (Anna (voice)), Jonathan Groff (Kristoff (voice)), Josh Gad (Olaf (voice)), Livvy Stubenrauch (Young Anna (voice)), Santino Fontana (Hans (voice)), Eva Bella (Young Elsa (voice)), Alan Tudyk (Duke (voice)), Maia Wilson (Bulda (voice)), Ciarán Hinds (Pabbie / Grandpa (voice)), Annie Lopez (Baby Troll (voice)), Annaleigh Ashford (Girl Troll (voice))",
+    "cached_at": "2026-05-27T12:14:54.205820"
   }
 }
