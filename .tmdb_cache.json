@@ -363,19 +363,6 @@
     "cast": "",
     "cached_at": "2026-06-01T14:52:45.645258"
   },
-  "the-d-day-darlings-victorious": {
-    "poster_url": "",
-    "trailer_url": "",
-    "runtime_min": null,
-    "vote_average": null,
-    "genres": [],
-    "imdb_id": "",
-    "overview": "",
-    "director": "",
-    "writer": "",
-    "cast": "",
-    "cached_at": "2026-05-03T09:59:49.128562"
-  },
   "penzance-musical-theatre-company-presents-calendar-girls": {
     "poster_url": "",
     "trailer_url": "",
@@ -1530,7 +1517,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-01T14:52:33.880035"
+    "cached_at": "2026-06-02T12:35:18.295114"
   },
   "rbo-2026-27-the-royal-opera-carmen": {
     "poster_url": "https://image.tmdb.org/t/p/w342/UhXsQRwE0eqTW5E95DKHZZj3aZ.jpg",
@@ -1543,7 +1530,7 @@
     "director": "",
     "writer": "",
     "cast": "Ginger Costa-Jackson, Russell Thomas, Adriana González",
-    "cached_at": "2026-06-01T14:52:33.935893"
+    "cached_at": "2026-06-02T12:35:18.454275"
   },
   "rbo-2026-27-the-royal-ballet-the-nutcracker": {
     "poster_url": "https://image.tmdb.org/t/p/w342/2r83M6V15qReBAebIrejbM0CSkQ.jpg",
@@ -1556,7 +1543,7 @@
     "director": "",
     "writer": "",
     "cast": "Marianna Tsembenhoi, Mayara Magri, Reece Clarke",
-    "cached_at": "2026-06-01T14:52:33.995162"
+    "cached_at": "2026-06-02T12:35:18.537777"
   },
   "rbo-2026-27-met-opera-la-fanciulla-del-west": {
     "poster_url": "",
@@ -1582,7 +1569,7 @@
     "director": "",
     "writer": "",
     "cast": "Elisabet Strid, Andreas Schager, Mika Kares",
-    "cached_at": "2026-06-01T14:52:34.289011"
+    "cached_at": "2026-06-02T12:35:18.646900"
   },
   "rbo-2026-27-the-royal-opera-cos-fan-tutte": {
     "poster_url": "https://image.tmdb.org/t/p/w342/jll3LbWdct2yykgP9bxjb0vZ44w.jpg",
@@ -1595,7 +1582,7 @@
     "director": "",
     "writer": "",
     "cast": "Louise Alder, Simone McIntosh, Mingjie Lei",
-    "cached_at": "2026-06-01T14:52:34.337531"
+    "cached_at": "2026-06-02T12:35:18.723402"
   },
   "rbo-2026-27-the-royal-ballet-alice-s-adventures-in-wonderland": {
     "poster_url": "https://image.tmdb.org/t/p/w342/5objvLeZTI5oBGHeu5D2hG0EksB.jpg",
@@ -1608,7 +1595,7 @@
     "director": "",
     "writer": "",
     "cast": "Francesca Hayward, William Bracewell, James Hay",
-    "cached_at": "2026-06-01T14:52:34.384270"
+    "cached_at": "2026-06-02T12:35:18.825800"
   },
   "rbo-2026-27-the-royal-ballet-swan-lake": {
     "poster_url": "https://image.tmdb.org/t/p/w342/mZ1srJ7CdHKuJD6TdRkVVfl4QrZ.jpg",
@@ -1621,7 +1608,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-01T14:52:34.436751"
+    "cached_at": "2026-06-02T12:35:18.903711"
   },
   "rbo-2026-27-the-royal-opera-tosca": {
     "poster_url": "https://image.tmdb.org/t/p/w342/aXA7HKS5DE4WxBtrayxEHOYdXmF.jpg",
@@ -1634,7 +1621,7 @@
     "director": "",
     "writer": "",
     "cast": "Aleksandra Kurzak, Saimir Pirgu, Christopher Maltman",
-    "cached_at": "2026-06-01T14:52:34.493429"
+    "cached_at": "2026-06-02T12:35:18.985891"
   },
   "rbo-2026-27-the-royal-ballet-romeo-juliet": {
     "poster_url": "https://image.tmdb.org/t/p/w342/eCZpBsBQhdBPCDEjX1DOtf9qcfW.jpg",
@@ -1647,7 +1634,7 @@
     "director": "",
     "writer": "",
     "cast": "Fumi Kaneko, Vadim Muntagirov, Francisco Serrano",
-    "cached_at": "2026-06-01T14:52:34.544878"
+    "cached_at": "2026-06-02T12:35:19.063546"
   },
   "frozen-presented-by-ramps": {
     "poster_url": "https://image.tmdb.org/t/p/w342/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
@@ -1756,5 +1743,22 @@
     "writer": "",
     "cast": "",
     "cached_at": "2026-06-01T14:52:46.490866"
+  },
+  "rose-of-nevada": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/rqHgjvD5HV0ojj4CEV31ztertPK.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=bw371ui9cTk",
+    "runtime_min": 115,
+    "vote_average": 6.5,
+    "genres": [
+      "Science Fiction",
+      "Mystery",
+      "Drama"
+    ],
+    "imdb_id": "tt35674521",
+    "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
+    "director": "Mark Jenkin",
+    "writer": "Mark Jenkin",
+    "cast": "George MacKay (Nick), Callum Turner (Liam), Francis Magee (Murgey), Edward Rowe (Mike), Rosalind Eleazar (Tina), Mary Woodvine (Mrs Richards), Adrian Rawlins (Mr Richards), Yana Penrose (Jess / Linsey), Mae Voogd",
+    "cached_at": "2026-06-02T12:35:19.152294"
   }
 }
