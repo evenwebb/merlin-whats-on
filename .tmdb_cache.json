@@ -1502,7 +1502,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-05T11:56:54.783114"
+    "cached_at": "2026-06-06T10:50:28.372367"
   },
   "rbo-2026-27-the-royal-opera-carmen": {
     "poster_url": "https://image.tmdb.org/t/p/w342/UhXsQRwE0eqTW5E95DKHZZj3aZ.jpg",
@@ -1515,7 +1515,7 @@
     "director": "",
     "writer": "",
     "cast": "Ginger Costa-Jackson, Russell Thomas, Adriana González",
-    "cached_at": "2026-06-05T11:56:54.830007"
+    "cached_at": "2026-06-06T10:50:28.452840"
   },
   "rbo-2026-27-the-royal-ballet-the-nutcracker": {
     "poster_url": "https://image.tmdb.org/t/p/w342/2r83M6V15qReBAebIrejbM0CSkQ.jpg",
@@ -1528,7 +1528,7 @@
     "director": "",
     "writer": "",
     "cast": "Marianna Tsembenhoi, Mayara Magri, Reece Clarke",
-    "cached_at": "2026-06-05T11:56:54.882370"
+    "cached_at": "2026-06-06T10:50:28.542790"
   },
   "rbo-2026-27-met-opera-la-fanciulla-del-west": {
     "poster_url": "",
@@ -1554,7 +1554,7 @@
     "director": "",
     "writer": "",
     "cast": "Elisabet Strid, Andreas Schager, Mika Kares",
-    "cached_at": "2026-06-05T11:56:55.133580"
+    "cached_at": "2026-06-06T10:50:28.636529"
   },
   "rbo-2026-27-the-royal-opera-cos-fan-tutte": {
     "poster_url": "https://image.tmdb.org/t/p/w342/jll3LbWdct2yykgP9bxjb0vZ44w.jpg",
@@ -1567,7 +1567,7 @@
     "director": "",
     "writer": "",
     "cast": "Louise Alder, Simone McIntosh, Mingjie Lei",
-    "cached_at": "2026-06-05T11:56:55.182043"
+    "cached_at": "2026-06-06T10:50:28.735573"
   },
   "rbo-2026-27-the-royal-ballet-alice-s-adventures-in-wonderland": {
     "poster_url": "https://image.tmdb.org/t/p/w342/5objvLeZTI5oBGHeu5D2hG0EksB.jpg",
@@ -1580,7 +1580,7 @@
     "director": "",
     "writer": "",
     "cast": "Francesca Hayward, William Bracewell, James Hay",
-    "cached_at": "2026-06-05T11:56:55.222768"
+    "cached_at": "2026-06-06T10:50:29.065060"
   },
   "rbo-2026-27-the-royal-ballet-swan-lake": {
     "poster_url": "https://image.tmdb.org/t/p/w342/mZ1srJ7CdHKuJD6TdRkVVfl4QrZ.jpg",
@@ -1593,7 +1593,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-05T11:56:55.274195"
+    "cached_at": "2026-06-06T10:50:29.136458"
   },
   "rbo-2026-27-the-royal-opera-tosca": {
     "poster_url": "https://image.tmdb.org/t/p/w342/aXA7HKS5DE4WxBtrayxEHOYdXmF.jpg",
@@ -1606,7 +1606,7 @@
     "director": "",
     "writer": "",
     "cast": "Aleksandra Kurzak, Saimir Pirgu, Christopher Maltman",
-    "cached_at": "2026-06-05T11:56:55.321010"
+    "cached_at": "2026-06-06T10:50:29.214608"
   },
   "rbo-2026-27-the-royal-ballet-romeo-juliet": {
     "poster_url": "https://image.tmdb.org/t/p/w342/eCZpBsBQhdBPCDEjX1DOtf9qcfW.jpg",
@@ -1619,7 +1619,7 @@
     "director": "",
     "writer": "",
     "cast": "Fumi Kaneko, Vadim Muntagirov, Francisco Serrano",
-    "cached_at": "2026-06-05T11:56:55.365675"
+    "cached_at": "2026-06-06T10:50:29.362113"
   },
   "frozen-presented-by-ramps": {
     "poster_url": "https://image.tmdb.org/t/p/w342/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
@@ -1846,7 +1846,7 @@
     "director": "",
     "writer": "",
     "cast": "André Rieu (Himself)",
-    "cached_at": "2026-06-05T11:56:54.727026"
+    "cached_at": "2026-06-06T10:50:28.301908"
   },
   "guilty-pleasures-at-the-ritz": {
     "poster_url": "",
@@ -1912,5 +1912,111 @@
     "writer": "",
     "cast": "",
     "cached_at": "2026-06-05T11:57:13.319375"
+  },
+  "supergirl": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/moejGxR2haap29d9NQ7qe8x4eGj.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=tzlY8XD1CGg",
+    "runtime_min": 110,
+    "vote_average": 0.0,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "imdb_id": "tt8814476",
+    "overview": "When an unexpected and ruthless adversary strikes too close to home, Kara Zor-El, aka Supergirl, reluctantly joins forces with an unlikely companion on an epic, interstellar journey of vengeance and justice.",
+    "director": "Craig Gillespie",
+    "writer": "Ana Nogueira, Jerry Siegel, Joe Shuster",
+    "cast": "Milly Alcock (Kara Zor-El / Supergirl), Matthias Schoenaerts (Krem of the Yellow Hills), Eve Ridley (Ruthye Mary Knoll), David Krumholtz (Zor-El), Emily Beecham (Alura In-Ze), Jason Momoa (Lobo), Alice Hewkin (Sklarian), Ferdinand Kingsley (Elias Knoll), Diarmaid Murtagh (Drom Baxton), Wil Coban (Brute), David Corenswet (Clark Kent / Superman), George Montague (Hideous Alien Double)",
+    "cached_at": "2026-06-06T10:50:28.146430"
+  },
+  "minions-monsters": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/nz7i42yhLIJ4ve9JKgM6NthoLHO.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=v6wPfg6sksw",
+    "runtime_min": 84,
+    "vote_average": 0.0,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Comedy",
+      "Family",
+      "Fantasy"
+    ],
+    "imdb_id": "tt32890033",
+    "overview": "This is the rambunctious, ridiculous and totally true story of how the Minions conquered Hollywood, became movie stars, lost everything, unleashed monsters onto the world and then banded together to try and save the planet from the mayhem they had just created.",
+    "director": "Pierre Coffin",
+    "writer": "Brian Lynch, Pierre Coffin",
+    "cast": "Pierre Coffin (Henry / James / Ed / Dick / The Minions (voice)), Trey Parker (Goomi (voice)), Allison Janney ((voice)), Christoph Waltz (Max (voice)), Jeff Bridges ((voice)), Jesse Eisenberg ((voice)), Zoey Deutch ((voice)), Bobby Moynihan ((voice)), Phil LaMarr ((voice))",
+    "cached_at": "2026-06-06T10:50:28.214555"
+  },
+  "handa-opera-on-sydney-harbour-verdi-s-aida": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/3LD9qV4Dn12hN3CaFgh00HvkF9b.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=9xh4IZBK2cc",
+    "runtime_min": 155,
+    "vote_average": 0.0,
+    "genres": [
+      "Music",
+      "Drama"
+    ],
+    "imdb_id": "",
+    "overview": "Any performance of Giuseppe Verdi’s Aida at La Scala, Milan, is guaranteed to be an experience – but, when it’s a new production, it becomes a major event, especially given the theatre’s notoriously critical audience. Legendary stage director Peter Stein succeeds in delivering a lucid production acclaimed in equal measure by the press and public: “a perfect coup de théâtre” (Giornale della musica). A “stellar cast” (La Stampa) contributes to the production’s success under the musical direction of Verdi specialist Zubin Mehta, who leads the orchestra in a “gorgeously colourful performance”, while “the entire ensemble is brilliant in its portrayal of the characters” (Die Presse).",
+    "director": "Tiziano Mancini, Peter Stein",
+    "writer": "",
+    "cast": "Carlo Colombara (Il Re), Anita Rachvelishvili (Amneris), Kristin Lewis (Aida), Fabio Sartori (Radamès), Matti Salminen (Ramfis), George Gagnidze (Amonasro), Azer Rza-Zada (Messaggero), Chiara Isotton (La Gran Sacerdotessa), Zubin Mehta (Self - Conductor)",
+    "cached_at": "2026-06-06T10:50:29.472764"
+  },
+  "handa-opera-on-sydney-harbour-puccini-s-turandot": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/j6K3q4QWbhQdg5li50IGoWt12BG.jpg",
+    "trailer_url": "",
+    "runtime_min": 130,
+    "vote_average": 6.0,
+    "genres": [
+      "Music"
+    ],
+    "imdb_id": "",
+    "overview": "The Pucchini opera \"Turandot\" will be shown completely new at the Gran Teatre del Liceu. The new production by the Spanish video artist Franc Aleu refers with a wink to the history of the Catalan institution: 20 years ago, this very opera was resumed there after a fire in 1994 severely damaged the theater.",
+    "director": "Benoit Toulemonde",
+    "writer": "Giuseppe Adami, Renato Simoni",
+    "cast": "Iréne Theorin (Turandot), Chris Merritt (Altoum), Alexander Vinogradov (Timur), Jorge de León (Calaf), Ermonela Jaho (Liù), Toni Marsol (Ping), Francisco Vas (Pang), Mikeldi Atxalandabaso (Pong), Michael Borthwick (Mandarin), Josep Pons (Self - Conductor)",
+    "cached_at": "2026-06-06T10:50:29.594141"
+  },
+  "jive-aces-at-the-ritz": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-06-06T10:50:29.806045"
+  },
+  "snow-white-and-the-seven-dwarfs-p-ssed-up-panto-at-the-ritz": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-06-06T10:50:30.366300"
+  },
+  "60-s-explosion-at-the-ritz": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-06-06T10:50:30.564233"
   }
 }
