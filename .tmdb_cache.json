@@ -1408,7 +1408,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-08T13:00:04.979505"
+    "cached_at": "2026-06-09T11:54:03.517184"
   },
   "rbo-2026-27-the-royal-opera-carmen": {
     "poster_url": "https://image.tmdb.org/t/p/w342/UhXsQRwE0eqTW5E95DKHZZj3aZ.jpg",
@@ -1421,7 +1421,7 @@
     "director": "",
     "writer": "",
     "cast": "Ginger Costa-Jackson, Russell Thomas, Adriana González",
-    "cached_at": "2026-06-08T13:00:05.208492"
+    "cached_at": "2026-06-09T11:54:03.565201"
   },
   "rbo-2026-27-the-royal-ballet-the-nutcracker": {
     "poster_url": "https://image.tmdb.org/t/p/w342/2r83M6V15qReBAebIrejbM0CSkQ.jpg",
@@ -1434,7 +1434,7 @@
     "director": "",
     "writer": "",
     "cast": "Marianna Tsembenhoi, Mayara Magri, Reece Clarke",
-    "cached_at": "2026-06-08T13:00:05.419430"
+    "cached_at": "2026-06-09T11:54:03.607680"
   },
   "rbo-2026-27-met-opera-la-fanciulla-del-west": {
     "poster_url": "",
@@ -1460,7 +1460,7 @@
     "director": "",
     "writer": "",
     "cast": "Elisabet Strid, Andreas Schager, Mika Kares",
-    "cached_at": "2026-06-08T13:00:06.391795"
+    "cached_at": "2026-06-09T11:54:03.660758"
   },
   "rbo-2026-27-the-royal-opera-cos-fan-tutte": {
     "poster_url": "https://image.tmdb.org/t/p/w342/jll3LbWdct2yykgP9bxjb0vZ44w.jpg",
@@ -1473,7 +1473,7 @@
     "director": "",
     "writer": "",
     "cast": "Louise Alder, Simone McIntosh, Mingjie Lei",
-    "cached_at": "2026-06-08T13:00:06.634840"
+    "cached_at": "2026-06-09T11:54:03.997246"
   },
   "rbo-2026-27-the-royal-ballet-alice-s-adventures-in-wonderland": {
     "poster_url": "https://image.tmdb.org/t/p/w342/5objvLeZTI5oBGHeu5D2hG0EksB.jpg",
@@ -1486,7 +1486,7 @@
     "director": "",
     "writer": "",
     "cast": "Francesca Hayward, William Bracewell, James Hay",
-    "cached_at": "2026-06-08T13:00:06.757632"
+    "cached_at": "2026-06-09T11:54:04.038561"
   },
   "rbo-2026-27-the-royal-ballet-swan-lake": {
     "poster_url": "https://image.tmdb.org/t/p/w342/mZ1srJ7CdHKuJD6TdRkVVfl4QrZ.jpg",
@@ -1499,7 +1499,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-08T13:00:07.011678"
+    "cached_at": "2026-06-09T11:54:04.101175"
   },
   "rbo-2026-27-the-royal-opera-tosca": {
     "poster_url": "https://image.tmdb.org/t/p/w342/aXA7HKS5DE4WxBtrayxEHOYdXmF.jpg",
@@ -1512,7 +1512,7 @@
     "director": "",
     "writer": "",
     "cast": "Aleksandra Kurzak, Saimir Pirgu, Christopher Maltman",
-    "cached_at": "2026-06-08T13:00:07.228848"
+    "cached_at": "2026-06-09T11:54:04.150692"
   },
   "rbo-2026-27-the-royal-ballet-romeo-juliet": {
     "poster_url": "https://image.tmdb.org/t/p/w342/eCZpBsBQhdBPCDEjX1DOtf9qcfW.jpg",
@@ -1525,7 +1525,7 @@
     "director": "",
     "writer": "",
     "cast": "Fumi Kaneko, Vadim Muntagirov, Francisco Serrano",
-    "cached_at": "2026-06-08T13:00:07.373507"
+    "cached_at": "2026-06-09T11:54:04.185165"
   },
   "frozen-presented-by-ramps": {
     "poster_url": "https://image.tmdb.org/t/p/w342/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
@@ -1752,7 +1752,7 @@
     "director": "",
     "writer": "",
     "cast": "André Rieu (Himself)",
-    "cached_at": "2026-06-08T13:00:04.770676"
+    "cached_at": "2026-06-09T11:54:03.436469"
   },
   "guilty-pleasures-at-the-ritz": {
     "poster_url": "",
@@ -2005,5 +2005,82 @@
     "writer": "",
     "cast": "Giles Thomas (Private Francis Francis), Ewan McGregor (Private Mick Hopper), Louise Germaine (Sylvia Berry), Douglas Henshall (Corporal Berry), Peter Jeffrey (Colonel Bernwood), Roy Hudd (Harold Atterbow), Clive Francis (Major Hedges), Nicholas Jones (Major Carter), Nicholas Farrell (Major Church), Maggie Steed (Aunt Vickie), Bernard Hill (Uncle Fred), Bernard Brown (Prime Minister Eden)",
     "cached_at": "2026-06-07T11:03:03.752204"
+  },
+  "mother-s-pride": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/jWrNT4QawuM5OclbjkbrhpbI2Wf.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=u1V8bdl21Bw",
+    "runtime_min": 93,
+    "vote_average": 6.7,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "imdb_id": "tt32569057",
+    "overview": "A comedy about a failing pub, a divided community and a grieving family whose lives are changed by brewing real ale and entering the Great British Beer Awards.",
+    "director": "Nick Moorcroft",
+    "writer": "Nick Moorcroft, Meg Leonard",
+    "cast": "Jonno Davies (Cal), James Buckley (Jake), Martin Clunes (Mick), Mark Addy (Paxman), Gabriella Wilde (Abi), Luke Treadaway (Pritchard), Josie Lawrence (Edith), Miles Jupp (Jeremy), Karl Collins (Wilf), Richard Glover (Jim), Emily Lloyd-Saini (Amy), Dominic Kinnaird (Traffic warden)",
+    "cached_at": "2026-06-09T11:54:03.409858"
+  },
+  "nt-live-the-misanthrope": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/ju8DRMBUnDOxpnIj47hsZasBSt1.jpg",
+    "trailer_url": "",
+    "runtime_min": 150,
+    "vote_average": 6.75,
+    "genres": [
+      "Comedy",
+      "TV Movie"
+    ],
+    "imdb_id": "tt0184741",
+    "overview": "This television film records Ingmar Bergman’s Copenhagen stage production of Molière’s The Misanthrope, presented as a guest performance at the Royal Danish Theatre. The play centers on Alceste, a man who rejects social hypocrisy and flattery, whose rigid principles are tested by his love for the socially adept Célimène.",
+    "director": "Ingmar Bergman",
+    "writer": "",
+    "cast": "Hanne Borchsenius (Éliante), Benny Hansen (Dubois), Holger Juul Hansen (Phillinte), Paul Hüttel (Basque), Henning Moritzen (Alceste), Erik Mørk (Acaste), Ghita Nørby (Célimène), Lise Ringheim (Arsinoë), Ebbe Rode (Oronte), Peter Steen (Clitandre), Olaf Ussing (A messenger)",
+    "cached_at": "2026-06-09T11:54:03.476542"
+  },
+  "exhibition-on-screen-james-mcneill-whistler": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/42D8pu3qd4Rxucjz9jaWRT6nyg6.jpg",
+    "trailer_url": "",
+    "runtime_min": 95,
+    "vote_average": 0.0,
+    "genres": [
+      "Documentary"
+    ],
+    "imdb_id": "tt4040090",
+    "overview": "Caustic wit, man about town, James McNeill Whistler was the original art star. Famous for his patent leather shoes, monocle, and uptown swagger, Whistler's theatrics attracted the curiosity of buyers and the attention of the critics. But beneath the high gloss and mannered style, the struggle of this pioneering genius to find his own voice resulted in a breakaway style that moved painting towards abstraction and would revolutionize the art world in his time-and beyond. Best known for the groundbreaking portrait of his mother, Whistler had become one of the most recognized artists in Europe by the time of his death. He is now placed in the first rank of modern painters, his work compared to that of Velazquez and Rembrandt. Dramatic re-creations, art, graphics, and interviews combine to profile this fascinating character.",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-06-09T11:54:04.235356"
+  },
+  "exhibition-on-screen-renoir-love": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/ffYPcigGUAbmzxXnFLnKfOmfSkX.jpg",
+    "trailer_url": "",
+    "runtime_min": 95,
+    "vote_average": 8.0,
+    "genres": [
+      "Documentary"
+    ],
+    "imdb_id": "tt40922980",
+    "overview": "Pierre-Auguste Renoir (1841-1919) is one of the most popular impressionist painters, famous for much-loved paintings such as “The Luncheon of the Boating Party”. But critics have sometimes been less impressed by an artist who could be considered superficial. This documentary sheds light on Renoir’s paintings. Could they be more modern and sophisticated than we imagine?",
+    "director": "Camille Ménager",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-06-09T11:54:04.324059"
+  },
+  "exhibition-on-screen-monet": {
+    "poster_url": "https://image.tmdb.org/t/p/w342/cYKPVyJLtSwMZ3cs46jCQOdLOIB.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=oUvcsP0Eg8k",
+    "runtime_min": 95,
+    "vote_average": 6.2,
+    "genres": [
+      "Documentary"
+    ],
+    "imdb_id": "tt6233946",
+    "overview": "From award-winning director Phil Grabsky comes this fresh new look at arguably the world’s favourite artist – through his own words.  Using letters and other private writings I, Claude Monet reveals new insight into the man who not only painted the picture that gave birth to impressionism but who was perhaps the most influential and successful painter of the 19th and early 20th centuries.  Despite this, and perhaps because of it, Monet’s life is a gripping tale about a man who, behind his sun-dazzled canvases, suffered from feelings of depression, loneliness, even suicide. Then, as his art developed and his love of gardening led to the glories of his garden at Giverney, his humour, insight and love of life is revealed.  Shot on location in Paris, London, Normandy and Venice I, Claude Monet is a cinematic immersion into some of the most loved and iconic scenes in Western Art.",
+    "director": "Phil Grabsky",
+    "writer": "",
+    "cast": "Henry Goodman (Claude Monet)",
+    "cached_at": "2026-06-09T11:54:04.367651"
   }
 }
