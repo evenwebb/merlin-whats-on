@@ -124,6 +124,7 @@ def _load_dotenv() -> None:
     except OSError as e:
         logger.warning("Could not read .env: %s", e)
 
+_load_dotenv()
 
 def uk_today_iso(when: Optional[datetime] = None) -> str:
     """Calendar date in Europe/London as YYYY-MM-DD (matches page 'today' and section splits)."""
@@ -186,14 +187,21 @@ def _env_bool(*names: str, default: bool = False) -> bool:
     return default
 
 
-def _env_int(*names: str, default: int) -> int:
-    """Read first-present integer env var among names."""
+def _env_int(*names: str, default: int, minimum: int = -10**9, maximum: int = 10**9) -> int:
+    """Read first-present integer env var among names with optional bounds."""
     for name in names:
         raw = os.environ.get(name)
         if raw is None:
             continue
         try:
-            return int(raw.strip())
+            val = int(raw.strip())
+            if val < minimum:
+                logger.warning("%s=%d below minimum %d, using %d", name, val, minimum, minimum)
+                return minimum
+            if val > maximum:
+                logger.warning("%s=%d above maximum %d, using %d", name, val, maximum, maximum)
+                return maximum
+            return val
         except ValueError:
             logger.warning("Invalid integer for %s: %r (using default %d)", name, raw, default)
             return default
@@ -316,6 +324,8 @@ def parse_uk_date(text: str, scrape_date: datetime) -> Optional[str]:
             dt = datetime.strptime(f"{day} {month_str} {year}", "%d %B %Y")
             if dt.date() < today:
                 dt = datetime.strptime(f"{day} {month_str} {year + 1}", "%d %B %Y")
+            elif dt.date() > today + timedelta(days=200):
+                dt = datetime.strptime(f"{day} {month_str} {year - 1}", "%d %B %Y")
             return dt.date().isoformat()
         except ValueError:
             pass
@@ -474,14 +484,20 @@ def _download_poster(url: str, slug: str) -> str:
     out_path = Path(POSTERS_DIR) / f"{slug}.jpg"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     if out_path.exists():
-        return f"posters/{slug}.jpg"
+        if out_path.stat().st_size > 512:
+            return f"posters/{slug}.jpg"
+        out_path.unlink()  # Re-download corrupt/truncated file
     try:
         headers = {"User-Agent": USER_AGENT}
         if "merlincinemas.co.uk" in url:
             parsed = urlparse(url)
             headers["Referer"] = f"{parsed.scheme}://{parsed.netloc}/"
-        r = HTTP_SESSION.get(url, headers=headers, timeout=15)
+        r = requests.get(url, headers=headers, timeout=15)
         r.raise_for_status()
+        ct = r.headers.get("Content-Type", "")
+        if not ct.startswith("image/"):
+            logger.warning("Poster URL returned non-image content-type %s: %s", ct, url[:50])
+            return ""
         if _save_poster_unscaled_two_to_three(r.content, out_path):
             return f"posters/{slug}.jpg"
         logger.warning("Poster rejected or unreadable (need ~2:3 aspect): %s", url[:80])
@@ -632,13 +648,14 @@ def _event_cinema_fallback_queries(title: str) -> List[str]:
     if not title or "RBO" not in title.upper():
         return []
     # Match: "PRODUCTION - RBO 2025-26" or "PRODUCTION - The MET Opera - RBO 2025-26"
-    m = re.search(r"^(.+?)\s+-\s+(?:The MET Opera\s+-\s+)?RBO\s+2025-26", title, re.IGNORECASE)
+    m = re.search(r"^(.+?)\s+-\s+(?:The MET Opera\s+-\s+)?RBO\s+(\d{4}-\d{2})", title, re.IGNORECASE)
     if not m:
         return []
     production = m.group(1).strip().title()
+    season = m.group(2).replace("-", "/")
     if not production:
         return []
-    queries = [f"Royal Ballet & Opera 2025/26: {production}"]
+    queries = [f"Royal Ballet & Opera {season}: {production}"]
     # Met Opera titles: TMDb lists as "The Metropolitan Opera: Eugene Onegin"
     if "MET Opera" in title or "Met Opera" in title:
         queries.append(f"The Metropolitan Opera: {production}")
@@ -1061,7 +1078,7 @@ def _extract_merlin_tag_data(showtime_link: Any) -> Dict[str, Any]:
     """Extract normalized Merlin tag labels/keys and sold-out flag from a showtime anchor."""
     labels: List[str] = []
     keys: List[str] = []
-    sold_out = "soldout" in ((showtime_link.get("class") or []) if hasattr(showtime_link, "get") else [])
+    sold_out = "soldout" in (showtime_link.get("class") or [])
     for img in showtime_link.select("div.tooltip img"):
         key = (img.get("data-key") or "").strip().lower()
         if key and key not in keys:
@@ -1511,10 +1528,13 @@ def validate_scrape_health(
             if build_today <= earliest <= now_cutoff:
                 now_showing_films += 1
 
-    min_total_films = _env_int("WTW_MIN_TOTAL_FILMS", "HEALTH_MIN_TOTAL_FILMS", default=10)
-    min_total_showtimes = _env_int("WTW_MIN_TOTAL_SHOWTIMES", "HEALTH_MIN_TOTAL_SHOWTIMES", default=30)
+    min_total_films = _env_int("MERLIN_MIN_TOTAL_FILMS", "WTW_MIN_TOTAL_FILMS", "HEALTH_MIN_TOTAL_FILMS", default=10)
+    min_total_showtimes = _env_int("MERLIN_MIN_TOTAL_SHOWTIMES", "WTW_MIN_TOTAL_SHOWTIMES", "HEALTH_MIN_TOTAL_SHOWTIMES", default=30)
     raw_min_cinemas = os.environ.get("HEALTH_MIN_CINEMAS_WITH_FILMS")
     considered_cinemas = max(0, len(per_cinema_film_counts))
+    if considered_cinemas == 0:
+        logger.warning("Health check skipped: no cinemas to validate (all excluded or failed)")
+        return
     if raw_min_cinemas is None:
         min_cinemas_with_films = min(4, considered_cinemas)
     else:
@@ -1525,9 +1545,9 @@ def validate_scrape_health(
             min_cinemas_with_films = min(4, considered_cinemas)
     min_now_showing_films = _env_int("HEALTH_MIN_NOW_SHOWING_FILMS", default=1)
     max_markup_suspect_cinemas = _env_int("HEALTH_MAX_MARKUP_SUSPECT_CINEMAS", default=1)
-    min_films_per_cinema = _env_int("WTW_MIN_FILMS_PER_CINEMA", default=0)
+    min_films_per_cinema = _env_int("MERLIN_MIN_FILMS_PER_CINEMA", "WTW_MIN_FILMS_PER_CINEMA", default=0)
     enforce = _env_bool("HEALTHCHECK_ENFORCE", default=HEALTHCHECK_DEFAULT_ENFORCE == "1")
-    fail_on_markup_drift = _env_bool("WTW_FAIL_ON_MARKUP_DRIFT", default=False)
+    fail_on_markup_drift = _env_bool("MERLIN_FAIL_ON_MARKUP_DRIFT", "WTW_FAIL_ON_MARKUP_DRIFT", default=False)
 
     problems: List[str] = []
     if total_films < min_total_films:
@@ -1660,9 +1680,14 @@ def update_cinema_failure_state(
     return updated, changed
 
 
+def _esc_html(s: str) -> str:
+    """HTML-escape text for safe insertion."""
+    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
 def build_html(data: Dict[str, Any]) -> str:
     """Generate single self-contained index.html with Web3 style and date filtering."""
-    initial_showings_visible = _env_int("WTW_INITIAL_SHOWINGS_VISIBLE", default=SHOWTIMES_MAX_SLOTS_PER_FILM)
+    initial_showings_visible = _env_int("MERLIN_INITIAL_SHOWINGS_VISIBLE", "WTW_INITIAL_SHOWINGS_VISIBLE", default=SHOWTIMES_MAX_SLOTS_PER_FILM)
     if initial_showings_visible < 1:
         initial_showings_visible = 1
 
@@ -1861,7 +1886,7 @@ def build_html(data: Dict[str, Any]) -> str:
 
                 def tag_html(tag: str) -> str:
                     icon_id = tag_icon_ids.get(tag)
-                    label = tag_short_labels.get(tag, tag)
+                    label = _esc_html(tag_short_labels.get(tag, tag))
                     tooltip = tag_tooltips.get(tag) or (tag if tag in tag_short_labels else None)
                     title_esc = (tooltip or "").replace("&", "&amp;").replace('"', "&quot;")
                     title_attr = f' title="{title_esc}"' if title_esc else ""
@@ -1989,16 +2014,13 @@ def build_html(data: Dict[str, Any]) -> str:
             if genres
             else ""
         )
-        # Escape for HTML (e.g. "Smith & Jones" -> "Smith &amp; Jones")
-        def esc(s: str) -> str:
-            return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        cast_first_esc = ", ".join(esc(a) for a in cast_first)
-        cast_rest_esc = ", ".join(esc(a) for a in cast_rest)
-        director_esc = esc(director)
-        writer_esc = esc(writer)
-        description_esc = esc(description)
-        release_line = f'<span class="release">Released: {esc(release_date_text)}</span>' if release_date_text else ""
-        note_html = f'<p class="crew"><strong>Booking Notes:</strong> {esc(ticket_note)}</p>' if ticket_note else ""
+        cast_first_esc = ", ".join(_esc_html(a) for a in cast_first)
+        cast_rest_esc = ", ".join(_esc_html(a) for a in cast_rest)
+        director_esc = _esc_html(director)
+        writer_esc = _esc_html(writer)
+        description_esc = _esc_html(description)
+        release_line = f'<span class="release">Released: {_esc_html(release_date_text)}</span>' if release_date_text else ""
+        note_html = f'<p class="crew"><strong>Booking Notes:</strong> {_esc_html(ticket_note)}</p>' if ticket_note else ""
 
         film_data_value = f"{film_id}-{film_slug}" if film_id and film_slug else film_slug
         cinema_links: Dict[str, str] = {}
@@ -2012,7 +2034,7 @@ def build_html(data: Dict[str, Any]) -> str:
             else:
                 cinema_links[short_cinema_name(cn)] = film_url or cu
         options_html = "".join(
-            f'<a href="{u}" class="cinema-option-link" target="_blank" rel="noopener">{esc(n)}</a>'
+            f'<a href="{u}" class="cinema-option-link" target="_blank" rel="noopener">{_esc_html(n)}</a>'
             for n, u in sorted(cinema_links.items())
         )
         chooser_html = f'<div id="film-page-options-{options_id}" class="film-page-options" hidden>{options_html}</div>'
@@ -2032,7 +2054,7 @@ def build_html(data: Dict[str, Any]) -> str:
         status_label = "Now Showing" if status == "now" else "Coming Soon"
         if is_live_event:
             status_label = "Live Event"
-        cinema_line = f'<p class="crew"><strong>Cinema:</strong> {esc(cinema_name)}</p>' if cinema_name else ""
+        cinema_line = f'<p class="crew"><strong>Cinema:</strong> {_esc_html(cinema_name)}</p>' if cinema_name else ""
         dates_attr = html.escape(",".join(all_showtime_dates), quote=True)
         cinemas_attr = html.escape(",".join(f.get("cinema_names_list") or []), quote=True)
         options_key_attr = html.escape(options_id, quote=True)
@@ -3134,7 +3156,10 @@ def main() -> None:
     if fail_threshold_raw:
         try:
             fail_threshold = int(fail_threshold_raw)
-            if fail_threshold >= 0 and len(missing_posters) > fail_threshold:
+            if fail_threshold < 0:
+                logger.warning("POSTER_MISSING_FAIL_THRESHOLD=%d is negative, treating as 0", fail_threshold)
+                fail_threshold = 0
+            if len(missing_posters) > fail_threshold:
                 raise RuntimeError(
                     f"Poster quality gate failed: {len(missing_posters)} missing poster(s) exceeds threshold {fail_threshold}"
                 )

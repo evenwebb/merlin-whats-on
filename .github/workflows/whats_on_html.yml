@@ -21,8 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       PIP_DISABLE_PIP_VERSION_CHECK: "1"
-      PIP_NO_PYTHON_VERSION_WARNING: "1"
       # Secrets / vars once at job level — inherited by all steps (no per-step env block).
       TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
       CREATE_FAILURE_ISSUE: ${{ secrets.CREATE_FAILURE_ISSUE }}
@@ -30,12 +30,12 @@ jobs:
       SCRAPER_RUN_ATTEMPTS: ${{ secrets.SCRAPER_RUN_ATTEMPTS || '1' }}
       POSTER_MISSING_FAIL_THRESHOLD: ${{ vars.POSTER_MISSING_FAIL_THRESHOLD || '8' }}
       HEALTHCHECK_ENFORCE: "true"
-      WTW_FAIL_ON_MARKUP_DRIFT: ${{ vars.WTW_FAIL_ON_MARKUP_DRIFT || 'false' }}
-      WTW_MIN_TOTAL_FILMS: ${{ vars.WTW_MIN_TOTAL_FILMS || '10' }}
-      WTW_MIN_TOTAL_SHOWTIMES: ${{ vars.WTW_MIN_TOTAL_SHOWTIMES || '30' }}
-      WTW_MIN_FILMS_PER_CINEMA: ${{ vars.WTW_MIN_FILMS_PER_CINEMA || '0' }}
-      WTW_INITIAL_SHOWINGS_VISIBLE: ${{ vars.WTW_INITIAL_SHOWINGS_VISIBLE || '40' }}
-      WTW_ENABLED_CINEMAS: ${{ vars.WTW_ENABLED_CINEMAS || 'all' }}
+      MERLIN_FAIL_ON_MARKUP_DRIFT: ${{ vars.MERLIN_FAIL_ON_MARKUP_DRIFT || 'false' }}
+      MERLIN_MIN_TOTAL_FILMS: ${{ vars.MERLIN_MIN_TOTAL_FILMS || '10' }}
+      MERLIN_MIN_TOTAL_SHOWTIMES: ${{ vars.MERLIN_MIN_TOTAL_SHOWTIMES || '30' }}
+      MERLIN_MIN_FILMS_PER_CINEMA: ${{ vars.MERLIN_MIN_FILMS_PER_CINEMA || '0' }}
+      MERLIN_INITIAL_SHOWINGS_VISIBLE: ${{ vars.MERLIN_INITIAL_SHOWINGS_VISIBLE || '40' }}
+      MERLIN_ENABLED_CINEMAS: ${{ vars.MERLIN_ENABLED_CINEMAS || 'all' }}
       HEALTH_MIN_TOTAL_FILMS: ${{ vars.HEALTH_MIN_TOTAL_FILMS || '10' }}
       HEALTH_MIN_TOTAL_SHOWTIMES: ${{ vars.HEALTH_MIN_TOTAL_SHOWTIMES || '30' }}
       HEALTH_MIN_CINEMAS_WITH_FILMS: ${{ vars.HEALTH_MIN_CINEMAS_WITH_FILMS || '4' }}
@@ -45,37 +45,39 @@ jobs:
       MAX_CONSECUTIVE_CINEMA_FAILURES: ${{ vars.MAX_CONSECUTIVE_CINEMA_FAILURES || '2' }}
       TMDB_EMPTY_POSTER_REFETCH_DAYS: ${{ vars.TMDB_EMPTY_POSTER_REFETCH_DAYS || '1' }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          show-progress: false
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: pip
           cache-dependency-path: requirements.txt
+
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+          cache-dependency-glob: requirements.txt
 
       - name: Install dependencies & run scraper
         run: |
           set -o pipefail
-          python3 -m pip install -q --disable-pip-version-check --prefer-binary -r requirements.txt
+          uv pip install --system -q -r requirements.txt
 
           mkdir -p logs
           : > logs/scraper_run.log
           {
             echo "Timestamp (UTC): $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
             echo "Runner: ${RUNNER_OS:-unknown}"
-            echo "Python: $(python3 --version 2>&1)"
+            echo "Python: $(python --version 2>&1)"
             echo "HEALTHCHECK_ENFORCE=${HEALTHCHECK_ENFORCE}"
-            echo "WTW_FAIL_ON_MARKUP_DRIFT=${WTW_FAIL_ON_MARKUP_DRIFT}"
-            echo "WTW_MIN_TOTAL_FILMS=${WTW_MIN_TOTAL_FILMS}"
-            echo "WTW_MIN_TOTAL_SHOWTIMES=${WTW_MIN_TOTAL_SHOWTIMES}"
-            echo "WTW_MIN_FILMS_PER_CINEMA=${WTW_MIN_FILMS_PER_CINEMA}"
-            echo "WTW_INITIAL_SHOWINGS_VISIBLE=${WTW_INITIAL_SHOWINGS_VISIBLE}"
-            echo "WTW_ENABLED_CINEMAS=${WTW_ENABLED_CINEMAS}"
+            echo "MERLIN_FAIL_ON_MARKUP_DRIFT=${MERLIN_FAIL_ON_MARKUP_DRIFT}"
+            echo "MERLIN_MIN_TOTAL_FILMS=${MERLIN_MIN_TOTAL_FILMS}"
+            echo "MERLIN_MIN_TOTAL_SHOWTIMES=${MERLIN_MIN_TOTAL_SHOWTIMES}"
+            echo "MERLIN_MIN_FILMS_PER_CINEMA=${MERLIN_MIN_FILMS_PER_CINEMA}"
+            echo "MERLIN_INITIAL_SHOWINGS_VISIBLE=${MERLIN_INITIAL_SHOWINGS_VISIBLE}"
+            echo "MERLIN_ENABLED_CINEMAS=${MERLIN_ENABLED_CINEMAS}"
             echo "HEALTH_MIN_TOTAL_FILMS=${HEALTH_MIN_TOTAL_FILMS}"
             echo "HEALTH_MIN_TOTAL_SHOWTIMES=${HEALTH_MIN_TOTAL_SHOWTIMES}"
             echo "HEALTH_MIN_CINEMAS_WITH_FILMS=${HEALTH_MIN_CINEMAS_WITH_FILMS}"
@@ -102,7 +104,7 @@ jobs:
           attempt=1
           while [ "$attempt" -le "$ATTEMPTS" ]; do
             echo "Scraper attempt $attempt/$ATTEMPTS"
-            if python3 whats_on_scraper.py 2>&1 | tee -a logs/scraper_run.log; then
+            if python whats_on_scraper.py 2>&1 | tee -a logs/scraper_run.log; then
               echo "Scraper completed successfully"
               exit 0
             fi
@@ -120,7 +122,7 @@ jobs:
 
       - name: Upload failure logs artifact
         if: failure()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         with:
           name: scraper-failure-logs
           retention-days: 7
@@ -150,7 +152,7 @@ jobs:
 
       - name: Create or update failure issue
         if: failure() && env.CREATE_FAILURE_ISSUE == 'true'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
@@ -233,7 +235,7 @@ jobs:
               "```",
               "",
               "Please review the run logs and fix the scraping/configuration issue."
-            ].join("\\n");
+            ].join("\n");
 
             const existing = await github.rest.issues.listForRepo({
               owner,
@@ -285,7 +287,7 @@ jobs:
                     `Failure signature \`${failureSignature}\` recurred in run ${runUrl}.`,
                     "",
                     "Issue reopened; duplicate details omitted."
-                  ].join("\\n")
+                  ].join("\n")
                 });
                 core.info(`Failure signature ${failureSignature} tracked in closed issue #${signatureIssue.number}; reopened/reset streak.`);
               } else {
@@ -313,7 +315,7 @@ jobs:
                   `New failure signature detected: \`${failureSignature}\``,
                   "",
                   body
-                ].join("\\n")
+                ].join("\n")
               });
             } else {
               await github.rest.issues.create({
@@ -327,7 +329,7 @@ jobs:
 
       - name: Auto-close stale failure issue on success streak
         if: success() && env.CREATE_FAILURE_ISSUE == 'true'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v7
         with:
           script: |
             const owner = context.repo.owner;
