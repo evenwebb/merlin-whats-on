@@ -1342,7 +1342,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-11T12:37:58.611908"
+    "cached_at": "2026-06-12T12:12:31.215201"
   },
   "rbo-2026-27-the-royal-opera-carmen": {
     "poster_url": "https://image.tmdb.org/t/p/w342/UhXsQRwE0eqTW5E95DKHZZj3aZ.jpg",
@@ -1355,7 +1355,7 @@
     "director": "",
     "writer": "",
     "cast": "Ginger Costa-Jackson, Russell Thomas, Adriana González",
-    "cached_at": "2026-06-11T12:37:58.668344"
+    "cached_at": "2026-06-12T12:12:31.256904"
   },
   "rbo-2026-27-the-royal-ballet-the-nutcracker": {
     "poster_url": "https://image.tmdb.org/t/p/w342/2r83M6V15qReBAebIrejbM0CSkQ.jpg",
@@ -1368,7 +1368,7 @@
     "director": "",
     "writer": "",
     "cast": "Marianna Tsembenhoi, Mayara Magri, Reece Clarke",
-    "cached_at": "2026-06-11T12:37:58.709849"
+    "cached_at": "2026-06-12T12:12:31.310846"
   },
   "rbo-2026-27-met-opera-la-fanciulla-del-west": {
     "poster_url": "",
@@ -1394,7 +1394,7 @@
     "director": "",
     "writer": "",
     "cast": "Elisabet Strid, Andreas Schager, Mika Kares",
-    "cached_at": "2026-06-11T12:37:59.330819"
+    "cached_at": "2026-06-12T12:12:31.370833"
   },
   "rbo-2026-27-the-royal-opera-cos-fan-tutte": {
     "poster_url": "https://image.tmdb.org/t/p/w342/jll3LbWdct2yykgP9bxjb0vZ44w.jpg",
@@ -1407,7 +1407,7 @@
     "director": "",
     "writer": "",
     "cast": "Louise Alder, Simone McIntosh, Mingjie Lei",
-    "cached_at": "2026-06-11T12:37:59.373263"
+    "cached_at": "2026-06-12T12:12:31.430700"
   },
   "rbo-2026-27-the-royal-ballet-alice-s-adventures-in-wonderland": {
     "poster_url": "https://image.tmdb.org/t/p/w342/5objvLeZTI5oBGHeu5D2hG0EksB.jpg",
@@ -1420,7 +1420,7 @@
     "director": "",
     "writer": "",
     "cast": "Francesca Hayward, William Bracewell, James Hay",
-    "cached_at": "2026-06-11T12:37:59.403934"
+    "cached_at": "2026-06-12T12:12:31.465088"
   },
   "rbo-2026-27-the-royal-ballet-swan-lake": {
     "poster_url": "https://image.tmdb.org/t/p/w342/mZ1srJ7CdHKuJD6TdRkVVfl4QrZ.jpg",
@@ -1433,7 +1433,7 @@
     "director": "",
     "writer": "",
     "cast": "",
-    "cached_at": "2026-06-11T12:37:59.452550"
+    "cached_at": "2026-06-12T12:12:31.513590"
   },
   "rbo-2026-27-the-royal-opera-tosca": {
     "poster_url": "https://image.tmdb.org/t/p/w342/aXA7HKS5DE4WxBtrayxEHOYdXmF.jpg",
@@ -1446,7 +1446,7 @@
     "director": "",
     "writer": "",
     "cast": "Aleksandra Kurzak, Saimir Pirgu, Christopher Maltman",
-    "cached_at": "2026-06-11T12:37:59.497820"
+    "cached_at": "2026-06-12T12:12:31.570959"
   },
   "rbo-2026-27-the-royal-ballet-romeo-juliet": {
     "poster_url": "https://image.tmdb.org/t/p/w342/eCZpBsBQhdBPCDEjX1DOtf9qcfW.jpg",
@@ -1459,7 +1459,7 @@
     "director": "",
     "writer": "",
     "cast": "Fumi Kaneko, Vadim Muntagirov, Francisco Serrano",
-    "cached_at": "2026-06-11T12:37:59.530366"
+    "cached_at": "2026-06-12T12:12:31.920154"
   },
   "frozen-presented-by-ramps": {
     "poster_url": "https://image.tmdb.org/t/p/w342/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
@@ -1686,7 +1686,7 @@
     "director": "",
     "writer": "",
     "cast": "André Rieu (Himself)",
-    "cached_at": "2026-06-11T12:37:58.562957"
+    "cached_at": "2026-06-12T12:12:31.171259"
   },
   "guilty-pleasures-at-the-ritz": {
     "poster_url": "",
@@ -2060,5 +2060,18 @@
     "writer": "",
     "cast": "Yuki Kajiura (Self), Ryo Takahashi (Self), Kaori Oda (Self), Keiko (Self), Yuriko Kaida (Self), Joelle Strother (Self)",
     "cached_at": "2026-06-11T12:38:16.702902"
+  },
+  "the-elvis-68-recreation-starring-emilio-santoro": {
+    "poster_url": "",
+    "trailer_url": "",
+    "runtime_min": null,
+    "vote_average": null,
+    "genres": [],
+    "imdb_id": "",
+    "overview": "",
+    "director": "",
+    "writer": "",
+    "cast": "",
+    "cached_at": "2026-06-12T12:12:32.170512"
   }
 }
