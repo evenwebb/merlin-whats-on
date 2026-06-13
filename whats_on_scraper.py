@@ -2050,10 +2050,19 @@ def build_html(data: Dict[str, Any]) -> str:
         crew_html = "\n      ".join(meta_lines)
 
         earliest = min(all_showtime_dates) if all_showtime_dates else ""
+        latest = max(all_showtime_dates) if all_showtime_dates else ""
         status = "now" if earliest and build_today_iso <= earliest <= now_showing_cutoff_iso else "coming-soon"
         status_label = "Now Showing" if status == "now" else "Coming Soon"
         if is_live_event:
             status_label = "Live Event"
+        # First/last chance labels (#8)
+        chance_badge = ""
+        if earliest and earliest == build_today_iso:
+            chance_badge = '<span class="chance-badge chance-opens">Opens today</span>'
+        elif latest and latest == build_today_iso:
+            chance_badge = '<span class="chance-badge chance-closing">Last chance today</span>'
+        elif latest and latest <= (datetime.now() + timedelta(days=3)).strftime("%Y-%m-%d"):
+            chance_badge = '<span class="chance-badge chance-closing">Ends soon</span>'
         cinema_line = f'<p class="crew"><strong>Cinema:</strong> {_esc_html(cinema_name)}</p>' if cinema_name else ""
         dates_attr = html.escape(",".join(all_showtime_dates), quote=True)
         cinemas_attr = html.escape(",".join(f.get("cinema_names_list") or []), quote=True)
@@ -2061,6 +2070,7 @@ def build_html(data: Dict[str, Any]) -> str:
         return f"""
 <article class="film-card" data-dates="{dates_attr}" data-status="{status}" data-options-key="{options_key_attr}" data-cinemas="{cinemas_attr}">
   <span class="status-pill status-pill--{status}">{status_label}</span>
+  {chance_badge}
   <div class="film-header">
     {poster_div}
     <div class="film-meta">
@@ -2357,6 +2367,9 @@ def build_html(data: Dict[str, Any]) -> str:
     }}
     .status-pill--now {{ background: rgba(0,212,255,0.16); border-color: rgba(0,212,255,0.45); color: #8beeff; }}
     .status-pill--coming-soon {{ background: rgba(168,85,247,0.2); border-color: rgba(168,85,247,0.5); color: #e0b8ff; }}
+    .chance-badge {{ display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-left: 0.4rem; margin-bottom: 0.7rem; vertical-align: top; }}
+    .chance-opens {{ background: rgba(74,222,128,0.2); color: #4ade80; border: 1px solid rgba(74,222,128,0.4); }}
+    .chance-closing {{ background: rgba(251,113,133,0.2); color: #fb7185; border: 1px solid rgba(251,113,133,0.4); }}
     .film-card::before {{
       content: '';
       position: absolute;
@@ -2497,6 +2510,16 @@ def build_html(data: Dict[str, Any]) -> str:
     .footer-disclaimer {{ font-size: 0.9rem; max-width: 36rem; margin: 0 auto 1rem; line-height: 1.6; }}
     .footer-links {{ display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem; margin-bottom: 1rem; }}
     .footer-attribution {{ font-size: 0.8rem; opacity: 0.85; margin: 0; line-height: 1.5; }}
+    .view-toggle {{ display: flex; gap: 0.4rem; margin-top: 0.75rem; }}
+    .view-btn {{ padding: 0.3rem 0.7rem; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-size: 0.78rem; font-weight: 500; transition: all 0.15s; }}
+    .view-btn.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
+    .view-btn:hover:not(.active) {{ border-color: var(--accent); color: var(--accent); }}
+    .poster-view .film-card {{ display: block; max-width: 220px; padding: 0; background: none; border: none; }}
+    .poster-view .film-card .film-header {{ display: block; }}
+    .poster-view .film-card .film-meta {{ padding: 0.5rem 0.25rem; }}
+    .poster-view .film-card .showtimes, .poster-view .film-card .links, .poster-view .film-card .synopsis, .poster-view .film-card .crew-line {{ display: none; }}
+    .poster-view .film-card .film-poster {{ width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; }}
+    .poster-view #films {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; }}
   </style>
 </head>
 <body>
@@ -2540,6 +2563,10 @@ def build_html(data: Dict[str, Any]) -> str:
     <header>
       <h1>What's on at Merlin Cinemas Cornwall</h1>
       <p>Ratings, trailers &amp; links to IMDb, RT and Trakt</p>
+      <div class="view-toggle">
+        <button type="button" class="view-btn active" data-view="cards" onclick="switchView('cards')" title="Card view">☰ Cards</button>
+        <button type="button" class="view-btn" data-view="posters" onclick="switchView('posters')" title="Poster grid view">▦ Posters</button>
+      </div>
     </header>
     {filter_tabs_html}
     <main id="films" data-initial-showings="{initial_showings_visible}" data-max-showtime-days="{SHOWTIMES_MAX_DAYS_PER_FILM}">{cards_html}</main>
@@ -2957,6 +2984,10 @@ def build_html(data: Dict[str, Any]) -> str:
         if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCinemaModal();
       }});
     }})();
+    function switchView(view) {{
+      document.querySelectorAll('.view-btn').forEach(function(b) {{ b.classList.toggle('active', b.dataset.view === view); }});
+      document.querySelector('.page').classList.toggle('poster-view', view === 'posters');
+    }}
   </script>
 </body>
 </html>
