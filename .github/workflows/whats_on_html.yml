@@ -25,7 +25,7 @@ jobs:
       PIP_DISABLE_PIP_VERSION_CHECK: "1"
       # Secrets / vars once at job level — inherited by all steps (no per-step env block).
       TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-      CREATE_FAILURE_ISSUE: ${{ secrets.CREATE_FAILURE_ISSUE }}
+      CREATE_FAILURE_ISSUE: ${{ secrets.CREATE_FAILURE_ISSUE || 'true' }}
       # Default 1 attempt = fastest billable time; set repository secret to 2 for retry + backoff.
       SCRAPER_RUN_ATTEMPTS: ${{ secrets.SCRAPER_RUN_ATTEMPTS || '1' }}
       POSTER_MISSING_FAIL_THRESHOLD: ${{ vars.POSTER_MISSING_FAIL_THRESHOLD || '8' }}

@@ -1495,7 +1495,7 @@ def _tmdb_movie_images_poster_path(api_key: str, movie_id: int) -> str:
     """Alternate poster from /movie/{id}/images when detail has no poster_path."""
     try:
         r = _tmdb_get(
-            "https://api.themoviedb.org/3/movie/{}/images".format(movie_id),
+            f"https://api.themoviedb.org/3/movie/{movie_id}/images",
             params={"api_key": api_key},
             timeout=10,
         )
@@ -1514,7 +1514,7 @@ def _tmdb_movie_images_poster_path(api_key: str, movie_id: int) -> str:
 def _tmdb_tv_images_poster_path(api_key: str, tv_id: int) -> str:
     try:
         r = _tmdb_get(
-            "https://api.themoviedb.org/3/tv/{}/images".format(tv_id),
+            f"https://api.themoviedb.org/3/tv/{tv_id}/images",
             params={"api_key": api_key},
             timeout=10,
         )
