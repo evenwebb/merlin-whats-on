@@ -26,6 +26,752 @@ from bs4 import BeautifulSoup
 from io import BytesIO
 from PIL import Image, ImageOps
 
+# ── External CSS/JS assets (written to docs/ at build time) ──────────────────
+_PAGE_CSS = """\
+    :root {
+      --bg: #0a0a0f;
+      --card-bg: #12121a;
+      --surface: #12121a;
+      --surface-2: #12121a;
+      --surface-3: #1a1a24;
+      --border: rgba(168,85,247,0.25);
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --cyan: #00d4ff;
+      --purple: #a855f7;
+      --accent: #00d4ff;
+      --accent-dim: rgba(0,212,255,0.15);
+      --accent-glow: rgba(0,212,255,0.25);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-lg: 24px;
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100% 80% at 50% -30%, var(--accent-dim) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(0,212,255,0.08) 0%, transparent 40%),
+        radial-gradient(ellipse 40% 40% at 10% 90%, rgba(168,85,247,0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .page { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    @media (min-width: 640px) { .page { padding: 3rem 2rem 5rem; } }
+    header {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp 0.8s ease-out;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem; }
+    .filter-tabs { display: flex; flex-direction: column; gap: 1rem; align-items: center; padding: 0.75rem 0 0; width: 100%; }
+    .tabs-wrap { width: 100%; }
+    .tabs-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.35rem; text-align: center; font-weight: 600; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; padding: 0.25rem 0 0.25rem; }
+    .tab {
+      font-family: inherit;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all var(--transition);
+    }
+    .tab:hover { border-color: var(--cyan); }
+    .tab.active {
+      background: linear-gradient(135deg, var(--accent-dim), rgba(168,85,247,0.15));
+      border-color: var(--cyan);
+    }
+    #films { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .film-section {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      background: linear-gradient(160deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+    @media (min-width: 900px) {
+      .film-section { grid-template-columns: repeat(2, 1fr); }
+    }
+    .film-section--now {
+      border-color: rgba(0,212,255,0.45);
+      box-shadow: inset 0 0 0 1px rgba(0,212,255,0.08);
+    }
+    .film-section--coming {
+      border-color: rgba(168,85,247,0.45);
+      box-shadow: inset 0 0 0 1px rgba(168,85,247,0.1);
+    }
+    .section-title-wrap {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+    .film-section--now .section-title-wrap {
+      border-color: rgba(0,212,255,0.5);
+      background: linear-gradient(90deg, rgba(0,212,255,0.2), rgba(0,212,255,0.06));
+    }
+    .film-section--coming .section-title-wrap {
+      border-color: rgba(168,85,247,0.5);
+      background: linear-gradient(90deg, rgba(168,85,247,0.24), rgba(168,85,247,0.08));
+    }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .film-section--now .section-title { color: var(--cyan); }
+    .film-section--coming .section-title { color: #cf90ff; }
+    .section-count { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text); opacity: 0.95; }
+    .film-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.6s ease-out backwards;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 1.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      margin-bottom: 0.7rem;
+    }
+    .status-pill--now { background: rgba(0,212,255,0.16); border-color: rgba(0,212,255,0.45); color: #8beeff; }
+    .status-pill--coming-soon { background: rgba(168,85,247,0.2); border-color: rgba(168,85,247,0.5); color: #e0b8ff; }
+    .chance-badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-left: 0.4rem; margin-bottom: 0.7rem; vertical-align: top; }
+    .chance-opens { background: rgba(74,222,128,0.2); color: #4ade80; border: 1px solid rgba(74,222,128,0.4); }
+    .chance-closing { background: rgba(251,113,133,0.2); color: #fb7185; border: 1px solid rgba(251,113,133,0.4); }
+    .film-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .film-card:hover {
+      border-color: rgba(0,212,255,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,255,0.1);
+    }
+    .film-card:hover::before { opacity: 1; }
+    .film-header { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .poster { position: relative; flex-shrink: 0; }
+    .poster img { width: 210px; height: 315px; object-fit: cover; border-radius: var(--radius-sm); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .poster .poster-event-banner { position: absolute; left: 0.4rem; right: 0.4rem; bottom: 0.4rem; width: calc(100% - 0.8rem); height: 2rem; object-fit: contain; background: rgba(0,0,0,0.45); padding: 0.2rem; border-radius: 6px; box-shadow: none; }
+    .poster-fallback-label {
+      position: absolute;
+      left: 0.5rem;
+      right: 0.5rem;
+      bottom: 0.55rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.62);
+      color: #e2e8f0;
+      font-size: 0.72rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .poster .icon--hints { position: absolute; right: 0; top: 0; width: 105px; height: 105px; pointer-events: none; }
+    .poster .icon--hints.icon--3d { background: url(icons/3D-Performance.png) no-repeat; background-size: 100% auto; background-position: top right; }
+    .film-meta { flex: 1; min-width: 200px; }
+    .film-meta h2 { font-size: 1.25rem; margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .cert { margin-right: 6px; vertical-align: middle; }
+    .cert-fallback { min-width: 2.1rem; padding: 0.18rem 0.45rem; background: var(--surface-3); color: #fff; font-size: 0.65rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; border: 1px solid rgba(255,255,255,0.25); }
+    .meta-line { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
+    .rating-wrap { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .rating-bar { display: block; width: 3rem; height: 0.5rem; background: rgba(255,255,255,0.25); border-radius: 3px; overflow: hidden; }
+    .rating-fill { display: block; height: 0.5rem; background: linear-gradient(90deg, #00d4ff, #a855f7); border-radius: 3px; transition: width 0.2s; }
+    .rating-text { font-variant-numeric: tabular-nums; font-size: 0.85em; color: var(--cyan); }
+    .genres { color: var(--purple); }
+    .trailer { display: inline-block; margin-bottom: 0.5rem; color: var(--cyan); font-size: 0.9rem; background: none; border: none; cursor: pointer; font-family: inherit; padding: 0; text-decoration: underline; }
+    .trailer:hover { color: var(--purple); }
+    .trailer-lightbox { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1rem; box-sizing: border-box; }
+    .trailer-lightbox.is-open { display: flex; }
+    .trailer-lightbox-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.85); cursor: pointer; }
+    .trailer-lightbox-inner { position: relative; width: 100%; max-width: 90vw; max-height: 90vh; aspect-ratio: 16/9; background: #000; border-radius: var(--radius); box-shadow: 0 0 40px var(--accent-glow); overflow: hidden; }
+    .trailer-lightbox-inner iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .trailer-lightbox-close { position: absolute; top: -2.5rem; right: 0; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); width: 2rem; height: 2rem; border-radius: var(--radius-sm); cursor: pointer; font-size: 1.25rem; line-height: 1; display: flex; align-items: center; justify-content: center; z-index: 1; transition: all var(--transition); }
+    .trailer-lightbox-close:hover { border-color: var(--cyan); color: var(--cyan); }
+    .trailer-lightbox-fallback { position: absolute; bottom: 0.5rem; left: 0.5rem; font-size: 0.85rem; color: var(--cyan); }
+    .trailer-lightbox-fallback:hover { color: var(--purple); }
+    .film-page-modal { position: fixed; inset: 0; z-index: 1100; display: none; align-items: center; justify-content: center; padding: 1rem; }
+    .film-page-modal.is-open { display: flex; }
+    .film-page-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.82); cursor: pointer; }
+    .film-page-modal-inner { position: relative; width: min(28rem, 100%); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; box-shadow: 0 0 30px var(--accent-glow); }
+    .film-page-modal-title { margin: 0 0 0.65rem; font-size: 1rem; }
+    .film-page-modal-list { display: grid; gap: 0.5rem; }
+    .film-page-modal-list a { text-decoration: none; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.55rem 0.7rem; background: rgba(255,255,255,0.03); }
+    .film-page-modal-list a:hover { border-color: var(--cyan); color: var(--cyan); }
+    .film-page-modal-close { position: absolute; top: 0.4rem; right: 0.4rem; background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; width: 1.9rem; height: 1.9rem; cursor: pointer; }
+    .film-meta .crew { font-size: 0.9rem; color: var(--text-muted); margin: 0; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+    .film-meta .crew:first-of-type { padding-top: 0; }
+    .film-meta .cast { font-size: 0.9rem; color: var(--text-muted); margin: 0; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+    .film-meta .synopsis { font-size: 0.9rem; color: var(--text-muted); margin: 0; padding: 0.75rem 0 0.5rem; line-height: 1.5; max-width: 56em; border-top: 1px solid var(--border); }
+    .links { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .links a, .links button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .links .btn {
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      color: var(--bg);
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .links .btn:hover {
+      background: linear-gradient(135deg, #20dfff, #b366ff);
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .links .link { color: var(--accent); background: rgba(255,255,255,0.06); border: 1px solid var(--border); }
+    .links .link:hover { background: rgba(0,212,255,0.12); border-color: var(--cyan); color: var(--purple); }
+    .ext-logo { width: 18px; height: 18px; flex-shrink: 0; }
+    .showtimes { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.9rem; }
+    .day-group { margin-bottom: 0.75rem; }
+    .day-group:last-child { margin-bottom: 0; }
+    .st-date { font-weight: 600; margin-bottom: 0.25rem; color: var(--text); }
+    .st-row { display: grid; grid-template-columns: 5.5rem minmax(8rem, 1fr) 2fr; gap: 0 0.75rem; align-items: center; margin-bottom: 0.2rem; }
+    .st-row:last-child { margin-bottom: 0; }
+    .st-time { font-variant-numeric: tabular-nums; }
+    .st-time a, .showtime a { color: var(--cyan); }
+    .st-time .past { color: var(--text-muted); }
+    .st-screen { color: var(--text-muted); }
+    .st-tags { display: flex; align-items: center; flex-wrap: wrap; gap: 0.25rem; }
+    .showtimes-actions { margin-top: 0.75rem; }
+    .showtimes-more-btn {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--cyan);
+      border-radius: 8px;
+      padding: 0.35rem 0.6rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .showtimes-more-btn:hover { border-color: var(--cyan); background: rgba(0,212,255,0.12); }
+    .showtimes-extra { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed var(--border); }
+    .cast-more-btn { background: none; border: none; color: var(--cyan); cursor: pointer; font-size: 0.85em; padding: 0 0.25rem; font-family: inherit; }
+    .cast-more-btn:hover { text-decoration: underline; }
+    .tag { font-size: 0.75rem; color: var(--text-muted); margin-left: 0.25rem; display: inline-flex; align-items: center; gap: 0.25rem; }
+    .tag-icon { width: 14px; height: 14px; flex-shrink: 0; vertical-align: middle; }
+    .cal-link { color: var(--purple); text-decoration: none; margin-left: 0.25rem; }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      animation: fadeUp 0.6s ease-out backwards;
+    }
+    footer a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color var(--transition); }
+    footer a:hover { color: var(--purple); }
+    .footer-disclaimer { font-size: 0.9rem; max-width: 36rem; margin: 0 auto 1rem; line-height: 1.6; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem; margin-bottom: 1rem; }
+    .footer-attribution { font-size: 0.8rem; opacity: 0.85; margin: 0; line-height: 1.5; }
+    .view-toggle { display: flex; gap: 0.4rem; margin-top: 0.75rem; }
+    .view-btn { padding: 0.3rem 0.7rem; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-size: 0.78rem; font-weight: 500; transition: all 0.15s; }
+    .view-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .view-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+    .poster-view .film-card { display: block; max-width: 220px; padding: 0; background: none; border: none; }
+    .poster-view .film-card .film-header { display: block; }
+    .poster-view .film-card .film-meta { padding: 0.5rem 0.25rem; }
+    .poster-view .film-card .showtimes, .poster-view .film-card .links, .poster-view .film-card .synopsis, .poster-view .film-card .crew-line { display: none; }
+    .poster-view .film-card .film-poster { width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; }
+    .poster-view #films { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; }
+"""
+
+_PAGE_JS = """\
+    (function() {
+      var filmsEl = document.getElementById('films');
+      var storageKey = 'wtw-whats-on-cinema';
+      if (!filmsEl) return;
+      var initialN = parseInt(filmsEl.getAttribute('data-initial-showings') || '40', 10);
+      var maxDays = parseInt(filmsEl.getAttribute('data-max-showtime-days') || '10', 10);
+      if (initialN < 1) initialN = 1;
+      if (!Number.isFinite(maxDays) || maxDays < 1) maxDays = 10;
+
+      function normalizeRow(r) {
+        if (Array.isArray(r)) {
+          return {
+            date: r[0] || '',
+            time: r[1] || '',
+            screen: r[2] || '',
+            cinema_name: r[3] || '',
+            booking_url: r[4] || '',
+            tags: r[5] || [],
+            sold_out: r.length > 6 ? !!r[6] : false
+          };
+        }
+        return {
+          date: r.date || '',
+          time: r.time || '',
+          screen: r.screen || '',
+          cinema_name: r.cinema_name || '',
+          booking_url: r.booking_url || '',
+          tags: r.tags || [],
+          sold_out: !!r.sold_out
+        };
+      }
+
+      function parseShowtimesJson(text) {
+        var o = JSON.parse(text);
+        if (o && o.v === 1 && Array.isArray(o.r)) return o.r.map(normalizeRow);
+        if (Array.isArray(o)) return o.map(normalizeRow);
+        return [];
+      }
+
+      function rowMatches(row, selDate, selCinema, selSaver) {
+        if (selDate !== 'all' && row.date !== selDate) return false;
+        if (selCinema !== 'all' && row.cinema_name !== selCinema) return false;
+        if (selSaver === 'super-saver') {
+          var tags = row.tags || [];
+          var hasSaver = false;
+          for (var ti = 0; ti < tags.length; ti++) {
+            if (tags[ti] === 'Super Saver') { hasSaver = true; break; }
+          }
+          if (!hasSaver) return false;
+        }
+        return true;
+      }
+
+      function sortRows(rows) {
+        return rows.slice().sort(function(a, b) {
+          if (a.date !== b.date) return a.date < b.date ? -1 : 1;
+          if (a.time !== b.time) return a.time < b.time ? -1 : 1;
+          if (a.screen !== b.screen) return a.screen < b.screen ? -1 : 1;
+          return (a.booking_url || '').localeCompare(b.booking_url || '');
+        });
+      }
+
+      function splitInitial(rows) {
+        var display = [];
+        var hidden = [];
+        var keptDates = {};
+        function countDates() {
+          var n = 0;
+          for (var k in keptDates) {
+            if (Object.prototype.hasOwnProperty.call(keptDates, k)) n++;
+          }
+          return n;
+        }
+        for (var i = 0; i < rows.length; i++) {
+          var st = rows[i];
+          var d = st.date || '';
+          if (!d) continue;
+          if (!keptDates[d] && countDates() >= maxDays) {
+            hidden.push(st);
+            continue;
+          }
+          if (!keptDates[d]) keptDates[d] = true;
+          if (display.length >= initialN) {
+            hidden.push(st);
+            continue;
+          }
+          display.push(st);
+        }
+        return { display: display, hidden: hidden };
+      }
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function dayHeaderLabel(iso) {
+        try {
+          var d = new Date(iso + 'T12:00:00Z');
+          return d.toLocaleDateString('en-GB', {
+            timeZone: 'Europe/London',
+            weekday: 'short',
+            day: 'numeric',
+            month: 'short'
+          });
+        } catch (e) {
+          return iso;
+        }
+      }
+
+      var tagIconIds = {
+        'Audio Description': 'icon-audio-desc',
+        'Wheelchair access': 'icon-wheelchair',
+        '2D': 'icon-2d',
+        '3D': 'icon-3d',
+        'Subtitles': 'icon-subtitles',
+        'Silver Screen': 'icon-silver-screen',
+        'Event cinema': 'icon-event-cinema',
+        'Advance Screening': 'icon-event-cinema',
+        'Strobe Light warning': 'icon-strobe',
+        'Parent & Baby': 'icon-parent-baby',
+        'Autism Friendly': 'icon-autism-friendly',
+        'Kids Club': 'icon-kids-club'
+      };
+      var tagShortLabels = {
+        'Audio Description': 'AD',
+        'Subtitles': 'Subs',
+        'Wheelchair access': 'WA',
+        'Strobe Light warning': 'Strobe',
+        'Hard of Hearing': 'HOH',
+        'Private Box': 'Box',
+        'Super Saver': 'Saver'
+      };
+      var tagTooltips = {
+        'Audio Description': 'Audio description',
+        'Subtitles': 'Subtitled screening',
+        'Wheelchair access': 'Wheelchair accessible',
+        '2D': 'Standard 2D screening',
+        'Strobe Light warning': 'Strobe lighting may affect photosensitive viewers',
+        'Hard of Hearing': 'Infrared hard of hearing available'
+      };
+
+      function oneTagHtml(tag) {
+        var iconId = tagIconIds[tag];
+        var label = tagShortLabels[tag] || tag;
+        var tooltip = tagTooltips[tag] || (tagShortLabels[tag] ? null : tag);
+        var titleEsc = tooltip ? escapeHtml(tooltip) : '';
+        var titleAttr = titleEsc ? ' title="' + titleEsc + '"' : '';
+        if (iconId) {
+          return '<span class="tag"' + titleAttr + '><svg class="tag-icon" aria-hidden="true"><use href="#' + iconId + '"/></svg>' + escapeHtml(label) + '</span>';
+        }
+        return '<span class="tag"' + titleAttr + '>' + escapeHtml(label) + '</span>';
+      }
+
+      function renderShowtimeRows(rows) {
+        var byDate = {};
+        for (var i = 0; i < rows.length; i++) {
+          var st = rows[i];
+          var d = st.date || '';
+          if (!byDate[d]) byDate[d] = [];
+          byDate[d].push(st);
+        }
+        var keys = Object.keys(byDate).sort();
+        var parts = [];
+        for (var ki = 0; ki < keys.length; ki++) {
+          var d = keys[ki];
+          var times = byDate[d];
+          var timeParts = [];
+          for (var j = 0; j < times.length; j++) {
+            var st = times[j];
+            var t = st.time || '';
+            var screen = escapeHtml(st.screen || '');
+            var booking = st.booking_url || '';
+            var soldOut = st.sold_out;
+            var tags = st.tags || [];
+            var tagSpan = '';
+            for (var ti = 0; ti < Math.min(tags.length, 4); ti++) {
+              tagSpan += (ti ? ' ' : '') + oneTagHtml(tags[ti]);
+            }
+            var timeEl;
+            if (booking && !soldOut) {
+              timeEl = '<a href="' + escapeHtml(booking) + '">' + escapeHtml(t) + '</a>';
+            } else if (soldOut) {
+              timeEl = '<span class="past">' + escapeHtml(t) + ' Sold Out</span>';
+            } else {
+              timeEl = '<span class="past">' + escapeHtml(t) + '</span>';
+            }
+            timeParts.push(
+              '<div class="st-row"><span class="st-time">' + timeEl + '</span><span class="st-screen">' + screen + '</span><span class="st-tags">' + tagSpan + '</span></div>'
+            );
+          }
+          parts.push(
+            '<div class="day-group"><div class="st-date">' + escapeHtml(dayHeaderLabel(d)) + '</div>' + timeParts.join('') + '</div>'
+          );
+        }
+        return parts.join('\\n');
+      }
+
+      function buildShowtimesInner(picked, optionsKey) {
+        picked = sortRows(picked);
+        var sp = splitInitial(picked);
+        var mainHtml = renderShowtimeRows(sp.display);
+        var hidden = sp.hidden;
+        var n = hidden.length;
+        if (n === 0) return mainHtml;
+        var extraId = 'showtimes-extra-' + optionsKey;
+        var moreLabel = 'Show ' + n + ' more showings';
+        return (
+          mainHtml +
+          '<div class="showtimes-actions"><button type="button" class="showtimes-more-btn" data-target="' +
+          escapeHtml(extraId) +
+          '" data-more-label="' +
+          escapeHtml(moreLabel) +
+          '" data-less-label="' +
+          escapeHtml('Show fewer showings') +
+          '">' +
+          escapeHtml(moreLabel) +
+          '</button></div><div id="' +
+          escapeHtml(extraId) +
+          '" class="showtimes-extra" hidden>' +
+          renderShowtimeRows(hidden) +
+          '</div>'
+        );
+      }
+
+      function applyFilters() {
+        var dateBtn = document.querySelector('.tab-date.active');
+        var cinemaBtn = document.querySelector('.tab-cinema.active');
+        var saverBtn = document.querySelector('.tab-saver.active');
+        var selDate = dateBtn ? dateBtn.getAttribute('data-date') || 'all' : 'all';
+        var selCinema = cinemaBtn ? cinemaBtn.getAttribute('data-cinema') || 'all' : 'all';
+        var selSaver = saverBtn ? saverBtn.getAttribute('data-saver') || 'all' : 'all';
+        var sectionVis = { now: false, coming: false };
+        var cards = filmsEl.querySelectorAll('.film-card');
+        for (var i = 0; i < cards.length; i++) {
+          var card = cards[i];
+          var scriptEl = card.querySelector('script.film-showtimes-full');
+          if (!scriptEl) continue;
+          var rows;
+          try {
+            rows = parseShowtimesJson(scriptEl.textContent.trim());
+          } catch (e2) {
+            card.style.removeProperty('display');
+            var stBad = card.getAttribute('data-status') || '';
+            if (stBad === 'now') sectionVis.now = true;
+            if (stBad === 'coming-soon') sectionVis.coming = true;
+            continue;
+          }
+          var picked = [];
+          for (var ri = 0; ri < rows.length; ri++) {
+            if (rowMatches(rows[ri], selDate, selCinema, selSaver)) picked.push(rows[ri]);
+          }
+          if (picked.length === 0) {
+            card.style.display = 'none';
+            continue;
+          }
+          card.style.removeProperty('display');
+          var optsKey = card.getAttribute('data-options-key') || 'film';
+          var wrap = card.querySelector('.showtimes');
+          if (wrap) wrap.innerHTML = buildShowtimesInner(picked, optsKey);
+          var status = card.getAttribute('data-status') || '';
+          if (status === 'now') sectionVis.now = true;
+          if (status === 'coming-soon') sectionVis.coming = true;
+        }
+        document.querySelectorAll('.film-section').forEach(function(section) {
+          var sectionType = section.getAttribute('data-section') || '';
+          var showSection = sectionType === 'now' ? sectionVis.now : sectionVis.coming;
+          section.style.display = showSection ? 'grid' : 'none';
+        });
+      }
+
+      function activateTabRow(selector, btn) {
+        document.querySelectorAll(selector).forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+      }
+
+      document.querySelectorAll('.tab-date').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          activateTabRow('.tab-date', btn);
+          applyFilters();
+        });
+      });
+      document.querySelectorAll('.tab-cinema').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          activateTabRow('.tab-cinema', btn);
+          var c = btn.getAttribute('data-cinema') || 'all';
+          try {
+            if (c === 'all') localStorage.removeItem(storageKey);
+            else localStorage.setItem(storageKey, c);
+          } catch (e3) {}
+          applyFilters();
+        });
+      });
+      document.querySelectorAll('.tab-saver').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          activateTabRow('.tab-saver', btn);
+          applyFilters();
+        });
+      });
+
+      filmsEl.addEventListener('click', function(ev) {
+        var btn = ev.target && ev.target.closest ? ev.target.closest('.showtimes-more-btn') : null;
+        if (!btn || !filmsEl.contains(btn)) return;
+        var targetId = btn.getAttribute('data-target');
+        var target = targetId ? document.getElementById(targetId) : null;
+        if (!target) return;
+        var isHidden = target.hasAttribute('hidden');
+        if (isHidden) {
+          target.removeAttribute('hidden');
+          btn.textContent = btn.getAttribute('data-less-label') || 'Show fewer showings';
+        } else {
+          target.setAttribute('hidden', '');
+          btn.textContent = btn.getAttribute('data-more-label') || 'Show more showings';
+        }
+      });
+
+      try {
+        var saved = localStorage.getItem(storageKey);
+        if (saved) {
+          var tabs = document.querySelectorAll('.tab-cinema');
+          var found = false;
+          for (var si = 0; si < tabs.length; si++) {
+            if (tabs[si].getAttribute('data-cinema') === saved) {
+              activateTabRow('.tab-cinema', tabs[si]);
+              found = true;
+              break;
+            }
+          }
+          if (!found) localStorage.removeItem(storageKey);
+        }
+      } catch (e4) {}
+      applyFilters();
+    })();
+    document.querySelectorAll('.cast-more-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var rest = btn.previousElementSibling;
+        if (rest && rest.classList.contains('cast-rest')) {
+          var on = rest.hasAttribute('hidden');
+          if (on) { rest.removeAttribute('hidden'); btn.textContent = 'Less'; }
+          else { rest.setAttribute('hidden', ''); btn.textContent = 'More'; }
+        }
+      });
+    });
+    (function() {
+      var lb = document.getElementById('trailer-lightbox');
+      var iframe = document.getElementById('trailer-lightbox-iframe');
+      var backdrop = document.getElementById('trailer-lightbox-backdrop');
+      var closeBtn = document.getElementById('trailer-lightbox-close');
+      var fallbackLink = document.getElementById('trailer-lightbox-fallback');
+      function closeLightbox() {
+        lb.classList.remove('is-open');
+        lb.setAttribute('aria-hidden', 'true');
+        iframe.src = '';
+        if (fallbackLink) fallbackLink.href = '#';
+      }
+      function openLightbox(embedUrl, watchUrl) {
+        iframe.src = embedUrl;
+        if (fallbackLink && watchUrl) fallbackLink.href = watchUrl;
+        lb.classList.add('is-open');
+        lb.setAttribute('aria-hidden', 'false');
+      }
+      document.querySelectorAll('.trailer-lightbox-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var embedUrl = this.getAttribute('data-embed');
+          var watchUrl = this.getAttribute('data-watch') || '';
+          if (embedUrl) openLightbox(embedUrl, watchUrl);
+        });
+      });
+      if (backdrop) backdrop.addEventListener('click', closeLightbox);
+      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLightbox();
+      });
+    })();
+    (function() {
+      var modal = document.getElementById('film-page-modal');
+      var modalList = document.getElementById('film-page-modal-list');
+      var modalBackdrop = document.getElementById('film-page-modal-backdrop');
+      var modalClose = document.getElementById('film-page-modal-close');
+      function closeCinemaModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        modalList.innerHTML = '';
+      }
+      document.querySelectorAll('.film-page-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var optionsId = this.getAttribute('data-options-id');
+          var options = document.getElementById(optionsId);
+          if (!options) return;
+          modalList.innerHTML = options.innerHTML || '';
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+        });
+      });
+      if (modalBackdrop) modalBackdrop.addEventListener('click', closeCinemaModal);
+      if (modalClose) modalClose.addEventListener('click', closeCinemaModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCinemaModal();
+      });
+    })();
+    function switchView(view) {
+      document.querySelectorAll('.view-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === view); });
+      document.querySelector('.page').classList.toggle('poster-view', view === 'posters');
+    }
+"""
+
+def write_asset_files(out_dir):
+    """Write external CSS and JS files for browser caching."""
+    p = Path(out_dir)
+    p.mkdir(parents=True, exist_ok=True)
+    (p / "style.css").write_text(_PAGE_CSS, encoding="utf-8")
+    (p / "script.js").write_text(_PAGE_JS, encoding="utf-8")
+
+
+
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
@@ -2196,330 +2942,7 @@ def build_html(data: Dict[str, Any]) -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {{
-      --bg: #0a0a0f;
-      --card-bg: #12121a;
-      --surface: #12121a;
-      --surface-2: #12121a;
-      --surface-3: #1a1a24;
-      --border: rgba(168,85,247,0.25);
-      --text: #e2e8f0;
-      --text-muted: #94a3b8;
-      --cyan: #00d4ff;
-      --purple: #a855f7;
-      --accent: #00d4ff;
-      --accent-dim: rgba(0,212,255,0.15);
-      --accent-glow: rgba(0,212,255,0.25);
-      --radius: 16px;
-      --radius-sm: 10px;
-      --radius-lg: 24px;
-      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }}
-    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    html {{ scroll-behavior: smooth; }}
-    body {{
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }}
-    .bg-mesh {{
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 100% 80% at 50% -30%, var(--accent-dim) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(0,212,255,0.08) 0%, transparent 40%),
-        radial-gradient(ellipse 40% 40% at 10% 90%, rgba(168,85,247,0.05) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }}
-    .bg-grid {{
-      position: fixed;
-      inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      z-index: 0;
-    }}
-    .page {{ position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }}
-    @media (min-width: 640px) {{ .page {{ padding: 3rem 2rem 5rem; }} }}
-    header {{
-      text-align: center;
-      padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-      animation: fadeUp 0.8s ease-out;
-    }}
-    @keyframes fadeUp {{
-      from {{ opacity: 0; transform: translateY(20px); }}
-      to {{ opacity: 1; transform: translateY(0); }}
-    }}
-    header h1 {{
-      font-size: clamp(2rem, 5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }}
-    header p {{ color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem; }}
-    .filter-tabs {{ display: flex; flex-direction: column; gap: 1rem; align-items: center; padding: 0.75rem 0 0; width: 100%; }}
-    .tabs-wrap {{ width: 100%; }}
-    .tabs-label {{ font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.35rem; text-align: center; font-weight: 600; }}
-    .tabs {{ display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; padding: 0.25rem 0 0.25rem; }}
-    .tab {{
-      font-family: inherit;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 0.5rem 0.75rem;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all var(--transition);
-    }}
-    .tab:hover {{ border-color: var(--cyan); }}
-    .tab.active {{
-      background: linear-gradient(135deg, var(--accent-dim), rgba(168,85,247,0.15));
-      border-color: var(--cyan);
-    }}
-    #films {{ display: grid; grid-template-columns: 1fr; gap: 1.5rem; }}
-    .film-section {{
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1rem;
-      background: linear-gradient(160deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    }}
-    @media (min-width: 900px) {{
-      .film-section {{ grid-template-columns: repeat(2, 1fr); }}
-    }}
-    .film-section--now {{
-      border-color: rgba(0,212,255,0.45);
-      box-shadow: inset 0 0 0 1px rgba(0,212,255,0.08);
-    }}
-    .film-section--coming {{
-      border-color: rgba(168,85,247,0.45);
-      box-shadow: inset 0 0 0 1px rgba(168,85,247,0.1);
-    }}
-    .section-title-wrap {{
-      grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      padding: 0.9rem 1rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.02);
-    }}
-    .film-section--now .section-title-wrap {{
-      border-color: rgba(0,212,255,0.5);
-      background: linear-gradient(90deg, rgba(0,212,255,0.2), rgba(0,212,255,0.06));
-    }}
-    .film-section--coming .section-title-wrap {{
-      border-color: rgba(168,85,247,0.5);
-      background: linear-gradient(90deg, rgba(168,85,247,0.24), rgba(168,85,247,0.08));
-    }}
-    .section-title {{
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      margin: 0;
-      text-transform: uppercase;
-    }}
-    .film-section--now .section-title {{ color: var(--cyan); }}
-    .film-section--coming .section-title {{ color: #cf90ff; }}
-    .section-count {{ font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text); opacity: 0.95; }}
-    .film-card {{
-      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      transition: all var(--transition);
-      position: relative;
-      overflow: hidden;
-      animation: fadeUp 0.6s ease-out backwards;
-    }}
-    .status-pill {{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 1.7rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-      margin-bottom: 0.7rem;
-    }}
-    .status-pill--now {{ background: rgba(0,212,255,0.16); border-color: rgba(0,212,255,0.45); color: #8beeff; }}
-    .status-pill--coming-soon {{ background: rgba(168,85,247,0.2); border-color: rgba(168,85,247,0.5); color: #e0b8ff; }}
-    .chance-badge {{ display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-left: 0.4rem; margin-bottom: 0.7rem; vertical-align: top; }}
-    .chance-opens {{ background: rgba(74,222,128,0.2); color: #4ade80; border: 1px solid rgba(74,222,128,0.4); }}
-    .chance-closing {{ background: rgba(251,113,133,0.2); color: #fb7185; border: 1px solid rgba(251,113,133,0.4); }}
-    .film-card::before {{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-      opacity: 0;
-      transition: opacity var(--transition);
-    }}
-    .film-card:hover {{
-      border-color: rgba(0,212,255,0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,255,0.1);
-    }}
-    .film-card:hover::before {{ opacity: 1; }}
-    .film-header {{ display: flex; gap: 1.25rem; flex-wrap: wrap; }}
-    .poster {{ position: relative; flex-shrink: 0; }}
-    .poster img {{ width: 210px; height: 315px; object-fit: cover; border-radius: var(--radius-sm); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }}
-    .poster .poster-event-banner {{ position: absolute; left: 0.4rem; right: 0.4rem; bottom: 0.4rem; width: calc(100% - 0.8rem); height: 2rem; object-fit: contain; background: rgba(0,0,0,0.45); padding: 0.2rem; border-radius: 6px; box-shadow: none; }}
-    .poster-fallback-label {{
-      position: absolute;
-      left: 0.5rem;
-      right: 0.5rem;
-      bottom: 0.55rem;
-      padding: 0.2rem 0.4rem;
-      border-radius: 6px;
-      background: rgba(0, 0, 0, 0.62);
-      color: #e2e8f0;
-      font-size: 0.72rem;
-      text-align: center;
-      letter-spacing: 0.02em;
-    }}
-    .poster .icon--hints {{ position: absolute; right: 0; top: 0; width: 105px; height: 105px; pointer-events: none; }}
-    .poster .icon--hints.icon--3d {{ background: url(icons/3D-Performance.png) no-repeat; background-size: 100% auto; background-position: top right; }}
-    .film-meta {{ flex: 1; min-width: 200px; }}
-    .film-meta h2 {{ font-size: 1.25rem; margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }}
-    .cert {{ margin-right: 6px; vertical-align: middle; }}
-    .cert-fallback {{ min-width: 2.1rem; padding: 0.18rem 0.45rem; background: var(--surface-3); color: #fff; font-size: 0.65rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; border: 1px solid rgba(255,255,255,0.25); }}
-    .meta-line {{ color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }}
-    .rating-wrap {{ display: inline-flex; align-items: center; gap: 0.4rem; }}
-    .rating-bar {{ display: block; width: 3rem; height: 0.5rem; background: rgba(255,255,255,0.25); border-radius: 3px; overflow: hidden; }}
-    .rating-fill {{ display: block; height: 0.5rem; background: linear-gradient(90deg, #00d4ff, #a855f7); border-radius: 3px; transition: width 0.2s; }}
-    .rating-text {{ font-variant-numeric: tabular-nums; font-size: 0.85em; color: var(--cyan); }}
-    .genres {{ color: var(--purple); }}
-    .trailer {{ display: inline-block; margin-bottom: 0.5rem; color: var(--cyan); font-size: 0.9rem; background: none; border: none; cursor: pointer; font-family: inherit; padding: 0; text-decoration: underline; }}
-    .trailer:hover {{ color: var(--purple); }}
-    .trailer-lightbox {{ position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1rem; box-sizing: border-box; }}
-    .trailer-lightbox.is-open {{ display: flex; }}
-    .trailer-lightbox-backdrop {{ position: absolute; inset: 0; background: rgba(0,0,0,0.85); cursor: pointer; }}
-    .trailer-lightbox-inner {{ position: relative; width: 100%; max-width: 90vw; max-height: 90vh; aspect-ratio: 16/9; background: #000; border-radius: var(--radius); box-shadow: 0 0 40px var(--accent-glow); overflow: hidden; }}
-    .trailer-lightbox-inner iframe {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }}
-    .trailer-lightbox-close {{ position: absolute; top: -2.5rem; right: 0; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); width: 2rem; height: 2rem; border-radius: var(--radius-sm); cursor: pointer; font-size: 1.25rem; line-height: 1; display: flex; align-items: center; justify-content: center; z-index: 1; transition: all var(--transition); }}
-    .trailer-lightbox-close:hover {{ border-color: var(--cyan); color: var(--cyan); }}
-    .trailer-lightbox-fallback {{ position: absolute; bottom: 0.5rem; left: 0.5rem; font-size: 0.85rem; color: var(--cyan); }}
-    .trailer-lightbox-fallback:hover {{ color: var(--purple); }}
-    .film-page-modal {{ position: fixed; inset: 0; z-index: 1100; display: none; align-items: center; justify-content: center; padding: 1rem; }}
-    .film-page-modal.is-open {{ display: flex; }}
-    .film-page-modal-backdrop {{ position: absolute; inset: 0; background: rgba(0,0,0,0.82); cursor: pointer; }}
-    .film-page-modal-inner {{ position: relative; width: min(28rem, 100%); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; box-shadow: 0 0 30px var(--accent-glow); }}
-    .film-page-modal-title {{ margin: 0 0 0.65rem; font-size: 1rem; }}
-    .film-page-modal-list {{ display: grid; gap: 0.5rem; }}
-    .film-page-modal-list a {{ text-decoration: none; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.55rem 0.7rem; background: rgba(255,255,255,0.03); }}
-    .film-page-modal-list a:hover {{ border-color: var(--cyan); color: var(--cyan); }}
-    .film-page-modal-close {{ position: absolute; top: 0.4rem; right: 0.4rem; background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; width: 1.9rem; height: 1.9rem; cursor: pointer; }}
-    .film-meta .crew {{ font-size: 0.9rem; color: var(--text-muted); margin: 0; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }}
-    .film-meta .crew:first-of-type {{ padding-top: 0; }}
-    .film-meta .cast {{ font-size: 0.9rem; color: var(--text-muted); margin: 0; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }}
-    .film-meta .synopsis {{ font-size: 0.9rem; color: var(--text-muted); margin: 0; padding: 0.75rem 0 0.5rem; line-height: 1.5; max-width: 56em; border-top: 1px solid var(--border); }}
-    .links {{ margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }}
-    .links a, .links button {{
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.5rem 0.75rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all var(--transition);
-    }}
-    .links .btn {{
-      background: linear-gradient(135deg, var(--cyan), var(--purple));
-      color: var(--bg);
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-    }}
-    .links .btn:hover {{
-      background: linear-gradient(135deg, #20dfff, #b366ff);
-      transform: scale(1.02);
-      box-shadow: 0 4px 20px var(--accent-glow);
-    }}
-    .links .link {{ color: var(--accent); background: rgba(255,255,255,0.06); border: 1px solid var(--border); }}
-    .links .link:hover {{ background: rgba(0,212,255,0.12); border-color: var(--cyan); color: var(--purple); }}
-    .ext-logo {{ width: 18px; height: 18px; flex-shrink: 0; }}
-    .showtimes {{ margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.9rem; }}
-    .day-group {{ margin-bottom: 0.75rem; }}
-    .day-group:last-child {{ margin-bottom: 0; }}
-    .st-date {{ font-weight: 600; margin-bottom: 0.25rem; color: var(--text); }}
-    .st-row {{ display: grid; grid-template-columns: 5.5rem minmax(8rem, 1fr) 2fr; gap: 0 0.75rem; align-items: center; margin-bottom: 0.2rem; }}
-    .st-row:last-child {{ margin-bottom: 0; }}
-    .st-time {{ font-variant-numeric: tabular-nums; }}
-    .st-time a, .showtime a {{ color: var(--cyan); }}
-    .st-time .past {{ color: var(--text-muted); }}
-    .st-screen {{ color: var(--text-muted); }}
-    .st-tags {{ display: flex; align-items: center; flex-wrap: wrap; gap: 0.25rem; }}
-    .showtimes-actions {{ margin-top: 0.75rem; }}
-    .showtimes-more-btn {{
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
-      color: var(--cyan);
-      border-radius: 8px;
-      padding: 0.35rem 0.6rem;
-      font-size: 0.85rem;
-      cursor: pointer;
-      font-family: inherit;
-    }}
-    .showtimes-more-btn:hover {{ border-color: var(--cyan); background: rgba(0,212,255,0.12); }}
-    .showtimes-extra {{ margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed var(--border); }}
-    .cast-more-btn {{ background: none; border: none; color: var(--cyan); cursor: pointer; font-size: 0.85em; padding: 0 0.25rem; font-family: inherit; }}
-    .cast-more-btn:hover {{ text-decoration: underline; }}
-    .tag {{ font-size: 0.75rem; color: var(--text-muted); margin-left: 0.25rem; display: inline-flex; align-items: center; gap: 0.25rem; }}
-    .tag-icon {{ width: 14px; height: 14px; flex-shrink: 0; vertical-align: middle; }}
-    .cal-link {{ color: var(--purple); text-decoration: none; margin-left: 0.25rem; }}
-    footer {{
-      margin-top: 4rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      animation: fadeUp 0.6s ease-out backwards;
-    }}
-    footer a {{ color: var(--accent); text-decoration: none; font-weight: 500; transition: color var(--transition); }}
-    footer a:hover {{ color: var(--purple); }}
-    .footer-disclaimer {{ font-size: 0.9rem; max-width: 36rem; margin: 0 auto 1rem; line-height: 1.6; }}
-    .footer-links {{ display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem; margin-bottom: 1rem; }}
-    .footer-attribution {{ font-size: 0.8rem; opacity: 0.85; margin: 0; line-height: 1.5; }}
-    .view-toggle {{ display: flex; gap: 0.4rem; margin-top: 0.75rem; }}
-    .view-btn {{ padding: 0.3rem 0.7rem; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-size: 0.78rem; font-weight: 500; transition: all 0.15s; }}
-    .view-btn.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
-    .view-btn:hover:not(.active) {{ border-color: var(--accent); color: var(--accent); }}
-    .poster-view .film-card {{ display: block; max-width: 220px; padding: 0; background: none; border: none; }}
-    .poster-view .film-card .film-header {{ display: block; }}
-    .poster-view .film-card .film-meta {{ padding: 0.5rem 0.25rem; }}
-    .poster-view .film-card .showtimes, .poster-view .film-card .links, .poster-view .film-card .synopsis, .poster-view .film-card .crew-line {{ display: none; }}
-    .poster-view .film-card .film-poster {{ width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; }}
-    .poster-view #films {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; }}
+  <link rel="stylesheet" href="style.css">
   </style>
 </head>
 <body>
@@ -2580,414 +3003,7 @@ def build_html(data: Dict[str, Any]) -> str:
       </p>
     </footer>
   </div>
-  <script>
-    (function() {{
-      var filmsEl = document.getElementById('films');
-      var storageKey = 'wtw-whats-on-cinema';
-      if (!filmsEl) return;
-      var initialN = parseInt(filmsEl.getAttribute('data-initial-showings') || '40', 10);
-      var maxDays = parseInt(filmsEl.getAttribute('data-max-showtime-days') || '10', 10);
-      if (initialN < 1) initialN = 1;
-      if (!Number.isFinite(maxDays) || maxDays < 1) maxDays = 10;
-
-      function normalizeRow(r) {{
-        if (Array.isArray(r)) {{
-          return {{
-            date: r[0] || '',
-            time: r[1] || '',
-            screen: r[2] || '',
-            cinema_name: r[3] || '',
-            booking_url: r[4] || '',
-            tags: r[5] || [],
-            sold_out: r.length > 6 ? !!r[6] : false
-          }};
-        }}
-        return {{
-          date: r.date || '',
-          time: r.time || '',
-          screen: r.screen || '',
-          cinema_name: r.cinema_name || '',
-          booking_url: r.booking_url || '',
-          tags: r.tags || [],
-          sold_out: !!r.sold_out
-        }};
-      }}
-
-      function parseShowtimesJson(text) {{
-        var o = JSON.parse(text);
-        if (o && o.v === 1 && Array.isArray(o.r)) return o.r.map(normalizeRow);
-        if (Array.isArray(o)) return o.map(normalizeRow);
-        return [];
-      }}
-
-      function rowMatches(row, selDate, selCinema, selSaver) {{
-        if (selDate !== 'all' && row.date !== selDate) return false;
-        if (selCinema !== 'all' && row.cinema_name !== selCinema) return false;
-        if (selSaver === 'super-saver') {{
-          var tags = row.tags || [];
-          var hasSaver = false;
-          for (var ti = 0; ti < tags.length; ti++) {{
-            if (tags[ti] === 'Super Saver') {{ hasSaver = true; break; }}
-          }}
-          if (!hasSaver) return false;
-        }}
-        return true;
-      }}
-
-      function sortRows(rows) {{
-        return rows.slice().sort(function(a, b) {{
-          if (a.date !== b.date) return a.date < b.date ? -1 : 1;
-          if (a.time !== b.time) return a.time < b.time ? -1 : 1;
-          if (a.screen !== b.screen) return a.screen < b.screen ? -1 : 1;
-          return (a.booking_url || '').localeCompare(b.booking_url || '');
-        }});
-      }}
-
-      function splitInitial(rows) {{
-        var display = [];
-        var hidden = [];
-        var keptDates = {{}};
-        function countDates() {{
-          var n = 0;
-          for (var k in keptDates) {{
-            if (Object.prototype.hasOwnProperty.call(keptDates, k)) n++;
-          }}
-          return n;
-        }}
-        for (var i = 0; i < rows.length; i++) {{
-          var st = rows[i];
-          var d = st.date || '';
-          if (!d) continue;
-          if (!keptDates[d] && countDates() >= maxDays) {{
-            hidden.push(st);
-            continue;
-          }}
-          if (!keptDates[d]) keptDates[d] = true;
-          if (display.length >= initialN) {{
-            hidden.push(st);
-            continue;
-          }}
-          display.push(st);
-        }}
-        return {{ display: display, hidden: hidden }};
-      }}
-
-      function escapeHtml(s) {{
-        return String(s)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;');
-      }}
-
-      function dayHeaderLabel(iso) {{
-        try {{
-          var d = new Date(iso + 'T12:00:00Z');
-          return d.toLocaleDateString('en-GB', {{
-            timeZone: 'Europe/London',
-            weekday: 'short',
-            day: 'numeric',
-            month: 'short'
-          }});
-        }} catch (e) {{
-          return iso;
-        }}
-      }}
-
-      var tagIconIds = {{
-        'Audio Description': 'icon-audio-desc',
-        'Wheelchair access': 'icon-wheelchair',
-        '2D': 'icon-2d',
-        '3D': 'icon-3d',
-        'Subtitles': 'icon-subtitles',
-        'Silver Screen': 'icon-silver-screen',
-        'Event cinema': 'icon-event-cinema',
-        'Advance Screening': 'icon-event-cinema',
-        'Strobe Light warning': 'icon-strobe',
-        'Parent & Baby': 'icon-parent-baby',
-        'Autism Friendly': 'icon-autism-friendly',
-        'Kids Club': 'icon-kids-club'
-      }};
-      var tagShortLabels = {{
-        'Audio Description': 'AD',
-        'Subtitles': 'Subs',
-        'Wheelchair access': 'WA',
-        'Strobe Light warning': 'Strobe',
-        'Hard of Hearing': 'HOH',
-        'Private Box': 'Box',
-        'Super Saver': 'Saver'
-      }};
-      var tagTooltips = {{
-        'Audio Description': 'Audio description',
-        'Subtitles': 'Subtitled screening',
-        'Wheelchair access': 'Wheelchair accessible',
-        '2D': 'Standard 2D screening',
-        'Strobe Light warning': 'Strobe lighting may affect photosensitive viewers',
-        'Hard of Hearing': 'Infrared hard of hearing available'
-      }};
-
-      function oneTagHtml(tag) {{
-        var iconId = tagIconIds[tag];
-        var label = tagShortLabels[tag] || tag;
-        var tooltip = tagTooltips[tag] || (tagShortLabels[tag] ? null : tag);
-        var titleEsc = tooltip ? escapeHtml(tooltip) : '';
-        var titleAttr = titleEsc ? ' title="' + titleEsc + '"' : '';
-        if (iconId) {{
-          return '<span class="tag"' + titleAttr + '><svg class="tag-icon" aria-hidden="true"><use href="#' + iconId + '"/></svg>' + escapeHtml(label) + '</span>';
-        }}
-        return '<span class="tag"' + titleAttr + '>' + escapeHtml(label) + '</span>';
-      }}
-
-      function renderShowtimeRows(rows) {{
-        var byDate = {{}};
-        for (var i = 0; i < rows.length; i++) {{
-          var st = rows[i];
-          var d = st.date || '';
-          if (!byDate[d]) byDate[d] = [];
-          byDate[d].push(st);
-        }}
-        var keys = Object.keys(byDate).sort();
-        var parts = [];
-        for (var ki = 0; ki < keys.length; ki++) {{
-          var d = keys[ki];
-          var times = byDate[d];
-          var timeParts = [];
-          for (var j = 0; j < times.length; j++) {{
-            var st = times[j];
-            var t = st.time || '';
-            var screen = escapeHtml(st.screen || '');
-            var booking = st.booking_url || '';
-            var soldOut = st.sold_out;
-            var tags = st.tags || [];
-            var tagSpan = '';
-            for (var ti = 0; ti < Math.min(tags.length, 4); ti++) {{
-              tagSpan += (ti ? ' ' : '') + oneTagHtml(tags[ti]);
-            }}
-            var timeEl;
-            if (booking && !soldOut) {{
-              timeEl = '<a href="' + escapeHtml(booking) + '">' + escapeHtml(t) + '</a>';
-            }} else if (soldOut) {{
-              timeEl = '<span class="past">' + escapeHtml(t) + ' Sold Out</span>';
-            }} else {{
-              timeEl = '<span class="past">' + escapeHtml(t) + '</span>';
-            }}
-            timeParts.push(
-              '<div class="st-row"><span class="st-time">' + timeEl + '</span><span class="st-screen">' + screen + '</span><span class="st-tags">' + tagSpan + '</span></div>'
-            );
-          }}
-          parts.push(
-            '<div class="day-group"><div class="st-date">' + escapeHtml(dayHeaderLabel(d)) + '</div>' + timeParts.join('') + '</div>'
-          );
-        }}
-        return parts.join('\\n');
-      }}
-
-      function buildShowtimesInner(picked, optionsKey) {{
-        picked = sortRows(picked);
-        var sp = splitInitial(picked);
-        var mainHtml = renderShowtimeRows(sp.display);
-        var hidden = sp.hidden;
-        var n = hidden.length;
-        if (n === 0) return mainHtml;
-        var extraId = 'showtimes-extra-' + optionsKey;
-        var moreLabel = 'Show ' + n + ' more showings';
-        return (
-          mainHtml +
-          '<div class="showtimes-actions"><button type="button" class="showtimes-more-btn" data-target="' +
-          escapeHtml(extraId) +
-          '" data-more-label="' +
-          escapeHtml(moreLabel) +
-          '" data-less-label="' +
-          escapeHtml('Show fewer showings') +
-          '">' +
-          escapeHtml(moreLabel) +
-          '</button></div><div id="' +
-          escapeHtml(extraId) +
-          '" class="showtimes-extra" hidden>' +
-          renderShowtimeRows(hidden) +
-          '</div>'
-        );
-      }}
-
-      function applyFilters() {{
-        var dateBtn = document.querySelector('.tab-date.active');
-        var cinemaBtn = document.querySelector('.tab-cinema.active');
-        var saverBtn = document.querySelector('.tab-saver.active');
-        var selDate = dateBtn ? dateBtn.getAttribute('data-date') || 'all' : 'all';
-        var selCinema = cinemaBtn ? cinemaBtn.getAttribute('data-cinema') || 'all' : 'all';
-        var selSaver = saverBtn ? saverBtn.getAttribute('data-saver') || 'all' : 'all';
-        var sectionVis = {{ now: false, coming: false }};
-        var cards = filmsEl.querySelectorAll('.film-card');
-        for (var i = 0; i < cards.length; i++) {{
-          var card = cards[i];
-          var scriptEl = card.querySelector('script.film-showtimes-full');
-          if (!scriptEl) continue;
-          var rows;
-          try {{
-            rows = parseShowtimesJson(scriptEl.textContent.trim());
-          }} catch (e2) {{
-            card.style.removeProperty('display');
-            var stBad = card.getAttribute('data-status') || '';
-            if (stBad === 'now') sectionVis.now = true;
-            if (stBad === 'coming-soon') sectionVis.coming = true;
-            continue;
-          }}
-          var picked = [];
-          for (var ri = 0; ri < rows.length; ri++) {{
-            if (rowMatches(rows[ri], selDate, selCinema, selSaver)) picked.push(rows[ri]);
-          }}
-          if (picked.length === 0) {{
-            card.style.display = 'none';
-            continue;
-          }}
-          card.style.removeProperty('display');
-          var optsKey = card.getAttribute('data-options-key') || 'film';
-          var wrap = card.querySelector('.showtimes');
-          if (wrap) wrap.innerHTML = buildShowtimesInner(picked, optsKey);
-          var status = card.getAttribute('data-status') || '';
-          if (status === 'now') sectionVis.now = true;
-          if (status === 'coming-soon') sectionVis.coming = true;
-        }}
-        document.querySelectorAll('.film-section').forEach(function(section) {{
-          var sectionType = section.getAttribute('data-section') || '';
-          var showSection = sectionType === 'now' ? sectionVis.now : sectionVis.coming;
-          section.style.display = showSection ? 'grid' : 'none';
-        }});
-      }}
-
-      function activateTabRow(selector, btn) {{
-        document.querySelectorAll(selector).forEach(function(b) {{ b.classList.remove('active'); }});
-        btn.classList.add('active');
-      }}
-
-      document.querySelectorAll('.tab-date').forEach(function(btn) {{
-        btn.addEventListener('click', function() {{
-          activateTabRow('.tab-date', btn);
-          applyFilters();
-        }});
-      }});
-      document.querySelectorAll('.tab-cinema').forEach(function(btn) {{
-        btn.addEventListener('click', function() {{
-          activateTabRow('.tab-cinema', btn);
-          var c = btn.getAttribute('data-cinema') || 'all';
-          try {{
-            if (c === 'all') localStorage.removeItem(storageKey);
-            else localStorage.setItem(storageKey, c);
-          }} catch (e3) {{}}
-          applyFilters();
-        }});
-      }});
-      document.querySelectorAll('.tab-saver').forEach(function(btn) {{
-        btn.addEventListener('click', function() {{
-          activateTabRow('.tab-saver', btn);
-          applyFilters();
-        }});
-      }});
-
-      filmsEl.addEventListener('click', function(ev) {{
-        var btn = ev.target && ev.target.closest ? ev.target.closest('.showtimes-more-btn') : null;
-        if (!btn || !filmsEl.contains(btn)) return;
-        var targetId = btn.getAttribute('data-target');
-        var target = targetId ? document.getElementById(targetId) : null;
-        if (!target) return;
-        var isHidden = target.hasAttribute('hidden');
-        if (isHidden) {{
-          target.removeAttribute('hidden');
-          btn.textContent = btn.getAttribute('data-less-label') || 'Show fewer showings';
-        }} else {{
-          target.setAttribute('hidden', '');
-          btn.textContent = btn.getAttribute('data-more-label') || 'Show more showings';
-        }}
-      }});
-
-      try {{
-        var saved = localStorage.getItem(storageKey);
-        if (saved) {{
-          var tabs = document.querySelectorAll('.tab-cinema');
-          var found = false;
-          for (var si = 0; si < tabs.length; si++) {{
-            if (tabs[si].getAttribute('data-cinema') === saved) {{
-              activateTabRow('.tab-cinema', tabs[si]);
-              found = true;
-              break;
-            }}
-          }}
-          if (!found) localStorage.removeItem(storageKey);
-        }}
-      }} catch (e4) {{}}
-      applyFilters();
-    }})();
-    document.querySelectorAll('.cast-more-btn').forEach(function(btn) {{
-      btn.addEventListener('click', function() {{
-        var rest = btn.previousElementSibling;
-        if (rest && rest.classList.contains('cast-rest')) {{
-          var on = rest.hasAttribute('hidden');
-          if (on) {{ rest.removeAttribute('hidden'); btn.textContent = 'Less'; }}
-          else {{ rest.setAttribute('hidden', ''); btn.textContent = 'More'; }}
-        }}
-      }});
-    }});
-    (function() {{
-      var lb = document.getElementById('trailer-lightbox');
-      var iframe = document.getElementById('trailer-lightbox-iframe');
-      var backdrop = document.getElementById('trailer-lightbox-backdrop');
-      var closeBtn = document.getElementById('trailer-lightbox-close');
-      var fallbackLink = document.getElementById('trailer-lightbox-fallback');
-      function closeLightbox() {{
-        lb.classList.remove('is-open');
-        lb.setAttribute('aria-hidden', 'true');
-        iframe.src = '';
-        if (fallbackLink) fallbackLink.href = '#';
-      }}
-      function openLightbox(embedUrl, watchUrl) {{
-        iframe.src = embedUrl;
-        if (fallbackLink && watchUrl) fallbackLink.href = watchUrl;
-        lb.classList.add('is-open');
-        lb.setAttribute('aria-hidden', 'false');
-      }}
-      document.querySelectorAll('.trailer-lightbox-trigger').forEach(function(btn) {{
-        btn.addEventListener('click', function() {{
-          var embedUrl = this.getAttribute('data-embed');
-          var watchUrl = this.getAttribute('data-watch') || '';
-          if (embedUrl) openLightbox(embedUrl, watchUrl);
-        }});
-      }});
-      if (backdrop) backdrop.addEventListener('click', closeLightbox);
-      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-      document.addEventListener('keydown', function(e) {{
-        if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLightbox();
-      }});
-    }})();
-    (function() {{
-      var modal = document.getElementById('film-page-modal');
-      var modalList = document.getElementById('film-page-modal-list');
-      var modalBackdrop = document.getElementById('film-page-modal-backdrop');
-      var modalClose = document.getElementById('film-page-modal-close');
-      function closeCinemaModal() {{
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-        modalList.innerHTML = '';
-      }}
-      document.querySelectorAll('.film-page-trigger').forEach(function(btn) {{
-        btn.addEventListener('click', function() {{
-          var optionsId = this.getAttribute('data-options-id');
-          var options = document.getElementById(optionsId);
-          if (!options) return;
-          modalList.innerHTML = options.innerHTML || '';
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-        }});
-      }});
-      if (modalBackdrop) modalBackdrop.addEventListener('click', closeCinemaModal);
-      if (modalClose) modalClose.addEventListener('click', closeCinemaModal);
-      document.addEventListener('keydown', function(e) {{
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCinemaModal();
-      }});
-    }})();
-    function switchView(view) {{
-      document.querySelectorAll('.view-btn').forEach(function(b) {{ b.classList.toggle('active', b.dataset.view === view); }});
-      document.querySelector('.page').classList.toggle('poster-view', view === 'posters');
-    }}
+  <script src="script.js" defer></script>
   </script>
 </body>
 </html>
@@ -3203,6 +3219,7 @@ def main() -> None:
 
     html = build_html(data)
     Path(SITE_DIR).mkdir(parents=True, exist_ok=True)
+    write_asset_files(SITE_DIR)
     Path(SITE_DIR, "index.html").write_text(html, encoding="utf-8")
     logger.info("Wrote %s/index.html", SITE_DIR)
     Path(FINGERPRINT_FILE).write_text(fingerprint, encoding="utf-8")
