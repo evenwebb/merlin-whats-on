@@ -2943,7 +2943,6 @@ def build_html(data: Dict[str, Any]) -> str:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css">
-  </style>
 </head>
 <body>
   <div class="bg-mesh"></div>
@@ -3004,7 +3003,6 @@ def build_html(data: Dict[str, Any]) -> str:
     </footer>
   </div>
   <script src="script.js" defer></script>
-  </script>
 </body>
 </html>
 """
