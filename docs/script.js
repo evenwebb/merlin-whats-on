@@ -268,7 +268,7 @@
         document.querySelectorAll('.film-section').forEach(function(section) {
           var sectionType = section.getAttribute('data-section') || '';
           var showSection = sectionType === 'now' ? sectionVis.now : sectionVis.coming;
-          section.style.display = showSection ? 'grid' : 'none';
+          section.style.display = showSection ? '' : 'none';
         });
       }
 
@@ -402,6 +402,8 @@
       });
     })();
     function switchView(view) {
+      var pageEl = document.querySelector('.page');
+      if (!pageEl) return;
       document.querySelectorAll('.view-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === view); });
-      document.querySelector('.page').classList.toggle('poster-view', view === 'posters');
+      pageEl.classList.toggle('poster-view', view === 'posters');
     }

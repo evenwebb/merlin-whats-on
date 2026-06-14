@@ -367,23 +367,11 @@ jobs:
               issue_number: issue.number,
               body: patchedBody
             });
-            await github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number: issue.number,
-              body: `Successful run recorded. Success streak is now ${next}.`
-            });
             if (next >= 2) {
               await github.rest.issues.update({
                 owner,
                 repo,
                 issue_number: issue.number,
                 state: "closed"
-              });
-              await github.rest.issues.createComment({
-                owner,
-                repo,
-                issue_number: issue.number,
-                body: "Auto-closing after 2 consecutive successful runs."
               });
             }

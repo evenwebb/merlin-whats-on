@@ -12,6 +12,7 @@ import json
 import logging
 import os
 import re
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from copy import deepcopy
@@ -30,13 +31,13 @@ from PIL import Image, ImageOps
 _PAGE_CSS = """\
     :root {
       --bg: #0a0a0f;
-      --card-bg: #12121a;
       --surface: #12121a;
       --surface-2: #12121a;
       --surface-3: #1a1a24;
       --border: rgba(168,85,247,0.25);
       --text: #e2e8f0;
       --text-muted: #94a3b8;
+      --muted: #94a3b8;
       --cyan: #00d4ff;
       --purple: #a855f7;
       --accent: #00d4ff;
@@ -240,6 +241,7 @@ _PAGE_CSS = """\
     .film-meta { flex: 1; min-width: 200px; }
     .film-meta h2 { font-size: 1.25rem; margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
     .cert { margin-right: 6px; vertical-align: middle; }
+    .cert-cert { width: 24px; height: 24px; display: inline-block; }
     .cert-fallback { min-width: 2.1rem; padding: 0.18rem 0.45rem; background: var(--surface-3); color: #fff; font-size: 0.65rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; border: 1px solid rgba(255,255,255,0.25); }
     .meta-line { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
     .rating-wrap { display: inline-flex; align-items: center; gap: 0.4rem; }
@@ -305,7 +307,7 @@ _PAGE_CSS = """\
     .st-row { display: grid; grid-template-columns: 5.5rem minmax(8rem, 1fr) 2fr; gap: 0 0.75rem; align-items: center; margin-bottom: 0.2rem; }
     .st-row:last-child { margin-bottom: 0; }
     .st-time { font-variant-numeric: tabular-nums; }
-    .st-time a, .showtime a { color: var(--cyan); }
+    .st-time a, .showtimes a { color: var(--cyan); }
     .st-time .past { color: var(--text-muted); }
     .st-screen { color: var(--text-muted); }
     .st-tags { display: flex; align-items: center; flex-wrap: wrap; gap: 0.25rem; }
@@ -624,7 +626,7 @@ _PAGE_JS = """\
         document.querySelectorAll('.film-section').forEach(function(section) {
           var sectionType = section.getAttribute('data-section') || '';
           var showSection = sectionType === 'now' ? sectionVis.now : sectionVis.coming;
-          section.style.display = showSection ? 'grid' : 'none';
+          section.style.display = showSection ? '' : 'none';
         });
       }
 
@@ -758,8 +760,10 @@ _PAGE_JS = """\
       });
     })();
     function switchView(view) {
+      var pageEl = document.querySelector('.page');
+      if (!pageEl) return;
       document.querySelectorAll('.view-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === view); });
-      document.querySelector('.page').classList.toggle('poster-view', view === 'posters');
+      pageEl.classList.toggle('poster-view', view === 'posters');
     }
 """
 
@@ -846,6 +850,16 @@ UK_TZ = ZoneInfo("Europe/London")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 HTTP_SESSION = requests.Session()
+_thread_local = threading.local()
+_detail_cache_lock = threading.Lock()
+
+def _get_session():
+    """Return a thread-local requests.Session."""
+    s = getattr(_thread_local, 'session', None)
+    if s is None:
+        s = requests.Session()
+        _thread_local.session = s
+    return s
 
 
 def _load_dotenv() -> None:
@@ -986,7 +1000,7 @@ def fetch_with_retries(url: str, retries: int = HTTP_RETRIES, timeout: int = HTT
     delay = HTTP_RETRY_DELAY
     for attempt in range(retries):
         try:
-            r = HTTP_SESSION.get(url, headers=headers, timeout=timeout)
+            r = _get_session().get(url, headers=headers, timeout=timeout)
             r.raise_for_status()
             return r
         except requests.RequestException as e:
@@ -1432,7 +1446,7 @@ def _tmdb_get(url: str, params: Dict[str, Any], timeout: int = 10) -> requests.R
         if TMDB_DELAY_SEC > 0:
             time.sleep(TMDB_DELAY_SEC)
         try:
-            resp = HTTP_SESSION.get(url, params=params, timeout=timeout)
+            resp = _get_session().get(url, params=params, timeout=timeout)
             if resp.status_code == 429:
                 retry_after = resp.headers.get("Retry-After", "").strip()
                 try:
@@ -2185,7 +2199,8 @@ def scrape_whats_on(
             scrape_diagnostics[cinema_slug] = diagnostics
             if detail_updates:
                 detail_cache_updated = True
-                detail_cache.update(detail_updates)
+                with _detail_cache_lock:
+                    detail_cache.update(detail_updates)
 
     ordered_cinemas = {
         cinema_slug: cinemas_scraped[cinema_slug]
@@ -2532,12 +2547,15 @@ def build_html(data: Dict[str, Any]) -> str:
     sorted_cinema_tabs = sorted(all_cinema_shorts)
 
     def cert_span(rating: Optional[str]) -> str:
-        """Render certificate as a compact text badge."""
+        """Render certificate as an image for known BBFC ratings; fallback text badge otherwise."""
         if not rating:
             return ""
         r = rating.upper()
         r_esc = html.escape(r, quote=True)
         r_txt = html.escape(r, quote=False)
+        cert_img = CERT_IMAGES.get(r)
+        if cert_img:
+            return f'<span class="cert"><img class="cert-cert cert-bbfc" src="certs/{cert_img}" alt="{r_esc}" width="24" height="24" loading="lazy"/></span>'
         return f'<span class="cert cert-fallback" aria-label="{r_esc}">{r_txt}</span>'
 
     def split_initial_showtimes(all_sorted: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
