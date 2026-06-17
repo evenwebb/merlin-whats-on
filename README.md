@@ -1,3 +1,5 @@
+> **Superseded** — This project has been replaced by **[merlin-cinemas](https://github.com/evenwebb/merlin-cinemas)**. Kept for reference only.
+
 # Merlin Cinemas Cornwall What's On
 
 Scrapes Merlin Cinemas Cornwall listings, enriches films with TMDb metadata, and publishes a static HTML site in `docs/` for GitHub Pages.
